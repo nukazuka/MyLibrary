@@ -21,4 +21,4 @@ install:
 	install -s *.so ../lib
 
 clean:
-	rm -f $(SHARED_OBJ) *~ \#* ../lib/*
+	rm -f $(SHARED_OBJ) *~ \#* 
