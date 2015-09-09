@@ -1,25 +1,9 @@
+#ifndef __CINT__
 #include "CanvasOperation.hh"
+#endif
+
 using namespace std;
 
-TCanvas* GetCanvas( string name, string shape, bool logy=false )
-{  
-  TCanvas* c;
-  string title = "title";
-
-  if ( shape == "square" )
-    c = new TCanvas( name.c_str(), title.c_str(), 1000, 1000 );
-  else if ( shape == "landscape" )
-    c = new TCanvas( name.c_str(), title.c_str(), 1200, 800 );
-  else if ( shape == "3:2" )
-    c = new TCanvas( name.c_str(), title.c_str(), 1200, 800 );
-  else
-    c = new TCanvas( name.c_str(), title.c_str(), 1600, 900 );
-
-  c->SetLogy( logy );
-
-  CanvasSetting(c);
-  return c;
-}
 
 void PadSetting() 
 {
@@ -48,3 +32,22 @@ void CanvasSetting( TCanvas* c )
   CanvasSetting();
 }
 
+TCanvas* GetCanvas( string name, string shape, bool logy=false )
+{  
+  TCanvas* c;
+  string title = "title";
+
+  if ( shape == "square" )
+    c = new TCanvas( name.c_str(), title.c_str(), 1000, 1000 );
+  else if ( shape == "landscape" )
+    c = new TCanvas( name.c_str(), title.c_str(), 1200, 800 );
+  else if ( shape == "3:2" )
+    c = new TCanvas( name.c_str(), title.c_str(), 1200, 800 );
+  else
+    c = new TCanvas( name.c_str(), title.c_str(), 1600, 900 );
+
+  c->SetLogy( logy );
+
+  CanvasSetting(c);
+  return c;
+}

@@ -1,4 +1,6 @@
+#ifndef __CINT__
 #include "StringOperation.hh"
+#endif
 
 using namespace std;
 

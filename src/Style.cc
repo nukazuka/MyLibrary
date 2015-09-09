@@ -1,8 +1,7 @@
 #ifndef __CINT__
-#include "../include/Style.hh"
+#include "Style.hh"
 #endif // __CINT__
 
-#include "Style.hh"
 void Style()
 {
 

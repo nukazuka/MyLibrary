@@ -1,4 +1,6 @@
+#ifndef __CINT__
 #include "IoOperation.hh"
+#endif
 
 using namespace std;
 
