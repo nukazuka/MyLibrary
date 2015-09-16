@@ -1,8 +1,8 @@
 #ifndef __CINT__
 #include "CanvasOperation.hh"
 #endif
-using namespace std;
 
+using namespace std;
 
 void PadSetting() 
 {
@@ -32,7 +32,6 @@ void CanvasSetting( TCanvas* c )
   // ? ? ?
   CanvasSetting();
 }
-
 
 TCanvas* GetCanvas( string name, string shape, bool logy=false )
 {  
