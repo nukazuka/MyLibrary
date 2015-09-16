@@ -43,4 +43,4 @@ install:
 	install -s $(SHARED_OBJ) ../lib
 
 clean:
-	rm -f $(SHARED_OBJ) *~ \#* ../*/*.~
+	rm -f $(SHARED_OBJ) *~ \#* ../*/*~
