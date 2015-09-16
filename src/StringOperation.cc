@@ -1,4 +1,6 @@
+#ifndef __CINT__
 #include "StringOperation.hh"
+#endif
 
 using namespace std;
 
@@ -128,6 +130,8 @@ string Subtraction( string s1, string s2 )
   return ssrtn.str();
 }
 
+//conversion
+
 int String2Int( string st )
 {
 
@@ -136,4 +140,12 @@ int String2Int( string st )
   iss >> num;
 
   return num;
+}
+
+string Int2String( int num )
+{
+
+  stringstream ss;
+  ss << num;
+  return ss.str();
 }

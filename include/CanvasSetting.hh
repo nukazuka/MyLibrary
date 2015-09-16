@@ -11,8 +11,8 @@ void CanvasSetting();
 void CanvasSetting( TCanvas* c );
 #endif
 
-#ifdef __CINT__
-#include "../src/CanvasSetting.cc"
-#endif // __CINT__
+//#ifdef __CINT__
+//#include "../src/CanvasSetting.cc"
+//#endif // __CINT__
 
 #endif //CanvasSetting_hh

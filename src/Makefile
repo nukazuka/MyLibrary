@@ -15,10 +15,13 @@ SHARED_OBJ = $(addprefix lib,$(SOURCES:.cc=.so))
 lib%.so: %.cc
 	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) -o $@  $< $(LDFLAGS)
 
-all: clean $(SHARED_OBJ)
+all: $(SHARED_OBJ) MyLibrary.hh
+
+MyLibrary.hh:
+	../MakeHeaderFile.sh ..
 
 install:
 	install -s *.so ../lib
 
 clean:
-	rm -f $(SHARED_OBJ) *~ \#* 
+	rm -f $(SHARED_OBJ) *~ \#*

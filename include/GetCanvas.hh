@@ -9,7 +9,7 @@
 #include "/home/gnukazuk/cernbox/share/ROOT/include/CanvasSetting.hh"
 #endif //__linux__
 
-#include "RootHeaders.hh"
+#include "HeadersRoot.hh"
 
 #include <string>
 

@@ -2,7 +2,6 @@
 #include "../include/Style.hh"
 #endif // __CINT__
 
-#include "Style.hh"
 void Style()
 {
 
