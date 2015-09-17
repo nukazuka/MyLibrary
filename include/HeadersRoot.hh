@@ -10,6 +10,8 @@
 // graphics
 #include "TCanvas.h"
 #include "TPad.h"
+#include "TPaveStats.h"
+#include "TPaveText.h"
 
 // histogram
 #include "TH1.h"

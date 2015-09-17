@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 void PadSetting() 
 {
 
@@ -17,11 +16,13 @@ void PadSetting()
   gStyle->SetGridStyle( 3 );
 }
 
+
 void CanvasSetting( )
 {
 
-  gPad->SetLeftMargin( 0.07 );
-  gPad->SetRightMargin( 0.15 );
+  //  gPad->SetLeftMargin( 0.07 );
+  //  gPad->SetLeftMargin( 0.05 );
+  //  gPad->SetRightMargin( 0.15 );
 
   PadSetting();
 }

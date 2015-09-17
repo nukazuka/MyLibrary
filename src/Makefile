@@ -1,12 +1,14 @@
 COMPILER = g++
 #COMPILER = clang++
 #COMPILER = g++-4.4
-CFLAGS    = -g -Wall -Wextra -Winit-self -Wno-unused-parameter -Wfloat-equal -std=c++11 -O -O1
+CFLAGS    = -g -Wall -Wextra -Winit-self -Wno-unused-parameter -Wfloat-equal # for warning
+CFLAGS   += -std=c++11
+CFLAGS   +=  -O -O1 # for optimazation
 CFLAGS   += `root-config --cflags`
 
 UNAME := $(shell uname)
 
-ifeq (\$(UNAME),Linux)
+ifeq ($(UNAME) , Linux)
 CFLAGS_SHARE = -shared 
 SUFFIX = .so
 INSTALL_OPTION = -s
@@ -28,19 +30,19 @@ SOURCES  = $(wildcard *.cc)
 OBJECTS  = $(SOURCES:.cc=.o)
 SHARED_OBJ = $(addprefix lib,$(SOURCES:.cc=$(SUFFIX)))
 
+lib%.so: %.cc
+	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) -o $@  $< $(LDFLAGS)
 
-#lib%.so: %.cc
-#	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) -o $@  $< $(LDFLAGS)
-
-ifeq ($(UNAME),Darwin)
 lib%.dylib: %.cc
 	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) -o $@  $< $(LDFLAGS)
-endif
 
-all: clean $(SHARED_OBJ)
+all: $(SHARED_OBJ) MyLibrary.hh
+
+MyLibrary.hh:
+	../MakeHeaderFile.sh ..
 
 install:
 	install $(INSTALL_OPTION) $(SHARED_OBJ) ../lib
 
 clean:
-	rm -f -r $(SHARED_OBJ) *~ \#* lib*.dSYM
+	rm -f $(SHARED_OBJ) *~ \#* ../*/*~
