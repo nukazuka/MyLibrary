@@ -59,6 +59,19 @@ sed -i "/Phast/d" ${path}
 # last endif
 echo -e "#endif // MYLIB_MYLIBRARY_HH" >> ${path}
 
+# echo used in Mac doesn't support -e option
+# so echo -e "~~~" -> -e "~~~"
+# delete "-e " with following commands
+# And -i of sed in Mac is bit different
+# so these commands are executed again
+if [ `uname` = Darwin ]
+then
+    sed -i "" "/MyLibrary.hh/d" ${path} 
+    sed -i "" "/Phast/d" ${path} 
+    sed -i "" "s/\-e //" ${path}
+fi
+
+
 cat ${path}
 
 # message

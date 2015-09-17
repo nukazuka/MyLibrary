@@ -133,7 +133,6 @@ string Subtraction( string s1, string s2 )
 }
 
 //conversion
-
 int String2Int( string st )
 {
 
@@ -147,6 +146,25 @@ int String2Int( string st )
 string Int2String( int num )
 {
 
+  stringstream ss;
+  ss << num;
+  return ss.str();
+}
+
+double String2Double( string st )
+{
+  istringstream iss(st);
+  stringstream ss(st);
+  double val;
+  ss >> val;
+  int num;
+  iss >> num;
+
+  return val;
+}
+
+string Double2String( double num )
+{
   stringstream ss;
   ss << num;
   return ss.str();

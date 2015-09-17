@@ -16,4 +16,7 @@ string Replace4Cut( string cut );
 string Subtraction( string s1, string s2 );
 int String2Int( string st );
 string Int2String( int num );
+double String2Double( string st );
+string Double2String( double num );
+
 #endif
