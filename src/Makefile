@@ -9,11 +9,13 @@ UNAME := $(shell uname)
 ifeq (\$(UNAME),Linux)
 CFLAGS_SHARE = -shared 
 SUFFIX = .so
+INSTALL_OPTION = -s
 endif
 
 ifeq ($(UNAME) , Darwin)
 CFLAGS_SHARE = -dynamiclib -fno-common
 SUFFIX = .dylib
+INSTALL_OPTION = 
 endif
 
 CFLAGS_SHARE += -fPIC
@@ -38,7 +40,7 @@ endif
 all: clean $(SHARED_OBJ)
 
 install:
-	install -s $(SHARED_OBJ) ../lib
+	install $(INSTALL_OPTION) $(SHARED_OBJ) ../lib
 
 clean:
 	rm -f -r $(SHARED_OBJ) *~ \#* lib*.dSYM

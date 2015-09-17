@@ -86,11 +86,6 @@ string Replace4Cut( string cut )
   // White space
   rtn = Replace( rtn, " " , "_" );
 
-  // Arithmetic operators
-  rtn = Replace( rtn, "+", "_plus_" );
-  rtn = Replace( rtn, "*", "_mul_" );
-  rtn = Replace( rtn, "/", "_dev_" );
-
   // Comparison oerators
   rtn = Replace( rtn, "==", "_eq_" );
   rtn = Replace( rtn, ">" , "_gt_" );
@@ -100,6 +95,13 @@ string Replace4Cut( string cut )
   rtn = Replace( rtn, "!=", "_ne_" );
   rtn = Replace( rtn, "&&", "_and_" );
   rtn = Replace( rtn, "||", "_or_" );
+  rtn = Replace( rtn, "!", "_not_" );
+
+  // Arithmetic operators
+  rtn = Replace( rtn, "+", "_plus_" );
+  rtn = Replace( rtn, "*", "_mul_" );
+  rtn = Replace( rtn, "/", "_dev_" );
+
 
   // Other operators
   rtn = Replace( rtn, "(" , "_" );
