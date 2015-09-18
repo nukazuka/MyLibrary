@@ -1,6 +1,7 @@
 #ifndef MYLIB_STYLE_HH
 #define MYLIB_STYLE_HH
 
+#include "HeadersRoot.hh"
 #include "TStyle.h"
 void Style();
 void SetHistStyle( TH1D* hist, int color, int width );
