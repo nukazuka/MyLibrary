@@ -9,6 +9,7 @@ using namespace std;
 string GetBaseName( string path );
 string GetFileName( string path );
 string GetPathToFile( string path);
+string GetRepeatedWords( string word, int num );
 string GetSuffix( string path );
 string Replace( string word, string old_key, string new_key );
 string Replace4Cut( string cut );

@@ -15,18 +15,6 @@ string GetBaseName( string path )
   return  rtn;
 }
 
-string GetSuffix( string path )
-{
-
-  string rtn = "";
-  if( path.find(".") == string::npos )
-    rtn = path;
-  else
-    rtn = path.substr( path.find_last_of(".")+1, path.size() - path.find_last_of(".") );
-
-  return rtn;
-}
-
 string GetFileName( string path )
 {
 
@@ -39,6 +27,7 @@ string GetFileName( string path )
   return rtn;
 }
 
+
 string GetPathToFile( string path )
 {
   string rtn = "";
@@ -46,6 +35,27 @@ string GetPathToFile( string path )
     rtn = path;
   else
     rtn = path.substr( 0, path.find_last_of("/") );
+
+  return rtn;
+}
+
+string GetRepeatedWords( string word, int num )
+{
+
+  string rtn = "";
+  for( int i=0; i<num; i++)
+    rtn += word;
+  return rtn;
+}
+
+string GetSuffix( string path )
+{
+
+  string rtn = "";
+  if( path.find(".") == string::npos )
+    rtn = path;
+  else
+    rtn = path.substr( path.find_last_of(".")+1, path.size() - path.find_last_of(".") );
 
   return rtn;
 }
