@@ -31,6 +31,8 @@ echo "#!/bin/bash" >> ${TEMP}
 # get path to MyLibrary/lib
 DIR=`pwd -P | sed -e "s/\/bin//g"`
 DIR_LIB=${DIR}/lib
+DIR_INCLUDE=${DIR}/include
+echo "DIR_INCLUDE=${DIR_INCLUDE}" >> ${TEMP}
 echo "DIR_MYLIBRARY=${DIR_LIB}" >> ${TEMP}
 
 # add library options
@@ -50,7 +52,7 @@ do
     fi
 done
 
-echo "echo -L\${DIR_MYLIBRARY} \${LIBS}" >> ${TEMP}
+echo "echo -I\${DIR_INCLUDE} -L\${DIR_MYLIBRARY} \${LIBS}" >> ${TEMP}
 
 # mv temp file 
 chmod u+x ${TEMP}
