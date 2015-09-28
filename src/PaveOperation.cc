@@ -5,12 +5,17 @@
 using namespace std;
 void DrawTitle(TVirtualPad* pad)
 {
+  DrawTitle( pad , 0.09 );
+}
+
+void DrawTitle(TVirtualPad* pad, Double_t text_size )
+{
 
   gPad->Update();
 
   TPaveText* title = (TPaveText*)pad->GetPrimitive( "title" );
   //      frame->SetTitleSize( 0.09 );
-  title->SetTextSize( 0.09 );
+  title->SetTextSize( text_size );
   title->SetTextAlign( 23 );
   title->Draw( "same" );
 }
