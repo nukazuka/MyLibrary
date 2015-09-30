@@ -35,7 +35,7 @@ echo -e "\n//include headers" >> ${path}
 ## ifndef __CINT__ # for cpp ###################################
 echo -e "#ifndef __CINT__" >> ${path}
 
-ls -1 ${path2}include/*.hh | xargs -I {} basename {} | xargs -I {} echo -e "#include \"{}\"" >> ${path}
+ls -1 ${path2}include/*.hh | xargs -I {} basename {} .hh | xargs -I {} echo -e "#include \"{}\"" >> ${path}
 
 echo -e "#endif // ndef __CINT__" >> ${path}
 
@@ -43,7 +43,7 @@ echo -e "#endif // ndef __CINT__" >> ${path}
 echo -e "\n//if __CINT__ is defined, include its source files" >> ${path}
 echo -e "#ifdef __CINT__" >> ${path}
 
-ls -1 ${path2}include/*.hh | xargs -I {} echo -e "#include \"`pwd`/{}\"" >> ${path}
+#ls -1 ${path2}include/*.hh | xargs -I {} echo -e "#include \"`pwd`/{}\"" >> ${path}
 
 ls -1 ${path2}src/*.cc | xargs -I {} echo -e "#include \"`pwd`/{}\"" >> ${path}
 
