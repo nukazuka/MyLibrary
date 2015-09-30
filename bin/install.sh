@@ -41,7 +41,8 @@ flag=1
 for file in ${LIB_FILES[@]}
 do
 
-    option=`echo $file | cut -c4- | xargs -I {} basename -s ${suffix} {} | xargs -I {} echo "-l"{}`
+#    option=`echo $file | cut -c4- | xargs -I {} basename -s ${suffix} {} | xargs -I {} echo "-l"{}`
+    option=`echo $file | cut -c4- | xargs -I {} basename {} ${suffix} | xargs -I {} echo "-l"{}`
     
     if [ "${flag}" -eq 1 ]
     then 
