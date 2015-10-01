@@ -4,17 +4,6 @@
 
 using namespace std;
 
-string GetBaseName( string path )
-{
-
-  string rtn = "";
-  if( path.find(".") == string::npos )
-    rtn = path;
-  else
-    rtn = path.substr( 0, path.find_last_of(".") );
-  return  rtn;
-}
-
 string GetFileName( string path )
 {
 
@@ -23,39 +12,6 @@ string GetFileName( string path )
     rtn = path;
   else
     rtn = path.substr( path.find_last_of("/")+1, path.size() - path.find_last_of("/") );
-
-  return rtn;
-}
-
-
-string GetPathToFile( string path )
-{
-  string rtn = "";
-  if( path.find("/") == string::npos )
-    rtn = path;
-  else
-    rtn = path.substr( 0, path.find_last_of("/") );
-
-  return rtn;
-}
-
-string GetRepeatedWords( string word, int num )
-{
-
-  string rtn = "";
-  for( int i=0; i<num; i++)
-    rtn += word;
-  return rtn;
-}
-
-string GetSuffix( string path )
-{
-
-  string rtn = "";
-  if( path.find(".") == string::npos )
-    rtn = path;
-  else
-    rtn = path.substr( path.find_last_of(".")+1, path.size() - path.find_last_of(".") );
 
   return rtn;
 }
@@ -83,6 +39,49 @@ string Replace( string word, string old_key, string new_key )
 	  pos += new_key.size();
 	}
     }
+
+  return rtn;
+}
+
+string GetPathToFile( string path )
+{
+
+  string rtn = "";
+  if( path.find("/") == string::npos )
+    rtn = path;
+  else
+    rtn = path.substr( 0, path.find_last_of("/") );
+
+  return rtn;
+}
+
+
+string GetBaseName( string path )
+{
+
+  string file_name = GetFileName( path );
+  string file_suffix = GetSuffix(path);
+  string rtn = Replace( file_name, file_suffix, "" );
+  return  rtn;
+}
+
+string GetRepeatedWords( string word, int num )
+{
+
+  string rtn = "";
+  for( int i=0; i<num; i++)
+    rtn += word;
+  return rtn;
+}
+
+string GetSuffix( string path )
+{
+
+  string rtn = "";
+  if( path.find(".") == string::npos )
+    rtn = path;
+  else
+    rtn = path.substr( path.find_last_of(".")+1, path.size() - path.find_last_of(".") );
 
   return rtn;
 }
