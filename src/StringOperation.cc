@@ -175,3 +175,13 @@ string Double2String( double num )
   ss << num;
   return ss.str();
 }
+
+bool IsNumber( string st )
+{
+
+  string::const_iterator it = st.begin();
+  while( it != st.end() && std::isdigit(*it) )
+    ++it;
+
+  return !st.empty() && it == st.end();
+}

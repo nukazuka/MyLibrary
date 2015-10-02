@@ -102,4 +102,11 @@ double String2Double( string st );
  */
 string Double2String( double num );
 
+/*!
+  @fn bool IsNumber( string st )
+  @param
+  @return
+  @brief
+ */
+bool IsNumber( string st );
 #endif
