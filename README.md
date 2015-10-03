@@ -13,6 +13,8 @@ If you want README written in English, make pull request.
 
 としている。
 
+## [関数・クラスの説明][doxygen]
+
 ## 詳しい説明
 
 * bin
@@ -131,3 +133,4 @@ linux では "lib*.so"，mac では "lib*.dylib" ファイルができる（mac 
 
 を入れれば OK のはず。
 
+[doxygen]: doc/html/index.html

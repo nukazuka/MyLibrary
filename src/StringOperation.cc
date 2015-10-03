@@ -125,6 +125,13 @@ string Replace4Cut( string cut )
 string Subtraction( string s1, string s2 )
 {
 
+  if( !(IsNumber(s1) && IsNumber(s2) ) )
+    {
+      cerr << "string Subtraction( string s1, string s2 )" << endl;
+      cerr << s1 << " and/or " << s2 << " are not number" << endl;
+      exit(-1);
+    }
+
   istringstream is1(s1);
   istringstream is2(s2);
 
@@ -141,6 +148,14 @@ string Subtraction( string s1, string s2 )
 //conversion
 int String2Int( string st )
 {
+
+  if( IsNumber( st ) == false )
+    {
+
+      cerr << "int String2Int( string st )" << endl;
+      cerr << st << " contains non number" << endl;
+      cerr << "Program is stopped" << endl;
+    }
 
   istringstream iss(st);
   int num;
@@ -175,6 +190,7 @@ string Double2String( double num )
   ss << num;
   return ss.str();
 }
+
 
 bool IsNumber( string st )
 {
