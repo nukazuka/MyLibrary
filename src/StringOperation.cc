@@ -43,7 +43,7 @@ string GetSuffix( string path )
   if( path.find(".") == string::npos )
     rtn = path;
   else
-    rtn = path.substr( path.find_last_of(".")+1, path.size() - path.find_last_of(".") );
+    rtn = path.substr( path.find_last_of("."), path.size() - path.find_last_of(".")+1 );
 
   return rtn;
 }
