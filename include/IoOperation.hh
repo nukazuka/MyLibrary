@@ -6,16 +6,36 @@
 
 using namespace std;
 
-/*! get root object*/
+/*!
+  @fn TObject* GetObject( string file_name, string obj_name)
+  @param
+  @return
+  @brief get root object
+ */
 TObject* GetObject( string file_name, string obj_name);
 
-/*! get root object in TDirectoryFile */
+/*!
+  @fn TObject* GetObject( string file_name, string dir_name, string obj_name)
+  @param
+  @return
+  @brief get root object in TDirectoryFile
+ */
 TObject* GetObject( string file_name, string dir_name, string obj_name);
 
-/*! get TTree */
+/*!
+  @fn TTree* GetTree( string file_name , string tr_name )
+  @param
+  @return
+  @brief get TTree
+ */
 TTree* GetTree( string file_name , string tr_name );
 
-/*! get TTree in TDirectoryFile */
+/*!
+  @fn TTree* GetTree( string file_name , string dir_name, string tr_name )
+  @param
+  @return
+  @brief get TTree in TDirectoryFile
+ */
 TTree* GetTree( string file_name , string dir_name, string tr_name );
 
 #endif

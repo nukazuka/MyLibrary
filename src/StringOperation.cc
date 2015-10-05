@@ -123,6 +123,17 @@ string Replace4Cut( string cut )
 
 }
 
+
+bool IsNumber( string st )
+{
+
+  string::const_iterator it = st.begin();
+  while( it != st.end() && std::isdigit(*it) )
+    ++it;
+
+  return !st.empty() && it == st.end();
+}
+
 string Subtraction( string s1, string s2 )
 {
 
@@ -192,13 +203,3 @@ string Double2String( double num )
   return ss.str();
 }
 
-
-bool IsNumber( string st )
-{
-
-  string::const_iterator it = st.begin();
-  while( it != st.end() && std::isdigit(*it) )
-    ++it;
-
-  return !st.empty() && it == st.end();
-}
