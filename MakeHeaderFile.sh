@@ -35,7 +35,7 @@ echo -e "\n//include headers" >> ${path}
 ## ifndef __CINT__ # for cpp ###################################
 echo -e "#ifndef __CINT__" >> ${path}
 
-ls -1 ${path2}include/*.hh | xargs -I {} basename {} .hh | xargs -I {} echo -e "#include \"{}\"" >> ${path}
+ls -1 ${path2}include/*.hh | xargs -I {} basename {} .hh | xargs -I {} echo -e "#include \"{}.hh\"" >> ${path}
 
 echo -e "#endif // ndef __CINT__" >> ${path}
 
