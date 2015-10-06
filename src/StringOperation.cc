@@ -94,19 +94,20 @@ string Replace4Cut( string cut )
 
   // Comparison oerators
   rtn = Replace( rtn, "==", "_eq_" );
-  rtn = Replace( rtn, ">" , "_gt_" );
   rtn = Replace( rtn, ">=", "_ge_" );
-  rtn = Replace( rtn, "<" , "_lt_" );
   rtn = Replace( rtn, "<=", "_le_" );
   rtn = Replace( rtn, "!=", "_ne_" );
   rtn = Replace( rtn, "&&", "_and_" );
   rtn = Replace( rtn, "||", "_or_" );
   rtn = Replace( rtn, "!", "_not_" );
+  rtn = Replace( rtn, ">" , "_gt_" );
+  rtn = Replace( rtn, "<" , "_lt_" );
 
   // Arithmetic operators
   rtn = Replace( rtn, "+", "_plus_" );
   rtn = Replace( rtn, "*", "_mul_" );
   rtn = Replace( rtn, "/", "_dev_" );
+  rtn = Replace( rtn, "=", "_eq_" );
 
 
   // Other operators
@@ -120,6 +121,17 @@ string Replace4Cut( string cut )
 
   return rtn;
 
+}
+
+
+bool IsNumber( string st )
+{
+
+  string::const_iterator it = st.begin();
+  while( it != st.end() && std::isdigit(*it) )
+    ++it;
+
+  return !st.empty() && it == st.end();
 }
 
 string Subtraction( string s1, string s2 )
@@ -191,13 +203,3 @@ string Double2String( double num )
   return ss.str();
 }
 
-
-bool IsNumber( string st )
-{
-
-  string::const_iterator it = st.begin();
-  while( it != st.end() && std::isdigit(*it) )
-    ++it;
-
-  return !st.empty() && it == st.end();
-}

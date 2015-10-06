@@ -4,9 +4,36 @@
 #include "HeadersSL.hh"
 #include "HeadersRoot.hh"
 
+/*!
+  @fn void DrawTitle(TVirtualPad* pad)
+  @param
+  @return
+  @brief
+ */
 void DrawTitle(TVirtualPad* pad);
+
+/*!
+  @fn void DrawTitle(TVirtualPad* pad, Double_t text_size)
+  @param
+  @return
+  @brief
+ */
 void DrawTitle(TVirtualPad* pad, Double_t text_size);
+
+/*!
+  @fn void DrawStats( TH1D* hist, double xmin, double ymin, double xmax, double ymax )
+  @param
+  @return
+  @brief
+ */
 void DrawStats( TH1D* hist, double xmin, double ymin, double xmax, double ymax );
+
+/*!
+  @fn void DrawStats2D( TH2D* hist, double xmin, double ymin, double xmax, double ymax )
+  @param
+  @return
+  @brief
+ */
 void DrawStats2D( TH2D* hist, double xmin, double ymin, double xmax, double ymax );
 
 /*
