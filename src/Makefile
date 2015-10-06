@@ -45,4 +45,4 @@ install:
 	install $(INSTALL_OPTION) $(SHARED_OBJ) ../lib
 
 clean:
-	rm -f $(SHARED_OBJ) *~ \#* ../*/*~
+	rm -rf $(SHARED_OBJ) *~ \#* ../*/*~ *dylib.dSYM

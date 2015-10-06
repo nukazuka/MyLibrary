@@ -4,17 +4,6 @@
 
 using namespace std;
 
-string GetBaseName( string path )
-{
-
-  string rtn = "";
-  if( path.find(".") == string::npos )
-    rtn = path;
-  else
-    rtn = path.substr( 0, path.find_last_of(".") );
-  return  rtn;
-}
-
 string GetFileName( string path )
 {
 
@@ -27,17 +16,16 @@ string GetFileName( string path )
   return rtn;
 }
 
-
 string GetPathToFile( string path )
 {
+
   string rtn = "";
-  if( path.find("/") == string::npos )
-    rtn = path;
-  else
+  if( path.find("/") != string::npos )
     rtn = path.substr( 0, path.find_last_of("/") );
 
   return rtn;
 }
+
 
 string GetRepeatedWords( string word, int num )
 {
@@ -55,7 +43,7 @@ string GetSuffix( string path )
   if( path.find(".") == string::npos )
     rtn = path;
   else
-    rtn = path.substr( path.find_last_of(".")+1, path.size() - path.find_last_of(".") );
+    rtn = path.substr( path.find_last_of("."), path.size() - path.find_last_of(".")+1 );
 
   return rtn;
 }
@@ -87,6 +75,14 @@ string Replace( string word, string old_key, string new_key )
   return rtn;
 }
 
+string GetBaseName( string path )
+{
+
+  string file_name = GetFileName( path );
+  string file_suffix = GetSuffix(path);
+  string rtn = Replace( file_name, file_suffix, "" );
+  return  rtn;
+}
 
 string Replace4Cut( string cut )
 {
@@ -129,6 +125,13 @@ string Replace4Cut( string cut )
 string Subtraction( string s1, string s2 )
 {
 
+  if( !(IsNumber(s1) && IsNumber(s2) ) )
+    {
+      cerr << "string Subtraction( string s1, string s2 )" << endl;
+      cerr << s1 << " and/or " << s2 << " are not number" << endl;
+      exit(-1);
+    }
+
   istringstream is1(s1);
   istringstream is2(s2);
 
@@ -145,6 +148,14 @@ string Subtraction( string s1, string s2 )
 //conversion
 int String2Int( string st )
 {
+
+  if( IsNumber( st ) == false )
+    {
+
+      cerr << "int String2Int( string st )" << endl;
+      cerr << st << " contains non number" << endl;
+      cerr << "Program is stopped" << endl;
+    }
 
   istringstream iss(st);
   int num;
@@ -178,4 +189,15 @@ string Double2String( double num )
   stringstream ss;
   ss << num;
   return ss.str();
+}
+
+
+bool IsNumber( string st )
+{
+
+  string::const_iterator it = st.begin();
+  while( it != st.end() && std::isdigit(*it) )
+    ++it;
+
+  return !st.empty() && it == st.end();
 }

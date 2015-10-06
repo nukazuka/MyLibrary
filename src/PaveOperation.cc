@@ -3,10 +3,7 @@
 #endif
 
 using namespace std;
-void DrawTitle(TVirtualPad* pad)
-{
-  DrawTitle( pad , 0.09 );
-}
+
 
 void DrawTitle(TVirtualPad* pad, Double_t text_size )
 {
@@ -18,6 +15,11 @@ void DrawTitle(TVirtualPad* pad, Double_t text_size )
   title->SetTextSize( text_size );
   title->SetTextAlign( 23 );
   title->Draw( "same" );
+}
+
+void DrawTitle(TVirtualPad* pad)
+{
+  DrawTitle( pad , 0.09 );
 }
 
 void DrawStats( TH1D* hist, double xmin, double ymin, double xmax, double ymax )

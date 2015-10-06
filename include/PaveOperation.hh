@@ -8,6 +8,7 @@ void DrawTitle(TVirtualPad* pad);
 void DrawTitle(TVirtualPad* pad, Double_t text_size);
 void DrawStats( TH1D* hist, double xmin, double ymin, double xmax, double ymax );
 void DrawStats2D( TH2D* hist, double xmin, double ymin, double xmax, double ymax );
+
 /*
 void DrawTitle(TVirtualPad* pad)
 {
