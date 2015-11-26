@@ -30,10 +30,10 @@ SOURCES  = $(wildcard *.cc)
 OBJECTS  = $(SOURCES:.cc=.o)
 SHARED_OBJ = $(addprefix lib,$(SOURCES:.cc=$(SUFFIX)))
 
-lib%.so: %.cc
+lib%.so: %.cc ../include/%.hh
 	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) -o $@  $< $(LDFLAGS)
 
-lib%.dylib: %.cc
+lib%.dylib: %.cc ../include/%.hh
 	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) -o $@  $< $(LDFLAGS)
 
 all: $(SHARED_OBJ) MyLibrary.hh

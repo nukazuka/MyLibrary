@@ -1,0 +1,280 @@
+#ifndef MYLIB_MULTIHIST_HH
+#define MYLIB_MULTIHIST_HH
+
+#include "HeadersSL.hh"
+#include "HeadersRoot.hh"
+#include "PaveOperation.hh"
+/*!
+  @fn void DrawTitle(TVirtualPad* pad)
+  @param
+  @return
+  @brief
+ */
+//void DrawTitle(TVirtualPad* pad);
+
+/*!
+  @class MultiHist
+  @brief This class treats multi-histograms.
+  @date 26/Nov./2015
+  @author G. Nukazuka
+  @detail This can make a frame which all histograms are in.
+*/
+
+using namespace std;
+template < typename TH >
+class MultiHist
+{
+private:
+  string name_;
+  string title_;
+  string option_;
+
+  double xmin_;
+  double xmax_;
+  double ymin_;
+  double ymax_;
+  double margin_ratio_top_;
+  double margin_ratio_right_;
+  double margin_ratio_bottom_;
+  double margin_ratio_left_;
+  double title_size_;
+
+
+  bool bl_stats_;
+  bool bl_title_;
+  bool bl_draw_no_entry_;
+  vector < TH* > vhist;
+
+  // Initialization
+  void Init();
+  void Init( string name, string title )
+  {
+    
+    name_  = name;
+    title_ = title;
+
+    xmin_  = ymin_ = 1.0;
+    xmax_  = ymax_ = 2.0;
+    margin_ratio_top_ = margin_ratio_bottom_ = margin_ratio_left_ = margin_ratio_right_ = 0.01;
+    title_size_ = 0.07;
+
+    bl_stats_ = bl_title_ = bl_draw_no_entry_ 
+      = true;
+    
+  }
+  
+  void GetRanges()
+  {
+    vector < double > x, y;
+    for( int i=0; i<vhist.size(); i++ )
+      {
+
+	int bin = vhist[i]->GetXaxis()->GetNbins();
+	double width = vhist[i]->GetBinWidth(i);
+	
+	if( bl_draw_no_entry_ == true )
+	  {
+	    x.push_back( vhist[i]->GetBinCenter(0)   - width/2. );
+	    x.push_back( vhist[i]->GetBinCenter(bin) + width/2. );
+	  }
+
+	/*
+	  // not ready
+	else
+	  {
+
+	  }
+	*/
+	
+	y.push_back( vhist[i]->GetBinContent( vhist[i]->GetMinimumBin() ) );
+	y.push_back( vhist[i]->GetBinContent( vhist[i]->GetMaximumBin() ) );
+
+      }
+
+    double xmin = *min_element( x.begin(), x.end() );
+    double xmax = *max_element( x.begin(), x.end() );
+    xmin_ = xmin;
+    xmax_ = xmax;
+
+    double ymin = *min_element( y.begin(), y.end() );
+    double ymax = *max_element( y.begin(), y.end() );
+    ymin_ = ymin;
+    ymax_ = ymax;
+  }
+  
+public:
+
+  // Constructor
+  /*!
+    @fn MultiHist()
+    @brief A default constructor.
+  */
+  MultiHist()
+  {
+    Init( "name", "title" );
+  }
+
+  /*!
+    @fn MultiHist( string name, string title)
+    @param name A name of this object.
+    @param title A title of this object
+    @brief A constructor with name and title
+  */
+  MultiHist( string name, string title )
+  {
+    Init( name, title );
+  }
+
+  // void 
+  /*!
+    @fn void Add( TH* hist )
+    @param hist A pointer of histogram which you want to treat.
+    @brief Add the histogram to this class
+  */
+  void Add( TH* hist ) { vhist.push_back( hist ); };
+
+  void Draw( string option ){ Draw( option, 0.9, 0.0, 1.0, 1.0 ); };
+    
+  void Draw( string option,
+	     double stats_xmin, double stats_ymin,
+	     double stats_xmax, double stats_ymax )
+  {
+
+    GetRanges();
+
+    double margin_right  = ( xmax_ - xmin_ ) * margin_ratio_right_;
+    double margin_left   = ( xmax_ - xmin_ ) * margin_ratio_left_;
+    double margin_top    = ( ymax_ - ymin_ ) * margin_ratio_top_;
+    double margin_bottom = ( ymax_ - ymin_ ) * margin_ratio_bottom_;
+
+    TH1F* frame = new TH1F( "hframe", title_.c_str() , 1000, xmin_ - margin_left, xmax_ + margin_right );
+    frame->SetMinimum( ymin_ - margin_bottom );
+    frame->SetMaximum( ymax_ + margin_top );
+    frame->SetStats( false );
+    frame->GetXaxis()->CenterTitle( true );
+    frame->GetYaxis()->CenterTitle( true );
+    frame->Draw();
+
+    double stats_height = (stats_ymax - stats_ymin) / vhist.size();
+    for( int i=0; i<vhist.size(); i++ )
+      {
+	
+	if( bl_stats_ == true )
+	  {
+
+	    vhist[i]->Draw( (option + "SAMES" ).c_str() );
+	    
+	    DrawStats( vhist[i] , 
+		       stats_xmin ,  
+		       stats_ymax - stats_height * (i+1) ,
+		       stats_xmax,
+		       stats_ymax - stats_height * i );
+	  }
+	else
+	  {
+	    vhist[i]->Draw( (option + "SAME" ).c_str() );
+	  }
+
+	if( i==0 && bl_title_==true )
+	  DrawTitle( gPad , title_size_ );
+      }
+    
+    
+  }
+  
+  void SetOption( string option ){ option_ = option;};
+
+  /*!
+    @fn void SetMarginTop( double ratio )
+    @param ratio ratio of margin
+    @brief Set margin in %
+  */
+  void SetMarginTop( double ratio ){ margin_ratio_top_ = ratio;};
+
+  /*! 
+    @fn void SetMarginRight( double ratio )
+    @param ratio
+    @brief
+   */
+  void SetMarginRight( double ratio ){ margin_ratio_right_ = ratio;};
+
+  /*!
+    @fn void SetMarginBottom( double ratio )
+    @param ratio ratio of margin
+    @brief Set margin in %
+  */
+  void SetMarginBottom( double ratio ){ margin_ratio_bottom_ = ratio;};
+
+  /*!  
+    @fn void SetMarginLeft( double ratio )
+    @param ratio ratio of margin
+    @brief
+  */
+  void SetMarginLeft( double ratio ){ margin_ratio_left_ = ratio;};
+
+  /*!  
+    @fn void SetMarginV( double ratio )
+    @param ratio ratio of margin
+    @brief Set margin in %
+  */
+  void SetMarginV( double ratio )
+  {
+    
+    SetMarginTop   ( ratio );
+    SetMarginBottom( ratio );
+  };
+
+  /*!
+    @fn void SetMarginH( double ratio )
+    @param ratio
+    @brief
+  */
+  void SetMarginH( double ratio )
+  {
+    SetMarginLeft ( ratio );
+    SetMarginRight( ratio );
+  };
+
+  /*!
+    @fn void SetMargins( double ratio )
+    @param ratio
+    @brief
+  */
+  void SetMargins( double ratio )
+  {
+    SetMarginH( ratio );
+    SetMarginV( ratio );
+  }
+
+
+  void SetDrawNoEntry( bool bl ){ bl_draw_no_entry_ = bl ;};
+  void SetStats( bool bl ){ bl_stats_ = bl;};
+  void SetTitleDraw( bool bl ){ bl_title_ = bl;};
+  void SetTitleSize( double size ){ title_size_ = size;};
+
+  void Print()
+  {
+    int width = 15;
+    cout << setw(width) << "name" << ":" << name_ << endl;
+    cout << setw(width) << "title" << ":" << title_ << endl;
+    cout << setw(width) << "option" << ":" << option_ << endl;
+    cout << setw(width) << "x & margin(%)" << ":"
+	 << setw(width) << setprecision(5) <<  xmin_ << " - " << margin_ratio_left_ << " <==> "
+	 << setw(width) << setprecision(5) << xmax_ << " - " << margin_ratio_right_
+	 << endl;
+    cout << setw(width) << "y & margin(%)" << ":"
+	 << setw(width) << setprecision(5) << ymin_ << " - " << margin_ratio_bottom_ << " <==> "
+	 << setw(width) << setprecision(5) << ymax_ << " - " << margin_ratio_top_
+	 << endl;
+  }
+
+  // int 
+  //  int Get
+
+  // string 
+  string GetName(){ return name_;};
+  string GetTitle(){ return title_;};
+
+};
+
+#endif

@@ -1,44 +1,63 @@
-#ifndef __CINT__
-#include "PaveOperation.hh"
-#endif
+#ifndef MYLIB_PAVEOPERATION_HH
+#define MYLIB_PAVEOPERATION_HH
 
-using namespace std;
+#include "HeadersSL.hh"
+#include "HeadersRoot.hh"
+
+/*!
+  @fn void DrawTitle(TVirtualPad* pad)
+  @param
+  @return
+  @brief
+ */
+void DrawTitle(TVirtualPad* pad);
+
+/*!
+  @fn void DrawTitle(TVirtualPad* pad, Double_t text_size = 0.07 )
+  @param
+  @return
+  @brief
+ */
+void DrawTitle(TVirtualPad* pad, Double_t text_size = 0.07 );
 
 
-void DrawTitle(TVirtualPad* pad, Double_t text_size )
+/*!
+  @fn void DrawTitle(Double_t text_size = 0.07 )
+  @param
+  @return
+  @brief
+ */
+void DrawTitle(Double_t text_size = 0.07 );
+
+/*!
+  @fn void DrawStats( TH1D* hist, double xmin, double ymin, double xmax, double ymax )
+  @param
+  @return
+  @brief
+ */
+void DrawStats( TH1D* hist, double xmin, double ymin, double xmax, double ymax );
+
+/*!
+  @fn void DrawStats2D( TH2D* hist, double xmin, double ymin, double xmax, double ymax )
+  @param
+  @return
+  @brief
+ */
+void DrawStats2D( TH2D* hist, double xmin, double ymin, double xmax, double ymax );
+
+/*
+void DrawTitle(TVirtualPad* pad)
 {
-
-  gPad->Update();
 
   TPaveText* title = (TPaveText*)pad->GetPrimitive( "title" );
   //      frame->SetTitleSize( 0.09 );
-  title->SetTextSize( text_size );
+  title->SetTextSize( 0.09 );
   title->SetTextAlign( 23 );
   title->Draw( "same" );
 }
 
-void DrawTitle(TVirtualPad* pad)
-{
-  DrawTitle( pad , 0.09 );
-}
-
-void DrawTitle(Double_t text_size)
-{
-  DrawTitle( gPad , text_size);
-}
-
-/*
-void DrawTitle()
-{
-  DrawTitle( gPad , 0.07);
-}
-*/
-
-/*
 void DrawStats( TH1D* hist, double xmin, double ymin, double xmax, double ymax )
 {
-
-  gPad->Update();
 
   TPaveStats *st = (TPaveStats*)hist->FindObject("stats");
   st->SetTextColor( hist->GetLineColor() );
@@ -54,11 +73,9 @@ void DrawStats( TH1D* hist, double xmin, double ymin, double xmax, double ymax )
   //  st->SetOptStat( 111111 ) ; // overflow and underflos are ON
   st->Draw("same");
 }
-*/
+
 void DrawStats2D( TH2D* hist, double xmin, double ymin, double xmax, double ymax )
 {
-
-  gPad->Update();
 
   TPaveStats *st = (TPaveStats*)hist->FindObject("stats");
   st->SetTextColor( hist->GetLineColor() );
@@ -73,3 +90,7 @@ void DrawStats2D( TH2D* hist, double xmin, double ymin, double xmax, double ymax
 
   st->Draw("same");
 }
+*/
+
+
+#endif

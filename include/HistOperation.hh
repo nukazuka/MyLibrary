@@ -12,7 +12,7 @@
  */
 //void DrawTitle(TVirtualPad* pad);
 
-template < type TH > 
+template < typename TH > 
 void HistSetting( TH* hist , int color )
 {
 
@@ -23,4 +23,5 @@ void HistSetting( TH* hist , int color )
 }
 
 
+void aaa();
 #endif
