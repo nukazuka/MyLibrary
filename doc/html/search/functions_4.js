@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['padsetting',['PadSetting',['../_canvas_operation_8cc.html#aeb576dac34138872b7cf507bc30cbd14',1,'PadSetting():&#160;CanvasOperation.cc'],['../_canvas_operation_8hh.html#aeb576dac34138872b7cf507bc30cbd14',1,'PadSetting():&#160;CanvasOperation.cc'],['../_canvas_setting_8hh.html#aeb576dac34138872b7cf507bc30cbd14',1,'PadSetting():&#160;CanvasOperation.cc']]]
+  ['histsetting',['HistSetting',['../_hist_operation_8hh.html#ad2717505eb810ce3759e7e3ef6dc02a0',1,'HistOperation.hh']]]
 ];

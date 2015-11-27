@@ -40,6 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -101,8 +102,50 @@ Functions</h2></td></tr>
 <tr class="separator:a766767e61d475a5e310dc33475d823d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3feaac70bb633c5fe1cbe1176491188"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_style_8cc.html#ab3feaac70bb633c5fe1cbe1176491188">SetHistStyle</a> (TH1D *hist, int color, int width)</td></tr>
 <tr class="separator:ab3feaac70bb633c5fe1cbe1176491188"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e9e61aaae3addbe373779491361e4e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_style_8cc.html#a1e9e61aaae3addbe373779491361e4e3">SetGraphStyle</a> (TGraph *g, int color, int width)</td></tr>
+<tr class="separator:a1e9e61aaae3addbe373779491361e4e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a1e9e61aaae3addbe373779491361e4e3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetGraphStyle </td>
+          <td>(</td>
+          <td class="paramtype">TGraph *&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_style_8cc_source.html#l00035">35</a> of file <a class="el" href="_style_8cc_source.html">Style.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  g-&gt;SetLineColor   ( color );</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  g-&gt;SetMarkerColor ( color );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  g-&gt;SetFillColor   ( color );</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  g-&gt;SetLineWidth   ( width );</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a class="anchor" id="ab3feaac70bb633c5fe1cbe1176491188"></a>
 <div class="memitem">
 <div class="memproto">

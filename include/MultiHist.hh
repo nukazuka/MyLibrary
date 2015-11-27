@@ -60,7 +60,6 @@ private:
 
     bl_stats_ = bl_title_ = bl_draw_no_entry_ 
       = true;
-    
   }
   
   void GetRanges()
@@ -131,7 +130,7 @@ public:
     @param hist A pointer of histogram which you want to treat.
     @brief Add the histogram to this class
   */
-  void Add( TH* hist ) { vhist.push_back( hist ); };
+  void Add( TH* hist ){ vhist.push_back( hist ); };
 
   void Draw( string option ){ Draw( option, 0.9, 0.0, 1.0, 1.0 ); };
     
@@ -249,6 +248,7 @@ public:
 
   void SetDrawNoEntry( bool bl ){ bl_draw_no_entry_ = bl ;};
   void SetStats( bool bl ){ bl_stats_ = bl;};
+  void SetStatFormat( int mode ){ stat_format_ = mode ;};
   void SetTitleDraw( bool bl ){ bl_title_ = bl;};
   void SetTitleSize( double size ){ title_size_ = size;};
 

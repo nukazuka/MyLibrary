@@ -40,6 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -111,21 +112,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif // ifdef __CINT__</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifdef __CINT__</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_style_8hh.html#ab3feaac70bb633c5fe1cbe1176491188">SetHistStyle</a>( TH1D* hist, <span class="keywordtype">int</span> color, <span class="keywordtype">int</span> width )</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  hist-&gt;Sumw2();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  hist-&gt;SetLineColor( color );</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  hist-&gt;SetLineWidth( width );</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  hist-&gt;GetXaxis()-&gt;CenterTitle();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  hist-&gt;GetYaxis()-&gt;CenterTitle();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif // ifndef __CINT__</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif // ifndef MYLIB_STYLE_HH</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif // ifndef __CINT__</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif // ifndef MYLIB_STYLE_HH</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_style_8hh.html#a1e9e61aaae3addbe373779491361e4e3">SetGraphStyle</a>( TGraph* g, <span class="keywordtype">int</span> color , <span class="keywordtype">int</span> width );</div>
 <div class="ttc" id="_headers_root_8hh_html"><div class="ttname"><a href="_headers_root_8hh.html">HeadersRoot.hh</a></div></div>
 <div class="ttc" id="_style_8hh_html_a766767e61d475a5e310dc33475d823d7"><div class="ttname"><a href="_style_8hh.html#a766767e61d475a5e310dc33475d823d7">Style</a></div><div class="ttdeci">void Style()</div><div class="ttdef"><b>Definition:</b> <a href="_style_8cc_source.html#l00005">Style.cc:5</a></div></div>
 <div class="ttc" id="_style_8hh_html_ab3feaac70bb633c5fe1cbe1176491188"><div class="ttname"><a href="_style_8hh.html#ab3feaac70bb633c5fe1cbe1176491188">SetHistStyle</a></div><div class="ttdeci">void SetHistStyle(TH1D *hist, int color, int width)</div><div class="ttdef"><b>Definition:</b> <a href="_style_8cc_source.html#l00015">Style.cc:15</a></div></div>
+<div class="ttc" id="_style_8hh_html_a1e9e61aaae3addbe373779491361e4e3"><div class="ttname"><a href="_style_8hh.html#a1e9e61aaae3addbe373779491361e4e3">SetGraphStyle</a></div><div class="ttdeci">void SetGraphStyle(TGraph *g, int color, int width)</div><div class="ttdef"><b>Definition:</b> <a href="_style_8cc_source.html#l00035">Style.cc:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
