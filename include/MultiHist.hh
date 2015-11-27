@@ -248,7 +248,6 @@ public:
 
   void SetDrawNoEntry( bool bl ){ bl_draw_no_entry_ = bl ;};
   void SetStats( bool bl ){ bl_stats_ = bl;};
-  void SetStatFormat( int mode ){ stat_format_ = mode ;};
   void SetTitleDraw( bool bl ){ bl_title_ = bl;};
   void SetTitleSize( double size ){ title_size_ = size;};
 

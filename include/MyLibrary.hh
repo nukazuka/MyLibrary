@@ -18,15 +18,6 @@
 
 //if __CINT__ is defined, include its source files
 #ifdef __CINT__
-<<<<<<< HEAD
-#include "/afs/cern.ch/user/g/gnukazuk/private/MyLibrary/src/../src/CanvasOperation.cc"
-#include "/afs/cern.ch/user/g/gnukazuk/private/MyLibrary/src/../src/HistOperation.cc"
-#include "/afs/cern.ch/user/g/gnukazuk/private/MyLibrary/src/../src/IoOperation.cc"
-#include "/afs/cern.ch/user/g/gnukazuk/private/MyLibrary/src/../src/NumericalOperation.cc"
-#include "/afs/cern.ch/user/g/gnukazuk/private/MyLibrary/src/../src/PaveOperation.cc"
-#include "/afs/cern.ch/user/g/gnukazuk/private/MyLibrary/src/../src/StringOperation.cc"
-#include "/afs/cern.ch/user/g/gnukazuk/private/MyLibrary/src/../src/Style.cc"
-=======
 #include "/Users/nukazuka/local/MyLibrary/src/../src/CanvasOperation.cc"
 #include "/Users/nukazuka/local/MyLibrary/src/../src/HistOperation.cc"
 #include "/Users/nukazuka/local/MyLibrary/src/../src/IoOperation.cc"
@@ -35,6 +26,5 @@
 #include "/Users/nukazuka/local/MyLibrary/src/../include/PaveOperation.hh"
 #include "/Users/nukazuka/local/MyLibrary/src/../src/StringOperation.cc"
 #include "/Users/nukazuka/local/MyLibrary/src/../src/Style.cc"
->>>>>>> 20719169b695c36937606bfb1bca9c6876a03bc1
 #endif // __CINT__
 #endif // MYLIB_MYLIBRARY_HH
