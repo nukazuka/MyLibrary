@@ -19,7 +19,7 @@ using namespace std;
   @param hist A pointer of histogram
   @detail
 */
-void HistSetting( TH1* hist );
+//void HistSetting( TH1* hist );
 
 /*
   @fn void HistSetting( TH1* hist, int color )
@@ -27,7 +27,26 @@ void HistSetting( TH1* hist );
   @param color 
   @detail
 */
-void HistSetting( TH1* hist, int color );
+//void HistSetting( TH1* hist, int color );
+
+
+/*!
+  @fn void DrawTitle(TVirtualPad* pad)
+  @param
+  @return
+  @brief
+ */
+//void DrawTitle(TVirtualPad* pad);
+
+template < typename TH > 
+void HistSetting( TH* hist , int color )
+{
+
+  hist->Sumw2();
+  hist->SetLineColor( color );
+  hist->SetMarkerColor( color );
+  hist->SetLineWidth( 2 );
+}
 
 
 #endif

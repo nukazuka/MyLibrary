@@ -40,6 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -101,82 +102,12 @@ Functions</h2></td></tr>
 <tr class="separator:ad6dafc6a523f1e088d11565ccde4db88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2902ca574ed3e01c2be97e21b1a747ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pave_operation_8cc.html#a2902ca574ed3e01c2be97e21b1a747ba">DrawTitle</a> (TVirtualPad *pad)</td></tr>
 <tr class="separator:a2902ca574ed3e01c2be97e21b1a747ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94ec3aecf4198e7e7afe74bcb68b4b1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pave_operation_8cc.html#a94ec3aecf4198e7e7afe74bcb68b4b1a">DrawStats</a> (TH1D *hist, double xmin, double ymin, double xmax, double ymax)</td></tr>
-<tr class="separator:a94ec3aecf4198e7e7afe74bcb68b4b1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ada40328f6a0d8ab72194e9b938a60c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pave_operation_8cc.html#a1ada40328f6a0d8ab72194e9b938a60c">DrawTitle</a> (Double_t text_size)</td></tr>
+<tr class="separator:a1ada40328f6a0d8ab72194e9b938a60c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38d0561c73ea7b706b591c3bb19d5a52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pave_operation_8cc.html#a38d0561c73ea7b706b591c3bb19d5a52">DrawStats2D</a> (TH2D *hist, double xmin, double ymin, double xmax, double ymax)</td></tr>
 <tr class="separator:a38d0561c73ea7b706b591c3bb19d5a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a94ec3aecf4198e7e7afe74bcb68b4b1a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DrawStats </td>
-          <td>(</td>
-          <td class="paramtype">TH1D *&#160;</td>
-          <td class="paramname"><em>hist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>xmin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>ymin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>xmax</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>ymax</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="_pave_operation_8cc_source.html#l00025">25</a> of file <a class="el" href="_pave_operation_8cc_source.html">PaveOperation.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  gPad-&gt;Update();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  TPaveStats *st = (TPaveStats*)hist-&gt;FindObject(<span class="stringliteral">&quot;stats&quot;</span>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  st-&gt;SetTextColor( hist-&gt;GetLineColor() );</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  st-&gt;SetLineColor( hist-&gt;GetLineColor() );</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  st-&gt;SetFillStyle( 1001 );</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  st-&gt;SetFillColor( 0 );</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  st-&gt;SetX1NDC( xmin );</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  st-&gt;SetX2NDC( xmax );</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  st-&gt;SetY1NDC( ymin );</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  st-&gt;SetY2NDC( ymax );</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">//  st-&gt;SetOptStat( 111111 ) ; // overflow and underflos are ON</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  st-&gt;Draw(<span class="stringliteral">&quot;same&quot;</span>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
 <a class="anchor" id="a38d0561c73ea7b706b591c3bb19d5a52"></a>
 <div class="memitem">
 <div class="memproto">
@@ -225,24 +156,24 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_pave_operation_8cc_source.html#l00045">45</a> of file <a class="el" href="_pave_operation_8cc_source.html">PaveOperation.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  gPad-&gt;Update();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  TPaveStats *st = (TPaveStats*)hist-&gt;FindObject(<span class="stringliteral">&quot;stats&quot;</span>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  st-&gt;SetTextColor( hist-&gt;GetLineColor() );</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  st-&gt;SetLineColor( hist-&gt;GetLineColor() );</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  st-&gt;SetFillStyle( 1001 );</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  st-&gt;SetFillColor( 0 );</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  st-&gt;SetX1NDC( xmin );</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  st-&gt;SetX2NDC( xmax );</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  st-&gt;SetY1NDC( ymin );</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  st-&gt;SetY2NDC( ymax );</div>
+<p>Definition at line <a class="el" href="_pave_operation_8cc_source.html#l00058">58</a> of file <a class="el" href="_pave_operation_8cc_source.html">PaveOperation.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  st-&gt;Draw(<span class="stringliteral">&quot;same&quot;</span>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  gPad-&gt;Update();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  TPaveStats *st = (TPaveStats*)hist-&gt;FindObject(<span class="stringliteral">&quot;stats&quot;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  st-&gt;SetTextColor( hist-&gt;GetLineColor() );</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  st-&gt;SetLineColor( hist-&gt;GetLineColor() );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  st-&gt;SetFillStyle( 1001 );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  st-&gt;SetFillColor( 0 );</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  st-&gt;SetX1NDC( xmin );</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  st-&gt;SetX2NDC( xmax );</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  st-&gt;SetY1NDC( ymin );</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  st-&gt;SetY2NDC( ymax );</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  st-&gt;Draw(<span class="stringliteral">&quot;same&quot;</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -260,7 +191,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Double_t&#160;</td>
-          <td class="paramname"><em>text_size</em>&#160;</td>
+          <td class="paramname"><em>text_size</em> = <code>0.07</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -314,6 +245,34 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="_pave_operation_8cc.html#ad6dafc6a523f1e088d11565ccde4db88">DrawTitle</a>( pad , 0.09 );</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="ttc" id="_pave_operation_8cc_html_ad6dafc6a523f1e088d11565ccde4db88"><div class="ttname"><a href="_pave_operation_8cc.html#ad6dafc6a523f1e088d11565ccde4db88">DrawTitle</a></div><div class="ttdeci">void DrawTitle(TVirtualPad *pad, Double_t text_size)</div><div class="ttdef"><b>Definition:</b> <a href="_pave_operation_8cc_source.html#l00008">PaveOperation.cc:8</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a1ada40328f6a0d8ab72194e9b938a60c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DrawTitle </td>
+          <td>(</td>
+          <td class="paramtype">Double_t&#160;</td>
+          <td class="paramname"><em>text_size</em> = <code>0.07</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_pave_operation_8cc_source.html#l00025">25</a> of file <a class="el" href="_pave_operation_8cc_source.html">PaveOperation.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="_pave_operation_8cc.html#ad6dafc6a523f1e088d11565ccde4db88">DrawTitle</a>( gPad , text_size);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 <div class="ttc" id="_pave_operation_8cc_html_ad6dafc6a523f1e088d11565ccde4db88"><div class="ttname"><a href="_pave_operation_8cc.html#ad6dafc6a523f1e088d11565ccde4db88">DrawTitle</a></div><div class="ttdeci">void DrawTitle(TVirtualPad *pad, Double_t text_size)</div><div class="ttdef"><b>Definition:</b> <a href="_pave_operation_8cc_source.html#l00008">PaveOperation.cc:8</a></div></div>
 </div><!-- fragment -->
 </div>

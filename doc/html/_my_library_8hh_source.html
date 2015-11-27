@@ -40,6 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -98,34 +99,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_canvas_setting_8hh.html">CanvasSetting.hh</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_headers_root_8hh.html">HeadersRoot.hh</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_headers_s_l_8hh.html">HeadersSL.hh</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_io_operation_8hh.html">IoOperation.hh</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_numerical_operation_8hh.html">NumericalOperation.hh</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_pave_operation_8hh.html">PaveOperation.hh</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_string_operation_8hh.html">StringOperation.hh</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_style_8hh.html">Style.hh</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif // ndef __CINT__</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//if __CINT__ is defined, include its source files</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifdef __CINT__</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_canvas_operation_8cc.html">/Users/nukazuka/local/MyLibrary/src/../src/CanvasOperation.cc</a>&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_io_operation_8cc.html">/Users/nukazuka/local/MyLibrary/src/../src/IoOperation.cc</a>&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_numerical_operation_8cc.html">/Users/nukazuka/local/MyLibrary/src/../src/NumericalOperation.cc</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_pave_operation_8cc.html">/Users/nukazuka/local/MyLibrary/src/../src/PaveOperation.cc</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_string_operation_8cc.html">/Users/nukazuka/local/MyLibrary/src/../src/StringOperation.cc</a>&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_style_8cc.html">/Users/nukazuka/local/MyLibrary/src/../src/Style.cc</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif // __CINT__</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif // MYLIB_MYLIBRARY_HH</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_hist_operation_8hh.html">HistOperation.hh</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_io_operation_8hh.html">IoOperation.hh</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_multi_hist_8hh.html">MultiHist.hh</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_numerical_operation_8hh.html">NumericalOperation.hh</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_pave_operation_8hh.html">PaveOperation.hh</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_string_operation_8hh.html">StringOperation.hh</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_style_8hh.html">Style.hh</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif // ndef __CINT__</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//if __CINT__ is defined, include its source files</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifdef __CINT__</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_canvas_operation_8cc.html">/Users/nukazuka/local/MyLibrary/src/../src/CanvasOperation.cc</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_hist_operation_8cc.html">/Users/nukazuka/local/MyLibrary/src/../src/HistOperation.cc</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_io_operation_8cc.html">/Users/nukazuka/local/MyLibrary/src/../src/IoOperation.cc</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_multi_hist_8hh.html">/Users/nukazuka/local/MyLibrary/src/../include/MultiHist.hh</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_numerical_operation_8cc.html">/Users/nukazuka/local/MyLibrary/src/../src/NumericalOperation.cc</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_pave_operation_8hh.html">/Users/nukazuka/local/MyLibrary/src/../include/PaveOperation.hh</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_string_operation_8cc.html">/Users/nukazuka/local/MyLibrary/src/../src/StringOperation.cc</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_style_8cc.html">/Users/nukazuka/local/MyLibrary/src/../src/Style.cc</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif // __CINT__</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif // MYLIB_MYLIBRARY_HH</span></div>
+<div class="ttc" id="_hist_operation_8cc_html"><div class="ttname"><a href="_hist_operation_8cc.html">HistOperation.cc</a></div></div>
 <div class="ttc" id="_io_operation_8hh_html"><div class="ttname"><a href="_io_operation_8hh.html">IoOperation.hh</a></div></div>
 <div class="ttc" id="_string_operation_8hh_html"><div class="ttname"><a href="_string_operation_8hh.html">StringOperation.hh</a></div></div>
 <div class="ttc" id="_style_8hh_html"><div class="ttname"><a href="_style_8hh.html">Style.hh</a></div></div>
 <div class="ttc" id="_canvas_setting_8hh_html"><div class="ttname"><a href="_canvas_setting_8hh.html">CanvasSetting.hh</a></div></div>
-<div class="ttc" id="_pave_operation_8cc_html"><div class="ttname"><a href="_pave_operation_8cc.html">PaveOperation.cc</a></div></div>
 <div class="ttc" id="_string_operation_8cc_html"><div class="ttname"><a href="_string_operation_8cc.html">StringOperation.cc</a></div></div>
 <div class="ttc" id="_headers_root_8hh_html"><div class="ttname"><a href="_headers_root_8hh.html">HeadersRoot.hh</a></div></div>
 <div class="ttc" id="_numerical_operation_8cc_html"><div class="ttname"><a href="_numerical_operation_8cc.html">NumericalOperation.cc</a></div></div>
+<div class="ttc" id="_hist_operation_8hh_html"><div class="ttname"><a href="_hist_operation_8hh.html">HistOperation.hh</a></div></div>
 <div class="ttc" id="_canvas_operation_8cc_html"><div class="ttname"><a href="_canvas_operation_8cc.html">CanvasOperation.cc</a></div></div>
 <div class="ttc" id="_headers_s_l_8hh_html"><div class="ttname"><a href="_headers_s_l_8hh.html">HeadersSL.hh</a></div></div>
 <div class="ttc" id="_pave_operation_8hh_html"><div class="ttname"><a href="_pave_operation_8hh.html">PaveOperation.hh</a></div></div>
+<div class="ttc" id="_multi_hist_8hh_html"><div class="ttname"><a href="_multi_hist_8hh.html">MultiHist.hh</a></div></div>
 <div class="ttc" id="_canvas_operation_8hh_html"><div class="ttname"><a href="_canvas_operation_8hh.html">CanvasOperation.hh</a></div></div>
 <div class="ttc" id="_io_operation_8cc_html"><div class="ttname"><a href="_io_operation_8cc.html">IoOperation.cc</a></div></div>
 <div class="ttc" id="_style_8cc_html"><div class="ttname"><a href="_style_8cc.html">Style.cc</a></div></div>

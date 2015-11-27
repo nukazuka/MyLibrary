@@ -40,6 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -96,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="_pave_operation_8hh.html#ad6dafc6a523f1e088d11565ccde4db88">    8</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pave_operation_8cc.html#ad6dafc6a523f1e088d11565ccde4db88">DrawTitle</a>(TVirtualPad* pad, Double_t text_size )</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="_pave_operation_8hh.html#a4401c5da6926e708679db3bf1825a014">    8</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pave_operation_8cc.html#ad6dafc6a523f1e088d11565ccde4db88">DrawTitle</a>(TVirtualPad* pad, Double_t text_size )</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  gPad-&gt;Update();</div>
@@ -113,49 +114,61 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="_pave_operation_8cc.html#ad6dafc6a523f1e088d11565ccde4db88">DrawTitle</a>( pad , 0.09 );</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="_pave_operation_8hh.html#a94ec3aecf4198e7e7afe74bcb68b4b1a">   25</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pave_operation_8cc.html#a94ec3aecf4198e7e7afe74bcb68b4b1a">DrawStats</a>( TH1D* hist, <span class="keywordtype">double</span> xmin, <span class="keywordtype">double</span> ymin, <span class="keywordtype">double</span> xmax, <span class="keywordtype">double</span> ymax )</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="_pave_operation_8hh.html#a7a30e6e0d051ddac785e6ffdaa5cdfb8">   25</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pave_operation_8cc.html#ad6dafc6a523f1e088d11565ccde4db88">DrawTitle</a>(Double_t text_size)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  gPad-&gt;Update();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="_pave_operation_8cc.html#ad6dafc6a523f1e088d11565ccde4db88">DrawTitle</a>( gPad , text_size);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  TPaveStats *st = (TPaveStats*)hist-&gt;FindObject(<span class="stringliteral">&quot;stats&quot;</span>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  st-&gt;SetTextColor( hist-&gt;GetLineColor() );</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  st-&gt;SetLineColor( hist-&gt;GetLineColor() );</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  st-&gt;SetFillStyle( 1001 );</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  st-&gt;SetFillColor( 0 );</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  st-&gt;SetX1NDC( xmin );</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  st-&gt;SetX2NDC( xmax );</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  st-&gt;SetY1NDC( ymin );</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  st-&gt;SetY2NDC( ymax );</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">//  st-&gt;SetOptStat( 111111 ) ; // overflow and underflos are ON</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  st-&gt;Draw(<span class="stringliteral">&quot;same&quot;</span>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="_pave_operation_8hh.html#a38d0561c73ea7b706b591c3bb19d5a52">   45</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pave_operation_8cc.html#a38d0561c73ea7b706b591c3bb19d5a52">DrawStats2D</a>( TH2D* hist, <span class="keywordtype">double</span> xmin, <span class="keywordtype">double</span> ymin, <span class="keywordtype">double</span> xmax, <span class="keywordtype">double</span> ymax )</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  gPad-&gt;Update();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  TPaveStats *st = (TPaveStats*)hist-&gt;FindObject(<span class="stringliteral">&quot;stats&quot;</span>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  st-&gt;SetTextColor( hist-&gt;GetLineColor() );</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  st-&gt;SetLineColor( hist-&gt;GetLineColor() );</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  st-&gt;SetFillStyle( 1001 );</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  st-&gt;SetFillColor( 0 );</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  st-&gt;SetX1NDC( xmin );</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  st-&gt;SetX2NDC( xmax );</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  st-&gt;SetY1NDC( ymin );</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  st-&gt;SetY2NDC( ymax );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">void DrawTitle()</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">{</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">  DrawTitle( gPad , 0.07);</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">}</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">void DrawStats( TH1D* hist, double xmin, double ymin, double xmax, double ymax )</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">{</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">  gPad-&gt;Update();</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">  TPaveStats *st = (TPaveStats*)hist-&gt;FindObject(&quot;stats&quot;);</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">  st-&gt;SetTextColor( hist-&gt;GetLineColor() );</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">  st-&gt;SetLineColor( hist-&gt;GetLineColor() );</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">  st-&gt;SetFillStyle( 1001 );</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">  st-&gt;SetFillColor( 0 );</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">  st-&gt;SetX1NDC( xmin );</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">  st-&gt;SetX2NDC( xmax );</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">  st-&gt;SetY1NDC( ymin );</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">  st-&gt;SetY2NDC( ymax );</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">  //  st-&gt;SetOptStat( 111111 ) ; // overflow and underflos are ON</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">  st-&gt;Draw(&quot;same&quot;);</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">}</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="_pave_operation_8hh.html#a38d0561c73ea7b706b591c3bb19d5a52">   58</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pave_operation_8cc.html#a38d0561c73ea7b706b591c3bb19d5a52">DrawStats2D</a>( TH2D* hist, <span class="keywordtype">double</span> xmin, <span class="keywordtype">double</span> ymin, <span class="keywordtype">double</span> xmax, <span class="keywordtype">double</span> ymax )</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  st-&gt;Draw(<span class="stringliteral">&quot;same&quot;</span>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  gPad-&gt;Update();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  TPaveStats *st = (TPaveStats*)hist-&gt;FindObject(<span class="stringliteral">&quot;stats&quot;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  st-&gt;SetTextColor( hist-&gt;GetLineColor() );</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  st-&gt;SetLineColor( hist-&gt;GetLineColor() );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  st-&gt;SetFillStyle( 1001 );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  st-&gt;SetFillColor( 0 );</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  st-&gt;SetX1NDC( xmin );</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  st-&gt;SetX2NDC( xmax );</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  st-&gt;SetY1NDC( ymin );</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  st-&gt;SetY2NDC( ymax );</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  st-&gt;Draw(<span class="stringliteral">&quot;same&quot;</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
 <div class="ttc" id="_pave_operation_8cc_html_ad6dafc6a523f1e088d11565ccde4db88"><div class="ttname"><a href="_pave_operation_8cc.html#ad6dafc6a523f1e088d11565ccde4db88">DrawTitle</a></div><div class="ttdeci">void DrawTitle(TVirtualPad *pad, Double_t text_size)</div><div class="ttdef"><b>Definition:</b> <a href="_pave_operation_8cc_source.html#l00008">PaveOperation.cc:8</a></div></div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
 <div class="ttc" id="_pave_operation_8hh_html"><div class="ttname"><a href="_pave_operation_8hh.html">PaveOperation.hh</a></div></div>
-<div class="ttc" id="_pave_operation_8cc_html_a94ec3aecf4198e7e7afe74bcb68b4b1a"><div class="ttname"><a href="_pave_operation_8cc.html#a94ec3aecf4198e7e7afe74bcb68b4b1a">DrawStats</a></div><div class="ttdeci">void DrawStats(TH1D *hist, double xmin, double ymin, double xmax, double ymax)</div><div class="ttdef"><b>Definition:</b> <a href="_pave_operation_8cc_source.html#l00025">PaveOperation.cc:25</a></div></div>
-<div class="ttc" id="_pave_operation_8cc_html_a38d0561c73ea7b706b591c3bb19d5a52"><div class="ttname"><a href="_pave_operation_8cc.html#a38d0561c73ea7b706b591c3bb19d5a52">DrawStats2D</a></div><div class="ttdeci">void DrawStats2D(TH2D *hist, double xmin, double ymin, double xmax, double ymax)</div><div class="ttdef"><b>Definition:</b> <a href="_pave_operation_8cc_source.html#l00045">PaveOperation.cc:45</a></div></div>
+<div class="ttc" id="_pave_operation_8cc_html_a38d0561c73ea7b706b591c3bb19d5a52"><div class="ttname"><a href="_pave_operation_8cc.html#a38d0561c73ea7b706b591c3bb19d5a52">DrawStats2D</a></div><div class="ttdeci">void DrawStats2D(TH2D *hist, double xmin, double ymin, double xmax, double ymax)</div><div class="ttdef"><b>Definition:</b> <a href="_pave_operation_8cc_source.html#l00058">PaveOperation.cc:58</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

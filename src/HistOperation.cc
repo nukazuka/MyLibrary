@@ -4,6 +4,7 @@
 
 using namespace std;
 
+/*
 void HistSetting( TH1* hist )
 {
 
@@ -21,3 +22,4 @@ void HistSetting( TH1* hist , int color)
   hist->SetMarkerColor( color );
   HistSetting( hist );
 }
+*/

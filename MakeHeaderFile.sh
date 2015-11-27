@@ -69,6 +69,12 @@ then
     sed -i "" "/MyLibrary.hh/d" ${path} 
     sed -i "" "/Phast/d" ${path} 
     sed -i "" "s/\-e //" ${path}
+
+    # because it's template class
+    sed -i "" "s/src\/MultiHist.cc/include\/MultiHist.hh/" ${path}
+    sed -i "" "s/src\/PaveOperation.cc/include\/PaveOperation.hh/" ${path}
+else
+    sed -i "s/src\/MultiHist.cc/include\/MultiHist.hh/" ${path}
 fi
 
 

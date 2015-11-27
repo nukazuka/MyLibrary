@@ -20,15 +20,8 @@ void SetHistStyle( TH* hist, int color, int width )
 #endif // ifdef __CINT__
 
 #ifdef __CINT__
-void SetHistStyle( TH1D* hist, int color, int width )
-{
-
-  hist->Sumw2();
-  hist->SetLineColor( color );
-  hist->SetLineWidth( width );
-  hist->GetXaxis()->CenterTitle();
-  hist->GetYaxis()->CenterTitle();
-}
 #endif // ifndef __CINT__
 
 #endif // ifndef MYLIB_STYLE_HH
+
+void SetGraphStyle( TGraph* g, int color , int width );

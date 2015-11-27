@@ -12,11 +12,15 @@
 #include "TPad.h"
 #include "TPaveStats.h"
 #include "TPaveText.h"
+#include "TApplication.h"
 
 // histogram
 #include "TH1.h"
 #include "TH2.h"
 #include "TH3.h"
+
+// graph
+#include "TGraph.h"
 
 // vector 
 #include "TLorentzVector.h"

@@ -27,6 +27,14 @@ void DrawTitle( Double_t text_size )
   DrawTitle( gPad , text_size );
 }
 
+/*
+void DrawTitle()
+{
+  DrawTitle( gPad , 0.07);
+}
+*/
+
+/*
 void DrawStats( TH1D* hist, double xmin, double ymin, double xmax, double ymax )
 {
 
@@ -46,7 +54,7 @@ void DrawStats( TH1D* hist, double xmin, double ymin, double xmax, double ymax )
   //  st->SetOptStat( 111111 ) ; // overflow and underflos are ON
   st->Draw("same");
 }
-
+*/
 void DrawStats2D( TH2D* hist, double xmin, double ymin, double xmax, double ymax )
 {
 
