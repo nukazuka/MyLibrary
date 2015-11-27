@@ -22,6 +22,11 @@ void DrawTitle(TVirtualPad* pad)
   DrawTitle( pad , 0.09 );
 }
 
+void DrawTitle( Double_t text_size )
+{
+  DrawTitle( gPad , text_size );
+}
+
 void DrawStats( TH1D* hist, double xmin, double ymin, double xmax, double ymax )
 {
 

@@ -21,6 +21,14 @@ void DrawTitle(TVirtualPad* pad);
 void DrawTitle(TVirtualPad* pad, Double_t text_size);
 
 /*!
+  @fn void DrawTitle(Double_t text_size)
+  @param
+  @return
+  @brief
+ */
+void DrawTitle( Double_t text_size);
+
+/*!
   @fn void DrawStats( TH1D* hist, double xmin, double ymin, double xmax, double ymax )
   @param
   @return
