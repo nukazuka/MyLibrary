@@ -1,3 +1,5 @@
+#ifndef MYLIB_PAVEOPERATION_CC
+#define MYLIB_PAVEOPERATION_CC
 #ifndef __CINT__
 #include "PaveOperation.hh"
 #endif
@@ -73,3 +75,5 @@ void DrawStats2D( TH2D* hist, double xmin, double ymin, double xmax, double ymax
 
   st->Draw("same");
 }
+
+#endif // MYLIB_PAVEOPERATION_CC

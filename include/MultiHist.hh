@@ -4,13 +4,6 @@
 #include "HeadersSL.hh"
 #include "HeadersRoot.hh"
 #include "PaveOperation.hh"
-/*!
-  @fn void DrawTitle(TVirtualPad* pad)
-  @param
-  @return
-  @brief
- */
-//void DrawTitle(TVirtualPad* pad);
 
 /*!
   @class MultiHist
@@ -43,13 +36,20 @@ private:
   bool bl_stats_;
   bool bl_title_;
   bool bl_draw_no_entry_;
+  bool bl_force_xmin_;
+  bool bl_force_xmax_;
+  bool bl_force_ymin_;
+  bool bl_force_ymax_;
+  bool bl_logx_;
+  bool bl_logy_;
+  
   vector < TH* > vhist;
 
   // Initialization
   void Init();
   void Init( string name, string title )
   {
-    
+
     name_  = name;
     title_ = title;
 
@@ -60,6 +60,12 @@ private:
 
     bl_stats_ = bl_title_ = bl_draw_no_entry_ 
       = true;
+
+    bl_force_xmin_ = bl_force_xmax_ = bl_force_ymin_ = bl_force_ymax_
+      = false;
+    
+    bl_logx_ = gPad->GetLogx();
+    bl_logy_ = gPad->GetLogy();
   }
   
   void GetRanges()
@@ -92,13 +98,40 @@ private:
 
     double xmin = *min_element( x.begin(), x.end() );
     double xmax = *max_element( x.begin(), x.end() );
-    xmin_ = xmin;
-    xmax_ = xmax;
+    if( bl_logx_ == true && xmin < 0 )
+      xmin = 1e-5;
+
+    if( bl_force_xmin_ == false )
+      {
+	xmin_ = xmin;
+	margin_ratio_left_ = 0.0;
+      }
+
+    if( bl_force_xmax_ == false )
+      {
+	xmax_ = xmax;
+	margin_ratio_right_ = 0.0;
+      }
 
     double ymin = *min_element( y.begin(), y.end() );
     double ymax = *max_element( y.begin(), y.end() );
-    ymin_ = ymin;
-    ymax_ = ymax;
+
+    if( bl_logy_ == true && ymin < 0 )
+      ymin = 1e-5;
+
+    if( bl_force_ymin_ == false )
+      {
+	ymin_ = ymin;
+	margin_ratio_bottom_ = 0.0;
+      }
+    
+    if( bl_force_ymax_ == false )
+      {
+	ymax_ = ymax;
+	margin_ratio_top_ = 0.0;
+      }
+
+      
   }
   
 public:
@@ -146,6 +179,29 @@ public:
     double margin_top    = ( ymax_ - ymin_ ) * margin_ratio_top_;
     double margin_bottom = ( ymax_ - ymin_ ) * margin_ratio_bottom_;
 
+    if( bl_force_xmin_ == false )
+      {
+	if( bl_logx_ == true && xmin_ - margin_left <= 0 )
+	  {
+	    if( xmin_ == 0 )
+	  margin_left = -1e-0;
+	    else
+	      margin_left = xmin_ - 1e-5;
+	  }
+      }
+    
+    if( bl_force_ymin_ == false )
+      {
+	if( bl_logy_ == true && ymin_ - margin_bottom <= 0 )
+	  {
+	    if( ymin_ == 0 )
+	      margin_bottom = -1e-0;
+	    else
+	      margin_bottom = ymin_ - 1e-5;
+	    
+	  }
+      }
+    
     TH1F* frame = new TH1F( "hframe", title_.c_str() , 1000, xmin_ - margin_left, xmax_ + margin_right );
     frame->SetMinimum( ymin_ - margin_bottom );
     frame->SetMaximum( ymax_ + margin_top );
@@ -250,6 +306,30 @@ public:
   void SetStats( bool bl ){ bl_stats_ = bl;};
   void SetTitleDraw( bool bl ){ bl_title_ = bl;};
   void SetTitleSize( double size ){ title_size_ = size;};
+
+  void SetXmin( double val )
+  {
+    xmin_ = val;
+    bl_force_xmin_ = true;
+  };
+
+  void SetXmax( double val )
+  {
+    xmax_ = val;
+    bl_force_xmax_ = true;
+  };
+
+  void SetYmin( double val )
+  {
+    ymin_ = val;
+    bl_force_ymin_ = true;
+  };
+
+  void SetYmax( double val )
+  {
+    ymax_ = val;
+    bl_force_ymax_ = true;
+  };
 
   void Print()
   {
