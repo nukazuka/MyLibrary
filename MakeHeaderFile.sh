@@ -39,6 +39,8 @@ ls -1 ${path2}include/*.hh | xargs -I {} basename {} .hh | xargs -I {} echo -e "
 
 echo -e "#endif // ndef __CINT__" >> ${path}
 
+## end of ifndef __CINT__
+
 ## ifdef __CINT__ # for CINT ###################################
 echo -e "\n//if __CINT__ is defined, include its source files" >> ${path}
 echo -e "#ifdef __CINT__" >> ${path}
@@ -47,7 +49,11 @@ echo -e "#ifdef __CINT__" >> ${path}
 
 ls -1 ${path2}src/*.cc | xargs -I {} echo -e "#include \"`pwd`/{}\"" >> ${path}
 
+echo `grep MultiHist.cc ${path} | sed -e "s/src/include/g" | sed -e "s/.cc/.hh/g" ` >> ${path}
+
 echo -e "#endif // __CINT__" >> ${path}
+
+## end of ifdef __CINT__
 
 # edit MyLibrary.hh
 ## remove #include "MyLibrary.hh" and "HeadersPhast.hh"
@@ -71,10 +77,8 @@ then
     sed -i "" "s/\-e //" ${path}
 
     # because it's template class
-    sed -i "" "s/src\/MultiHist.cc/include\/MultiHist.hh/" ${path}
+#    sed -i "" "s/src\/MultiHist.cc/include\/MultiHist.hh/" ${path}
     sed -i "" "s/src\/PaveOperation.cc/include\/PaveOperation.hh/" ${path}
-else
-    sed -i "s/src\/MultiHist.cc/include\/MultiHist.hh/" ${path}
 fi
 
 
