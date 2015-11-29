@@ -103,7 +103,7 @@ void MultiHist::Add( TH1* hist )
 
 void MultiHist::Draw( string option )
 {
-  Draw( option, 0.9, 0.0, 1.0, 1.0 );
+  Draw( option, 0.9, 0.1, 1.0, 0.9 );
 }
 
 void MultiHist::Draw( string option,
@@ -224,11 +224,11 @@ void MultiHist::Print()
 {
 
   int width = 15;
-  cout << setw(width) << "name" << ":" << name_ << endl;
-  cout << setw(width) << "title" << ":" << title_ << endl;
+  cout << setw(width) << "name"   << ":" << name_   << endl;
+  cout << setw(width) << "title"  << ":" << title_  << endl;
   cout << setw(width) << "option" << ":" << option_ << endl;
   cout << setw(width) << "x & margin(%)" << ":"
-       << setw(width) << setprecision(5) <<  xmin_ << " - " << margin_ratio_left_ << " <==> "
+       << setw(width) << setprecision(5) << xmin_ << " - " << margin_ratio_left_ << " <==> "
        << setw(width) << setprecision(5) << xmax_ << " - " << margin_ratio_right_
        << endl;
   cout << setw(width) << "y & margin(%)" << ":"

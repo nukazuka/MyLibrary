@@ -67,12 +67,20 @@ public:
 
   // void 
   /*!
-    @fn void Add( TH* hist )
+    @fn void Add( TH1* hist )
     @param hist A pointer of histogram which you want to treat.
     @brief Add the histogram to this class
+    @detail The argument is a pointer of TH1 but casted to TH1D*.
+    This conversion does not lose information.
   */
   void Add( TH1* hist );
 
+  /*!
+    @fn void Draw( string option )
+    @param option An option for TH1D::Draw
+    @brief Draw all histograms.
+    @detail Statistic boxies are drawn in right side of the frame.
+  */
   void Draw( string option );
     
   void Draw( string option,
