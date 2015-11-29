@@ -4,7 +4,7 @@ COMPILER = g++
 CFLAGS    = -g -Wall -Wextra -Winit-self -Wno-unused-parameter -Wfloat-equal # for warning
 CFLAGS   += -std=c++11
 CFLAGS   +=  -O -O1 # for optimazation
-CFLAGS   += `root-config --cflags`
+CFLAGS   += `root-config --cflags` `MyLibrary-config`
 
 UNAME := $(shell uname)
 
