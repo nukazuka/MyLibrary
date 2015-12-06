@@ -39,8 +39,16 @@ void MultiHist::CheckLogScale()
 void MultiHist::Margins()
 {
 
+  //  margin_ratio_top_ = 0.01;
 
+  double diff_x = xmax_ - xmin_;
+  double diff_y = ymax_ - ymin_;
 
+  if( bl_logx_ == true  && (xmin_ - diff_x * margin_ratio_left_ ) <= 0 )
+    margin_ratio_left_ = xmin_ * 0.5 / diff_x;
+
+  if( bl_logy_ == true  && (ymin_ - diff_y * margin_ratio_left_ ) <= 0 )
+      margin_ratio_bottom_ = ymin_ * 0.5 / diff_y;
 
 }
 
@@ -122,13 +130,13 @@ void MultiHist::Ranges()
       xmax_ = xmax;
     }
 
-  if( bl_force_xmin_ == false )
+  if( bl_force_xmin_ == true )
     {
       xmin_ = xmin;
       margin_ratio_left_ = 0.0;
     }
 
-  if( bl_force_xmax_ == false )
+  if( bl_force_xmax_ == true )
     {
       xmax_ = xmax;
       margin_ratio_right_ = 0.0;
@@ -180,13 +188,13 @@ void MultiHist::Ranges()
       ymax_ = ymax;
     }
 
-  if( bl_force_ymin_ == false )
+  if( bl_force_ymin_ == true )
     {
       ymin_ = ymin;
       margin_ratio_bottom_ = 0.0;
     }
     
-  if( bl_force_ymax_ == false )
+  if( bl_force_ymax_ == true )
     {
       ymax_ = ymax;
       margin_ratio_top_ = 0.0;
@@ -294,7 +302,7 @@ void MultiHist::Draw( string option,
 	}
     }
   */
-    
+  
   TH1F* frame = new TH1F( "hframe", title_.c_str() , 1000, xmin_ - margin_left, xmax_ + margin_right );
   frame->SetMinimum( ymin_ - margin_bottom );
   frame->SetMaximum( ymax_ + margin_top );
