@@ -4,6 +4,7 @@
 #include "HeadersSL.hh"
 #include "HeadersRoot.hh"
 #include "PaveOperation.hh"
+#include "StringOperation.hh"
 
 /*!
   @class MultiHist

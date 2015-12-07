@@ -56,7 +56,7 @@ void MultiHist::GetRanges()
 
   double xmin = *min_element( x.begin(), x.end() );
   double xmax = *max_element( x.begin(), x.end() );
-  if( bl_logx_ == true && xmin < 0 )
+  if( bl_logx_ == true && xmin <= 0 )
     xmin = 1e-5;
 
   if( bl_force_xmin_ == false )
@@ -74,8 +74,17 @@ void MultiHist::GetRanges()
   double ymin = *min_element( y.begin(), y.end() );
   double ymax = *max_element( y.begin(), y.end() );
 
-  if( bl_logy_ == true && ymin < 0 )
-    ymin = 1e-5;
+  cout << "ymin: " << ymin << endl;
+  cout << "ymax: " << ymax << endl;
+  if( bl_logy_ == true )
+    if( ymin <= 0.0 || bl_force_ymin_ == false )
+      {
+	if( ymin != 0.0 )
+	  ymin_ = 0.1;
+	else
+	  ymin_ = 0.5;
+      }
+
 
   if( bl_force_ymin_ == false )
     {
@@ -138,6 +147,8 @@ void MultiHist::Draw( string option,
 	}
     }
     
+  this->Print();
+  cout << "ymin : " << ymin_ << " - " << margin_bottom << endl;
   TH1F* frame = new TH1F( "hframe", title_.c_str() , 1000, xmin_ - margin_left, xmax_ + margin_right );
   frame->SetMinimum( ymin_ - margin_bottom );
   frame->SetMaximum( ymax_ + margin_top );
@@ -145,6 +156,11 @@ void MultiHist::Draw( string option,
   frame->GetXaxis()->CenterTitle( true );
   frame->GetYaxis()->CenterTitle( true );
   frame->Draw();
+
+  option = Replace( option , "sames" , "" );
+  option = Replace( option , "SAMES" , "" );
+  option = Replace( option , "same"  , "" );
+  option = Replace( option , "SAME"  , "" );
 
   double stats_height = (stats_ymax - stats_ymin) / vhist.size();
   for( int i=0; i<vhist.size(); i++ )
