@@ -5,6 +5,10 @@ using namespace std;
 // private function 
 
 // // Initialization
+void MultiHist::Init( )
+{
+  Init( (string)"default_name", (string)"default_title" );
+}
 void MultiHist::Init( string name, string title )
 {
 
@@ -22,23 +26,47 @@ void MultiHist::Init( string name, string title )
   bl_force_xmin_ = bl_force_xmax_ = bl_force_ymin_ = bl_force_ymax_
     = false;
     
+  CheckLogScale();
+}
+
+void MultiHist::CheckLogScale()
+{
   bl_logx_ = gPad->GetLogx();
   bl_logy_ = gPad->GetLogy();
 }
 
-void MultiHist::GetRanges()
+
+void MultiHist::Margins()
 {
+
+  //  margin_ratio_top_ = 0.01;
+
+  double diff_x = xmax_ - xmin_;
+  double diff_y = ymax_ - ymin_;
+
+  if( bl_logx_ == true  && (xmin_ - diff_x * margin_ratio_left_ ) <= 0 )
+    margin_ratio_left_ = xmin_ * 0.5 / diff_x;
+
+  if( bl_logy_ == true  && (ymin_ - diff_y * margin_ratio_left_ ) <= 0 )
+      margin_ratio_bottom_ = ymin_ * 0.5 / diff_y;
+
+}
+
+void MultiHist::Ranges()
+{
+
+  CheckLogScale();
   vector < double > x, y;
-  for( int i=0; i<vhist.size(); i++ )
+  for( int i=0; i<vhist_.size(); i++ )
     {
 
-      int bin = vhist[i]->GetXaxis()->GetNbins();
-      double width = vhist[i]->GetBinWidth(i);
+      int bin = vhist_[i]->GetXaxis()->GetNbins();
+      double width = vhist_[i]->GetBinWidth(i);
 	
       if( bl_draw_no_entry_ == true )
 	{
-	  x.push_back( vhist[i]->GetBinCenter(0)   - width/2. );
-	  x.push_back( vhist[i]->GetBinCenter(bin) + width/2. );
+	  x.push_back( vhist_[i]->GetBinCenter(0)   - width/2. );
+	  x.push_back( vhist_[i]->GetBinCenter(bin) + width/2. );
 	}
 
       /*
@@ -49,23 +77,66 @@ void MultiHist::GetRanges()
       }
       */
 	
-      y.push_back( vhist[i]->GetBinContent( vhist[i]->GetMinimumBin() ) );
-      y.push_back( vhist[i]->GetBinContent( vhist[i]->GetMaximumBin() ) );
+      y.push_back( vhist_[i]->GetBinContent( vhist_[i]->GetMinimumBin() ) );
+      y.push_back( vhist_[i]->GetBinContent( vhist_[i]->GetMaximumBin() ) );
 
     }
 
   double xmin = *min_element( x.begin(), x.end() );
   double xmax = *max_element( x.begin(), x.end() );
-  if( bl_logx_ == true && xmin <= 0 )
-    xmin = 1e-5;
 
-  if( bl_force_xmin_ == false )
+  // case ( x <= 0 ?)
+  // (min, max):
+  //   1. (OK, OK) : no problem
+  //   2. (NO, OK) : can be happen    -> get suitable min. value
+  //   3. (OK, NO) : something wrong  -> exit program
+  //   4. (NO, NO) : very rare case   -> force liner scale
+  //
+
+  if( bl_logx_ == true )
+    {
+
+      if( xmin <= 0.0 && xmax <= 0.0 )// case4
+	{
+
+	  xmin_ = xmin;
+	  xmax_ = xmax;
+	  gPad->SetLogx( false );
+	}
+      else if( xmin > 0.0 && xmax <= 0.0 ) // case3
+	{
+
+	  cerr << "void MultiHist::GetRanges()" << endl;
+	  cerr << "  xmin is " << xmin << endl;
+	  cerr << "  xmax is " << xmax << endl;
+	  cerr << "  Something is wrong.\nProgram is stopped." << endl;
+	  exit( -1 );
+	}
+      else // case2
+	{
+
+	  cerr << "=============== WARNING = from here ==============" << endl;
+	  cerr << "void MultiHist::GetRange()" << endl;
+	  cerr << "xmin is " << xmin << " and xaxis is set as a log scale" << endl;
+	  xmin_ = GetSuitableXmin();
+	  cerr << "xmin is changed to " << xmin_ << endl;
+	  cerr << "=============== WARNING = to here   ==============" << endl;
+	}
+    }
+  else // case1
+    {
+
+      xmin_ = xmin;
+      xmax_ = xmax;
+    }
+
+  if( bl_force_xmin_ == true )
     {
       xmin_ = xmin;
       margin_ratio_left_ = 0.0;
     }
 
-  if( bl_force_xmax_ == false )
+  if( bl_force_xmax_ == true )
     {
       xmax_ = xmax;
       margin_ratio_right_ = 0.0;
@@ -74,37 +145,119 @@ void MultiHist::GetRanges()
   double ymin = *min_element( y.begin(), y.end() );
   double ymax = *max_element( y.begin(), y.end() );
 
-  cout << "ymin: " << ymin << endl;
-  cout << "ymax: " << ymax << endl;
   if( bl_logy_ == true )
-    if( ymin <= 0.0 || bl_force_ymin_ == false )
-      {
-	if( ymin != 0.0 )
-	  ymin_ = 0.1;
-	else
-	  ymin_ = 0.5;
-      }
+    {
 
+      if( ymin <= 0.0 && ymax <= 0.0 )// case4
+	{
 
-  if( bl_force_ymin_ == false )
+	  ymin_ = ymin;
+	  ymax_ = ymax;
+	  gPad->SetLogy( false );
+	}
+      else if( ymin > 0.0 && ymax <= 0.0 ) // case3
+	{
+
+	  cerr << "void MultiHist::GetRanges()" << endl;
+	  cerr << "  ymin is " << ymin << endl;
+	  cerr << "  ymax is " << ymax << endl;
+	  cerr << "  Something is wrong.\nProgram is stopped." << endl;
+	  exit( -1 );
+	}
+      else // case2
+	{
+
+	  if( ymin < 0 )
+	    {
+
+	      cerr << "=============== WARNING = from here ==============" << endl;
+	      cerr << "void MultiHist::GetRange()" << endl;
+	      cerr << "ymin is " << ymin << " and yaxis is set as a log scale" << endl;
+	      cerr << "ymin is changed to " << ymin_ << endl;
+	      cerr << "=============== WARNING = to here   ==============" << endl;
+	    }
+
+	  ymin_ = GetSuitableYmin();
+
+	}
+    }
+  else // case1
+    {
+
+      ymin_ = ymin;
+      ymax_ = ymax;
+    }
+
+  if( bl_force_ymin_ == true )
     {
       ymin_ = ymin;
       margin_ratio_bottom_ = 0.0;
     }
     
-  if( bl_force_ymax_ == false )
+  if( bl_force_ymax_ == true )
     {
       ymax_ = ymax;
       margin_ratio_top_ = 0.0;
     }
 }
 
+double MultiHist::GetSuitableXmin()
+{
+
+  double xmin_candidate = 0.0;
+  vector < double > vxmin_candidate;
+  for( int i=0, itotal=vhist_.size(); i<itotal; i++ )
+    {
+      
+      for( int j=0, jtotal=vhist_[i]->GetXaxis()->GetNbins(); j<jtotal; j++ )
+	{
+	  xmin_candidate = vhist_[i]->GetBinCenter(j);
+	  
+	  if( xmin_candidate > 0 )
+	    {
+	      vxmin_candidate.push_back( xmin_candidate );
+	      break;
+	    }
+	}
+    }
+
+  return *min_element( vxmin_candidate.begin(), vxmin_candidate.end() );
+}
+
+double MultiHist::GetSuitableYmin()
+{
+
+  vector < double > ymin_candidate;
+  for( int i=0, itotal=vhist_.size(); i<itotal; i++ )
+    {
+
+      vector < double > vtemp;
+      for( int j=0, jtotal = vhist_[i]->GetXaxis()->GetNbins(); j<jtotal; j++ )
+	vtemp.push_back( vhist_[i]->GetBinContent(j) );
+
+      sort( vtemp.begin(), vtemp.end());
+
+      for( int j=0, jtotal=vtemp.size(); j<jtotal; j++ )
+	{
+
+	  if( vtemp[j] > 0 )
+	    {
+
+	      ymin_candidate.push_back( vtemp[j] );
+	      break;
+	    }
+	}
+    }
+
+  double min = *min_element( ymin_candidate.begin(), ymin_candidate.end() );
+  return min;
+}
 
 // public function
 
 void MultiHist::Add( TH1* hist )
 {
-  vhist.push_back( (TH1D*)hist );
+  vhist_.push_back( (TH1D*)hist );
 }
 
 void MultiHist::Draw( string option )
@@ -117,13 +270,15 @@ void MultiHist::Draw( string option,
 		      double stats_xmax, double stats_ymax )
 {
 
-  GetRanges();
+  Ranges();
+  Margins();
 
   double margin_right  = ( xmax_ - xmin_ ) * margin_ratio_right_;
   double margin_left   = ( xmax_ - xmin_ ) * margin_ratio_left_;
   double margin_top    = ( ymax_ - ymin_ ) * margin_ratio_top_;
   double margin_bottom = ( ymax_ - ymin_ ) * margin_ratio_bottom_;
 
+  /*
   if( bl_force_xmin_ == false )
     {
       if( bl_logx_ == true && xmin_ - margin_left <= 0 )
@@ -146,9 +301,8 @@ void MultiHist::Draw( string option,
 	    
 	}
     }
-    
-  this->Print();
-  cout << "ymin : " << ymin_ << " - " << margin_bottom << endl;
+  */
+  
   TH1F* frame = new TH1F( "hframe", title_.c_str() , 1000, xmin_ - margin_left, xmax_ + margin_right );
   frame->SetMinimum( ymin_ - margin_bottom );
   frame->SetMaximum( ymax_ + margin_top );
@@ -162,16 +316,16 @@ void MultiHist::Draw( string option,
   option = Replace( option , "same"  , "" );
   option = Replace( option , "SAME"  , "" );
 
-  double stats_height = (stats_ymax - stats_ymin) / vhist.size();
-  for( int i=0; i<vhist.size(); i++ )
+  double stats_height = (stats_ymax - stats_ymin) / vhist_.size();
+  for( int i=0; i<vhist_.size(); i++ )
     {
 	
       if( bl_stats_ == true )
 	{
 
-	  vhist[i]->Draw( (option + "SAMES" ).c_str() );
+	  vhist_[i]->Draw( (option + "SAMES" ).c_str() );
 	    
-	  DrawStats( vhist[i] , 
+	  DrawStats( vhist_[i] , 
 		     stats_xmin ,  
 		     stats_ymax - stats_height * (i+1) ,
 		     stats_xmax,
@@ -179,7 +333,7 @@ void MultiHist::Draw( string option,
 	}
       else
 	{
-	  vhist[i]->Draw( (option + "SAME" ).c_str() );
+	  vhist_[i]->Draw( (option + "SAME" ).c_str() );
 	}
 
       if( i==0 && bl_title_==true )

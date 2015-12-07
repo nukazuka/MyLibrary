@@ -43,11 +43,16 @@ private:
   bool bl_logx_;
   bool bl_logy_;
   
-  vector < TH1D* > vhist;
+  vector < TH1D* > vhist_;
 
   // Initialization
+  void Init( );
   void Init( string name, string title );
-  void GetRanges();
+  void CheckLogScale();
+  void Margins();
+  void Ranges();
+  double GetSuitableXmin();
+  double GetSuitableYmin();
   
 public:
 
@@ -56,7 +61,7 @@ public:
     @fn MultiHist()
     @brief A default constructor.
   */
-  MultiHist(){ Init( "default_name", "default_title" ); } ;
+  MultiHist(){ Init();};
 
   /*!
     @fn MultiHist( string name, string title)

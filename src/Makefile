@@ -1,10 +1,13 @@
+# g++ installed via macports or homebrew on Mac cannot handle -std=c++11 option.
+# /usr/bin/g++ on Mac can do this.
+
 COMPILER = g++
 #COMPILER = clang++
-#COMPILER = g++-4.4
-CFLAGS    = -g -Wall -Wextra -Winit-self -Wno-unused-parameter -Wfloat-equal # for warning
+CFLAGS    = #-g -Wall -Wextra -Winit-self -Wno-unused-parameter -Wfloat-equal # for warning
 CFLAGS   += -std=c++11
 CFLAGS   +=  -O -O1 # for optimazation
-CFLAGS   += `root-config --cflags` `MyLibrary-config`
+CFLAGS   += `root-config --cflags`
+MYLIB_FLAGS = `MyLibrary-config`
 
 UNAME := $(shell uname)
 
@@ -30,13 +33,17 @@ SOURCES  = $(wildcard *.cc)
 OBJECTS  = $(SOURCES:.cc=.o)
 SHARED_OBJ = $(addprefix lib,$(SOURCES:.cc=$(SUFFIX)))
 
+all: $(SHARED_OBJ) MyLibrary.hh
+
 lib%.so: %.cc ../include/%.hh
 	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) -o $@  $< $(LDFLAGS)
 
 lib%.dylib: %.cc ../include/%.hh
 	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) -o $@  $< $(LDFLAGS)
 
-all: $(SHARED_OBJ) MyLibrary.hh
+libMultiHist.dylib: MultiHist.cc ../include/MultiHist.hh
+	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) -L../lib -lPaveOperation $(INCLUDE) -o $@  $< $(LDFLAGS)
+
 
 MyLibrary.hh:
 	../MakeHeaderFile.sh ..
