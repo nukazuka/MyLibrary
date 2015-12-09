@@ -311,6 +311,11 @@ void MultiHist::Draw( string option,
   frame->GetYaxis()->CenterTitle( true );
   frame->Draw();
 
+  option = Replace( option , "sames" , "" );
+  option = Replace( option , "SAMES" , "" );
+  option = Replace( option , "same"  , "" );
+  option = Replace( option , "SAME"  , "" );
+
   double stats_height = (stats_ymax - stats_ymin) / vhist_.size();
   for( int i=0; i<vhist_.size(); i++ )
     {

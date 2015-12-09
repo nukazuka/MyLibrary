@@ -116,6 +116,9 @@ string Replace4Cut( string cut )
   rtn = Replace( rtn, "[" , "_" );
   rtn = Replace( rtn, "]" , "_" );
 
+  // __ -> _
+  rtn = Replace( rtn, "_" , "__" );
+
   // Correction for result directory
   rtn = Replace( rtn, "result_dev_", "result/" );
 
