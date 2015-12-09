@@ -42,7 +42,7 @@ lib%.dylib: %.cc ../include/%.hh
 	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) -o $@  $< $(LDFLAGS)
 
 libMultiHist.dylib: MultiHist.cc ../include/MultiHist.hh
-	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) -L../lib -lPaveOperation $(INCLUDE) -o $@  $< $(LDFLAGS)
+	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) -L../lib -lPaveOperation -lStringOperation $(INCLUDE) -o $@  $< $(LDFLAGS)
 
 
 MyLibrary.hh:
