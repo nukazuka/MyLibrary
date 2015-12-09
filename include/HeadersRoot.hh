@@ -15,9 +15,9 @@
 #include "TApplication.h"
 
 // histogram
-#include "TH1.h"
-#include "TH2.h"
-#include "TH3.h"
+#include "TH1D.h"
+#include "TH2D.h"
+#include "TH3D.h"
 
 // graph
 #include "TGraph.h"
