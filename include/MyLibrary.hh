@@ -18,14 +18,14 @@
 
 //if __CINT__ is defined, include its source files
 #ifdef __CINT__
-#include "/Users/nukazuka/local/MyLibrary/src/../src/CanvasOperation.cc"
-#include "/Users/nukazuka/local/MyLibrary/src/../src/HistOperation.cc"
-#include "/Users/nukazuka/local/MyLibrary/src/../src/IoOperation.cc"
-#include "/Users/nukazuka/local/MyLibrary/src/../src/MultiHist.cc"
-#include "/Users/nukazuka/local/MyLibrary/src/../src/NumericalOperation.cc"
-#include "/Users/nukazuka/local/MyLibrary/src/../include/PaveOperation.hh"
-#include "/Users/nukazuka/local/MyLibrary/src/../src/StringOperation.cc"
-#include "/Users/nukazuka/local/MyLibrary/src/../src/Style.cc"
-#include "/Users/nukazuka/local/MyLibrary/include/../include/MultiHist.hh"
+#include "/afs/cern.ch/user/g/gnukazuk/private/MyLibrary/src/../src/CanvasOperation.cc"
+#include "/afs/cern.ch/user/g/gnukazuk/private/MyLibrary/src/../src/HistOperation.cc"
+#include "/afs/cern.ch/user/g/gnukazuk/private/MyLibrary/src/../src/IoOperation.cc"
+#include "/afs/cern.ch/user/g/gnukazuk/private/MyLibrary/src/../src/MultiHist.cc"
+#include "/afs/cern.ch/user/g/gnukazuk/private/MyLibrary/src/../src/NumericalOperation.cc"
+#include "/afs/cern.ch/user/g/gnukazuk/private/MyLibrary/src/../src/PaveOperation.cc"
+#include "/afs/cern.ch/user/g/gnukazuk/private/MyLibrary/src/../src/StringOperation.cc"
+#include "/afs/cern.ch/user/g/gnukazuk/private/MyLibrary/src/../src/Style.cc"
+#include "/afs/cern.ch/user/g/gnukazuk/private/MyLibrary/include/../include/MultiHist.hh"
 #endif // __CINT__
 #endif // MYLIB_MYLIBRARY_HH
