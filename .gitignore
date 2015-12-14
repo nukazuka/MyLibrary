@@ -3,3 +3,4 @@
 *.dylib
 *.dSYM/
 lib/
+include/MyLibrary.hh
