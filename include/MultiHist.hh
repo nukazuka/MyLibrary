@@ -11,7 +11,7 @@
   @brief This class treats multi-histograms.
   @date 26/Nov./2015
   @author G. Nukazuka
-  @detail This can make a frame which all histograms are in.
+  @details This can make a frame which all histograms are in.
 */
 
 using namespace std;
@@ -76,7 +76,7 @@ public:
     @fn void Add( TH1* hist )
     @param hist A pointer of histogram which you want to treat.
     @brief Add the histogram to this class
-    @detail The argument is a pointer of TH1 but casted to TH1D*.
+    @details The argument is a pointer of TH1 but casted to TH1D*.
     This conversion does not lose information.
   */
   void Add( TH1* hist );
@@ -85,7 +85,7 @@ public:
     @fn void Draw( string option )
     @param option An option for TH1D::Draw
     @brief Draw all histograms.
-    @detail Statistic boxies are drawn in right side of the frame.
+    @details Statistic boxies are drawn in right side of the frame.
   */
   void Draw( string option );
     
