@@ -133,4 +133,4 @@ linux では "lib*.so"，mac では "lib*.dylib" ファイルができる（mac 
 
 を入れれば OK のはず。
 
-[doxygen]: doc/html/index.html
+[doxygen]: https://nukazuka.github.io/MyLibrary/index.html
