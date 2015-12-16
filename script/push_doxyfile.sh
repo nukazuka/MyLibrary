@@ -25,12 +25,10 @@ fi
 
 
 doxygen
-git checkout gh-pages
 cd document
 git add .
 git commit -m $1
 git push origin gh-pages
-git checkout master
 cd ..
 
 

@@ -11,7 +11,7 @@
   @brief This class treats multi-histograms.
   @date 26/Nov./2015
   @author G. Nukazuka
-  @details This can make a frame which all histograms are in.
+  @details This class handle some histograms at same time.
 */
 
 using namespace std;
@@ -88,11 +88,26 @@ public:
     @details Statistic boxies are drawn in right side of the frame.
   */
   void Draw( string option );
-    
+
+  /*!
+    @fn   void Draw( string option, double stats_xmin, double stats_ymin, double stats_xmax, double stats_ymax )
+    @param option options for drawing.
+    @param stats_xmin
+    @param stats_ymin
+    @param stats_xmax
+    @param stats_ymax
+    @brief draw all histograms which had been stored
+    @details if scale of x and/or y are set to log scale and minimum values are negative, ranges will be modified automatically.
+  */
   void Draw( string option,
 	     double stats_xmin, double stats_ymin,
 	     double stats_xmax, double stats_ymax );
   
+  /*!
+    @ void SetOption( string option )
+    @param option options for drawing
+    @brief set options for drawing
+  */
   void SetOption( string option ){ option_ = option;};
 
   /*!
@@ -105,7 +120,7 @@ public:
   /*! 
     @fn void SetMarginRight( double ratio )
     @param ratio
-    @brief
+    @brief set right margin in %
    */
   void SetMarginRight( double ratio ){ margin_ratio_right_ = ratio;};
 
