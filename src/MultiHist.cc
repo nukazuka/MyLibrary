@@ -115,6 +115,7 @@ void MultiHist::Ranges()
       else // case2
 	{
 
+	  xmax = xmax_;
 	  cerr << "=============== WARNING = from here ==============" << endl;
 	  cerr << "void MultiHist::GetRange()" << endl;
 	  cerr << "xmin is " << xmin << " and xaxis is set as a log scale" << endl;
@@ -177,6 +178,7 @@ void MultiHist::Ranges()
 	      cerr << "=============== WARNING = to here   ==============" << endl;
 	    }
 
+	  ymax_ = ymax;
 	  ymin_ = GetSuitableYmin();
 
 	}
