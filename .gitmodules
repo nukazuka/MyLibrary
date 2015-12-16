@@ -1,0 +1,4 @@
+[submodule "document"]
+	path = document
+	url = git@github.com:nukazuka/MyLibrary.git
+	branch = gh-pages
