@@ -12,7 +12,10 @@
   @date 26/Nov./2015
   @author G. Nukazuka
   @details This class handle some histograms at same time.
-  @todo totototototdododododdo
+  @todo # クラスに付け加えるもの
+
+  - 統計情報の位置指定をできるようにする。
+  - 
 */
 
 using namespace std;
@@ -61,7 +64,6 @@ public:
   /*!
     @fn MultiHist()
     @brief A default constructor.
-    @todo aaaaaaaaaaaaaaaaaa
   */
   MultiHist(){ Init();};
 

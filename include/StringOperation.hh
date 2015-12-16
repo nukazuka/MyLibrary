@@ -2,6 +2,7 @@
 #define MYLIB_STRINGOPERATION_HH
 
 #include "HeadersSL.hh"
+#include <sstream>
 
 using namespace std;
 /*!
