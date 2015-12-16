@@ -12,7 +12,7 @@
   @date 26/Nov./2015
   @author G. Nukazuka
   @details This class handle some histograms at same time.
-  @TODO totototototdododododdo
+  @todo totototototdododododdo
 */
 
 using namespace std;
@@ -61,7 +61,7 @@ public:
   /*!
     @fn MultiHist()
     @brief A default constructor.
-    @TODO aaaaaaaaaaaaaaaaaa
+    @todo aaaaaaaaaaaaaaaaaa
   */
   MultiHist(){ Init();};
 
