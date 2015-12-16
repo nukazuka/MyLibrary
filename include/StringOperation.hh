@@ -1,11 +1,7 @@
 #ifndef MYLIB_STRINGOPERATION_HH
 #define MYLIB_STRINGOPERATION_HH
 
-#include <string>
-#include <istream>
-#include <sstream>
-#include <iostream>
-#include <cstdlib>
+#include "HeadersSL.hh"
 
 using namespace std;
 /*!
