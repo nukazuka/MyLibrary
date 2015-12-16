@@ -13,9 +13,8 @@
   @author G. Nukazuka
   @details This class handle some histograms at same time.
   @todo # クラスに付け加えるもの
-
   - 統計情報の位置指定をできるようにする。
-  - 
+  - なにか
 */
 
 using namespace std;
