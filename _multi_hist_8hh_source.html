@@ -97,117 +97,117 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_pave_operation_8hh.html">PaveOperation.hh</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_string_operation_8hh.html">StringOperation.hh</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_multi_hist.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_multi_hist.html">MultiHist</a></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordtype">string</span> name_;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">string</span> title_;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">string</span> option_;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">double</span> xmin_;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">double</span> xmax_;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">double</span> ymin_;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">double</span> ymax_;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">double</span> margin_ratio_top_;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">double</span> margin_ratio_right_;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">double</span> margin_ratio_bottom_;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">double</span> margin_ratio_left_;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">double</span> title_size_;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">bool</span> bl_stats_;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">bool</span> bl_title_;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">bool</span> bl_draw_no_entry_;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">bool</span> bl_force_xmin_;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">bool</span> bl_force_xmax_;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">bool</span> bl_force_ymin_;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">bool</span> bl_force_ymax_;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">bool</span> bl_logx_;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">bool</span> bl_logy_;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  vector &lt; TH1D* &gt; vhist_;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// Initialization</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">void</span> Init( );</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> Init( <span class="keywordtype">string</span> name, <span class="keywordtype">string</span> title );</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">void</span> CheckLogScale();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> Margins();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">void</span> Ranges();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">double</span> GetSuitableXmin();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">double</span> GetSuitableYmin();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="comment">// Constructor</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_multi_hist.html#ad21711e837223ea671f8d0d7ddfbf468">   68</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_multi_hist.html#ad21711e837223ea671f8d0d7ddfbf468">MultiHist</a>(){ Init();};</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="class_multi_hist.html#a7eef0074a80e470e0de795247ba11e94">   76</a></span>&#160;  <a class="code" href="class_multi_hist.html#a7eef0074a80e470e0de795247ba11e94">MultiHist</a>( <span class="keywordtype">string</span> name, <span class="keywordtype">string</span> title ){ Init( name, title) ;} ;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="comment">// void </span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> Add( TH1* hist );</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">void</span> Draw( <span class="keywordtype">string</span> option );</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordtype">void</span> Draw( <span class="keywordtype">string</span> option,</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;         <span class="keywordtype">double</span> stats_xmin, <span class="keywordtype">double</span> stats_ymin,</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;         <span class="keywordtype">double</span> stats_xmax, <span class="keywordtype">double</span> stats_ymax );</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  </div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="class_multi_hist.html#a61e12692e71667372e51b96fd35dee51">  115</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_multi_hist.html#a61e12692e71667372e51b96fd35dee51">SetOption</a>( <span class="keywordtype">string</span> option ){ option_ = option;};</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="class_multi_hist.html#a3b683572bce8d177a524b31472179f3a">  122</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_multi_hist.html#a3b683572bce8d177a524b31472179f3a">SetMarginTop</a>( <span class="keywordtype">double</span> ratio ){ margin_ratio_top_ = ratio;};</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="class_multi_hist.html#afd1548917ff5225fa7934f7be4647b67">  129</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_multi_hist.html#afd1548917ff5225fa7934f7be4647b67">SetMarginRight</a>( <span class="keywordtype">double</span> ratio ){ margin_ratio_right_ = ratio;};</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="class_multi_hist.html#a7b2c6e93485c4553374800c5f02bfa81">  136</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_multi_hist.html#a7b2c6e93485c4553374800c5f02bfa81">SetMarginBottom</a>( <span class="keywordtype">double</span> ratio ){ margin_ratio_bottom_ = ratio;};</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="class_multi_hist.html#a7d1dda179d5f4475762d65f3ebca7ae4">  143</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_multi_hist.html#a7d1dda179d5f4475762d65f3ebca7ae4">SetMarginLeft</a>( <span class="keywordtype">double</span> ratio ){ margin_ratio_left_ = ratio;};</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keywordtype">void</span> SetMarginV( <span class="keywordtype">double</span> ratio );</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keywordtype">void</span> SetMarginH( <span class="keywordtype">double</span> ratio );</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keywordtype">void</span> SetMargins( <span class="keywordtype">double</span> ratio );</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
-<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="class_multi_hist.html#a4c3b8c4d0056429497919c5738a7e0fb">  165</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_multi_hist.html#a4c3b8c4d0056429497919c5738a7e0fb">SetDrawNoEntry</a> ( <span class="keywordtype">bool</span> bl )     { bl_draw_no_entry_ = bl ;};</div>
-<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="class_multi_hist.html#aa4397c14d12b33e6cf121a1f7b430b77">  166</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_multi_hist.html#aa4397c14d12b33e6cf121a1f7b430b77">SetStats</a>       ( <span class="keywordtype">bool</span> bl )     { bl_stats_ = bl;};</div>
-<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="class_multi_hist.html#a4f74e4a5a75e8879f5eb4a6c20bf0237">  167</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_multi_hist.html#a4f74e4a5a75e8879f5eb4a6c20bf0237">SetTitleDraw</a>   ( <span class="keywordtype">bool</span> bl )     { bl_title_ = bl;};</div>
-<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="class_multi_hist.html#ad4f7c1176694e3fc90116c25d27f00c8">  168</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_multi_hist.html#ad4f7c1176694e3fc90116c25d27f00c8">SetTitleSize</a>   ( <span class="keywordtype">double</span> size ) { title_size_ = size;};</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keywordtype">void</span> SetXmin( <span class="keywordtype">double</span> val );</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keywordtype">void</span> SetXmax( <span class="keywordtype">double</span> val );</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="keywordtype">void</span> SetYmin( <span class="keywordtype">double</span> val );</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keywordtype">void</span> SetYmax( <span class="keywordtype">double</span> val );</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keywordtype">void</span> Print();</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="comment">// int </span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  <span class="comment">//  int Get</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="comment">// string </span></div>
-<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="class_multi_hist.html#aab1f01f1cfa68d55c02d8dbf207cc544">  181</a></span>&#160;  <span class="keywordtype">string</span> <a class="code" href="class_multi_hist.html#aab1f01f1cfa68d55c02d8dbf207cc544">GetName</a>(){ <span class="keywordflow">return</span> name_;};</div>
-<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="class_multi_hist.html#a993499146cfa7592d1158ffbb3fd304a">  182</a></span>&#160;  <span class="keywordtype">string</span> <a class="code" href="class_multi_hist.html#a993499146cfa7592d1158ffbb3fd304a">GetTitle</a>(){ <span class="keywordflow">return</span> title_;};</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;};</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_multi_hist.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_multi_hist.html">MultiHist</a></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">string</span> name_;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordtype">string</span> title_;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">string</span> option_;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">double</span> xmin_;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">double</span> xmax_;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">double</span> ymin_;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">double</span> ymax_;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">double</span> margin_ratio_top_;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">double</span> margin_ratio_right_;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">double</span> margin_ratio_bottom_;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">double</span> margin_ratio_left_;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">double</span> title_size_;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">bool</span> bl_stats_;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">bool</span> bl_title_;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">bool</span> bl_draw_no_entry_;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">bool</span> bl_force_xmin_;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">bool</span> bl_force_xmax_;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">bool</span> bl_force_ymin_;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">bool</span> bl_force_ymax_;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">bool</span> bl_logx_;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">bool</span> bl_logy_;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  vector &lt; TH1D* &gt; vhist_;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// Initialization</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">void</span> Init( );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">void</span> Init( <span class="keywordtype">string</span> name, <span class="keywordtype">string</span> title );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> CheckLogScale();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">void</span> Margins();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> Ranges();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">double</span> GetSuitableXmin();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">double</span> GetSuitableYmin();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="comment">// Constructor</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_multi_hist.html#ad21711e837223ea671f8d0d7ddfbf468">   67</a></span>&#160;<span class="comment"></span>  <a class="code" href="class_multi_hist.html#ad21711e837223ea671f8d0d7ddfbf468">MultiHist</a>(){ Init();};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="class_multi_hist.html#a7eef0074a80e470e0de795247ba11e94">   75</a></span>&#160;  <a class="code" href="class_multi_hist.html#a7eef0074a80e470e0de795247ba11e94">MultiHist</a>( <span class="keywordtype">string</span> name, <span class="keywordtype">string</span> title ){ Init( name, title) ;} ;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="comment">// void </span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> Add( TH1* hist );</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">void</span> Draw( <span class="keywordtype">string</span> option );</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordtype">void</span> Draw( <span class="keywordtype">string</span> option,</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;         <span class="keywordtype">double</span> stats_xmin, <span class="keywordtype">double</span> stats_ymin,</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;         <span class="keywordtype">double</span> stats_xmax, <span class="keywordtype">double</span> stats_ymax );</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  </div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="class_multi_hist.html#a61e12692e71667372e51b96fd35dee51">  114</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_multi_hist.html#a61e12692e71667372e51b96fd35dee51">SetOption</a>( <span class="keywordtype">string</span> option ){ option_ = option;};</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="class_multi_hist.html#a3b683572bce8d177a524b31472179f3a">  121</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_multi_hist.html#a3b683572bce8d177a524b31472179f3a">SetMarginTop</a>( <span class="keywordtype">double</span> ratio ){ margin_ratio_top_ = ratio;};</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="class_multi_hist.html#afd1548917ff5225fa7934f7be4647b67">  128</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_multi_hist.html#afd1548917ff5225fa7934f7be4647b67">SetMarginRight</a>( <span class="keywordtype">double</span> ratio ){ margin_ratio_right_ = ratio;};</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="class_multi_hist.html#a7b2c6e93485c4553374800c5f02bfa81">  135</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_multi_hist.html#a7b2c6e93485c4553374800c5f02bfa81">SetMarginBottom</a>( <span class="keywordtype">double</span> ratio ){ margin_ratio_bottom_ = ratio;};</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="class_multi_hist.html#a7d1dda179d5f4475762d65f3ebca7ae4">  142</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_multi_hist.html#a7d1dda179d5f4475762d65f3ebca7ae4">SetMarginLeft</a>( <span class="keywordtype">double</span> ratio ){ margin_ratio_left_ = ratio;};</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordtype">void</span> SetMarginV( <span class="keywordtype">double</span> ratio );</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keywordtype">void</span> SetMarginH( <span class="keywordtype">double</span> ratio );</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordtype">void</span> SetMargins( <span class="keywordtype">double</span> ratio );</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="class_multi_hist.html#a4c3b8c4d0056429497919c5738a7e0fb">  164</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_multi_hist.html#a4c3b8c4d0056429497919c5738a7e0fb">SetDrawNoEntry</a> ( <span class="keywordtype">bool</span> bl )     { bl_draw_no_entry_ = bl ;};</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="class_multi_hist.html#aa4397c14d12b33e6cf121a1f7b430b77">  165</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_multi_hist.html#aa4397c14d12b33e6cf121a1f7b430b77">SetStats</a>       ( <span class="keywordtype">bool</span> bl )     { bl_stats_ = bl;};</div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="class_multi_hist.html#a4f74e4a5a75e8879f5eb4a6c20bf0237">  166</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_multi_hist.html#a4f74e4a5a75e8879f5eb4a6c20bf0237">SetTitleDraw</a>   ( <span class="keywordtype">bool</span> bl )     { bl_title_ = bl;};</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="class_multi_hist.html#ad4f7c1176694e3fc90116c25d27f00c8">  167</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_multi_hist.html#ad4f7c1176694e3fc90116c25d27f00c8">SetTitleSize</a>   ( <span class="keywordtype">double</span> size ) { title_size_ = size;};</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keywordtype">void</span> SetXmin( <span class="keywordtype">double</span> val );</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keywordtype">void</span> SetXmax( <span class="keywordtype">double</span> val );</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keywordtype">void</span> SetYmin( <span class="keywordtype">double</span> val );</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="keywordtype">void</span> SetYmax( <span class="keywordtype">double</span> val );</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="keywordtype">void</span> Print();</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="comment">// int </span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="comment">//  int Get</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="comment">// string </span></div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="class_multi_hist.html#aab1f01f1cfa68d55c02d8dbf207cc544">  180</a></span>&#160;  <span class="keywordtype">string</span> <a class="code" href="class_multi_hist.html#aab1f01f1cfa68d55c02d8dbf207cc544">GetName</a>(){ <span class="keywordflow">return</span> name_;};</div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="class_multi_hist.html#a993499146cfa7592d1158ffbb3fd304a">  181</a></span>&#160;  <span class="keywordtype">string</span> <a class="code" href="class_multi_hist.html#a993499146cfa7592d1158ffbb3fd304a">GetTitle</a>(){ <span class="keywordflow">return</span> title_;};</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;};</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="_string_operation_8hh_html"><div class="ttname"><a href="_string_operation_8hh.html">StringOperation.hh</a></div></div>
-<div class="ttc" id="class_multi_hist_html_a7eef0074a80e470e0de795247ba11e94"><div class="ttname"><a href="class_multi_hist.html#a7eef0074a80e470e0de795247ba11e94">MultiHist::MultiHist</a></div><div class="ttdeci">MultiHist(string name, string title)</div><div class="ttdoc">A constructor with name and title. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00076">MultiHist.hh:76</a></div></div>
-<div class="ttc" id="class_multi_hist_html_ad21711e837223ea671f8d0d7ddfbf468"><div class="ttname"><a href="class_multi_hist.html#ad21711e837223ea671f8d0d7ddfbf468">MultiHist::MultiHist</a></div><div class="ttdeci">MultiHist()</div><div class="ttdoc">A default constructor. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00068">MultiHist.hh:68</a></div></div>
-<div class="ttc" id="class_multi_hist_html_a61e12692e71667372e51b96fd35dee51"><div class="ttname"><a href="class_multi_hist.html#a61e12692e71667372e51b96fd35dee51">MultiHist::SetOption</a></div><div class="ttdeci">void SetOption(string option)</div><div class="ttdoc">set options for drawing </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00115">MultiHist.hh:115</a></div></div>
+<div class="ttc" id="class_multi_hist_html_a7eef0074a80e470e0de795247ba11e94"><div class="ttname"><a href="class_multi_hist.html#a7eef0074a80e470e0de795247ba11e94">MultiHist::MultiHist</a></div><div class="ttdeci">MultiHist(string name, string title)</div><div class="ttdoc">A constructor with name and title. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00075">MultiHist.hh:75</a></div></div>
+<div class="ttc" id="class_multi_hist_html_ad21711e837223ea671f8d0d7ddfbf468"><div class="ttname"><a href="class_multi_hist.html#ad21711e837223ea671f8d0d7ddfbf468">MultiHist::MultiHist</a></div><div class="ttdeci">MultiHist()</div><div class="ttdoc">A default constructor. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00067">MultiHist.hh:67</a></div></div>
+<div class="ttc" id="class_multi_hist_html_a61e12692e71667372e51b96fd35dee51"><div class="ttname"><a href="class_multi_hist.html#a61e12692e71667372e51b96fd35dee51">MultiHist::SetOption</a></div><div class="ttdeci">void SetOption(string option)</div><div class="ttdoc">set options for drawing </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00114">MultiHist.hh:114</a></div></div>
 <div class="ttc" id="_headers_root_8hh_html"><div class="ttname"><a href="_headers_root_8hh.html">HeadersRoot.hh</a></div></div>
 <div class="ttc" id="_headers_s_l_8hh_html"><div class="ttname"><a href="_headers_s_l_8hh.html">HeadersSL.hh</a></div></div>
-<div class="ttc" id="class_multi_hist_html_a7d1dda179d5f4475762d65f3ebca7ae4"><div class="ttname"><a href="class_multi_hist.html#a7d1dda179d5f4475762d65f3ebca7ae4">MultiHist::SetMarginLeft</a></div><div class="ttdeci">void SetMarginLeft(double ratio)</div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00143">MultiHist.hh:143</a></div></div>
+<div class="ttc" id="class_multi_hist_html_a7d1dda179d5f4475762d65f3ebca7ae4"><div class="ttname"><a href="class_multi_hist.html#a7d1dda179d5f4475762d65f3ebca7ae4">MultiHist::SetMarginLeft</a></div><div class="ttdeci">void SetMarginLeft(double ratio)</div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00142">MultiHist.hh:142</a></div></div>
 <div class="ttc" id="_pave_operation_8hh_html"><div class="ttname"><a href="_pave_operation_8hh.html">PaveOperation.hh</a></div></div>
-<div class="ttc" id="class_multi_hist_html_a993499146cfa7592d1158ffbb3fd304a"><div class="ttname"><a href="class_multi_hist.html#a993499146cfa7592d1158ffbb3fd304a">MultiHist::GetTitle</a></div><div class="ttdeci">string GetTitle()</div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00182">MultiHist.hh:182</a></div></div>
-<div class="ttc" id="class_multi_hist_html_a4f74e4a5a75e8879f5eb4a6c20bf0237"><div class="ttname"><a href="class_multi_hist.html#a4f74e4a5a75e8879f5eb4a6c20bf0237">MultiHist::SetTitleDraw</a></div><div class="ttdeci">void SetTitleDraw(bool bl)</div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00167">MultiHist.hh:167</a></div></div>
-<div class="ttc" id="class_multi_hist_html_a3b683572bce8d177a524b31472179f3a"><div class="ttname"><a href="class_multi_hist.html#a3b683572bce8d177a524b31472179f3a">MultiHist::SetMarginTop</a></div><div class="ttdeci">void SetMarginTop(double ratio)</div><div class="ttdoc">Set margin in %. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00122">MultiHist.hh:122</a></div></div>
-<div class="ttc" id="class_multi_hist_html"><div class="ttname"><a href="class_multi_hist.html">MultiHist</a></div><div class="ttdoc">This class treats multi-histograms. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00023">MultiHist.hh:23</a></div></div>
-<div class="ttc" id="class_multi_hist_html_aab1f01f1cfa68d55c02d8dbf207cc544"><div class="ttname"><a href="class_multi_hist.html#aab1f01f1cfa68d55c02d8dbf207cc544">MultiHist::GetName</a></div><div class="ttdeci">string GetName()</div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00181">MultiHist.hh:181</a></div></div>
-<div class="ttc" id="class_multi_hist_html_ad4f7c1176694e3fc90116c25d27f00c8"><div class="ttname"><a href="class_multi_hist.html#ad4f7c1176694e3fc90116c25d27f00c8">MultiHist::SetTitleSize</a></div><div class="ttdeci">void SetTitleSize(double size)</div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00168">MultiHist.hh:168</a></div></div>
-<div class="ttc" id="class_multi_hist_html_a4c3b8c4d0056429497919c5738a7e0fb"><div class="ttname"><a href="class_multi_hist.html#a4c3b8c4d0056429497919c5738a7e0fb">MultiHist::SetDrawNoEntry</a></div><div class="ttdeci">void SetDrawNoEntry(bool bl)</div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00165">MultiHist.hh:165</a></div></div>
-<div class="ttc" id="class_multi_hist_html_aa4397c14d12b33e6cf121a1f7b430b77"><div class="ttname"><a href="class_multi_hist.html#aa4397c14d12b33e6cf121a1f7b430b77">MultiHist::SetStats</a></div><div class="ttdeci">void SetStats(bool bl)</div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00166">MultiHist.hh:166</a></div></div>
-<div class="ttc" id="class_multi_hist_html_a7b2c6e93485c4553374800c5f02bfa81"><div class="ttname"><a href="class_multi_hist.html#a7b2c6e93485c4553374800c5f02bfa81">MultiHist::SetMarginBottom</a></div><div class="ttdeci">void SetMarginBottom(double ratio)</div><div class="ttdoc">Set margin in %. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00136">MultiHist.hh:136</a></div></div>
-<div class="ttc" id="class_multi_hist_html_afd1548917ff5225fa7934f7be4647b67"><div class="ttname"><a href="class_multi_hist.html#afd1548917ff5225fa7934f7be4647b67">MultiHist::SetMarginRight</a></div><div class="ttdeci">void SetMarginRight(double ratio)</div><div class="ttdoc">set right margin in % </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00129">MultiHist.hh:129</a></div></div>
+<div class="ttc" id="class_multi_hist_html_a993499146cfa7592d1158ffbb3fd304a"><div class="ttname"><a href="class_multi_hist.html#a993499146cfa7592d1158ffbb3fd304a">MultiHist::GetTitle</a></div><div class="ttdeci">string GetTitle()</div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00181">MultiHist.hh:181</a></div></div>
+<div class="ttc" id="class_multi_hist_html_a4f74e4a5a75e8879f5eb4a6c20bf0237"><div class="ttname"><a href="class_multi_hist.html#a4f74e4a5a75e8879f5eb4a6c20bf0237">MultiHist::SetTitleDraw</a></div><div class="ttdeci">void SetTitleDraw(bool bl)</div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00166">MultiHist.hh:166</a></div></div>
+<div class="ttc" id="class_multi_hist_html_a3b683572bce8d177a524b31472179f3a"><div class="ttname"><a href="class_multi_hist.html#a3b683572bce8d177a524b31472179f3a">MultiHist::SetMarginTop</a></div><div class="ttdeci">void SetMarginTop(double ratio)</div><div class="ttdoc">Set margin in %. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00121">MultiHist.hh:121</a></div></div>
+<div class="ttc" id="class_multi_hist_html"><div class="ttname"><a href="class_multi_hist.html">MultiHist</a></div><div class="ttdoc">This class treats multi-histograms. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00022">MultiHist.hh:22</a></div></div>
+<div class="ttc" id="class_multi_hist_html_aab1f01f1cfa68d55c02d8dbf207cc544"><div class="ttname"><a href="class_multi_hist.html#aab1f01f1cfa68d55c02d8dbf207cc544">MultiHist::GetName</a></div><div class="ttdeci">string GetName()</div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00180">MultiHist.hh:180</a></div></div>
+<div class="ttc" id="class_multi_hist_html_ad4f7c1176694e3fc90116c25d27f00c8"><div class="ttname"><a href="class_multi_hist.html#ad4f7c1176694e3fc90116c25d27f00c8">MultiHist::SetTitleSize</a></div><div class="ttdeci">void SetTitleSize(double size)</div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00167">MultiHist.hh:167</a></div></div>
+<div class="ttc" id="class_multi_hist_html_a4c3b8c4d0056429497919c5738a7e0fb"><div class="ttname"><a href="class_multi_hist.html#a4c3b8c4d0056429497919c5738a7e0fb">MultiHist::SetDrawNoEntry</a></div><div class="ttdeci">void SetDrawNoEntry(bool bl)</div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00164">MultiHist.hh:164</a></div></div>
+<div class="ttc" id="class_multi_hist_html_aa4397c14d12b33e6cf121a1f7b430b77"><div class="ttname"><a href="class_multi_hist.html#aa4397c14d12b33e6cf121a1f7b430b77">MultiHist::SetStats</a></div><div class="ttdeci">void SetStats(bool bl)</div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00165">MultiHist.hh:165</a></div></div>
+<div class="ttc" id="class_multi_hist_html_a7b2c6e93485c4553374800c5f02bfa81"><div class="ttname"><a href="class_multi_hist.html#a7b2c6e93485c4553374800c5f02bfa81">MultiHist::SetMarginBottom</a></div><div class="ttdeci">void SetMarginBottom(double ratio)</div><div class="ttdoc">Set margin in %. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00135">MultiHist.hh:135</a></div></div>
+<div class="ttc" id="class_multi_hist_html_afd1548917ff5225fa7934f7be4647b67"><div class="ttname"><a href="class_multi_hist.html#afd1548917ff5225fa7934f7be4647b67">MultiHist::SetMarginRight</a></div><div class="ttdeci">void SetMarginRight(double ratio)</div><div class="ttdoc">set right margin in % </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00128">MultiHist.hh:128</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
