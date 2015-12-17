@@ -12,12 +12,22 @@ void MultiHist::Init( )
 void MultiHist::Init( string name, string title )
 {
 
+  id_ = stats_type_ = 0;
   name_  = name;
   title_ = title;
 
   xmin_  = ymin_ = 1.0;
   xmax_  = ymax_ = 2.0;
   margin_ratio_top_ = margin_ratio_bottom_ = margin_ratio_left_ = margin_ratio_right_ = 0.01;
+
+  stats_xmin_ = 0.9;
+  stats_ymin_ = 0.1;
+  stats_xmax_ = 1.0;
+  stats_ymax_ = 0.9;
+
+  stats_width_ = 0.1;
+  stats_height_ = 0.1;
+
   title_size_ = 0.07;
 
   bl_stats_ = bl_title_ = bl_draw_no_entry_ 
@@ -133,13 +143,14 @@ void MultiHist::Ranges()
 
   if( bl_force_xmin_ == true )
     {
-      xmin_ = xmin;
+
+      xmin_ = xmin_force_;
       margin_ratio_left_ = 0.0;
     }
 
   if( bl_force_xmax_ == true )
     {
-      xmax_ = xmax;
+      xmax_ = xmax_force_;
       margin_ratio_right_ = 0.0;
     }
 
@@ -192,13 +203,13 @@ void MultiHist::Ranges()
 
   if( bl_force_ymin_ == true )
     {
-      ymin_ = ymin;
+      ymin_ = ymin_force_;
       margin_ratio_bottom_ = 0.0;
     }
     
   if( bl_force_ymax_ == true )
     {
-      ymax_ = ymax;
+      ymax_ = ymax_force_;
       margin_ratio_top_ = 0.0;
     }
 }
@@ -262,9 +273,23 @@ void MultiHist::Add( TH1* hist )
   vhist_.push_back( (TH1D*)hist );
 }
 
+void MultiHist::DeleteAllHist()
+{
+
+  vhist_.erase( vhist_.begin() , vhist_.end() );
+}
+
 void MultiHist::Draw( string option )
 {
-  Draw( option, 0.9, 0.1, 1.0, 0.9 );
+  if( stats_type_ == 0 )
+    Draw( option, stats_xmin_ , stats_ymin_ , stats_xmax_ , stats_ymax_ );
+  else if( stats_type_ == 1 )
+    {
+
+      double xmin = stats_xmax_ - stats_width_ ;//* vhist_.size();
+      double ymin = stats_ymax_ - stats_height_ * vhist_.size();
+      Draw( option, xmin, ymin, stats_xmax_ , stats_ymax_ );
+    }
 }
 
 void MultiHist::Draw( string option,
@@ -280,32 +305,8 @@ void MultiHist::Draw( string option,
   double margin_top    = ( ymax_ - ymin_ ) * margin_ratio_top_;
   double margin_bottom = ( ymax_ - ymin_ ) * margin_ratio_bottom_;
 
-  /*
-  if( bl_force_xmin_ == false )
-    {
-      if( bl_logx_ == true && xmin_ - margin_left <= 0 )
-	{
-	  if( xmin_ == 0 )
-	    margin_left = -1e-0;
-	  else
-	    margin_left = xmin_ - 1e-5;
-	}
-    }
-    
-  if( bl_force_ymin_ == false )
-    {
-      if( bl_logy_ == true && ymin_ - margin_bottom <= 0 )
-	{
-	  if( ymin_ == 0 )
-	    margin_bottom = -1e-0;
-	  else
-	    margin_bottom = ymin_ - 1e-5;
-	    
-	}
-    }
-  */
-  
-  TH1F* frame = new TH1F( "hframe", title_.c_str() , 1000, xmin_ - margin_left, xmax_ + margin_right );
+  string name = name_ + title_ + "hframe" + Int2String( id_ );
+  TH1F* frame = new TH1F( name.c_str() , title_.c_str() , 1000, xmin_ - margin_left, xmax_ + margin_right );
   frame->SetMinimum( ymin_ - margin_bottom );
   frame->SetMaximum( ymax_ + margin_top );
   frame->SetStats( false );
@@ -318,7 +319,9 @@ void MultiHist::Draw( string option,
   option = Replace( option , "same"  , "" );
   option = Replace( option , "SAME"  , "" );
 
+  // configuration for stats box
   double stats_height = (stats_ymax - stats_ymin) / vhist_.size();
+
   for( int i=0; i<vhist_.size(); i++ )
     {
 	
@@ -339,11 +342,10 @@ void MultiHist::Draw( string option,
 	}
 
       if( i==0 && bl_title_==true )
-	//	  DrawTitle( gPad , title_size_ );
 	DrawTitle( title_size_ );
     }
     
-    
+  id_++;
 }
 
 void MultiHist::SetMarginV( double ratio )
@@ -365,27 +367,61 @@ void MultiHist::SetMargins( double ratio )
   SetMarginV( ratio );
 }
 
+void MultiHist::SetStatsBoxSize( double width , double height )
+{
+  
+  stats_width_ = width;
+  stats_height_ = height;  
+}
+
+void MultiHist::SetStatsBoxPoint( double xmax , double ymax )
+{
+  stats_xmax_ = xmax;
+  stats_ymax_ = ymax;
+}
+
+void MultiHist::SetStatsPosition( double xmin, double ymin, double xmax, double ymax )
+{
+
+  stats_xmin_ = xmin;
+  stats_ymin_ = ymin;
+  stats_xmax_ = xmax;
+  stats_ymax_ = ymax;
+}
+
+void MultiHist::SetStatsType( string type )
+{
+
+  if( type == "area" || type == "Area" || type == "AREA" )
+    SetStatsType( 0 );
+  else if( type == "box" || type == "Box" || type == "BOX" )
+    SetStatsType( 1 );
+  else 
+    SetStatsType( -1 );
+
+}
+
 void MultiHist::SetXmin( double val )
 {
-  xmin_ = val;
+  xmin_force_ = val;
   bl_force_xmin_ = true;
 };
 
 void MultiHist::SetXmax( double val )
 {
-  xmax_ = val;
+  xmax_force_ = val;
   bl_force_xmax_ = true;
 };
 
 void MultiHist::SetYmin( double val )
 {
-  ymin_ = val;
+  ymin_force_ = val;
   bl_force_ymin_ = true;
 };
 
 void MultiHist::SetYmax( double val )
 {
-  ymax_ = val;
+  ymax_force_ = val;
   bl_force_ymax_ = true;
 };
 

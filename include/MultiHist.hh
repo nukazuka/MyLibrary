@@ -14,7 +14,7 @@
   @details This class handle some histograms at same time.
   @todo # クラスに付け加えるもの
   - 統計情報の位置指定をできるようにする。
-  - なにか
+  - draw_no_entry を実装する（ソースの Ranges() not ready の箇所）
 */
 
 using namespace std;
@@ -22,6 +22,9 @@ using namespace std;
 class MultiHist
 {
 private:
+
+  int id_;
+  int stats_type_;
   string name_;
   string title_;
   string option_;
@@ -30,10 +33,25 @@ private:
   double xmax_;
   double ymin_;
   double ymax_;
+
+  double xmin_force_;
+  double ymin_force_;
+  double xmax_force_;
+  double ymax_force_;
+
   double margin_ratio_top_;
   double margin_ratio_right_;
   double margin_ratio_bottom_;
   double margin_ratio_left_;
+
+  double stats_xmin_;
+  double stats_ymin_;
+  double stats_xmax_;
+  double stats_ymax_;
+
+  double stats_width_;
+  double stats_height_;
+
   double title_size_;
 
   bool bl_stats_;
@@ -85,12 +103,19 @@ public:
   void Add( TH1* hist );
 
   /*!
+    @fn void DeleteAllHist()
+    @brief All added histograms are deleted
+  */
+  void DeleteAllHist();
+
+  /*!
     @fn void Draw( string option )
     @param option An option for TH1D::Draw
     @brief Draw all histograms.
-    @details Statistic boxies are drawn in right side of the frame.
+    @details Statistic boxies are drawn with soecified type.
+    If you want to use "box" type, use this function.
   */
-  void Draw( string option );
+  void Draw( string option = "" );
 
   /*!
     @fn   void Draw( string option, double stats_xmin, double stats_ymin, double stats_xmax, double stats_ymax )
@@ -154,6 +179,7 @@ public:
     @brief
   */
   void SetMarginH( double ratio );
+
   /*!
     @fn void SetMargins( double ratio )
     @param ratio
@@ -161,23 +187,144 @@ public:
   */
   void SetMargins( double ratio );
 
+  /*!
+    @fn void SetStatsPosition( double xmin, double ymin, double xmax, double ymax )
+    @param xmin a position of left side of stats in ratio
+    @param ymin a position of bottom of stats in ratio
+    @param xmax a position of right side of stats in ratio
+    @param ymax a position of top side of stats in ratio
+    @brief set position of box for statistic
+    @details all values are in ratio
+  */
+  void SetStatsPosition( double xmin, double ymin, double xmax, double ymax );
+
+  /*!
+    @fn void SetStatsBoxSize( double width , double height )
+    @param width
+    @param height
+    @brief set size of stats box
+    @detail This function is for "box" type arrangement.
+  */
+  void SetStatsBoxSize( double width , double height );
+
+  /*!
+    @fn void SetStatsBoxPoint( double xmax , double ymax )
+    @param
+    @brief
+    @details
+  */
+  void SetStatsBoxPoint( double xmax , double ymax );
+
+  /*!
+    @fn void SetStatsType( string type )
+    @param type type of an arrengement of stats box
+    @brief set an arrangement type of stats box
+    @details following types are supported
+    - area, Area, AREA : you can specify are of stats with void SetStatsPosition( double xmin, double ymin, double xmax, double ymax ). The area will be devided into a number of hist and stats boxes will be drawn in specified direction.
+  */
+  void SetStatsType( string type );
+
+  /*!
+    @fn void SetStatsType( int num )
+    @param num an arrangement of stats box 
+    @brief
+    @details
+  */
+  void SetStatsType( int num ){ stats_type_ = num ;};
+
+  /*!
+    @fn void SetDrawNoEntry ( bool bl )
+    @param
+    @brief
+    @details
+  */
   void SetDrawNoEntry ( bool bl )     { bl_draw_no_entry_ = bl ;};
+
+  /*!
+    @fn void SetStats( bool bl )
+    @param
+    @brief
+    @details
+  */
   void SetStats       ( bool bl )     { bl_stats_ = bl;};
+
+  /*!
+    @fn void SetTitleDraw ( bool bl )
+    @param title new title
+    @brief set title
+  */
+  void SetTitle   ( string title )     { title_ = title;};
+
+  /*!
+    @fn void SetTitleDraw ( bool bl )
+    @param bl Title will be drawn if bl == true,
+    @brief Set whether draw title or not
+  */
   void SetTitleDraw   ( bool bl )     { bl_title_ = bl;};
+
+  /*!
+    @fn void SetTitleSize( double size )
+    @param
+    @brief
+    @details
+  */
   void SetTitleSize   ( double size ) { title_size_ = size;};
 
+  /*!
+    @fn void SetXmin( double val )
+    @param
+    @brief
+    @details
+  */
   void SetXmin( double val );
+
+  /*!
+    @fn void SetXmax( double val )
+    @param
+    @brief
+    @details
+  */
   void SetXmax( double val );
+  /*!
+    @fn void SetYmin( double val )
+    @param
+    @brief
+    @details
+  */
   void SetYmin( double val );
+  /*!
+    @fn void SetYmax( double val )
+    @param
+    @brief
+    @details
+  */
   void SetYmax( double val );
   
+  /*!
+    @fn void Print()
+    @brief
+    @details
+  */
   void Print();
 
   // int 
   //  int Get
 
   // string 
+  /*!
+    @fn string GetName()
+    @param
+    @brief
+    @details
+  */
+
   string GetName(){ return name_;};
+  /*!
+    @fn string GetTitle()
+    @param
+    @brief
+    @details
+  */
   string GetTitle(){ return title_;};
 
 };

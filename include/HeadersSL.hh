@@ -6,6 +6,6 @@
 #include <cstdlib>
 #include <iomanip>
 #include <algorithm>
-
+#include <vector>
 
 #endif
