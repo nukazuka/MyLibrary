@@ -49,6 +49,9 @@ private:
   double stats_xmax_;
   double stats_ymax_;
 
+  double offset_title_x_;
+  double offset_title_y_;
+
   double stats_width_;
   double stats_height_;
 
@@ -254,6 +257,9 @@ public:
     @brief set title
   */
   void SetTitle   ( string title )     { title_ = title;};
+
+  void SetTitleOffsetX( double offset ){ offset_title_x_ = offset;};
+  void SetTitleOffsetY( double offset ){ offset_title_y_ = offset;};
 
   /*!
     @fn void SetTitleDraw ( bool bl )

@@ -30,6 +30,7 @@ void MultiHist::Init( string name, string title )
 
   title_size_ = 0.07;
 
+  offset_title_x_ = offset_title_y_ = 1.0;
   bl_stats_ = bl_title_ = bl_draw_no_entry_ 
     = true;
 
@@ -312,6 +313,9 @@ void MultiHist::Draw( string option,
   frame->SetStats( false );
   frame->GetXaxis()->CenterTitle( true );
   frame->GetYaxis()->CenterTitle( true );
+  frame->GetXaxis()->SetTitleOffset( offset_title_x_ );
+  frame->GetYaxis()->SetTitleOffset( offset_title_y_ );
+
   frame->Draw();
 
   option = Replace( option , "sames" , "" );
