@@ -212,9 +212,10 @@ public:
 
   /*!
     @fn void SetStatsBoxPoint( double xmax , double ymax )
-    @param
-    @brief
-    @details
+    @param xmax right side of stats box
+    @param ymax bottom side of stats box
+    @brief set point 
+    @details aaa
   */
   void SetStatsBoxPoint( double xmax , double ymax );
 
