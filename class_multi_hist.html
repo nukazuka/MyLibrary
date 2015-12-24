@@ -154,6 +154,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa4397c14d12b33e6cf121a1f7b430b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff7ce53aead01e156cb90b81a8f9df94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_hist.html#aff7ce53aead01e156cb90b81a8f9df94">SetTitle</a> (string title)</td></tr>
 <tr class="separator:aff7ce53aead01e156cb90b81a8f9df94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07ef8c0f59f0fbb7af379f8ba78d7749"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_hist.html#a07ef8c0f59f0fbb7af379f8ba78d7749">SetTitleOffsetX</a> (double offset)</td></tr>
+<tr class="separator:a07ef8c0f59f0fbb7af379f8ba78d7749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeee54d36f6b2218bb43d7e2e82233fcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_hist.html#aeee54d36f6b2218bb43d7e2e82233fcb">SetTitleOffsetY</a> (double offset)</td></tr>
+<tr class="separator:aeee54d36f6b2218bb43d7e2e82233fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f74e4a5a75e8879f5eb4a6c20bf0237"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_hist.html#a4f74e4a5a75e8879f5eb4a6c20bf0237">SetTitleDraw</a> (bool bl)</td></tr>
 <tr class="memdesc:a4f74e4a5a75e8879f5eb4a6c20bf0237"><td class="mdescLeft">&#160;</td><td class="mdescRight">set title  <a href="#a4f74e4a5a75e8879f5eb4a6c20bf0237">More...</a><br/></td></tr>
 <tr class="separator:a4f74e4a5a75e8879f5eb4a6c20bf0237"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -211,8 +215,8 @@ Public Member Functions</h2></td></tr>
 
 <p>A default constructor. </p>
 
-<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00085">85</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{ Init();};</div>
+<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00088">88</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{ Init();};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -257,8 +261,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00093">93</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{ Init( name, title) ;} ;</div>
+<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00096">96</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{ Init( name, title) ;} ;</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -286,10 +290,10 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>The argument is a pointer of TH1 but casted to TH1D*. This conversion does not lose information. </p>
 
-<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00271">271</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;{</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  vhist_.push_back( (TH1D*)hist );</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00272">272</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;{</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  vhist_.push_back( (TH1D*)hist );</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -308,11 +312,11 @@ Public Member Functions</h2></td></tr>
 
 <p>All added histograms are deleted. </p>
 
-<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00276">276</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;{</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  vhist_.erase( vhist_.begin() , vhist_.end() );</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00277">277</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;{</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  vhist_.erase( vhist_.begin() , vhist_.end() );</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -339,19 +343,21 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>Statistic boxies are drawn with soecified type. If you want to use "box" type, use this function. </p>
 
-<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00282">282</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;{</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  <span class="keywordflow">if</span>( stats_type_ == 0 )</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <a class="code" href="class_multi_hist.html#a38db25d70d0fd0ac05274446f87ed8d9">Draw</a>( option, stats_xmin_ , stats_ymin_ , stats_xmax_ , stats_ymax_ );</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span>( stats_type_ == 1 )</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    {</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;      <span class="keywordtype">double</span> xmin = stats_xmax_ - stats_width_ ;<span class="comment">//* vhist_.size();</span></div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;      <span class="keywordtype">double</span> ymin = stats_ymax_ - stats_height_ * vhist_.size();</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;      <a class="code" href="class_multi_hist.html#a38db25d70d0fd0ac05274446f87ed8d9">Draw</a>( option, xmin, ymin, stats_xmax_ , stats_ymax_ );</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    }</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;}</div>
-<div class="ttc" id="class_multi_hist_html_a38db25d70d0fd0ac05274446f87ed8d9"><div class="ttname"><a href="class_multi_hist.html#a38db25d70d0fd0ac05274446f87ed8d9">MultiHist::Draw</a></div><div class="ttdeci">void Draw(string option=&quot;&quot;)</div><div class="ttdoc">Draw all histograms. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8cc_source.html#l00282">MultiHist.cc:282</a></div></div>
+<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00283">283</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;{</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <span class="keywordflow">if</span>( stats_type_ == 0 )</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <a class="code" href="class_multi_hist.html#a38db25d70d0fd0ac05274446f87ed8d9">Draw</a>( option, stats_xmin_ , stats_ymin_ , stats_xmax_ , stats_ymax_ );</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span>( stats_type_ == 1 )</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    {</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;      <span class="keywordtype">double</span> xmin = stats_xmax_ - stats_width_ ;<span class="comment">//* vhist_.size();</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;      <span class="keywordtype">double</span> ymin = stats_ymax_ - stats_height_ * vhist_.size();</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;      <a class="code" href="class_multi_hist.html#a38db25d70d0fd0ac05274446f87ed8d9">Draw</a>( option, xmin, ymin, stats_xmax_ , stats_ymax_ );</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;}</div>
+<div class="ttc" id="class_multi_hist_html_a38db25d70d0fd0ac05274446f87ed8d9"><div class="ttname"><a href="class_multi_hist.html#a38db25d70d0fd0ac05274446f87ed8d9">MultiHist::Draw</a></div><div class="ttdeci">void Draw(string option=&quot;&quot;)</div><div class="ttdoc">Draw all histograms. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8cc_source.html#l00283">MultiHist.cc:283</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -410,59 +416,62 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>if scale of x and/or y are set to log scale and minimum values are negative, ranges will be modified automatically. </p>
 
-<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00295">295</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;{</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  Ranges();</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  Margins();</div>
+<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00298">298</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;{</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <span class="keywordtype">double</span> margin_right  = ( xmax_ - xmin_ ) * margin_ratio_right_;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  <span class="keywordtype">double</span> margin_left   = ( xmax_ - xmin_ ) * margin_ratio_left_;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <span class="keywordtype">double</span> margin_top    = ( ymax_ - ymin_ ) * margin_ratio_top_;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  <span class="keywordtype">double</span> margin_bottom = ( ymax_ - ymin_ ) * margin_ratio_bottom_;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  <span class="keywordtype">string</span> name = name_ + title_ + <span class="stringliteral">&quot;hframe&quot;</span> + <a class="code" href="_string_operation_8cc.html#acfe1f91ad92436380fdacb590acba3c0">Int2String</a>( id_ );</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  TH1F* frame = <span class="keyword">new</span> TH1F( name.c_str() , title_.c_str() , 1000, xmin_ - margin_left, xmax_ + margin_right );</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  frame-&gt;SetMinimum( ymin_ - margin_bottom );</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  frame-&gt;SetMaximum( ymax_ + margin_top );</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  frame-&gt;SetStats( <span class="keyword">false</span> );</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  frame-&gt;GetXaxis()-&gt;CenterTitle( <span class="keyword">true</span> );</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  frame-&gt;GetYaxis()-&gt;CenterTitle( <span class="keyword">true</span> );</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  frame-&gt;Draw();</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  option = <a class="code" href="_string_operation_8cc.html#a5ebe0c68b60fcd6dd8caf0fa483306db">Replace</a>( option , <span class="stringliteral">&quot;sames&quot;</span> , <span class="stringliteral">&quot;&quot;</span> );</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  option = <a class="code" href="_string_operation_8cc.html#a5ebe0c68b60fcd6dd8caf0fa483306db">Replace</a>( option , <span class="stringliteral">&quot;SAMES&quot;</span> , <span class="stringliteral">&quot;&quot;</span> );</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  option = <a class="code" href="_string_operation_8cc.html#a5ebe0c68b60fcd6dd8caf0fa483306db">Replace</a>( option , <span class="stringliteral">&quot;same&quot;</span>  , <span class="stringliteral">&quot;&quot;</span> );</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  option = <a class="code" href="_string_operation_8cc.html#a5ebe0c68b60fcd6dd8caf0fa483306db">Replace</a>( option , <span class="stringliteral">&quot;SAME&quot;</span>  , <span class="stringliteral">&quot;&quot;</span> );</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  <span class="comment">// configuration for stats box</span></div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  <span class="keywordtype">double</span> stats_height = (stats_ymax - stats_ymin) / vhist_.size();</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i=0; i&lt;vhist_.size(); i++ )</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    {</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    </div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;      <span class="keywordflow">if</span>( bl_stats_ == <span class="keyword">true</span> )</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  Ranges();</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  Margins();</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  <span class="keywordtype">double</span> margin_right  = ( xmax_ - xmin_ ) * margin_ratio_right_;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  <span class="keywordtype">double</span> margin_left   = ( xmax_ - xmin_ ) * margin_ratio_left_;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  <span class="keywordtype">double</span> margin_top    = ( ymax_ - ymin_ ) * margin_ratio_top_;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  <span class="keywordtype">double</span> margin_bottom = ( ymax_ - ymin_ ) * margin_ratio_bottom_;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  <span class="keywordtype">string</span> name = name_ + title_ + <span class="stringliteral">&quot;hframe&quot;</span> + <a class="code" href="_string_operation_8cc.html#acfe1f91ad92436380fdacb590acba3c0">Int2String</a>( id_ );</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  TH1F* frame = <span class="keyword">new</span> TH1F( name.c_str() , title_.c_str() , 1000, xmin_ - margin_left, xmax_ + margin_right );</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  frame-&gt;SetMinimum( ymin_ - margin_bottom );</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  frame-&gt;SetMaximum( ymax_ + margin_top );</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  frame-&gt;SetStats( <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  frame-&gt;GetXaxis()-&gt;CenterTitle( <span class="keyword">true</span> );</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  frame-&gt;GetYaxis()-&gt;CenterTitle( <span class="keyword">true</span> );</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  frame-&gt;GetXaxis()-&gt;SetTitleOffset( offset_title_x_ );</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  frame-&gt;GetYaxis()-&gt;SetTitleOffset( offset_title_y_ );</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  frame-&gt;Draw();</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  option = <a class="code" href="_string_operation_8cc.html#a5ebe0c68b60fcd6dd8caf0fa483306db">Replace</a>( option , <span class="stringliteral">&quot;sames&quot;</span> , <span class="stringliteral">&quot;&quot;</span> );</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  option = <a class="code" href="_string_operation_8cc.html#a5ebe0c68b60fcd6dd8caf0fa483306db">Replace</a>( option , <span class="stringliteral">&quot;SAMES&quot;</span> , <span class="stringliteral">&quot;&quot;</span> );</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  option = <a class="code" href="_string_operation_8cc.html#a5ebe0c68b60fcd6dd8caf0fa483306db">Replace</a>( option , <span class="stringliteral">&quot;same&quot;</span>  , <span class="stringliteral">&quot;&quot;</span> );</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  option = <a class="code" href="_string_operation_8cc.html#a5ebe0c68b60fcd6dd8caf0fa483306db">Replace</a>( option , <span class="stringliteral">&quot;SAME&quot;</span>  , <span class="stringliteral">&quot;&quot;</span> );</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  <span class="comment">// configuration for stats box</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  <span class="keywordtype">double</span> stats_height = (stats_ymax - stats_ymin) / vhist_.size();</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;      vhist_[i]-&gt;Draw( (option + <span class="stringliteral">&quot;SAMES&quot;</span> ).c_str() );</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        </div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;      <a class="code" href="_pave_operation_8hh.html#af71e38570520000cdd3b0652d5f756a3">DrawStats</a>( vhist_[i] , </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;             stats_xmin ,  </div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;             stats_ymax - stats_height * (i+1) ,</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;             stats_xmax,</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;             stats_ymax - stats_height * i );</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    }</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    {</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;      vhist_[i]-&gt;Draw( (option + <span class="stringliteral">&quot;SAME&quot;</span> ).c_str() );</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    }</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;      <span class="keywordflow">if</span>( i==0 &amp;&amp; bl_title_==<span class="keyword">true</span> )</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <a class="code" href="_pave_operation_8cc.html#ad6dafc6a523f1e088d11565ccde4db88">DrawTitle</a>( title_size_ );</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    }</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    </div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  id_++;</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;}</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i=0; i&lt;vhist_.size(); i++ )</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    {</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;      <span class="keywordflow">if</span>( bl_stats_ == <span class="keyword">true</span> )</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    {</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;      vhist_[i]-&gt;Draw( (option + <span class="stringliteral">&quot;SAMES&quot;</span> ).c_str() );</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        </div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;      <a class="code" href="_pave_operation_8hh.html#af71e38570520000cdd3b0652d5f756a3">DrawStats</a>( vhist_[i] , </div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;             stats_xmin ,  </div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;             stats_ymax - stats_height * (i+1) ,</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;             stats_xmax,</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;             stats_ymax - stats_height * i );</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    }</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    {</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;      vhist_[i]-&gt;Draw( (option + <span class="stringliteral">&quot;SAME&quot;</span> ).c_str() );</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    }</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;      <span class="keywordflow">if</span>( i==0 &amp;&amp; bl_title_==<span class="keyword">true</span> )</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <a class="code" href="_pave_operation_8cc.html#ad6dafc6a523f1e088d11565ccde4db88">DrawTitle</a>( title_size_ );</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    }</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;  id_++;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;}</div>
 <div class="ttc" id="_string_operation_8cc_html_acfe1f91ad92436380fdacb590acba3c0"><div class="ttname"><a href="_string_operation_8cc.html#acfe1f91ad92436380fdacb590acba3c0">Int2String</a></div><div class="ttdeci">string Int2String(int num)</div><div class="ttdoc">int を string 型に変換し返す。 </div><div class="ttdef"><b>Definition:</b> <a href="_string_operation_8cc_source.html#l00182">StringOperation.cc:182</a></div></div>
 <div class="ttc" id="_string_operation_8cc_html_a5ebe0c68b60fcd6dd8caf0fa483306db"><div class="ttname"><a href="_string_operation_8cc.html#a5ebe0c68b60fcd6dd8caf0fa483306db">Replace</a></div><div class="ttdeci">string Replace(string word, string old_key, string new_key)</div><div class="ttdoc">word から old_key を探し， new_key に置き換えた文字列を返す。word は変更しない。 </div><div class="ttdef"><b>Definition:</b> <a href="_string_operation_8cc_source.html#l00051">StringOperation.cc:51</a></div></div>
 <div class="ttc" id="_pave_operation_8cc_html_ad6dafc6a523f1e088d11565ccde4db88"><div class="ttname"><a href="_pave_operation_8cc.html#ad6dafc6a523f1e088d11565ccde4db88">DrawTitle</a></div><div class="ttdeci">void DrawTitle(TVirtualPad *pad, Double_t text_size)</div><div class="ttdef"><b>Definition:</b> <a href="_pave_operation_8cc_source.html#l00010">PaveOperation.cc:10</a></div></div>
@@ -497,8 +506,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00321">321</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;{ <span class="keywordflow">return</span> name_;};</div>
+<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00327">327</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;{ <span class="keywordflow">return</span> name_;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -529,8 +538,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00328">328</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;{ <span class="keywordflow">return</span> title_;};</div>
+<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00334">334</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;{ <span class="keywordflow">return</span> title_;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -547,22 +556,22 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00428">428</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;{</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;  <span class="keywordtype">int</span> width = 15;</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;  cout &lt;&lt; setw(width) &lt;&lt; <span class="stringliteral">&quot;name&quot;</span>   &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; name_   &lt;&lt; endl;</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;  cout &lt;&lt; setw(width) &lt;&lt; <span class="stringliteral">&quot;title&quot;</span>  &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; title_  &lt;&lt; endl;</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;  cout &lt;&lt; setw(width) &lt;&lt; <span class="stringliteral">&quot;option&quot;</span> &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; option_ &lt;&lt; endl;</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;  cout &lt;&lt; setw(width) &lt;&lt; <span class="stringliteral">&quot;x &amp; margin(%)&quot;</span> &lt;&lt; <span class="stringliteral">&quot;:&quot;</span></div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;       &lt;&lt; setw(width) &lt;&lt; setprecision(5) &lt;&lt; xmin_ &lt;&lt; <span class="stringliteral">&quot; - &quot;</span> &lt;&lt; margin_ratio_left_ &lt;&lt; <span class="stringliteral">&quot; &lt;==&gt; &quot;</span></div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;       &lt;&lt; setw(width) &lt;&lt; setprecision(5) &lt;&lt; xmax_ &lt;&lt; <span class="stringliteral">&quot; - &quot;</span> &lt;&lt; margin_ratio_right_</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;       &lt;&lt; endl;</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;  cout &lt;&lt; setw(width) &lt;&lt; <span class="stringliteral">&quot;y &amp; margin(%)&quot;</span> &lt;&lt; <span class="stringliteral">&quot;:&quot;</span></div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;       &lt;&lt; setw(width) &lt;&lt; setprecision(5) &lt;&lt; ymin_ &lt;&lt; <span class="stringliteral">&quot; - &quot;</span> &lt;&lt; margin_ratio_bottom_ &lt;&lt; <span class="stringliteral">&quot; &lt;==&gt; &quot;</span></div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;       &lt;&lt; setw(width) &lt;&lt; setprecision(5) &lt;&lt; ymax_ &lt;&lt; <span class="stringliteral">&quot; - &quot;</span> &lt;&lt; margin_ratio_top_</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;       &lt;&lt; endl;</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00434">434</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;{</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;  <span class="keywordtype">int</span> width = 15;</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;  cout &lt;&lt; setw(width) &lt;&lt; <span class="stringliteral">&quot;name&quot;</span>   &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; name_   &lt;&lt; endl;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;  cout &lt;&lt; setw(width) &lt;&lt; <span class="stringliteral">&quot;title&quot;</span>  &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; title_  &lt;&lt; endl;</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;  cout &lt;&lt; setw(width) &lt;&lt; <span class="stringliteral">&quot;option&quot;</span> &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; option_ &lt;&lt; endl;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;  cout &lt;&lt; setw(width) &lt;&lt; <span class="stringliteral">&quot;x &amp; margin(%)&quot;</span> &lt;&lt; <span class="stringliteral">&quot;:&quot;</span></div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;       &lt;&lt; setw(width) &lt;&lt; setprecision(5) &lt;&lt; xmin_ &lt;&lt; <span class="stringliteral">&quot; - &quot;</span> &lt;&lt; margin_ratio_left_ &lt;&lt; <span class="stringliteral">&quot; &lt;==&gt; &quot;</span></div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;       &lt;&lt; setw(width) &lt;&lt; setprecision(5) &lt;&lt; xmax_ &lt;&lt; <span class="stringliteral">&quot; - &quot;</span> &lt;&lt; margin_ratio_right_</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;       &lt;&lt; endl;</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;  cout &lt;&lt; setw(width) &lt;&lt; <span class="stringliteral">&quot;y &amp; margin(%)&quot;</span> &lt;&lt; <span class="stringliteral">&quot;:&quot;</span></div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;       &lt;&lt; setw(width) &lt;&lt; setprecision(5) &lt;&lt; ymin_ &lt;&lt; <span class="stringliteral">&quot; - &quot;</span> &lt;&lt; margin_ratio_bottom_ &lt;&lt; <span class="stringliteral">&quot; &lt;==&gt; &quot;</span></div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;       &lt;&lt; setw(width) &lt;&lt; setprecision(5) &lt;&lt; ymax_ &lt;&lt; <span class="stringliteral">&quot; - &quot;</span> &lt;&lt; margin_ratio_top_</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;       &lt;&lt; endl;</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -594,8 +603,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00241">241</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;{ bl_draw_no_entry_ = bl ;};</div>
+<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00244">244</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;{ bl_draw_no_entry_ = bl ;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -629,8 +638,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00160">160</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;{ margin_ratio_bottom_ = ratio;};</div>
+<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00163">163</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;{ margin_ratio_bottom_ = ratio;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -654,13 +663,13 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00358">358</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;{</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  <a class="code" href="class_multi_hist.html#a7d1dda179d5f4475762d65f3ebca7ae4">SetMarginLeft</a> ( ratio );</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  <a class="code" href="class_multi_hist.html#afd1548917ff5225fa7934f7be4647b67">SetMarginRight</a>( ratio );</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;};</div>
-<div class="ttc" id="class_multi_hist_html_a7d1dda179d5f4475762d65f3ebca7ae4"><div class="ttname"><a href="class_multi_hist.html#a7d1dda179d5f4475762d65f3ebca7ae4">MultiHist::SetMarginLeft</a></div><div class="ttdeci">void SetMarginLeft(double ratio)</div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00167">MultiHist.hh:167</a></div></div>
-<div class="ttc" id="class_multi_hist_html_afd1548917ff5225fa7934f7be4647b67"><div class="ttname"><a href="class_multi_hist.html#afd1548917ff5225fa7934f7be4647b67">MultiHist::SetMarginRight</a></div><div class="ttdeci">void SetMarginRight(double ratio)</div><div class="ttdoc">set right margin in % </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00153">MultiHist.hh:153</a></div></div>
+<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00364">364</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;{</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  <a class="code" href="class_multi_hist.html#a7d1dda179d5f4475762d65f3ebca7ae4">SetMarginLeft</a> ( ratio );</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  <a class="code" href="class_multi_hist.html#afd1548917ff5225fa7934f7be4647b67">SetMarginRight</a>( ratio );</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;};</div>
+<div class="ttc" id="class_multi_hist_html_a7d1dda179d5f4475762d65f3ebca7ae4"><div class="ttname"><a href="class_multi_hist.html#a7d1dda179d5f4475762d65f3ebca7ae4">MultiHist::SetMarginLeft</a></div><div class="ttdeci">void SetMarginLeft(double ratio)</div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00170">MultiHist.hh:170</a></div></div>
+<div class="ttc" id="class_multi_hist_html_afd1548917ff5225fa7934f7be4647b67"><div class="ttname"><a href="class_multi_hist.html#afd1548917ff5225fa7934f7be4647b67">MultiHist::SetMarginRight</a></div><div class="ttdeci">void SetMarginRight(double ratio)</div><div class="ttdoc">set right margin in % </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00156">MultiHist.hh:156</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -692,8 +701,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00167">167</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;{ margin_ratio_left_ = ratio;};</div>
+<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00170">170</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{ margin_ratio_left_ = ratio;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -727,8 +736,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00153">153</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;{ margin_ratio_right_ = ratio;};</div>
+<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00156">156</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;{ margin_ratio_right_ = ratio;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -752,13 +761,13 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00364">364</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;{</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  <a class="code" href="class_multi_hist.html#aec0179ed3ebfb930f897ab234ca04494">SetMarginH</a>( ratio );</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  <a class="code" href="class_multi_hist.html#a3c3ee5df728d50f5baeaf2bddf491d5f">SetMarginV</a>( ratio );</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;}</div>
-<div class="ttc" id="class_multi_hist_html_a3c3ee5df728d50f5baeaf2bddf491d5f"><div class="ttname"><a href="class_multi_hist.html#a3c3ee5df728d50f5baeaf2bddf491d5f">MultiHist::SetMarginV</a></div><div class="ttdeci">void SetMarginV(double ratio)</div><div class="ttdoc">Set margin in %. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8cc_source.html#l00351">MultiHist.cc:351</a></div></div>
-<div class="ttc" id="class_multi_hist_html_aec0179ed3ebfb930f897ab234ca04494"><div class="ttname"><a href="class_multi_hist.html#aec0179ed3ebfb930f897ab234ca04494">MultiHist::SetMarginH</a></div><div class="ttdeci">void SetMarginH(double ratio)</div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8cc_source.html#l00358">MultiHist.cc:358</a></div></div>
+<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00370">370</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;{</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  <a class="code" href="class_multi_hist.html#aec0179ed3ebfb930f897ab234ca04494">SetMarginH</a>( ratio );</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  <a class="code" href="class_multi_hist.html#a3c3ee5df728d50f5baeaf2bddf491d5f">SetMarginV</a>( ratio );</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;}</div>
+<div class="ttc" id="class_multi_hist_html_a3c3ee5df728d50f5baeaf2bddf491d5f"><div class="ttname"><a href="class_multi_hist.html#a3c3ee5df728d50f5baeaf2bddf491d5f">MultiHist::SetMarginV</a></div><div class="ttdeci">void SetMarginV(double ratio)</div><div class="ttdoc">Set margin in %. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8cc_source.html#l00357">MultiHist.cc:357</a></div></div>
+<div class="ttc" id="class_multi_hist_html_aec0179ed3ebfb930f897ab234ca04494"><div class="ttname"><a href="class_multi_hist.html#aec0179ed3ebfb930f897ab234ca04494">MultiHist::SetMarginH</a></div><div class="ttdeci">void SetMarginH(double ratio)</div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8cc_source.html#l00364">MultiHist.cc:364</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -792,8 +801,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00146">146</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{ margin_ratio_top_ = ratio;};</div>
+<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00149">149</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;{ margin_ratio_top_ = ratio;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -819,14 +828,14 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00351">351</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;{</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    </div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;  <a class="code" href="class_multi_hist.html#a3b683572bce8d177a524b31472179f3a">SetMarginTop</a>   ( ratio );</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  <a class="code" href="class_multi_hist.html#a7b2c6e93485c4553374800c5f02bfa81">SetMarginBottom</a>( ratio );</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;};</div>
-<div class="ttc" id="class_multi_hist_html_a3b683572bce8d177a524b31472179f3a"><div class="ttname"><a href="class_multi_hist.html#a3b683572bce8d177a524b31472179f3a">MultiHist::SetMarginTop</a></div><div class="ttdeci">void SetMarginTop(double ratio)</div><div class="ttdoc">Set margin in %. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00146">MultiHist.hh:146</a></div></div>
-<div class="ttc" id="class_multi_hist_html_a7b2c6e93485c4553374800c5f02bfa81"><div class="ttname"><a href="class_multi_hist.html#a7b2c6e93485c4553374800c5f02bfa81">MultiHist::SetMarginBottom</a></div><div class="ttdeci">void SetMarginBottom(double ratio)</div><div class="ttdoc">Set margin in %. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00160">MultiHist.hh:160</a></div></div>
+<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00357">357</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;{</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  <a class="code" href="class_multi_hist.html#a3b683572bce8d177a524b31472179f3a">SetMarginTop</a>   ( ratio );</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  <a class="code" href="class_multi_hist.html#a7b2c6e93485c4553374800c5f02bfa81">SetMarginBottom</a>( ratio );</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;};</div>
+<div class="ttc" id="class_multi_hist_html_a3b683572bce8d177a524b31472179f3a"><div class="ttname"><a href="class_multi_hist.html#a3b683572bce8d177a524b31472179f3a">MultiHist::SetMarginTop</a></div><div class="ttdeci">void SetMarginTop(double ratio)</div><div class="ttdoc">Set margin in %. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00149">MultiHist.hh:149</a></div></div>
+<div class="ttc" id="class_multi_hist_html_a7b2c6e93485c4553374800c5f02bfa81"><div class="ttname"><a href="class_multi_hist.html#a7b2c6e93485c4553374800c5f02bfa81">MultiHist::SetMarginBottom</a></div><div class="ttdeci">void SetMarginBottom(double ratio)</div><div class="ttdoc">Set margin in %. </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8hh_source.html#l00163">MultiHist.hh:163</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -861,8 +870,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00139">139</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;{ option_ = option;};</div>
+<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00142">142</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;{ option_ = option;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -894,8 +903,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00249">249</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;{ bl_stats_ = bl;};</div>
+<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00252">252</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;{ bl_stats_ = bl;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -929,11 +938,11 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00377">377</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;{</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;  stats_xmax_ = xmax;</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;  stats_ymax_ = ymax;</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00383">383</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;{</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;  stats_xmax_ = xmax;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;  stats_ymax_ = ymax;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -970,12 +979,12 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00370">370</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;{</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  stats_width_ = width;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  stats_height_ = height;  </div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00376">376</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;{</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;  </div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;  stats_width_ = width;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;  stats_height_ = height;  </div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1027,14 +1036,14 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>all values are in ratio </p>
 
-<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00383">383</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;{</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;  stats_xmin_ = xmin;</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  stats_ymin_ = ymin;</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;  stats_xmax_ = xmax;</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  stats_ymax_ = ymax;</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00389">389</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;{</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;  stats_xmin_ = xmin;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;  stats_ymin_ = ymin;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  stats_xmax_ = xmax;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  stats_ymax_ = ymax;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1064,18 +1073,18 @@ Public Member Functions</h2></td></tr>
 <li>area, Area, AREA : you can specify are of stats with void <a class="el" href="class_multi_hist.html#acf6ee1204b3942a102b2c20d6183bb3e" title="set position of box for statistic ">SetStatsPosition( double xmin, double ymin, double xmax, double ymax )</a>. The area will be devided into a number of hist and stats boxes will be drawn in specified direction. </li>
 </ul>
 
-<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00392">392</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;{</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  <span class="keywordflow">if</span>( type == <span class="stringliteral">&quot;area&quot;</span> || type == <span class="stringliteral">&quot;Area&quot;</span> || type == <span class="stringliteral">&quot;AREA&quot;</span> )</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <a class="code" href="class_multi_hist.html#a54f75be1b9e0afad94705bb0722cdb04">SetStatsType</a>( 0 );</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span>( type == <span class="stringliteral">&quot;box&quot;</span> || type == <span class="stringliteral">&quot;Box&quot;</span> || type == <span class="stringliteral">&quot;BOX&quot;</span> )</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <a class="code" href="class_multi_hist.html#a54f75be1b9e0afad94705bb0722cdb04">SetStatsType</a>( 1 );</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;  <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <a class="code" href="class_multi_hist.html#a54f75be1b9e0afad94705bb0722cdb04">SetStatsType</a>( -1 );</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;}</div>
-<div class="ttc" id="class_multi_hist_html_a54f75be1b9e0afad94705bb0722cdb04"><div class="ttname"><a href="class_multi_hist.html#a54f75be1b9e0afad94705bb0722cdb04">MultiHist::SetStatsType</a></div><div class="ttdeci">void SetStatsType(string type)</div><div class="ttdoc">set an arrangement type of stats box </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8cc_source.html#l00392">MultiHist.cc:392</a></div></div>
+<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00398">398</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;{</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;  <span class="keywordflow">if</span>( type == <span class="stringliteral">&quot;area&quot;</span> || type == <span class="stringliteral">&quot;Area&quot;</span> || type == <span class="stringliteral">&quot;AREA&quot;</span> )</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <a class="code" href="class_multi_hist.html#a54f75be1b9e0afad94705bb0722cdb04">SetStatsType</a>( 0 );</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span>( type == <span class="stringliteral">&quot;box&quot;</span> || type == <span class="stringliteral">&quot;Box&quot;</span> || type == <span class="stringliteral">&quot;BOX&quot;</span> )</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <a class="code" href="class_multi_hist.html#a54f75be1b9e0afad94705bb0722cdb04">SetStatsType</a>( 1 );</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <a class="code" href="class_multi_hist.html#a54f75be1b9e0afad94705bb0722cdb04">SetStatsType</a>( -1 );</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;}</div>
+<div class="ttc" id="class_multi_hist_html_a54f75be1b9e0afad94705bb0722cdb04"><div class="ttname"><a href="class_multi_hist.html#a54f75be1b9e0afad94705bb0722cdb04">MultiHist::SetStatsType</a></div><div class="ttdeci">void SetStatsType(string type)</div><div class="ttdoc">set an arrangement type of stats box </div><div class="ttdef"><b>Definition:</b> <a href="_multi_hist_8cc_source.html#l00398">MultiHist.cc:398</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1107,8 +1116,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00233">233</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;{ stats_type_ = num ;};</div>
+<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00236">236</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;{ stats_type_ = num ;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1134,8 +1143,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00256">256</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;{ title_ = title;};</div>
+<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00259">259</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;{ title_ = title;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1171,8 +1180,62 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00263">263</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;{ bl_title_ = bl;};</div>
+<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00269">269</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;{ bl_title_ = bl;};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a07ef8c0f59f0fbb7af379f8ba78d7749"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MultiHist::SetTitleOffsetX </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>offset</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00261">261</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;{ offset_title_x_ = offset;};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aeee54d36f6b2218bb43d7e2e82233fcb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MultiHist::SetTitleOffsetY </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>offset</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00262">262</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;{ offset_title_y_ = offset;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1204,8 +1267,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00271">271</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;{ title_size_ = size;};</div>
+<p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00277">277</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;{ title_size_ = size;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1229,11 +1292,11 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00410">410</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;{</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;  xmax_force_ = val;</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;  bl_force_xmax_ = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;};</div>
+<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00416">416</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;{</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;  xmax_force_ = val;</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;  bl_force_xmax_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1257,11 +1320,11 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00404">404</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;{</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;  xmin_force_ = val;</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;  bl_force_xmin_ = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;};</div>
+<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00410">410</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;{</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;  xmin_force_ = val;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;  bl_force_xmin_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1285,11 +1348,11 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00422">422</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;{</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;  ymax_force_ = val;</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;  bl_force_ymax_ = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;};</div>
+<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00428">428</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;{</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;  ymax_force_ = val;</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;  bl_force_ymax_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1313,11 +1376,11 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00416">416</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;{</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;  ymin_force_ = val;</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;  bl_force_ymin_ = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;};</div>
+<p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00422">422</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;{</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;  ymin_force_ = val;</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;  bl_force_ymin_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -18,6 +18,8 @@ var searchData=
   ['setstatstype',['SetStatsType',['../class_multi_hist.html#a54f75be1b9e0afad94705bb0722cdb04',1,'MultiHist::SetStatsType(string type)'],['../class_multi_hist.html#a86bb47ee8070f72ad96de6326e1a5913',1,'MultiHist::SetStatsType(int num)']]],
   ['settitle',['SetTitle',['../class_multi_hist.html#aff7ce53aead01e156cb90b81a8f9df94',1,'MultiHist']]],
   ['settitledraw',['SetTitleDraw',['../class_multi_hist.html#a4f74e4a5a75e8879f5eb4a6c20bf0237',1,'MultiHist']]],
+  ['settitleoffsetx',['SetTitleOffsetX',['../class_multi_hist.html#a07ef8c0f59f0fbb7af379f8ba78d7749',1,'MultiHist']]],
+  ['settitleoffsety',['SetTitleOffsetY',['../class_multi_hist.html#aeee54d36f6b2218bb43d7e2e82233fcb',1,'MultiHist']]],
   ['settitlesize',['SetTitleSize',['../class_multi_hist.html#ad4f7c1176694e3fc90116c25d27f00c8',1,'MultiHist']]],
   ['setxmax',['SetXmax',['../class_multi_hist.html#a72d648fdaeaaee52ae40ef4bf7d974d1',1,'MultiHist']]],
   ['setxmin',['SetXmin',['../class_multi_hist.html#acce6dc067422dbf9edf4de2073be886f',1,'MultiHist']]],

@@ -216,16 +216,18 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    c = <span class="keyword">new</span> TCanvas( name.c_str(), title.c_str(), 1200, 800 );</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( shape == <span class="stringliteral">&quot;3:2&quot;</span> )</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    c = <span class="keyword">new</span> TCanvas( name.c_str(), title.c_str(), 1200, 800 );</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( shape == <span class="stringliteral">&quot;double&quot;</span> )</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    c = <span class="keyword">new</span> TCanvas( name.c_str(), title.c_str(), 1600, 800 );</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    c = <span class="keyword">new</span> TCanvas( name.c_str(), title.c_str(), 1600, 900 );</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  c-&gt;SetLogy( logy );</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( shape == <span class="stringliteral">&quot;presen&quot;</span> )</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    c = <span class="keyword">new</span> TCanvas( name.c_str(), title.c_str(), 255, 170 );</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( shape == <span class="stringliteral">&quot;double&quot;</span> )</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    c = <span class="keyword">new</span> TCanvas( name.c_str(), title.c_str(), 1600, 800 );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    c = <span class="keyword">new</span> TCanvas( name.c_str(), title.c_str(), 1600, 900 );</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="_canvas_operation_8cc.html#a4a48668a653446329783d49706968cf4">CanvasSetting</a>(c);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">return</span> c;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  c-&gt;SetLogy( logy );</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="_canvas_operation_8cc.html#a4a48668a653446329783d49706968cf4">CanvasSetting</a>(c);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">return</span> c;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="ttc" id="_canvas_operation_8cc_html_a4a48668a653446329783d49706968cf4"><div class="ttname"><a href="_canvas_operation_8cc.html#a4a48668a653446329783d49706968cf4">CanvasSetting</a></div><div class="ttdeci">void CanvasSetting()</div><div class="ttdef"><b>Definition:</b> <a href="_canvas_operation_8cc_source.html#l00020">CanvasOperation.cc:20</a></div></div>
 </div><!-- fragment -->
 </div>
