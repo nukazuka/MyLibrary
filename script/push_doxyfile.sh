@@ -28,7 +28,7 @@ doxygen
 cd document
 rename "s/_canvas/canvas/" _canvas*
 sed -i -e "s/_canvas/canvas/g" *.html
-git add .
+git add 
 git commit -m "$1"
 git push origin gh-pages
 cd ..

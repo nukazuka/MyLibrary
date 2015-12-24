@@ -327,9 +327,7 @@ public:
   string GetName(){ return name_;};
   /*!
     @fn string GetTitle()
-    @param
-    @brief
-    @details
+    @brief return the title of this object
   */
   string GetTitle(){ return title_;};
 
