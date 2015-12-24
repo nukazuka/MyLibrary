@@ -1,9 +1,0 @@
-#/bin/bash
-
-DIR_MYLIBRARY=
-
-LIBS="-lStringOperation "
-LIBS+="-lStyle "
-LIBS+="-lCanvasOperation "
-LIBS+="-lIoOperation "
-echo "-L${DIR_MYLIBRARY} ${LIBS}"
