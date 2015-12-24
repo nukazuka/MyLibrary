@@ -83,8 +83,7 @@ string Replace( string word, string old_key, string new_key );
   @param cut : 対象となる文字列
   @brief ファイル名に cut 情報をのせるために作った。
   @return cut にある C/C++ の関係演算子を文字列に置き換えたもの。
-
- */
+*/
 string Replace4Cut( string cut );
 
 /*!

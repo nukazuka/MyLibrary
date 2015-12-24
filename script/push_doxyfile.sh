@@ -39,12 +39,28 @@ fi
 # git push origin master
 
 
+# checkout to gh-pages in document directory
 cd document
 git checkout gh-pages
+
+# go to parent directory and make doxygen files
 cd ..
 doxygen
-rename "s/_canvas/canvas/" _canvas*
-sed -i -e "s/_canvas/canvas/g" *.html
+
+# back to document directory
+cd document
+
+# rename files which begin with"_" 
+for file in `ls _*`
+do
+    new_file=`echo $file | cut -c2-`
+    mv ${file} ${new_file}
+    sed -i -e "s/${file}/${new_file}/g" *.html
+done
+
+#rename -f "s/_canvas/canvas/" _canvas*
+#sed -i -e "s/_canvas/canvas/g" *.html
+
 git add -A
 git commit -m "$1"
 git push origin gh-pages
