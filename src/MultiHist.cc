@@ -282,6 +282,7 @@ void MultiHist::DeleteAllHist()
 
 void MultiHist::Draw( string option )
 {
+
   if( stats_type_ == 0 )
     Draw( option, stats_xmin_ , stats_ymin_ , stats_xmax_ , stats_ymax_ );
   else if( stats_type_ == 1 )
@@ -291,6 +292,7 @@ void MultiHist::Draw( string option )
       double ymin = stats_ymax_ - stats_height_ * vhist_.size();
       Draw( option, xmin, ymin, stats_xmax_ , stats_ymax_ );
     }
+
 }
 
 void MultiHist::Draw( string option,
