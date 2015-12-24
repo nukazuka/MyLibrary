@@ -215,7 +215,7 @@ public:
     @param xmax right side of stats box
     @param ymax bottom side of stats box
     @brief set point 
-    @details aaa
+    @details 
   */
   void SetStatsBoxPoint( double xmax , double ymax );
 
@@ -231,8 +231,8 @@ public:
   /*!
     @fn void SetStatsType( int num )
     @param num an arrangement of stats box 
-    @brief
-    @details
+    @brief set type of stats box with int
+    @details user should use void MultiHist::SetStatsType( string type )
   */
   void SetStatsType( int num ){ stats_type_ = num ;};
 

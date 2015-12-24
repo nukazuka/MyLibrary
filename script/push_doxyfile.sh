@@ -24,24 +24,29 @@ fi
 
 
 
-doxygen
+# doxygen
+# cd document
+# #rename "s/_canvas/canvas/" _canvas*
+# #sed -i -e "s/_canvas/canvas/g" *.html
+# echo -e "\n\n git add ." 
+# git add -A
+# git commit -m "$1"
+# git push origin gh-pages
+
+# cd ..
+# git add -A 
+# git commit -m "$1"
+# git push origin master
+
+
 cd document
-#rename "s/_canvas/canvas/" _canvas*
-#sed -i -e "s/_canvas/canvas/g" *.html
-echo -e "\n\n git add ." 
-git add -A
-
-echo -e "\n\n git commit $1 " 
-git commit -m "$1"
-
-echo -e "\n\n git push gh-pages"
-git push origin gh-pages
-
+git checkout gh-pages
 cd ..
-echo -e "\n\n git add -A" 
-git add -A 
-echo -e "\n\n git commit -m $1"
+doxygen
+rename "s/_canvas/canvas/" _canvas*
+sed -i -e "s/_canvas/canvas/g" *.html
+git add -A
 git commit -m "$1"
-echo -e "\n\n git push origin master"
-git push origin master
+git push origin gh-pages
+git checkout
 
