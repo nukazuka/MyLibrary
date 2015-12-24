@@ -148,6 +148,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a54f75be1b9e0afad94705bb0722cdb04"><td class="mdescLeft">&#160;</td><td class="mdescRight">set an arrangement type of stats box  <a href="#a54f75be1b9e0afad94705bb0722cdb04">More...</a><br/></td></tr>
 <tr class="separator:a54f75be1b9e0afad94705bb0722cdb04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86bb47ee8070f72ad96de6326e1a5913"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_hist.html#a86bb47ee8070f72ad96de6326e1a5913">SetStatsType</a> (int num)</td></tr>
+<tr class="memdesc:a86bb47ee8070f72ad96de6326e1a5913"><td class="mdescLeft">&#160;</td><td class="mdescRight">set type of stats box with int  <a href="#a86bb47ee8070f72ad96de6326e1a5913">More...</a><br/></td></tr>
 <tr class="separator:a86bb47ee8070f72ad96de6326e1a5913"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c3b8c4d0056429497919c5738a7e0fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_hist.html#a4c3b8c4d0056429497919c5738a7e0fb">SetDrawNoEntry</a> (bool bl)</td></tr>
 <tr class="separator:a4c3b8c4d0056429497919c5738a7e0fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -934,11 +935,10 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">xmax</td><td>right side of stats box </td></tr>
-    <tr><td class="paramname">ymax</td><td>bottom side of stats box</td></tr>
+    <tr><td class="paramname">ymax</td><td>bottom side of stats box </td></tr>
   </table>
   </dd>
 </dl>
-<p>aaa </p>
 
 <p>Definition at line <a class="el" href="_multi_hist_8cc_source.html#l00383">383</a> of file <a class="el" href="_multi_hist_8cc_source.html">MultiHist.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;{</div>
@@ -1111,12 +1111,15 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>set type of stats box with int </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">num</td><td>an arrangement of stats box </td></tr>
+    <tr><td class="paramname">num</td><td>an arrangement of stats box</td></tr>
   </table>
   </dd>
 </dl>
+<p>user should use void <a class="el" href="class_multi_hist.html#a54f75be1b9e0afad94705bb0722cdb04" title="set an arrangement type of stats box ">MultiHist::SetStatsType( string type )</a> </p>
 
 <p>Definition at line <a class="el" href="_multi_hist_8hh_source.html#l00237">237</a> of file <a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
 <div class="fragment"><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;{ stats_type_ = num ;};</div>
