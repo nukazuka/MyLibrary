@@ -29,7 +29,7 @@ cd document
 #rename "s/_canvas/canvas/" _canvas*
 #sed -i -e "s/_canvas/canvas/g" *.html
 echo -e "\n\n git add ." 
-git add .
+git add -A
 
 echo -e "\n\n git commit $1 " 
 git commit -m "$1"
