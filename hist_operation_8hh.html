@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>MyLibrary: Todo List</title>
+<title>MyLibrary: include/HistOperation.hh File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -38,9 +38,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -59,6 +59,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -73,24 +79,68 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Todo List </div>  </div>
+<div class="title">HistOperation.hh File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><dl class="reflist">
-<dt><a class="anchor" id="_todo000002"></a>Global <a class="el" href="string_operation_8cc.html#a502382ab8ca7cdbeb26bf9835c51817d">Double2String</a>  (double num)</dt>
-<dd>有効数字をどうするか？  </dd>
-<dt><a class="anchor" id="_todo000001"></a>Class <a class="el" href="class_multi_hist.html">MultiHist</a>  </dt>
-<dd><h1>クラスに付け加えるもの</h1>
-<ul>
-<li>統計情報の位置指定をできるようにする。</li>
-<li>draw_no_entry を実装する（ソースの Ranges() not ready の箇所） </li>
-</ul>
-</dd>
-</dl>
-</div></div><!-- contents -->
+<div class="textblock"><code>#include &quot;<a class="el" href="headers_s_l_8hh_source.html">HeadersSL.hh</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="headers_root_8hh_source.html">HeadersRoot.hh</a>&quot;</code><br/>
+</div>
+<p><a href="hist_operation_8hh_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ad2717505eb810ce3759e7e3ef6dc02a0"><td class="memTemplParams" colspan="2">template&lt;typename TH &gt; </td></tr>
+<tr class="memitem:ad2717505eb810ce3759e7e3ef6dc02a0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="hist_operation_8hh.html#ad2717505eb810ce3759e7e3ef6dc02a0">HistSetting</a> (TH *hist, int color)</td></tr>
+<tr class="separator:ad2717505eb810ce3759e7e3ef6dc02a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ad2717505eb810ce3759e7e3ef6dc02a0"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TH &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void HistSetting </td>
+          <td>(</td>
+          <td class="paramtype">TH *&#160;</td>
+          <td class="paramname"><em>hist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="hist_operation_8hh_source.html#l00042">42</a> of file <a class="el" href="hist_operation_8hh_source.html">HistOperation.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  hist-&gt;Sumw2();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  hist-&gt;SetLineColor( color );</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  hist-&gt;SetMarkerColor( color );</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  hist-&gt;SetLineWidth( 2 );</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

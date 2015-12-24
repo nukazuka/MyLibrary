@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>MyLibrary: Todo List</title>
+<title>MyLibrary: src/NumericalOperation.cc Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -38,9 +38,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -59,6 +59,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -73,24 +79,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">Todo List </div>  </div>
+<div class="title">NumericalOperation.cc</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><dl class="reflist">
-<dt><a class="anchor" id="_todo000002"></a>Global <a class="el" href="string_operation_8cc.html#a502382ab8ca7cdbeb26bf9835c51817d">Double2String</a>  (double num)</dt>
-<dd>有効数字をどうするか？  </dd>
-<dt><a class="anchor" id="_todo000001"></a>Class <a class="el" href="class_multi_hist.html">MultiHist</a>  </dt>
-<dd><h1>クラスに付け加えるもの</h1>
-<ul>
-<li>統計情報の位置指定をできるようにする。</li>
-<li>draw_no_entry を実装する（ソースの Ranges() not ready の箇所） </li>
-</ul>
-</dd>
-</dl>
-</div></div><!-- contents -->
+<a href="numerical_operation_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __CINT__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="numerical_operation_8hh.html">NumericalOperation.hh</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="numerical_operation_8hh.html#ab14f28e45cd4fa1554e8220ec5fe9cef">    7</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="numerical_operation_8cc.html#ab14f28e45cd4fa1554e8220ec5fe9cef">Deg2Rad</a>( <span class="keywordtype">double</span> degree )</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keywordflow">return</span> degree / 180.0 * TMath::Pi();</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="numerical_operation_8hh.html#a711e41604c6487bc1ad87edbd223706a">   12</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="numerical_operation_8cc.html#a711e41604c6487bc1ad87edbd223706a">Rad2Deg</a>( <span class="keywordtype">double</span> radian )</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordflow">return</span> radian / TMath::Pi() * 180.0;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="ttc" id="numerical_operation_8cc.html_ab14f28e45cd4fa1554e8220ec5fe9cef"><div class="ttname"><a href="numerical_operation_8cc.html#ab14f28e45cd4fa1554e8220ec5fe9cef">Deg2Rad</a></div><div class="ttdeci">double Deg2Rad(double degree)</div><div class="ttdef"><b>Definition:</b> <a href="numerical_operation_8cc_source.html#l00007">NumericalOperation.cc:7</a></div></div>
+<div class="ttc" id="numerical_operation_8cc.html_a711e41604c6487bc1ad87edbd223706a"><div class="ttname"><a href="numerical_operation_8cc.html#a711e41604c6487bc1ad87edbd223706a">Rad2Deg</a></div><div class="ttdeci">double Rad2Deg(double radian)</div><div class="ttdef"><b>Definition:</b> <a href="numerical_operation_8cc_source.html#l00012">NumericalOperation.cc:12</a></div></div>
+<div class="ttc" id="numerical_operation_8hh.html"><div class="ttname"><a href="numerical_operation_8hh.html">NumericalOperation.hh</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
