@@ -7,26 +7,30 @@
 using namespace std;
 
 
-void DrawTitle(TVirtualPad* pad, Double_t text_size )
+void DrawTitle(TVirtualPad* pad, Double_t text_size , int text_align )
 {
 
-  gPad->Update();
+  pad->Update();
 
   TPaveText* title = (TPaveText*)pad->GetPrimitive( "title" );
-  //      frame->SetTitleSize( 0.09 );
   title->SetTextSize( text_size );
-  title->SetTextAlign( 23 );
+  title->SetTextAlign( text_align );
   title->Draw( "same" );
+}
+
+void DrawTitle( Double_t text_size , int text_align)
+{
+  DrawTitle( gPad , text_size , text_align );
+}
+
+void DrawTitle(TVirtualPad* pad, Double_t text_size )
+{
+  DrawTitle( pad , text_size , 23);
 }
 
 void DrawTitle(TVirtualPad* pad)
 {
-  DrawTitle( pad , 0.09 );
-}
-
-void DrawTitle( Double_t text_size )
-{
-  DrawTitle( gPad , text_size );
+  DrawTitle( pad , 0.07 , 23);
 }
 
 /*

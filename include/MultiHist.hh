@@ -29,43 +29,44 @@ private:
   string title_;
   string option_;
 
-  double xmin_;
-  double xmax_;
-  double ymin_;
-  double ymax_;
+  double xmin_ = 1.0;
+  double xmax_ = 2.0;
+  double ymin_ = 1.0;
+  double ymax_ = 2.0;
 
-  double xmin_force_;
-  double ymin_force_;
-  double xmax_force_;
-  double ymax_force_;
+  double xmin_force_ = false;
+  double ymin_force_ = false;
+  double xmax_force_ = false;
+  double ymax_force_ = false;
 
-  double margin_ratio_top_;
-  double margin_ratio_right_;
-  double margin_ratio_bottom_;
-  double margin_ratio_left_;
+  double margin_ratio_top_    = 0.01;
+  double margin_ratio_right_  = 0.01;
+  double margin_ratio_bottom_ = 0.01;
+  double margin_ratio_left_   = 0.01;
 
-  double stats_xmin_;
-  double stats_ymin_;
-  double stats_xmax_;
-  double stats_ymax_;
+  double stats_xmin_ = 0.9;
+  double stats_ymin_ = 0.1;
+  double stats_xmax_ = 1.0;
+  double stats_ymax_ = 0.9;
 
-  double offset_title_x_;
-  double offset_title_y_;
+  double offset_title_x_ = 1.0;
+  double offset_title_y_ = 1.0;
 
-  double stats_width_;
-  double stats_height_;
+  double stats_width_  = 0.1;
+  double stats_height_ = 0.1;
 
-  double title_size_;
+  double title_size_ = 0.07;
+  int title_align_ = 23;
 
-  bool bl_stats_;
-  bool bl_title_;
-  bool bl_draw_no_entry_;
-  bool bl_force_xmin_;
-  bool bl_force_xmax_;
-  bool bl_force_ymin_;
-  bool bl_force_ymax_;
-  bool bl_logx_;
-  bool bl_logy_;
+  bool bl_stats_ = true;
+  bool bl_title_ = true;
+  bool bl_draw_no_entry_ = true;
+  bool bl_force_xmin_ = false;
+  bool bl_force_xmax_ = false;
+  bool bl_force_ymin_ = false;
+  bool bl_force_ymax_ = false;
+  bool bl_logx_ = false;
+  bool bl_logy_ = false;
   
   vector < TH1D* > vhist_;
 
@@ -270,12 +271,26 @@ public:
   void SetTitleDraw   ( bool bl )     { bl_title_ = bl;};
 
   /*!
+    @fn void SetTitleAlign( int align )
+    @param align align for title
+    @brief see [here][http://google.com] for alignment
+    @details
+  */
+  void SetTitleAlign   ( int align ) { title_align_ = align;};
+
+  /*!
     @fn void SetTitleSize( double size )
     @param
     @brief
     @details
   */
   void SetTitleSize   ( double size ) { title_size_ = size;};
+
+  /*!
+    @fn void SetRange( double xmin, double ymin, double xmax, double ymax )
+    @brief set ranges to be drawn
+  */
+  void SetRange( double xmin, double ymin, double xmax, double ymax );
 
   /*!
     @fn void SetXmin( double val )

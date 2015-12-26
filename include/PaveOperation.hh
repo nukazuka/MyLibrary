@@ -5,6 +5,33 @@
 #include "HeadersRoot.hh"
 
 #ifndef __CINT__
+
+/*!
+  @fn void DrawTitle(TVirtualPad* pad, Double_t text_size , int text_align )
+  @param pad 対象となる pad 
+  @param test_size text size
+  @param text_align 文字の置き方
+  @brief pad にある title オブジェクトを取得して書き直す
+  @detail 他の DrawTitle は最終的にこの関数を呼び出している。
+*/
+void DrawTitle(TVirtualPad* pad, Double_t text_size , int text_align );
+
+/*!
+  @fn void void DrawTitle( Double_t text_size = 0.07 , int test_align = 23 )
+  @param
+  @param
+  @brief
+  @detail
+*/
+void DrawTitle( Double_t text_size = 0.07 , int test_align = 23 );
+
+/*!
+  @fn void DrawTitle(TVirtualPad* pad, Double_t text_size = 0.07 )
+  @brief
+  @detail 後方互換性のために残してるけど，もう使わない。
+ */
+void DrawTitle(TVirtualPad* pad, Double_t text_size = 0.07 );
+
 /*!
   @fn void DrawTitle(TVirtualPad* pad)
   @param
@@ -13,38 +40,6 @@
  */
 void DrawTitle(TVirtualPad* pad);
 
-/*!
-  @fn void DrawTitle(TVirtualPad* pad, Double_t text_size = 0.07 )
-  @param
-  @return
-  @brief
- */
-void DrawTitle(TVirtualPad* pad, Double_t text_size = 0.07 );
-
-
-/*!
-  @fn void DrawTitle(Double_t text_size = 0.07 )
-  @param
-  @return
-  @brief
- */
-void DrawTitle(Double_t text_size = 0.07 );
-
-/*!
-  @fn void DrawTitle(Double_t text_size = 0.07 )
-  @param
-  @return
-  @brief
- */
-//void DrawTitle();
-
-/*!
-  @fn void DrawTitle(Double_t text_size)
-  @param
-  @return
-  @brief
- */
-void DrawTitle( Double_t text_size);
 
 /*!
   @fn void DrawStats( TH1D* hist, double xmin, double ymin, double xmax, double ymax )

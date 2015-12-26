@@ -25,3 +25,4 @@ void SetHistStyle( TH* hist, int color, int width )
 #endif // ifndef MYLIB_STYLE_HH
 
 void SetGraphStyle( TGraph* g, int color , int width );
+void SetColorPalette_old( int num = 55 );

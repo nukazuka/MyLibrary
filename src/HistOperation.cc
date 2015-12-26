@@ -1,6 +1,6 @@
-#ifndef __CINT__
+//#ifndef __CINT__
 #include "HistOperation.hh"
-#endif
+//#endif
 
 using namespace std;
 

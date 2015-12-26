@@ -46,6 +46,9 @@ void HistSetting( TH* hist , int color )
   hist->SetLineColor( color );
   hist->SetMarkerColor( color );
   hist->SetLineWidth( 2 );
+  hist->GetXaxis()->CenterTitle();
+  hist->GetYaxis()->CenterTitle();
+
 }
 
 

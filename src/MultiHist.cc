@@ -16,27 +16,6 @@ void MultiHist::Init( string name, string title )
   name_  = name;
   title_ = title;
 
-  xmin_  = ymin_ = 1.0;
-  xmax_  = ymax_ = 2.0;
-  margin_ratio_top_ = margin_ratio_bottom_ = margin_ratio_left_ = margin_ratio_right_ = 0.01;
-
-  stats_xmin_ = 0.9;
-  stats_ymin_ = 0.1;
-  stats_xmax_ = 1.0;
-  stats_ymax_ = 0.9;
-
-  stats_width_ = 0.1;
-  stats_height_ = 0.1;
-
-  title_size_ = 0.07;
-
-  offset_title_x_ = offset_title_y_ = 1.0;
-  bl_stats_ = bl_title_ = bl_draw_no_entry_ 
-    = true;
-
-  bl_force_xmin_ = bl_force_xmax_ = bl_force_ymin_ = bl_force_ymax_
-    = false;
-    
   CheckLogScale();
 }
 
@@ -348,7 +327,7 @@ void MultiHist::Draw( string option,
 	}
 
       if( i==0 && bl_title_==true )
-	DrawTitle( title_size_ );
+	DrawTitle( title_size_ , title_align_ );
     }
     
   id_++;
@@ -405,6 +384,14 @@ void MultiHist::SetStatsType( string type )
   else 
     SetStatsType( -1 );
 
+}
+
+void MultiHist::SetRange( double xmin, double ymin, double xmax, double ymax )
+{
+  SetXmin( xmin );
+  SetYmin( ymin );
+  SetXmax( xmax );
+  SetYmax( ymax );
 }
 
 void MultiHist::SetXmin( double val )

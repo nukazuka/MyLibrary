@@ -13,6 +13,7 @@
 #include "TPaveStats.h"
 #include "TPaveText.h"
 #include "TApplication.h"
+#include "TColor.h"
 
 // histogram
 #include "TH1D.h"
