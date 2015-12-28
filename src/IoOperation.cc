@@ -33,7 +33,8 @@ TObject* GetObject( string file_name, string obj_name)
       cerr << "TObject* GetObject( string file_name, string dir_name, string obj_name)" << endl;
       cerr << "TObj :" << obj_name << " are not found in " << file_name << endl;
       tf->ls();
-      exit(-1);
+      return new TObject();
+      //      exit(-1);
     }
 
   

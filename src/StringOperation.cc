@@ -199,10 +199,10 @@ double String2Double( string st )
   return val;
 }
 
-string Double2String( double num )
+string Double2String( double num , int precision )
 {
   stringstream ss;
-  ss << num;
+  ss << setprecision( precision ) << num;
   return ss.str();
 }
 

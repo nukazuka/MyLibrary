@@ -122,12 +122,13 @@ double String2Double( string st );
 
 /*!
   @fn string Double2String( double num )
-  @param num : 変換される double 型の数字。
+  @param num  変換される double 型の数字。
+  @param precision 有効数字の桁数
   @return num を文字列に変換したもの。
   @brief double を strgin 型に変換し，返す。
   @details 有効数字をどうするかまだ決めていない.
   @todo 有効数字をどうするか？ */
-string Double2String( double num );
+string Double2String( double num , int presicion=5 );
 
 /*!
   @fn bool IsNumber( string st )
