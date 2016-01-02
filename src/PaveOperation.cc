@@ -13,6 +13,10 @@ void DrawTitle(TVirtualPad* pad, Double_t text_size , int text_align )
   pad->Update();
 
   TPaveText* title = (TPaveText*)pad->GetPrimitive( "title" );
+
+  if( text_size < 0 )
+    text_size = 0;
+
   title->SetTextSize( text_size );
   title->SetTextAlign( text_align );
   title->Draw( "same" );

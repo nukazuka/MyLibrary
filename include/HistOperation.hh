@@ -39,17 +39,24 @@ using namespace std;
 //void DrawTitle(TVirtualPad* pad);
 
 template < typename TH > 
-void HistSetting( TH* hist , int color )
+void HistSetting( TH* hist , int color , int line_width = 2)
 {
 
   hist->Sumw2();
   hist->SetLineColor( color );
   hist->SetMarkerColor( color );
-  hist->SetLineWidth( 2 );
+  hist->SetLineWidth( line_width );
   hist->GetXaxis()->CenterTitle();
   hist->GetYaxis()->CenterTitle();
 
 }
 
+/*
+template < typename TH > 
+void HistSetting( TH* hist , int color )
+{
+  HistSetting( hist , color , 2 );
+}
+*/
 
 #endif
