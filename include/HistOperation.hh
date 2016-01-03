@@ -38,6 +38,7 @@ using namespace std;
  */
 //void DrawTitle(TVirtualPad* pad);
 
+/*
 template < typename TH > 
 void HistSetting( TH* hist , int color , int line_width = 2)
 {
@@ -50,6 +51,8 @@ void HistSetting( TH* hist , int color , int line_width = 2)
   hist->GetYaxis()->CenterTitle();
 
 }
+*/
+
 
 /*
 template < typename TH > 

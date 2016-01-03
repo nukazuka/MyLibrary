@@ -32,12 +32,15 @@ void SetHistStyle( TH1D* hist, int color, int width )
 
 #endif
 
-void SetGraphStyle( TGraph* g, int color , int width )
+void GraphSetting( TGraph* g, int color , int width , int marker_style , int fill_style)
 {
+
   g->SetLineColor   ( color );
   g->SetMarkerColor ( color );
   g->SetFillColor   ( color );
   g->SetLineWidth   ( width );
+  g->SetMarkerStyle ( marker_style );
+  g->SetFillStyle   ( fill_style );
 }
 
 void SetColorPalette_old( int ncolors )
