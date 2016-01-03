@@ -50,6 +50,7 @@ echo -e "#ifdef __CINT__" >> ${path}
 ls -1 ${path2}src/*.cc | xargs -I {} echo -e "#include \"`pwd`/{}\"" >> ${path}
 
 echo `grep MultiHist.cc ${path} | sed -e "s/src/include/g" | sed -e "s/.cc/.hh/g" ` >> ${path}
+echo `grep Style.cc ${path} | sed -e "s/src/include/g" | sed -e "s/.cc/.hh/g" ` >> ${path}
 
 echo -e "#endif // __CINT__" >> ${path}
 
@@ -79,6 +80,7 @@ then
     # because it's template class
 #    sed -i "" "s/src\/MultiHist.cc/include\/MultiHist.hh/" ${path}
     sed -i "" "s/src\/PaveOperation.cc/include\/PaveOperation.hh/" ${path}
+#    sed -i "" "s/src\/Style.cc/include\/Style.hh/" ${path}
 fi
 
 
