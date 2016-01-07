@@ -299,6 +299,9 @@ void MultiHist::Draw( string option,
 
   frame->Draw();
 
+  if( option == "" )
+    option = option_;
+
   option = Replace( option , "sames" , "" );
   option = Replace( option , "SAMES" , "" );
   option = Replace( option , "same"  , "" );
