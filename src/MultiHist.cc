@@ -59,6 +59,7 @@ void MultiHist::Ranges()
 	  x.push_back( vhist_[i]->GetBinCenter(bin) + width/2. );
 	}
 
+      // in the case of "bl_draw_no_entry_ == false"
       /*
       // not ready
       else
@@ -193,6 +194,32 @@ void MultiHist::Ranges()
       margin_ratio_top_ = 0.0;
     }
 }
+void MultiHist::Ranges2D()
+{
+
+  double bin_num_x = vhist2d_[0]->GetNbinsX();
+  double bin_num_y = vhist2d_[0]->GetNbinsY();
+  double width_x = vhist2d_[0]->GetXaxis()->GetBinWidth(0);
+  double width_y = vhist2d_[0]->GetYaxis()->GetBinWidth(0);
+
+  xmin_ = vhist2d_[0]->GetXaxis()->GetBinCenter(0)         - width_x/2;
+  xmax_ = vhist2d_[0]->GetXaxis()->GetBinCenter(bin_num_x) - width_x/2;
+  ymin_ = vhist2d_[0]->GetYaxis()->GetBinCenter(0)         - width_y/2;
+  ymax_ = vhist2d_[0]->GetYaxis()->GetBinCenter(bin_num_y) - width_y/2;
+
+  if( bl_force_xmin_ )
+    xmin_ = xmin_force_;
+
+  if( bl_force_xmax_ )
+    xmax_ = xmax_force_;
+  
+  if( bl_force_ymin_ )
+    ymin_ = ymin_force_;
+
+  if( bl_force_ymax_ )
+    ymax_ = ymax_force_;
+  
+}
 
 double MultiHist::GetSuitableXmin()
 {
@@ -250,13 +277,37 @@ double MultiHist::GetSuitableYmin()
 
 void MultiHist::Add( TH1* hist )
 {
-  vhist_.push_back( (TH1D*)hist );
+  /*
+    TH1I, F, D 等をまとめて扱えるように，引数を TH1 にして，
+    とりあえず TH1D にキャストした。
+    今のとこおかしい点はないけど，TH1I で割り算をすると小数点以下が
+    切り捨てられる等の癖をどう扱うのかよくわかんない。
+    今は TH1D しか使わないから問題ないので放置しておく。    
+   */
+  vhist_.push_back( (TH1D*)hist ); 
+}
+
+void MultiHist::Add( TH2D* hist2d )
+{
+  vhist2d_.push_back( hist2d );
 }
 
 void MultiHist::DeleteAllHist()
 {
+  DeleteHist();
+  DeleteHist2D();
+}
+
+void MultiHist::DeleteHist()
+{
 
   vhist_.erase( vhist_.begin() , vhist_.end() );
+}
+
+void MultiHist::DeleteHist2D()
+{
+
+  vhist2d_.erase( vhist2d_.begin() , vhist2d_.end() );
 }
 
 void MultiHist::Draw( string option )
@@ -296,6 +347,8 @@ void MultiHist::Draw( string option,
   frame->GetYaxis()->CenterTitle( true );
   frame->GetXaxis()->SetTitleOffset( offset_title_x_ );
   frame->GetYaxis()->SetTitleOffset( offset_title_y_ );
+  frame->GetXaxis()->SetLabelOffset( offset_label_x_ );
+  frame->GetYaxis()->SetLabelOffset( offset_label_y_ );
 
   frame->Draw();
 
@@ -312,12 +365,12 @@ void MultiHist::Draw( string option,
 
   for( int i=0; i<vhist_.size(); i++ )
     {
-	
+	  
       if( bl_stats_ == true )
 	{
-
+	      
 	  vhist_[i]->Draw( (option + "SAMES" ).c_str() );
-	    
+	      
 	  DrawStats( vhist_[i] , 
 		     stats_xmin ,  
 		     stats_ymax - stats_height * (i+1) ,
@@ -328,11 +381,54 @@ void MultiHist::Draw( string option,
 	{
 	  vhist_[i]->Draw( (option + "SAME" ).c_str() );
 	}
-
+	  
       if( i==0 && bl_title_==true )
 	DrawTitle( title_size_ , title_align_ );
     }
-    
+
+  id_++;
+}
+
+void MultiHist::Draw2D( string option )
+{
+
+  // temp 
+  Ranges2D();
+
+  double margin_right  = ( xmax_ - xmin_ ) * margin_ratio_right_;
+  double margin_left   = ( xmax_ - xmin_ ) * margin_ratio_left_;
+  double margin_top    = ( ymax_ - ymin_ ) * margin_ratio_top_;
+  double margin_bottom = ( ymax_ - ymin_ ) * margin_ratio_bottom_;
+
+  string name = name_ + title_ + "hframe" + Int2String( id_ );
+  TH1F* frame = new TH1F( name.c_str() , title_.c_str() , 1000, xmin_ - margin_left, xmax_ + margin_right );
+  frame->SetMinimum( ymin_ - margin_bottom );
+  frame->SetMaximum( ymax_ + margin_top );
+  frame->SetStats( false );
+  frame->GetXaxis()->CenterTitle( true );
+  frame->GetYaxis()->CenterTitle( true );
+  frame->GetXaxis()->SetTitleOffset( offset_title_x_ );
+  frame->GetYaxis()->SetTitleOffset( offset_title_y_ );
+
+  frame->Draw();
+
+  string option2 = "";
+  if( bl_stats_ == true )
+    option2 = "SAMES";
+  else
+    option2 = "SAME";
+  for( int i=0; i<vhist2d_.size(); i++ )
+    {
+      vhist2d_[i]->Draw( (option + option2 ).c_str() );
+      /*
+	DrawStats( vhist2d_[i] , 
+	stats_xmin ,  
+	stats_ymax - stats_height * (i+1) ,
+	stats_xmax,
+	stats_ymax - stats_height * i );
+      */
+    }  
+
   id_++;
 }
 
@@ -395,6 +491,16 @@ void MultiHist::SetRange( double xmin, double ymin, double xmax, double ymax )
   SetYmin( ymin );
   SetXmax( xmax );
   SetYmax( ymax );
+}
+
+void MultiHist::ResetRange()
+{
+
+  xmin_force_ = ymin_force_ = xmax_force_ = ymax_force_
+    = -9999.9;
+
+  bl_force_xmin_ = bl_force_xmax_ = bl_force_ymin_ = bl_force_ymax_ 
+    = false;
 }
 
 void MultiHist::SetXmin( double val )

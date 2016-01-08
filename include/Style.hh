@@ -18,7 +18,9 @@ template < typename TH >
 void HistSetting( TH* hist , int color = 1 , int line_width = 2 , int fill_style = 0 )
 {
 
-  hist->Sumw2();
+  if( hist->fN != hist->GetNcells() )
+    if( hist->GetDefaultSumw2() == true )
+      hist->Sumw2();
   hist->SetLineColor( color );
   hist->SetMarkerColor( color );
   hist->SetLineWidth( line_width );

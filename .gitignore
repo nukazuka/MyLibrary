@@ -1,4 +1,5 @@
 *~
+*.root
 *.so
 *.dylib
 *.dSYM/

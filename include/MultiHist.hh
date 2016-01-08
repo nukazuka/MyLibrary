@@ -34,10 +34,10 @@ private:
   double ymin_ = 1.0;
   double ymax_ = 2.0;
 
-  double xmin_force_ = false;
-  double ymin_force_ = false;
-  double xmax_force_ = false;
-  double ymax_force_ = false;
+  double xmin_force_ = -9999.9;
+  double ymin_force_ = -9999.9;
+  double xmax_force_ = -9999.9;
+  double ymax_force_ = -9999.9;
 
   double margin_ratio_top_    = 0.01;
   double margin_ratio_right_  = 0.01;
@@ -51,6 +51,9 @@ private:
 
   double offset_title_x_ = 1.0;
   double offset_title_y_ = 1.0;
+
+  double offset_label_x_ = 0.005;
+  double offset_label_y_ = 0.005;
 
   double stats_width_  = 0.1;
   double stats_height_ = 0.1;
@@ -69,6 +72,7 @@ private:
   bool bl_logy_ = false;
   
   vector < TH1D* > vhist_;
+  vector < TH2D* > vhist2d_;
 
   // Initialization
   void Init( );
@@ -76,6 +80,7 @@ private:
   void CheckLogScale();
   void Margins();
   void Ranges();
+  void Ranges2D();
   double GetSuitableXmin();
   double GetSuitableYmin();
   
@@ -107,10 +112,31 @@ public:
   void Add( TH1* hist );
 
   /*!
+    @fn void Add( TH2D* hist2d )
+    @param hist2d A pointer of 2 dimensional histogram
+    @brief add 2D histogram
+    @detail If at least one 2D hist have been added, 1D hist will not be drawn.
+    To remove 2D hists, use DeleteHist2D().
+  */
+  void Add( TH2D* hist2d );
+
+  /*!
     @fn void DeleteAllHist()
-    @brief All added histograms are deleted
+    @brief Delete all stored histograms
   */
   void DeleteAllHist();
+
+  /*!
+    @fn void DeleteHist()
+    @brief Delete stored 1D histograms 
+  */
+  void DeleteHist();
+
+  /*!
+    @fn void DeleteHist2D()
+    @brief Delete stored 2D histograms
+  */
+  void DeleteHist2D();
 
   /*!
     @fn void Draw( string option )
@@ -120,7 +146,7 @@ public:
     If you want to use "box" type, use this function.
   */
   void Draw( string option = "" );
-
+  
   /*!
     @fn   void Draw( string option, double stats_xmin, double stats_ymin, double stats_xmax, double stats_ymax )
     @param option options for drawing.
@@ -134,27 +160,49 @@ public:
   void Draw( string option,
 	     double stats_xmin, double stats_ymin,
 	     double stats_xmax, double stats_ymax );
-  
-  /*!
-    @ void SetOption( string option )
-    @param option options for drawing
-    @brief set options for drawing
-  */
-  void SetOption( string option ){ option_ = option;};
 
   /*!
-    @fn void SetMarginTop( double ratio )
-    @param ratio ratio of margin
-    @brief Set margin in %
+    @fn void Draw2D( string option )
+    @param option An option for TH2D::Draw
+    @brief Draw all 2D histograms
   */
-  void SetMarginTop( double ratio ){ margin_ratio_top_ = ratio;};
+  void Draw2D( string option = "" );
 
-  /*! 
-    @fn void SetMarginRight( double ratio )
-    @param ratio
-    @brief set right margin in %
-   */
-  void SetMarginRight( double ratio ){ margin_ratio_right_ = ratio;};
+  /*!
+    @fn string GetName()
+    @param
+    @brief
+    @details
+  */
+  string GetName(){ return name_;};
+
+  /*!
+    @fn string GetTitle()
+    @brief return the title of this object
+  */
+  string GetTitle(){ return title_;};
+
+
+  /*!
+    @fn void Print()
+    @brief
+    @details
+  */
+  void Print();
+
+  /*!
+    @void void ResetRange()
+    @brief all specified range are reset
+  */
+  void ResetRange();
+
+  /*!
+    @fn void SetDrawNoEntry ( bool bl )
+    @param
+    @brief
+    @details
+  */
+  void SetDrawNoEntry ( bool bl )     { bl_draw_no_entry_ = bl ;};
 
   /*!
     @fn void SetMarginBottom( double ratio )
@@ -170,12 +218,19 @@ public:
   */
   void SetMarginLeft( double ratio ){ margin_ratio_left_ = ratio;};
 
-  /*!  
-    @fn void SetMarginV( double ratio )
+  /*! 
+    @fn void SetMarginRight( double ratio )
+    @param ratio
+    @brief set right margin in %
+   */
+  void SetMarginRight( double ratio ){ margin_ratio_right_ = ratio;};
+
+  /*!
+    @fn void SetMarginTop( double ratio )
     @param ratio ratio of margin
     @brief Set margin in %
   */
-  void SetMarginV( double ratio );
+  void SetMarginTop( double ratio ){ margin_ratio_top_ = ratio;};
 
   /*!
     @fn void SetMarginH( double ratio )
@@ -184,23 +239,40 @@ public:
   */
   void SetMarginH( double ratio );
 
+  /*!  
+    @fn void SetMarginV( double ratio )
+    @param ratio ratio of margin
+    @brief Set margin in %
+  */
+  void SetMarginV( double ratio );
+
   /*!
     @fn void SetMargins( double ratio )
     @param ratio
     @brief
   */
   void SetMargins( double ratio );
+  
+  /*!
+    @ void SetOption( string option )
+    @param option options for drawing
+    @brief set options for drawing
+  */
+  void SetOption( string option ){ option_ = option;};
 
   /*!
-    @fn void SetStatsPosition( double xmin, double ymin, double xmax, double ymax )
-    @param xmin a position of left side of stats in ratio
-    @param ymin a position of bottom of stats in ratio
-    @param xmax a position of right side of stats in ratio
-    @param ymax a position of top side of stats in ratio
-    @brief set position of box for statistic
-    @details all values are in ratio
+    @fn void SetRange( double xmin, double ymin, double xmax, double ymax )
+    @brief set ranges to be drawn
   */
-  void SetStatsPosition( double xmin, double ymin, double xmax, double ymax );
+  void SetRange( double xmin, double ymin, double xmax, double ymax );
+
+  /*!
+    @fn void SetStats( bool bl )
+    @param
+    @brief
+    @details
+  */
+  void SetStats       ( bool bl )     { bl_stats_ = bl;};
 
   /*!
     @fn void SetStatsBoxSize( double width , double height )
@@ -221,6 +293,17 @@ public:
   void SetStatsBoxPoint( double xmax , double ymax );
 
   /*!
+    @fn void SetStatsPosition( double xmin, double ymin, double xmax, double ymax )
+    @param xmin a position of left side of stats in ratio
+    @param ymin a position of bottom of stats in ratio
+    @param xmax a position of right side of stats in ratio
+    @param ymax a position of top side of stats in ratio
+    @brief set position of box for statistic
+    @details all values are in ratio
+  */
+  void SetStatsPosition( double xmin, double ymin, double xmax, double ymax );
+
+  /*!
     @fn void SetStatsType( string type )
     @param type type of an arrengement of stats box
     @brief set an arrangement type of stats box
@@ -238,30 +321,19 @@ public:
   void SetStatsType( int num ){ stats_type_ = num ;};
 
   /*!
-    @fn void SetDrawNoEntry ( bool bl )
-    @param
-    @brief
-    @details
-  */
-  void SetDrawNoEntry ( bool bl )     { bl_draw_no_entry_ = bl ;};
-
-  /*!
-    @fn void SetStats( bool bl )
-    @param
-    @brief
-    @details
-  */
-  void SetStats       ( bool bl )     { bl_stats_ = bl;};
-
-  /*!
     @fn void SetTitleDraw ( bool bl )
     @param title new title
     @brief set title
   */
   void SetTitle   ( string title )     { title_ = title;};
 
-  void SetTitleOffsetX( double offset ){ offset_title_x_ = offset;};
-  void SetTitleOffsetY( double offset ){ offset_title_y_ = offset;};
+  /*!
+    @fn void SetTitleAlign( int align )
+    @param align align for title
+    @brief see [here][https://root.cern.ch/doc/master/classTAttText.html#T1] for alignment
+    @details
+  */
+  void SetTitleAlign   ( int align ) { title_align_ = align;};
 
   /*!
     @fn void SetTitleDraw ( bool bl )
@@ -271,12 +343,29 @@ public:
   void SetTitleDraw   ( bool bl )     { bl_title_ = bl;};
 
   /*!
-    @fn void SetTitleAlign( int align )
-    @param align align for title
-    @brief see [here][http://google.com] for alignment
-    @details
+    @fn void SetLabelOffsetX( double offset )
+    @param offset An offset of label in x axis
   */
-  void SetTitleAlign   ( int align ) { title_align_ = align;};
+  void SetLabelOffsetX( double offset ){ offset_label_x_ = offset;};
+
+  /*!
+    @fn void SetLabelOffsetY( double offset )
+    @param offset An offset of label in y axis
+  */
+  void SetLabelOffsetY( double offset ){ offset_label_y_ = offset;};
+
+  /*!
+    @fn void SetTitleOffsetX( double offset )
+    @param offset An offset of title in x axis
+  */
+  void SetTitleOffsetX( double offset ){ offset_title_x_ = offset;};
+
+  /*!
+    @fn void SetTitleOffsetY( double offset )
+    @param offset An offset of title in y axis
+  */
+  void SetTitleOffsetY( double offset ){ offset_title_y_ = offset;};
+
 
   /*!
     @fn void SetTitleSize( double size )
@@ -285,12 +374,6 @@ public:
     @details
   */
   void SetTitleSize   ( double size ) { title_size_ = size;};
-
-  /*!
-    @fn void SetRange( double xmin, double ymin, double xmax, double ymax )
-    @brief set ranges to be drawn
-  */
-  void SetRange( double xmin, double ymin, double xmax, double ymax );
 
   /*!
     @fn void SetXmin( double val )
@@ -321,32 +404,6 @@ public:
     @details
   */
   void SetYmax( double val );
-  
-  /*!
-    @fn void Print()
-    @brief
-    @details
-  */
-  void Print();
-
-  // int 
-  //  int Get
-
-  // string 
-  /*!
-    @fn string GetName()
-    @param
-    @brief
-    @details
-  */
-
-  string GetName(){ return name_;};
-  /*!
-    @fn string GetTitle()
-    @brief return the title of this object
-  */
-  string GetTitle(){ return title_;};
-
 };
 
 #endif
