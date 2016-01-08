@@ -1,6 +1,7 @@
 #ifndef MYLIB_PAVEOPERATION_HH
 #define MYLIB_PAVEOPERATION_HH
 
+#include "TPaletteAxis.h"
 #include "HeadersSL.hh"
 #include "HeadersRoot.hh"
 
@@ -55,6 +56,23 @@ void DrawTitle(TVirtualPad* pad);
   @brief
  */
 void DrawStats2D( TH2D* hist, double xmin, double ymin, double xmax, double ymax );
+
+/*!
+  @fn void DrawPaletteAxis( TH2D* hist , double xmin = 0.9 , double ymin = 0.1, double xmax = 0.93, double ymax = 0.9, double label_size = 0.08 )
+  @param hist target of histogram
+  @param xmin left position in ratio
+  @param ymin bottom position in ratio
+  @param xmax right position in ratio
+  @param ymax top position in ratio
+  @param label_size size of label
+  @brief Draw color palette axis for TH2
+  @detail
+
+*/
+void DrawPaletteAxis( TH2D* hist , 
+		      double xmin = 0.9 , double ymin = 0.1,
+		      double xmax = 0.93, double ymax = 0.9,
+		      double label_size = 0.08 );
 
 /*
 void DrawTitle(TVirtualPad* pad)

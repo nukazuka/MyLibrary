@@ -6,7 +6,7 @@
 void Style();
 void SetHistStyle( TH1D* hist, int color, int width );
 
-#ifndef __CINT__
+// #ifndef __CINT__
 template < class TH >
 void SetHistStyle( TH* hist, int color, int width )
 {
@@ -26,13 +26,13 @@ void HistSetting( TH* hist , int color = 1 , int line_width = 2 , int fill_style
   hist->GetYaxis()->CenterTitle();
 }
 
-#endif // ifdef __CINT__
+//#endif // ifdef __CINT__
 
-#ifdef __CINT__
-#endif // ifndef __CINT__
-
-#endif // ifndef MYLIB_STYLE_HH
+//#ifdef __CINT__
+//#endif // ifndef __CINT__
 
 //void SetGraphStyle( TGraph* g, int color , int width );
 void GraphSetting( TGraph* g, int color = 1, int width = 2 , int marker_style = 20  , int fill_style = 0 );
 void SetColorPalette_old( int num = 55 );
+
+#endif // ifndef MYLIB_STYLE_HH
