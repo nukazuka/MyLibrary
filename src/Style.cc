@@ -23,7 +23,10 @@ void SetHistStyle( TH1D* hist, int color, int width )
 void SetHistStyle( TH1D* hist, int color, int width )
 {
 
-  hist->Sumw2();
+  if( hist->fN != hist->GetNcells() )
+    if( hist->GetDefaultSumw2() == true )
+      hist->Sumw2();
+
   hist->SetLineColor( color );
   hist->SetLineWidth( width );
   hist->GetXaxis()->CenterTitle();
