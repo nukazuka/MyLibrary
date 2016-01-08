@@ -207,7 +207,7 @@ public:
     @param width
     @param height
     @brief set size of stats box
-    @detail This function is for "box" type arrangement.
+    @details This function is for "box" type arrangement.
   */
   void SetStatsBoxSize( double width , double height );
 
@@ -265,7 +265,7 @@ public:
 
   /*!
     @fn void SetTitleDraw ( bool bl )
-    @param bl Title will be drawn if bl == true,
+    @param bool bl Title will be drawn if bl == true,
     @brief Set whether draw title or not
   */
   void SetTitleDraw   ( bool bl )     { bl_title_ = bl;};

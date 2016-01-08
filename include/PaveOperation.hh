@@ -12,7 +12,7 @@
   @param test_size text size
   @param text_align 文字の置き方
   @brief pad にある title オブジェクトを取得して書き直す
-  @detail 他の DrawTitle は最終的にこの関数を呼び出している。
+  @details 他の DrawTitle は最終的にこの関数を呼び出している。
 */
 void DrawTitle(TVirtualPad* pad, Double_t text_size , int text_align );
 
@@ -21,14 +21,14 @@ void DrawTitle(TVirtualPad* pad, Double_t text_size , int text_align );
   @param
   @param
   @brief
-  @detail
+  @details
 */
 void DrawTitle( Double_t text_size = 0.07 , int test_align = 23 );
 
 /*!
   @fn void DrawTitle(TVirtualPad* pad, Double_t text_size = 0.07 )
   @brief
-  @detail 後方互換性のために残してるけど，もう使わない。
+  @details 後方互換性のために残してるけど，もう使わない。
  */
 void DrawTitle(TVirtualPad* pad, Double_t text_size = 0.07 );
 
