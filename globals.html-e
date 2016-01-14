@@ -123,6 +123,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="string_operation_8hh.html#aa6e6537a0d1742cb34bc42fb3a8e4015">StringOperation.hh</a>
 , <a class="el" href="string_operation_8cc.html#af8fb0074371ce1e801b41b1b9fb4f1d0">StringOperation.cc</a>
 </li>
+<li>DrawPaletteAxis()
+: <a class="el" href="pave_operation_8cc.html#a4952086280c5bc6a12106cec35ddcfce">PaveOperation.cc</a>
+, <a class="el" href="pave_operation_8hh.html#ae5e71038ccca0543871fb6d36d2f0786">PaveOperation.hh</a>
+</li>
 <li>DrawStats()
 : <a class="el" href="pave_operation_8hh.html#af71e38570520000cdd3b0652d5f756a3">PaveOperation.hh</a>
 </li>
@@ -131,11 +135,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="pave_operation_8hh.html#a38d0561c73ea7b706b591c3bb19d5a52">PaveOperation.hh</a>
 </li>
 <li>DrawTitle()
-: <a class="el" href="pave_operation_8cc.html#a75aabce0a4006351b09f10f85aa5f2f3">PaveOperation.cc</a>
-, <a class="el" href="pave_operation_8hh.html#a2902ca574ed3e01c2be97e21b1a747ba">PaveOperation.hh</a>
+: <a class="el" href="pave_operation_8hh.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">PaveOperation.hh</a>
 , <a class="el" href="pave_operation_8cc.html#a2902ca574ed3e01c2be97e21b1a747ba">PaveOperation.cc</a>
-, <a class="el" href="pave_operation_8hh.html#a4401c5da6926e708679db3bf1825a014">PaveOperation.hh</a>
-, <a class="el" href="pave_operation_8cc.html#ad6dafc6a523f1e088d11565ccde4db88">PaveOperation.cc</a>
+, <a class="el" href="pave_operation_8hh.html#a351c5610de492dc89966d4e455d75b19">PaveOperation.hh</a>
+, <a class="el" href="pave_operation_8cc.html#a75aabce0a4006351b09f10f85aa5f2f3">PaveOperation.cc</a>
 </li>
 </ul>
 

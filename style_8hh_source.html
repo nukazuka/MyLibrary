@@ -98,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keywordtype">void</span> <a class="code" href="style_8hh.html#a766767e61d475a5e310dc33475d823d7">Style</a>();</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordtype">void</span> <a class="code" href="style_8hh.html#ab3feaac70bb633c5fe1cbe1176491188">SetHistStyle</a>( TH1D* hist, <span class="keywordtype">int</span> color, <span class="keywordtype">int</span> width );</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef __CINT__</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// #ifndef __CINT__</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">template</span> &lt; <span class="keyword">class</span> TH &gt;</div>
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="style_8hh.html#a4f076592efc20e6e216a435692e84cf4">   11</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="style_8hh.html#ab3feaac70bb633c5fe1cbe1176491188">SetHistStyle</a>( TH* hist, <span class="keywordtype">int</span> color, <span class="keywordtype">int</span> width )</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
@@ -110,27 +110,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="style_8hh.html#a84e618da783b0ef006fa5120055e3004">   18</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="style_8hh.html#a84e618da783b0ef006fa5120055e3004">HistSetting</a>( TH* hist , <span class="keywordtype">int</span> color = 1 , <span class="keywordtype">int</span> line_width = 2 , <span class="keywordtype">int</span> fill_style = 0 )</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  hist-&gt;Sumw2();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  hist-&gt;SetLineColor( color );</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  hist-&gt;SetMarkerColor( color );</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  hist-&gt;SetLineWidth( line_width );</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  hist-&gt;GetXaxis()-&gt;CenterTitle();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  hist-&gt;GetYaxis()-&gt;CenterTitle();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif // ifdef __CINT__</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordflow">if</span>( hist-&gt;fN != hist-&gt;GetNcells() )</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">if</span>( hist-&gt;GetDefaultSumw2() == true )</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      hist-&gt;Sumw2();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  hist-&gt;SetLineColor( color );</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  hist-&gt;SetMarkerColor( color );</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  hist-&gt;SetLineWidth( line_width );</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  hist-&gt;GetXaxis()-&gt;CenterTitle();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  hist-&gt;GetYaxis()-&gt;CenterTitle();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifdef __CINT__</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif // ifndef __CINT__</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif // ifndef MYLIB_STYLE_HH</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//#endif // ifdef __CINT__</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//#ifdef __CINT__</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//#endif // ifndef __CINT__</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//void SetGraphStyle( TGraph* g, int color , int width );</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> <a class="code" href="style_8hh.html#a8181b4e7ad44809e2a722cdcc7488b0a">GraphSetting</a>( TGraph* g, <span class="keywordtype">int</span> color = 1, <span class="keywordtype">int</span> width = 2 , <span class="keywordtype">int</span> marker_style = 20  , <span class="keywordtype">int</span> fill_style = 0 );</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span> <a class="code" href="style_8hh.html#a37a0d2b808df8265b9194872b96ea620">SetColorPalette_old</a>( <span class="keywordtype">int</span> num = 55 );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif // ifndef MYLIB_STYLE_HH</span></div>
 <div class="ttc" id="headers_root_8hh.html"><div class="ttname"><a href="headers_root_8hh.html">HeadersRoot.hh</a></div></div>
-<div class="ttc" id="style_8hh.html_a37a0d2b808df8265b9194872b96ea620"><div class="ttname"><a href="style_8hh.html#a37a0d2b808df8265b9194872b96ea620">SetColorPalette_old</a></div><div class="ttdeci">void SetColorPalette_old(int num=55)</div><div class="ttdef"><b>Definition:</b> <a href="style_8cc_source.html#l00046">Style.cc:46</a></div></div>
-<div class="ttc" id="style_8hh.html_a8181b4e7ad44809e2a722cdcc7488b0a"><div class="ttname"><a href="style_8hh.html#a8181b4e7ad44809e2a722cdcc7488b0a">GraphSetting</a></div><div class="ttdeci">void GraphSetting(TGraph *g, int color=1, int width=2, int marker_style=20, int fill_style=0)</div><div class="ttdef"><b>Definition:</b> <a href="style_8cc_source.html#l00035">Style.cc:35</a></div></div>
+<div class="ttc" id="style_8hh.html_a37a0d2b808df8265b9194872b96ea620"><div class="ttname"><a href="style_8hh.html#a37a0d2b808df8265b9194872b96ea620">SetColorPalette_old</a></div><div class="ttdeci">void SetColorPalette_old(int num=55)</div><div class="ttdef"><b>Definition:</b> <a href="style_8cc_source.html#l00049">Style.cc:49</a></div></div>
+<div class="ttc" id="style_8hh.html_a8181b4e7ad44809e2a722cdcc7488b0a"><div class="ttname"><a href="style_8hh.html#a8181b4e7ad44809e2a722cdcc7488b0a">GraphSetting</a></div><div class="ttdeci">void GraphSetting(TGraph *g, int color=1, int width=2, int marker_style=20, int fill_style=0)</div><div class="ttdef"><b>Definition:</b> <a href="style_8cc_source.html#l00038">Style.cc:38</a></div></div>
 <div class="ttc" id="style_8hh.html_a84e618da783b0ef006fa5120055e3004"><div class="ttname"><a href="style_8hh.html#a84e618da783b0ef006fa5120055e3004">HistSetting</a></div><div class="ttdeci">void HistSetting(TH *hist, int color=1, int line_width=2, int fill_style=0)</div><div class="ttdef"><b>Definition:</b> <a href="style_8hh_source.html#l00018">Style.hh:18</a></div></div>
 <div class="ttc" id="style_8hh.html_a766767e61d475a5e310dc33475d823d7"><div class="ttname"><a href="style_8hh.html#a766767e61d475a5e310dc33475d823d7">Style</a></div><div class="ttdeci">void Style()</div><div class="ttdef"><b>Definition:</b> <a href="style_8cc_source.html#l00005">Style.cc:5</a></div></div>
 <div class="ttc" id="style_8hh.html_ab3feaac70bb633c5fe1cbe1176491188"><div class="ttname"><a href="style_8hh.html#ab3feaac70bb633c5fe1cbe1176491188">SetHistStyle</a></div><div class="ttdeci">void SetHistStyle(TH1D *hist, int color, int width)</div><div class="ttdef"><b>Definition:</b> <a href="style_8cc_source.html#l00015">Style.cc:15</a></div></div>

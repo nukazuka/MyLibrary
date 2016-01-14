@@ -3,6 +3,8 @@ var searchData=
   ['setcolorpalette_5fold',['SetColorPalette_old',['../_style_8cc.html#a4c1ad0c46c90a57ec6f7c30810215d46',1,'SetColorPalette_old(int ncolors):&#160;Style.cc'],['../_style_8hh.html#a37a0d2b808df8265b9194872b96ea620',1,'SetColorPalette_old(int num=55):&#160;Style.cc']]],
   ['setdrawnoentry',['SetDrawNoEntry',['../class_multi_hist.html#a4c3b8c4d0056429497919c5738a7e0fb',1,'MultiHist']]],
   ['sethiststyle',['SetHistStyle',['../_style_8cc.html#ab3feaac70bb633c5fe1cbe1176491188',1,'SetHistStyle(TH1D *hist, int color, int width):&#160;Style.cc'],['../_style_8hh.html#ab3feaac70bb633c5fe1cbe1176491188',1,'SetHistStyle(TH1D *hist, int color, int width):&#160;Style.cc'],['../_style_8hh.html#a4f076592efc20e6e216a435692e84cf4',1,'SetHistStyle(TH *hist, int color, int width):&#160;Style.hh']]],
+  ['setlabeloffsetx',['SetLabelOffsetX',['../class_multi_hist.html#a5d1891bb21cf5c01838ebe6002fc017e',1,'MultiHist']]],
+  ['setlabeloffsety',['SetLabelOffsetY',['../class_multi_hist.html#a091c719cb5adeca5edd4ceeb78bb5a16',1,'MultiHist']]],
   ['setmarginbottom',['SetMarginBottom',['../class_multi_hist.html#a7b2c6e93485c4553374800c5f02bfa81',1,'MultiHist']]],
   ['setmarginh',['SetMarginH',['../class_multi_hist.html#aec0179ed3ebfb930f897ab234ca04494',1,'MultiHist']]],
   ['setmarginleft',['SetMarginLeft',['../class_multi_hist.html#a7d1dda179d5f4475762d65f3ebca7ae4',1,'MultiHist']]],
