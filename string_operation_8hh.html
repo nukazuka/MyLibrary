@@ -131,15 +131,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a661084e6421f537268af3a85704058ab"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_operation_8hh.html#a661084e6421f537268af3a85704058ab">String2Double</a> (string st)</td></tr>
 <tr class="memdesc:a661084e6421f537268af3a85704058ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">数字のみからなる文字列を double 型に変換し返す。  <a href="#a661084e6421f537268af3a85704058ab">More...</a><br/></td></tr>
 <tr class="separator:a661084e6421f537268af3a85704058ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a502382ab8ca7cdbeb26bf9835c51817d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_operation_8hh.html#a502382ab8ca7cdbeb26bf9835c51817d">Double2String</a> (double num)</td></tr>
-<tr class="memdesc:a502382ab8ca7cdbeb26bf9835c51817d"><td class="mdescLeft">&#160;</td><td class="mdescRight">double を strgin 型に変換し，返す。  <a href="#a502382ab8ca7cdbeb26bf9835c51817d">More...</a><br/></td></tr>
-<tr class="separator:a502382ab8ca7cdbeb26bf9835c51817d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6e6537a0d1742cb34bc42fb3a8e4015"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_operation_8hh.html#aa6e6537a0d1742cb34bc42fb3a8e4015">Double2String</a> (double num, int presicion=5)</td></tr>
+<tr class="separator:aa6e6537a0d1742cb34bc42fb3a8e4015"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a293e0c80f13ff851cef056c6bb13f659"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_operation_8hh.html#a293e0c80f13ff851cef056c6bb13f659">IsNumber</a> (string st)</td></tr>
 <tr class="memdesc:a293e0c80f13ff851cef056c6bb13f659"><td class="mdescLeft">&#160;</td><td class="mdescRight">文字列が数字のみで構成されているかを判定する。  <a href="#a293e0c80f13ff851cef056c6bb13f659">More...</a><br/></td></tr>
 <tr class="separator:a293e0c80f13ff851cef056c6bb13f659"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a502382ab8ca7cdbeb26bf9835c51817d"></a>
+<a class="anchor" id="aa6e6537a0d1742cb34bc42fb3a8e4015"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -147,27 +146,26 @@ Functions</h2></td></tr>
           <td class="memname">string Double2String </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>num</em></td><td>)</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>presicion</em> = <code>5</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>double を strgin 型に変換し，返す。 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">num</td><td>: 変換される double 型の数字。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>num を文字列に変換したもの。</dd></dl>
-<p>有効数字をどうするかまだ決めていない. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>有効数字をどうするか？ </dd></dl>
-
 <p>Definition at line <a class="el" href="string_operation_8cc_source.html#l00202">202</a> of file <a class="el" href="string_operation_8cc_source.html">StringOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;{</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  stringstream ss;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  ss &lt;&lt; num;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  ss &lt;&lt; setprecision( precision ) &lt;&lt; num;</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keywordflow">return</span> ss.str();</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div>
 </div><!-- fragment -->

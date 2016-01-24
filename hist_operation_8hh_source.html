@@ -112,21 +112,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//void DrawTitle(TVirtualPad* pad);</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">template</span> &lt; <span class="keyword">typename</span> TH &gt; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="hist_operation_8hh.html#ad2717505eb810ce3759e7e3ef6dc02a0">   42</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="hist_operation_8hh.html#ad2717505eb810ce3759e7e3ef6dc02a0">HistSetting</a>( TH* hist , <span class="keywordtype">int</span> color )</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  hist-&gt;Sumw2();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  hist-&gt;SetLineColor( color );</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  hist-&gt;SetMarkerColor( color );</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  hist-&gt;SetLineWidth( 2 );</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">template &lt; typename TH &gt; </span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">void HistSetting( TH* hist , int color , int line_width = 2)</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">{</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">  hist-&gt;Sumw2();</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">  hist-&gt;SetLineColor( color );</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">  hist-&gt;SetMarkerColor( color );</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">  hist-&gt;SetLineWidth( line_width );</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">  hist-&gt;GetXaxis()-&gt;CenterTitle();</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">  hist-&gt;GetYaxis()-&gt;CenterTitle();</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">}</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">template &lt; typename TH &gt; </span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">void HistSetting( TH* hist , int color )</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">{</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">  HistSetting( hist , color , 2 );</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">}</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="headers_root_8hh.html"><div class="ttname"><a href="headers_root_8hh.html">HeadersRoot.hh</a></div></div>
 <div class="ttc" id="headers_s_l_8hh.html"><div class="ttname"><a href="headers_s_l_8hh.html">HeadersSL.hh</a></div></div>
-<div class="ttc" id="hist_operation_8hh.html_ad2717505eb810ce3759e7e3ef6dc02a0"><div class="ttname"><a href="hist_operation_8hh.html#ad2717505eb810ce3759e7e3ef6dc02a0">HistSetting</a></div><div class="ttdeci">void HistSetting(TH *hist, int color)</div><div class="ttdef"><b>Definition:</b> <a href="hist_operation_8hh_source.html#l00042">HistOperation.hh:42</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
