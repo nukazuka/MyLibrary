@@ -117,6 +117,7 @@ public:
     This conversion does not lose information.
   */
   void Add( TH1* hist );
+  //void Add( TH1D* hist );
 
   /*!
     @fn void Add( TH2D* hist2d )
