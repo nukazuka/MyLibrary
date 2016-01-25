@@ -349,6 +349,8 @@ void MultiHist::Draw( string option,
   frame->GetYaxis()->SetTitleOffset( offset_title_y_ );
   frame->GetXaxis()->SetLabelOffset( offset_label_x_ );
   frame->GetYaxis()->SetLabelOffset( offset_label_y_ );
+  frame->GetXaxis()->SetLabelSize( size_label_x_ );
+  frame->GetYaxis()->SetLabelSize( size_label_y_ );
 
   frame->Draw();
 

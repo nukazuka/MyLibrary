@@ -29,6 +29,7 @@ private:
   string title_;
   string option_;
 
+  // min and max value of x and y axis
   double xmin_ = 1.0;
   double xmax_ = 2.0;
   double ymin_ = 1.0;
@@ -49,15 +50,21 @@ private:
   double stats_xmax_ = 1.0;
   double stats_ymax_ = 0.9;
 
+  // valiable for axis' title
   double offset_title_x_ = 1.0;
   double offset_title_y_ = 1.0;
 
+  // valiable for axis' label
   double offset_label_x_ = 0.005;
   double offset_label_y_ = 0.005;
+  double size_label_x_   = 0.05;
+  double size_label_y_   = 0.05;
 
+  // valiable for stats box
   double stats_width_  = 0.1;
   double stats_height_ = 0.1;
 
+  // valiable for title 
   double title_size_ = 0.07;
   int title_align_ = 23;
 
@@ -353,6 +360,18 @@ public:
     @param offset An offset of label in y axis
   */
   void SetLabelOffsetY( double offset ){ offset_label_y_ = offset;};
+
+  /*!
+    @fn   void SetLabelSizeX( double size )
+    @param size a size of x axis' label
+  */
+  void SetLabelSizeX( double size ){ size_label_x_ = size;};
+
+  /*!
+    @fn   void SetLabelSizeY( double size )
+    @param size a size of y axis' label
+  */
+  void SetLabelSizeY( double size ){ size_label_y_ = size;};
 
   /*!
     @fn void SetTitleOffsetX( double offset )
