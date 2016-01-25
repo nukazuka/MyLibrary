@@ -24,7 +24,7 @@ class MultiHist
 private:
 
   int id_;
-  int stats_type_;
+  int stats_type_ = 1;
   string name_;
   string title_;
   string option_;
