@@ -70,7 +70,7 @@ private:
 
   bool bl_stats_ = true;
   bool bl_title_ = true;
-  bool bl_draw_no_entry_ = true;
+  bool bl_draw_no_entry_ = false;
   bool bl_force_xmin_ = false;
   bool bl_force_xmax_ = false;
   bool bl_force_ymin_ = false;
@@ -212,7 +212,7 @@ public:
     @brief
     @details
   */
-  void SetDrawNoEntry ( bool bl )     { bl_draw_no_entry_ = bl ;};
+  void SetDrawNoEntry ( bool bl = true )     { bl_draw_no_entry_ = bl ;};
 
   /*!
     @fn void SetMarginBottom( double ratio )

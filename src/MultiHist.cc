@@ -131,21 +131,17 @@ void MultiHist::Ranges()
       int bin = vhist_[i]->GetXaxis()->GetNbins();
       double width = vhist_[i]->GetBinWidth(i);
 	
-      if( bl_draw_no_entry_ == true )
+      if( bl_draw_no_entry_ == false )
 	{
 	  x.push_back( vhist_[i]->GetBinCenter(0)   - width/2. );
 	  x.push_back( vhist_[i]->GetBinCenter(bin) + width/2. );
 	}
-
-      // in the case of "bl_draw_no_entry_ == false"
-      /*
-      // not ready
       else
-      {
-
-      }
-      */
-	
+	{
+	  x.push_back( GetHistStart( vhist_[i] ) - width/2 );
+	  x.push_back( GetHistEnd( vhist_[i] )   + width/2 );
+	}
+      
       y.push_back( vhist_[i]->GetBinContent( vhist_[i]->GetMinimumBin() ) );
       y.push_back( vhist_[i]->GetBinContent( vhist_[i]->GetMaximumBin() ) );
 
@@ -271,7 +267,10 @@ void MultiHist::Ranges()
       ymax_ = ymax_force_;
       margin_ratio_top_ = 0.0;
     }
+
+  
 }
+
 void MultiHist::Ranges2D()
 {
 
@@ -382,6 +381,14 @@ void MultiHist::Draw( string option,
   frame->GetYaxis()->SetLabelSize( size_label_y_ );
 
   frame->Draw();
+
+  cout << " " 
+       << setw(15) << vhist_[0]->GetTitle() << " "
+       << setw(9) << setprecision(4) << xmin_ << " " 
+       << setw(9) << setprecision(4) << xmax_ << "\t"
+       << setw(9) << setprecision(4) << ymin_ << " " 
+       << setw(9) << setprecision(4) << ymax_ << "\t" 
+       << endl;
 
   if( option == "" )
     option = option_;
