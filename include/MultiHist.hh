@@ -85,11 +85,13 @@ private:
   void Init( );
   void Init( string name, string title );
   void CheckLogScale();
+  double GetHistEnd( TH1D* hist );
+  double GetHistStart( TH1D* hist );
+  double GetSuitableXmin();
+  double GetSuitableYmin();
   void Margins();
   void Ranges();
   void Ranges2D();
-  double GetSuitableXmin();
-  double GetSuitableYmin();
   
 public:
 

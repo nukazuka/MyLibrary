@@ -2,7 +2,9 @@
 
 using namespace std;
 
-// private function 
+////////////////////////////////////////////////////////////
+// private functions ///////////////////////////////////////
+////////////////////////////////////////////////////////////
 
 // // Initialization
 void MultiHist::Init( )
@@ -25,6 +27,82 @@ void MultiHist::CheckLogScale()
   bl_logy_ = gPad->GetLogy();
 }
 
+
+double MultiHist::GetHistEnd( TH1D* hist )
+{
+
+  double rtn = -1;
+  for( int i=hist->GetNbinsX(); i>-1; i-- )
+    {
+      if( hist->GetBinContent( i ) != 0 )
+	  return hist->GetBinCenter(i);
+    }
+  return rtn;
+}
+
+double MultiHist::GetHistStart( TH1D* hist )
+{
+
+  double rtn = -1;
+  for( int i=1, itotal=hist->GetNbinsX()+1; i<itotal; i++ )
+    {
+      if( hist->GetBinContent( i ) != 0 )
+	  return hist->GetBinCenter(i);
+    }
+  return rtn;
+}
+
+double MultiHist::GetSuitableXmin()
+{
+
+  double xmin_candidate = 0.0;
+  vector < double > vxmin_candidate;
+  for( int i=0, itotal=vhist_.size(); i<itotal; i++ )
+    {
+      
+      for( int j=0, jtotal=vhist_[i]->GetXaxis()->GetNbins(); j<jtotal; j++ )
+	{
+	  xmin_candidate = vhist_[i]->GetBinCenter(j);
+	  
+	  if( xmin_candidate > 0 )
+	    {
+	      vxmin_candidate.push_back( xmin_candidate );
+	      break;
+	    }
+	}
+    }
+
+  return *min_element( vxmin_candidate.begin(), vxmin_candidate.end() );
+}
+
+double MultiHist::GetSuitableYmin()
+{
+
+  vector < double > ymin_candidate;
+  for( int i=0, itotal=vhist_.size(); i<itotal; i++ )
+    {
+
+      vector < double > vtemp;
+      for( int j=0, jtotal = vhist_[i]->GetXaxis()->GetNbins(); j<jtotal; j++ )
+	vtemp.push_back( vhist_[i]->GetBinContent(j) );
+
+      sort( vtemp.begin(), vtemp.end());
+
+      for( int j=0, jtotal=vtemp.size(); j<jtotal; j++ )
+	{
+
+	  if( vtemp[j] > 0 )
+	    {
+
+	      ymin_candidate.push_back( vtemp[j] );
+	      break;
+	    }
+	}
+    }
+
+  double min = *min_element( ymin_candidate.begin(), ymin_candidate.end() );
+  return min;
+}
 
 void MultiHist::Margins()
 {
@@ -221,59 +299,10 @@ void MultiHist::Ranges2D()
   
 }
 
-double MultiHist::GetSuitableXmin()
-{
 
-  double xmin_candidate = 0.0;
-  vector < double > vxmin_candidate;
-  for( int i=0, itotal=vhist_.size(); i<itotal; i++ )
-    {
-      
-      for( int j=0, jtotal=vhist_[i]->GetXaxis()->GetNbins(); j<jtotal; j++ )
-	{
-	  xmin_candidate = vhist_[i]->GetBinCenter(j);
-	  
-	  if( xmin_candidate > 0 )
-	    {
-	      vxmin_candidate.push_back( xmin_candidate );
-	      break;
-	    }
-	}
-    }
-
-  return *min_element( vxmin_candidate.begin(), vxmin_candidate.end() );
-}
-
-double MultiHist::GetSuitableYmin()
-{
-
-  vector < double > ymin_candidate;
-  for( int i=0, itotal=vhist_.size(); i<itotal; i++ )
-    {
-
-      vector < double > vtemp;
-      for( int j=0, jtotal = vhist_[i]->GetXaxis()->GetNbins(); j<jtotal; j++ )
-	vtemp.push_back( vhist_[i]->GetBinContent(j) );
-
-      sort( vtemp.begin(), vtemp.end());
-
-      for( int j=0, jtotal=vtemp.size(); j<jtotal; j++ )
-	{
-
-	  if( vtemp[j] > 0 )
-	    {
-
-	      ymin_candidate.push_back( vtemp[j] );
-	      break;
-	    }
-	}
-    }
-
-  double min = *min_element( ymin_candidate.begin(), ymin_candidate.end() );
-  return min;
-}
-
-// public function
+////////////////////////////////////////////////////////////
+// public functions ////////////////////////////////////////
+////////////////////////////////////////////////////////////
 
 void MultiHist::Add( TH1* hist )
 {
