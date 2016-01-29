@@ -51,8 +51,12 @@ private:
   double stats_ymax_ = 0.9;
 
   // valiable for axis' title
+  string title_x_ = " ";
+  string title_y_ = " ";
   double offset_title_x_ = 1.0;
   double offset_title_y_ = 1.0;
+  double size_title_x_ = 0.15;
+  double size_title_y_ = 0.15;
 
   // valiable for axis' label
   double offset_label_x_ = 0.005;
@@ -85,6 +89,7 @@ private:
   void Init( );
   void Init( string name, string title );
   void CheckLogScale();
+  void FrameSetting( TH1F* frame, double margin_bottom, double margin_top );
   double GetHistEnd( TH1D* hist );
   double GetHistStart( TH1D* hist );
   double GetSuitableXmin();
@@ -353,6 +358,20 @@ public:
   void SetTitleDraw   ( bool bl )     { bl_title_ = bl;};
 
   /*!
+    @fn   void SetTitleX( string title )
+    @param title title of x axis
+    @brief set title of x axis
+  */
+  void SetTitleX( string title ){ title_x_ = title;};
+
+  /*!
+    @fn   void SetTitleY( string title )
+    @param title title of y axis
+    @brief set title of y axis
+  */
+  void SetTitleY( string title ){ title_y_ = title;};
+
+  /*!
     @fn void SetLabelOffsetX( double offset )
     @param offset An offset of label in x axis
   */
@@ -388,7 +407,6 @@ public:
   */
   void SetTitleOffsetY( double offset ){ offset_title_y_ = offset;};
 
-
   /*!
     @fn void SetTitleSize( double size )
     @param
@@ -396,6 +414,20 @@ public:
     @details
   */
   void SetTitleSize   ( double size ) { title_size_ = size;};
+
+  /*!
+    @fn void SetTitleSizeX( double size )
+    @param size a size of x axis' title
+    @brief set a size of x axis's title
+  */
+  void SetTitleSizeX   ( double size ) { size_title_x_ = size;};
+
+  /*!
+    @fn void SetTitleSizey( double size )
+    @param size a size of y axis' title
+    @brief set a size of y axis's title
+  */
+  void SetTitleSizeY   ( double size ) { size_title_y_ = size;};
 
   /*!
     @fn void SetXmin( double val )

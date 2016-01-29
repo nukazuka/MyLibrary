@@ -27,6 +27,35 @@ void MultiHist::CheckLogScale()
   bl_logy_ = gPad->GetLogy();
 }
 
+void MultiHist::FrameSetting( TH1F* frame, double margin_bottom, double margin_top )
+{
+
+  frame->SetMinimum( ymin_ - margin_bottom );
+  frame->SetMaximum( ymax_ + margin_top );
+  frame->SetStats( false );
+
+  frame->GetXaxis()->CenterTitle( true );
+  frame->GetYaxis()->CenterTitle( true );
+
+  frame->GetXaxis()->SetTitleOffset( offset_title_x_ );
+  frame->GetYaxis()->SetTitleOffset( offset_title_y_ );
+
+  frame->GetXaxis()->SetTitleSize( size_title_x_ );
+  frame->GetYaxis()->SetTitleSize( size_title_y_ );
+
+  frame->GetXaxis()->SetLabelOffset( offset_label_x_ );
+  frame->GetYaxis()->SetLabelOffset( offset_label_y_ );
+
+  frame->GetXaxis()->SetLabelSize( size_label_x_ );
+  frame->GetYaxis()->SetLabelSize( size_label_y_ );
+
+  if( (string)(frame->GetXaxis()->GetTitle()) == "" )
+    frame->GetXaxis()->SetTitle( title_x_.c_str() );
+
+  if( (string)(frame->GetYaxis()->GetTitle()) == "" )
+    frame->GetYaxis()->SetTitle( title_y_.c_str() );
+
+}
 
 double MultiHist::GetHistEnd( TH1D* hist )
 {
@@ -368,18 +397,8 @@ void MultiHist::Draw( string option,
 
   string name = name_ + title_ + "hframe" + Int2String( id_ );
   TH1F* frame = new TH1F( name.c_str() , title_.c_str() , 1000, xmin_ - margin_left, xmax_ + margin_right );
-  frame->SetMinimum( ymin_ - margin_bottom );
-  frame->SetMaximum( ymax_ + margin_top );
-  frame->SetStats( false );
-  frame->GetXaxis()->CenterTitle( true );
-  frame->GetYaxis()->CenterTitle( true );
-  frame->GetXaxis()->SetTitleOffset( offset_title_x_ );
-  frame->GetYaxis()->SetTitleOffset( offset_title_y_ );
-  frame->GetXaxis()->SetLabelOffset( offset_label_x_ );
-  frame->GetYaxis()->SetLabelOffset( offset_label_y_ );
-  frame->GetXaxis()->SetLabelSize( size_label_x_ );
-  frame->GetYaxis()->SetLabelSize( size_label_y_ );
 
+  FrameSetting( frame , margin_bottom, margin_top );
   frame->Draw();
 
   if( option == "" )
@@ -432,14 +451,8 @@ void MultiHist::Draw2D( string option )
 
   string name = name_ + title_ + "hframe" + Int2String( id_ );
   TH1F* frame = new TH1F( name.c_str() , title_.c_str() , 1000, xmin_ - margin_left, xmax_ + margin_right );
-  frame->SetMinimum( ymin_ - margin_bottom );
-  frame->SetMaximum( ymax_ + margin_top );
-  frame->SetStats( false );
-  frame->GetXaxis()->CenterTitle( true );
-  frame->GetYaxis()->CenterTitle( true );
-  frame->GetXaxis()->SetTitleOffset( offset_title_x_ );
-  frame->GetYaxis()->SetTitleOffset( offset_title_y_ );
 
+  FrameSetting( frame , margin_bottom, margin_top );
   frame->Draw();
 
   string option2 = "";
