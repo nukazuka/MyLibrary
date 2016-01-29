@@ -42,6 +42,7 @@ fi
 # checkout to gh-pages in document directory
 cd document
 git checkout gh-pages
+git pull
 
 # go to parent directory and make doxygen files
 cd ..
