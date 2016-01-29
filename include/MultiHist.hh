@@ -24,7 +24,7 @@ class MultiHist
 private:
 
   int id_;
-  int stats_type_;
+  int stats_type_ = 1;
   string name_;
   string title_;
   string option_;
@@ -74,7 +74,7 @@ private:
 
   bool bl_stats_ = true;
   bool bl_title_ = true;
-  bool bl_draw_no_entry_ = true;
+  bool bl_draw_no_entry_ = false;
   bool bl_force_xmin_ = false;
   bool bl_force_xmax_ = false;
   bool bl_force_ymin_ = false;
@@ -90,11 +90,13 @@ private:
   void Init( string name, string title );
   void CheckLogScale();
   void FrameSetting( TH1F* frame, double margin_bottom, double margin_top );
+  double GetHistEnd( TH1D* hist );
+  double GetHistStart( TH1D* hist );
+  double GetSuitableXmin();
+  double GetSuitableYmin();
   void Margins();
   void Ranges();
   void Ranges2D();
-  double GetSuitableXmin();
-  double GetSuitableYmin();
   
 public:
 
@@ -122,6 +124,7 @@ public:
     This conversion does not lose information.
   */
   void Add( TH1* hist );
+  //void Add( TH1D* hist );
 
   /*!
     @fn void Add( TH2D* hist2d )
@@ -214,7 +217,7 @@ public:
     @brief
     @details
   */
-  void SetDrawNoEntry ( bool bl )     { bl_draw_no_entry_ = bl ;};
+  void SetDrawNoEntry ( bool bl = true )     { bl_draw_no_entry_ = bl ;};
 
   /*!
     @fn void SetMarginBottom( double ratio )

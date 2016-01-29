@@ -2,7 +2,9 @@
 
 using namespace std;
 
-// private function 
+////////////////////////////////////////////////////////////
+// private functions ///////////////////////////////////////
+////////////////////////////////////////////////////////////
 
 // // Initialization
 void MultiHist::Init( )
@@ -24,7 +26,6 @@ void MultiHist::CheckLogScale()
   bl_logx_ = gPad->GetLogx();
   bl_logy_ = gPad->GetLogy();
 }
-
 
 void MultiHist::FrameSetting( TH1F* frame, double margin_bottom, double margin_top )
 {
@@ -56,6 +57,82 @@ void MultiHist::FrameSetting( TH1F* frame, double margin_bottom, double margin_t
 
 }
 
+double MultiHist::GetHistEnd( TH1D* hist )
+{
+
+  double rtn = -1;
+  for( int i=hist->GetNbinsX(); i>-1; i-- )
+    {
+      if( hist->GetBinContent( i ) != 0 )
+	  return hist->GetBinCenter(i);
+    }
+  return rtn;
+}
+
+double MultiHist::GetHistStart( TH1D* hist )
+{
+
+  double rtn = -1;
+  for( int i=1, itotal=hist->GetNbinsX()+1; i<itotal; i++ )
+    {
+      if( hist->GetBinContent( i ) != 0 )
+	  return hist->GetBinCenter(i);
+    }
+  return rtn;
+}
+
+double MultiHist::GetSuitableXmin()
+{
+
+  double xmin_candidate = 0.0;
+  vector < double > vxmin_candidate;
+  for( int i=0, itotal=vhist_.size(); i<itotal; i++ )
+    {
+      
+      for( int j=0, jtotal=vhist_[i]->GetXaxis()->GetNbins(); j<jtotal; j++ )
+	{
+	  xmin_candidate = vhist_[i]->GetBinCenter(j);
+	  
+	  if( xmin_candidate > 0 )
+	    {
+	      vxmin_candidate.push_back( xmin_candidate );
+	      break;
+	    }
+	}
+    }
+
+  return *min_element( vxmin_candidate.begin(), vxmin_candidate.end() );
+}
+
+double MultiHist::GetSuitableYmin()
+{
+
+  vector < double > ymin_candidate;
+  for( int i=0, itotal=vhist_.size(); i<itotal; i++ )
+    {
+
+      vector < double > vtemp;
+      for( int j=0, jtotal = vhist_[i]->GetXaxis()->GetNbins(); j<jtotal; j++ )
+	vtemp.push_back( vhist_[i]->GetBinContent(j) );
+
+      sort( vtemp.begin(), vtemp.end());
+
+      for( int j=0, jtotal=vtemp.size(); j<jtotal; j++ )
+	{
+
+	  if( vtemp[j] > 0 )
+	    {
+
+	      ymin_candidate.push_back( vtemp[j] );
+	      break;
+	    }
+	}
+    }
+
+  double min = *min_element( ymin_candidate.begin(), ymin_candidate.end() );
+  return min;
+}
+
 void MultiHist::Margins()
 {
 
@@ -83,21 +160,17 @@ void MultiHist::Ranges()
       int bin = vhist_[i]->GetXaxis()->GetNbins();
       double width = vhist_[i]->GetBinWidth(i);
 	
-      if( bl_draw_no_entry_ == true )
+      if( bl_draw_no_entry_ == false )
 	{
 	  x.push_back( vhist_[i]->GetBinCenter(0)   - width/2. );
 	  x.push_back( vhist_[i]->GetBinCenter(bin) + width/2. );
 	}
-
-      // in the case of "bl_draw_no_entry_ == false"
-      /*
-      // not ready
       else
-      {
-
-      }
-      */
-	
+	{
+	  x.push_back( GetHistStart( vhist_[i] ) - width/2 );
+	  x.push_back( GetHistEnd( vhist_[i] )   + width/2 );
+	}
+      
       y.push_back( vhist_[i]->GetBinContent( vhist_[i]->GetMinimumBin() ) );
       y.push_back( vhist_[i]->GetBinContent( vhist_[i]->GetMaximumBin() ) );
 
@@ -223,7 +296,10 @@ void MultiHist::Ranges()
       ymax_ = ymax_force_;
       margin_ratio_top_ = 0.0;
     }
+
+  
 }
+
 void MultiHist::Ranges2D()
 {
 
@@ -251,59 +327,10 @@ void MultiHist::Ranges2D()
   
 }
 
-double MultiHist::GetSuitableXmin()
-{
 
-  double xmin_candidate = 0.0;
-  vector < double > vxmin_candidate;
-  for( int i=0, itotal=vhist_.size(); i<itotal; i++ )
-    {
-      
-      for( int j=0, jtotal=vhist_[i]->GetXaxis()->GetNbins(); j<jtotal; j++ )
-	{
-	  xmin_candidate = vhist_[i]->GetBinCenter(j);
-	  
-	  if( xmin_candidate > 0 )
-	    {
-	      vxmin_candidate.push_back( xmin_candidate );
-	      break;
-	    }
-	}
-    }
-
-  return *min_element( vxmin_candidate.begin(), vxmin_candidate.end() );
-}
-
-double MultiHist::GetSuitableYmin()
-{
-
-  vector < double > ymin_candidate;
-  for( int i=0, itotal=vhist_.size(); i<itotal; i++ )
-    {
-
-      vector < double > vtemp;
-      for( int j=0, jtotal = vhist_[i]->GetXaxis()->GetNbins(); j<jtotal; j++ )
-	vtemp.push_back( vhist_[i]->GetBinContent(j) );
-
-      sort( vtemp.begin(), vtemp.end());
-
-      for( int j=0, jtotal=vtemp.size(); j<jtotal; j++ )
-	{
-
-	  if( vtemp[j] > 0 )
-	    {
-
-	      ymin_candidate.push_back( vtemp[j] );
-	      break;
-	    }
-	}
-    }
-
-  double min = *min_element( ymin_candidate.begin(), ymin_candidate.end() );
-  return min;
-}
-
-// public function
+////////////////////////////////////////////////////////////
+// public functions ////////////////////////////////////////
+////////////////////////////////////////////////////////////
 
 void MultiHist::Add( TH1* hist )
 {
@@ -373,6 +400,14 @@ void MultiHist::Draw( string option,
 
   FrameSetting( frame , margin_bottom, margin_top );
   frame->Draw();
+
+  cout << " " 
+       << setw(15) << vhist_[0]->GetTitle() << " "
+       << setw(9) << setprecision(4) << xmin_ << " " 
+       << setw(9) << setprecision(4) << xmax_ << "\t"
+       << setw(9) << setprecision(4) << ymin_ << " " 
+       << setw(9) << setprecision(4) << ymax_ << "\t" 
+       << endl;
 
   if( option == "" )
     option = option_;
