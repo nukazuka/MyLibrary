@@ -382,14 +382,6 @@ void MultiHist::Draw( string option,
 
   frame->Draw();
 
-  cout << " " 
-       << setw(15) << vhist_[0]->GetTitle() << " "
-       << setw(9) << setprecision(4) << xmin_ << " " 
-       << setw(9) << setprecision(4) << xmax_ << "\t"
-       << setw(9) << setprecision(4) << ymin_ << " " 
-       << setw(9) << setprecision(4) << ymax_ << "\t" 
-       << endl;
-
   if( option == "" )
     option = option_;
 
