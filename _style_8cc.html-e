@@ -94,17 +94,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_style_8hh_source.html">Style.hh</a>&quot;</code><br />
 </div>
-<p><a href="style_8cc_source.html">Go to the source code of this file.</a></p>
+<p><a href="_style_8cc_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a766767e61d475a5e310dc33475d823d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="style_8cc.html#a766767e61d475a5e310dc33475d823d7">Style</a> ()</td></tr>
+<tr class="memitem:a766767e61d475a5e310dc33475d823d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_style_8cc.html#a766767e61d475a5e310dc33475d823d7">Style</a> ()</td></tr>
 <tr class="separator:a766767e61d475a5e310dc33475d823d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3feaac70bb633c5fe1cbe1176491188"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="style_8cc.html#ab3feaac70bb633c5fe1cbe1176491188">SetHistStyle</a> (TH1D *hist, int color, int width)</td></tr>
+<tr class="memitem:ab3feaac70bb633c5fe1cbe1176491188"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_style_8cc.html#ab3feaac70bb633c5fe1cbe1176491188">SetHistStyle</a> (TH1D *hist, int color, int width)</td></tr>
 <tr class="separator:ab3feaac70bb633c5fe1cbe1176491188"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add73f43f8c4d724148fe0a02c88e3a23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="style_8cc.html#add73f43f8c4d724148fe0a02c88e3a23">GraphSetting</a> (TGraph *g, int color, int width, int marker_style, int fill_style)</td></tr>
+<tr class="memitem:add73f43f8c4d724148fe0a02c88e3a23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_style_8cc.html#add73f43f8c4d724148fe0a02c88e3a23">GraphSetting</a> (TGraph *g, int color, int width, int marker_style, int fill_style)</td></tr>
 <tr class="separator:add73f43f8c4d724148fe0a02c88e3a23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c1ad0c46c90a57ec6f7c30810215d46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="style_8cc.html#a4c1ad0c46c90a57ec6f7c30810215d46">SetColorPalette_old</a> (int ncolors)</td></tr>
+<tr class="memitem:a4c1ad0c46c90a57ec6f7c30810215d46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_style_8cc.html#a4c1ad0c46c90a57ec6f7c30810215d46">SetColorPalette_old</a> (int ncolors)</td></tr>
 <tr class="separator:a4c1ad0c46c90a57ec6f7c30810215d46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -150,7 +150,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="style_8cc_source.html#l00038">38</a> of file <a class="el" href="style_8cc_source.html">Style.cc</a>.</p>
+<p>Definition at line <a class="el" href="_style_8cc_source.html#l00038">38</a> of file <a class="el" href="_style_8cc_source.html">Style.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  g-&gt;SetLineColor   ( color );</div>
@@ -177,7 +177,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="style_8cc_source.html#l00049">49</a> of file <a class="el" href="style_8cc_source.html">Style.cc</a>.</p>
+<p>Definition at line <a class="el" href="_style_8cc_source.html#l00049">49</a> of file <a class="el" href="_style_8cc_source.html">Style.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  TColor::InitializeColors();</div>
@@ -842,7 +842,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="style_8cc_source.html#l00015">15</a> of file <a class="el" href="style_8cc_source.html">Style.cc</a>.</p>
+<p>Definition at line <a class="el" href="_style_8cc_source.html#l00015">15</a> of file <a class="el" href="_style_8cc_source.html">Style.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  SetHistStyle&lt;TH1D&gt;(hist, color, width);</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
@@ -862,7 +862,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="style_8cc_source.html#l00005">5</a> of file <a class="el" href="style_8cc_source.html">Style.cc</a>.</p>
+<p>Definition at line <a class="el" href="_style_8cc_source.html#l00005">5</a> of file <a class="el" href="_style_8cc_source.html">Style.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  gStyle-&gt;SetEndErrorSize(0);</div>
