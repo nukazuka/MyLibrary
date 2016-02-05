@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['canvasoperation_2ecc',['CanvasOperation.cc',['../_canvas_operation_8cc.html',1,'']]],
-  ['canvasoperation_2ehh',['CanvasOperation.hh',['../_canvas_operation_8hh.html',1,'']]],
-  ['canvassetting_2ehh',['CanvasSetting.hh',['../_canvas_setting_8hh.html',1,'']]]
+  ['argumentparser_2ecc',['ArgumentParser.cc',['../_argument_parser_8cc.html',1,'']]],
+  ['argumentparser_2ehh',['ArgumentParser.hh',['../_argument_parser_8hh.html',1,'']]]
 ];

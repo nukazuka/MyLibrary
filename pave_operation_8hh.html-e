@@ -96,26 +96,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="headers_s_l_8hh_source.html">HeadersSL.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="headers_root_8hh_source.html">HeadersRoot.hh</a>&quot;</code><br />
 </div>
-<p><a href="pave_operation_8hh_source.html">Go to the source code of this file.</a></p>
+<p><a href="_pave_operation_8hh_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab69188cdbd7ed32e0b3fa15c8d787f2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pave_operation_8hh.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a> (TVirtualPad *pad, Double_t text_size, int text_align)</td></tr>
+<tr class="memitem:ab69188cdbd7ed32e0b3fa15c8d787f2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pave_operation_8hh.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a> (TVirtualPad *pad, Double_t text_size, int text_align)</td></tr>
 <tr class="memdesc:ab69188cdbd7ed32e0b3fa15c8d787f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">pad にある title オブジェクトを取得して書き直す  <a href="#ab69188cdbd7ed32e0b3fa15c8d787f2a">More...</a><br /></td></tr>
 <tr class="separator:ab69188cdbd7ed32e0b3fa15c8d787f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a351c5610de492dc89966d4e455d75b19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pave_operation_8hh.html#a351c5610de492dc89966d4e455d75b19">DrawTitle</a> (Double_t text_size=0.07, int test_align=23)</td></tr>
+<tr class="memitem:a351c5610de492dc89966d4e455d75b19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pave_operation_8hh.html#a351c5610de492dc89966d4e455d75b19">DrawTitle</a> (Double_t text_size=0.07, int test_align=23)</td></tr>
 <tr class="separator:a351c5610de492dc89966d4e455d75b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4401c5da6926e708679db3bf1825a014"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pave_operation_8hh.html#a4401c5da6926e708679db3bf1825a014">DrawTitle</a> (TVirtualPad *pad, Double_t text_size=0.07)</td></tr>
+<tr class="memitem:a4401c5da6926e708679db3bf1825a014"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pave_operation_8hh.html#a4401c5da6926e708679db3bf1825a014">DrawTitle</a> (TVirtualPad *pad, Double_t text_size=0.07)</td></tr>
 <tr class="separator:a4401c5da6926e708679db3bf1825a014"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2902ca574ed3e01c2be97e21b1a747ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pave_operation_8hh.html#a2902ca574ed3e01c2be97e21b1a747ba">DrawTitle</a> (TVirtualPad *pad)</td></tr>
+<tr class="memitem:a2902ca574ed3e01c2be97e21b1a747ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pave_operation_8hh.html#a2902ca574ed3e01c2be97e21b1a747ba">DrawTitle</a> (TVirtualPad *pad)</td></tr>
 <tr class="separator:a2902ca574ed3e01c2be97e21b1a747ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38d0561c73ea7b706b591c3bb19d5a52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pave_operation_8hh.html#a38d0561c73ea7b706b591c3bb19d5a52">DrawStats2D</a> (TH2D *hist, double xmin, double ymin, double xmax, double ymax)</td></tr>
+<tr class="memitem:a38d0561c73ea7b706b591c3bb19d5a52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pave_operation_8hh.html#a38d0561c73ea7b706b591c3bb19d5a52">DrawStats2D</a> (TH2D *hist, double xmin, double ymin, double xmax, double ymax)</td></tr>
 <tr class="separator:a38d0561c73ea7b706b591c3bb19d5a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5e71038ccca0543871fb6d36d2f0786"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pave_operation_8hh.html#ae5e71038ccca0543871fb6d36d2f0786">DrawPaletteAxis</a> (TH2D *hist, double xmin=0.9, double ymin=0.1, double xmax=0.93, double ymax=0.9, double label_size=0.08)</td></tr>
+<tr class="memitem:ae5e71038ccca0543871fb6d36d2f0786"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pave_operation_8hh.html#ae5e71038ccca0543871fb6d36d2f0786">DrawPaletteAxis</a> (TH2D *hist, double xmin=0.9, double ymin=0.1, double xmax=0.93, double ymax=0.9, double label_size=0.08)</td></tr>
 <tr class="memdesc:ae5e71038ccca0543871fb6d36d2f0786"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw color palette axis for TH2 .  <a href="#ae5e71038ccca0543871fb6d36d2f0786">More...</a><br /></td></tr>
 <tr class="separator:ae5e71038ccca0543871fb6d36d2f0786"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af71e38570520000cdd3b0652d5f756a3"><td class="memTemplParams" colspan="2">template&lt;typename TH &gt; </td></tr>
-<tr class="memitem:af71e38570520000cdd3b0652d5f756a3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="pave_operation_8hh.html#af71e38570520000cdd3b0652d5f756a3">DrawStats</a> (TH *hist, double xmin, double ymin, double xmax, double ymax)</td></tr>
+<tr class="memitem:af71e38570520000cdd3b0652d5f756a3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="_pave_operation_8hh.html#af71e38570520000cdd3b0652d5f756a3">DrawStats</a> (TH *hist, double xmin, double ymin, double xmax, double ymax)</td></tr>
 <tr class="separator:af71e38570520000cdd3b0652d5f756a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -180,7 +180,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="pave_operation_8cc_source.html#l00047">47</a> of file <a class="el" href="pave_operation_8cc_source.html">PaveOperation.cc</a>.</p>
+<p>Definition at line <a class="el" href="_pave_operation_8cc_source.html#l00047">47</a> of file <a class="el" href="_pave_operation_8cc_source.html">PaveOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  gPad-&gt;Update();</div>
@@ -242,7 +242,7 @@ template&lt;typename TH &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="pave_operation_8hh_source.html#l00131">131</a> of file <a class="el" href="pave_operation_8hh_source.html">PaveOperation.hh</a>.</p>
+<p>Definition at line <a class="el" href="_pave_operation_8hh_source.html#l00131">131</a> of file <a class="el" href="_pave_operation_8hh_source.html">PaveOperation.hh</a>.</p>
 <div class="fragment"><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;{</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  gPad-&gt;Update();</div>
@@ -312,7 +312,7 @@ template&lt;typename TH &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="pave_operation_8cc_source.html#l00087">87</a> of file <a class="el" href="pave_operation_8cc_source.html">PaveOperation.cc</a>.</p>
+<p>Definition at line <a class="el" href="_pave_operation_8cc_source.html#l00087">87</a> of file <a class="el" href="_pave_operation_8cc_source.html">PaveOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  gPad-&gt;Update();</div>
@@ -374,7 +374,7 @@ template&lt;typename TH &gt; </div>
 </dl>
 <p>他の DrawTitle は最終的にこの関数を呼び出している。 </p>
 
-<p>Definition at line <a class="el" href="pave_operation_8cc_source.html#l00010">10</a> of file <a class="el" href="pave_operation_8cc_source.html">PaveOperation.cc</a>.</p>
+<p>Definition at line <a class="el" href="_pave_operation_8cc_source.html#l00010">10</a> of file <a class="el" href="_pave_operation_8cc_source.html">PaveOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  pad-&gt;Update();</div>
@@ -421,11 +421,11 @@ template&lt;typename TH &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="pave_operation_8cc_source.html#l00025">25</a> of file <a class="el" href="pave_operation_8cc_source.html">PaveOperation.cc</a>.</p>
+<p>Definition at line <a class="el" href="_pave_operation_8cc_source.html#l00025">25</a> of file <a class="el" href="_pave_operation_8cc_source.html">PaveOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a>( gPad , text_size , text_align );</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="ttc" id="pave_operation_8cc.html_ab69188cdbd7ed32e0b3fa15c8d787f2a"><div class="ttname"><a href="pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a></div><div class="ttdeci">void DrawTitle(TVirtualPad *pad, Double_t text_size, int text_align)</div><div class="ttdoc">pad にある title オブジェクトを取得して書き直す </div><div class="ttdef"><b>Definition:</b> <a href="pave_operation_8cc_source.html#l00010">PaveOperation.cc:10</a></div></div>
+<div class="ttc" id="pave_operation_8cc.html_ab69188cdbd7ed32e0b3fa15c8d787f2a"><div class="ttname"><a href="pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a></div><div class="ttdeci">void DrawTitle(TVirtualPad *pad, Double_t text_size, int text_align)</div><div class="ttdoc">pad にある title オブジェクトを取得して書き直す </div><div class="ttdef"><b>Definition:</b> <a href="_pave_operation_8cc_source.html#l00010">PaveOperation.cc:10</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -454,11 +454,11 @@ template&lt;typename TH &gt; </div>
 </div><div class="memdoc">
 <p>後方互換性のために残してるけど，もう使わない。 </p>
 
-<p>Definition at line <a class="el" href="pave_operation_8cc_source.html#l00030">30</a> of file <a class="el" href="pave_operation_8cc_source.html">PaveOperation.cc</a>.</p>
+<p>Definition at line <a class="el" href="_pave_operation_8cc_source.html#l00030">30</a> of file <a class="el" href="_pave_operation_8cc_source.html">PaveOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a>( pad , text_size , 23);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
-<div class="ttc" id="pave_operation_8cc.html_ab69188cdbd7ed32e0b3fa15c8d787f2a"><div class="ttname"><a href="pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a></div><div class="ttdeci">void DrawTitle(TVirtualPad *pad, Double_t text_size, int text_align)</div><div class="ttdoc">pad にある title オブジェクトを取得して書き直す </div><div class="ttdef"><b>Definition:</b> <a href="pave_operation_8cc_source.html#l00010">PaveOperation.cc:10</a></div></div>
+<div class="ttc" id="pave_operation_8cc.html_ab69188cdbd7ed32e0b3fa15c8d787f2a"><div class="ttname"><a href="pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a></div><div class="ttdeci">void DrawTitle(TVirtualPad *pad, Double_t text_size, int text_align)</div><div class="ttdoc">pad にある title オブジェクトを取得して書き直す </div><div class="ttdef"><b>Definition:</b> <a href="_pave_operation_8cc_source.html#l00010">PaveOperation.cc:10</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -482,11 +482,11 @@ template&lt;typename TH &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="pave_operation_8cc_source.html#l00035">35</a> of file <a class="el" href="pave_operation_8cc_source.html">PaveOperation.cc</a>.</p>
+<p>Definition at line <a class="el" href="_pave_operation_8cc_source.html#l00035">35</a> of file <a class="el" href="_pave_operation_8cc_source.html">PaveOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a>( pad , 0.07 , 23);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="ttc" id="pave_operation_8cc.html_ab69188cdbd7ed32e0b3fa15c8d787f2a"><div class="ttname"><a href="pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a></div><div class="ttdeci">void DrawTitle(TVirtualPad *pad, Double_t text_size, int text_align)</div><div class="ttdoc">pad にある title オブジェクトを取得して書き直す </div><div class="ttdef"><b>Definition:</b> <a href="pave_operation_8cc_source.html#l00010">PaveOperation.cc:10</a></div></div>
+<div class="ttc" id="pave_operation_8cc.html_ab69188cdbd7ed32e0b3fa15c8d787f2a"><div class="ttname"><a href="pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a></div><div class="ttdeci">void DrawTitle(TVirtualPad *pad, Double_t text_size, int text_align)</div><div class="ttdoc">pad にある title オブジェクトを取得して書き直す </div><div class="ttdef"><b>Definition:</b> <a href="_pave_operation_8cc_source.html#l00010">PaveOperation.cc:10</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

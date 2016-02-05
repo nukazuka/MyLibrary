@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['multihist',['MultiHist',['../class_multi_hist.html',1,'']]]
+  ['argumentparser',['ArgumentParser',['../class_argument_parser.html',1,'']]]
 ];

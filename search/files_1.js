@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['headersphast_2ehh',['HeadersPhast.hh',['../_headers_phast_8hh.html',1,'']]],
-  ['headersroot_2ehh',['HeadersRoot.hh',['../_headers_root_8hh.html',1,'']]],
-  ['headerssl_2ehh',['HeadersSL.hh',['../_headers_s_l_8hh.html',1,'']]],
-  ['histoperation_2ecc',['HistOperation.cc',['../_hist_operation_8cc.html',1,'']]],
-  ['histoperation_2ehh',['HistOperation.hh',['../_hist_operation_8hh.html',1,'']]]
+  ['canvasoperation_2ecc',['CanvasOperation.cc',['../_canvas_operation_8cc.html',1,'']]],
+  ['canvasoperation_2ehh',['CanvasOperation.hh',['../_canvas_operation_8hh.html',1,'']]],
+  ['canvassetting_2ehh',['CanvasSetting.hh',['../_canvas_setting_8hh.html',1,'']]]
 ];

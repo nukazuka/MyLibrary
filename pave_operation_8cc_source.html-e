@@ -90,16 +90,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">PaveOperation.cc</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="pave_operation_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MYLIB_PAVEOPERATION_CC</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="pave_operation_8cc.html#a1b587f78e23cb4903145ca85b429a342">    2</a></span>&#160;<span class="preprocessor">#define MYLIB_PAVEOPERATION_CC</span></div>
+<a href="_pave_operation_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MYLIB_PAVEOPERATION_CC</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="_pave_operation_8cc.html#a1b587f78e23cb4903145ca85b429a342">    2</a></span>&#160;<span class="preprocessor">#define MYLIB_PAVEOPERATION_CC</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef __CINT__</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pave_operation_8hh.html">PaveOperation.hh</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_pave_operation_8hh.html">PaveOperation.hh</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="pave_operation_8hh.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">   10</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a>(TVirtualPad* pad, Double_t text_size , <span class="keywordtype">int</span> text_align )</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="_pave_operation_8hh.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">   10</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a>(TVirtualPad* pad, Double_t text_size , <span class="keywordtype">int</span> text_align )</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  pad-&gt;Update();</div>
@@ -114,19 +114,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  title-&gt;Draw( <span class="stringliteral">&quot;same&quot;</span> );</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="pave_operation_8hh.html#a351c5610de492dc89966d4e455d75b19">   25</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a>( Double_t text_size , <span class="keywordtype">int</span> text_align)</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="_pave_operation_8hh.html#a351c5610de492dc89966d4e455d75b19">   25</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a>( Double_t text_size , <span class="keywordtype">int</span> text_align)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a>( gPad , text_size , text_align );</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="_pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a>( gPad , text_size , text_align );</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="pave_operation_8hh.html#a4401c5da6926e708679db3bf1825a014">   30</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a>(TVirtualPad* pad, Double_t text_size )</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="_pave_operation_8hh.html#a4401c5da6926e708679db3bf1825a014">   30</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a>(TVirtualPad* pad, Double_t text_size )</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a>( pad , text_size , 23);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="_pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a>( pad , text_size , 23);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="pave_operation_8hh.html#a2902ca574ed3e01c2be97e21b1a747ba">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a>(TVirtualPad* pad)</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="_pave_operation_8hh.html#a2902ca574ed3e01c2be97e21b1a747ba">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a>(TVirtualPad* pad)</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a>( pad , 0.07 , 23);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="_pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a>( pad , 0.07 , 23);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/*</span></div>
@@ -136,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">}</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="pave_operation_8hh.html#ae5e71038ccca0543871fb6d36d2f0786">   47</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="pave_operation_8cc.html#a4952086280c5bc6a12106cec35ddcfce">DrawPaletteAxis</a>( TH2D* hist , </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="_pave_operation_8hh.html#ae5e71038ccca0543871fb6d36d2f0786">   47</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pave_operation_8cc.html#a4952086280c5bc6a12106cec35ddcfce">DrawPaletteAxis</a>( TH2D* hist , </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;              <span class="keywordtype">double</span> xmin, <span class="keywordtype">double</span> ymin,</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;              <span class="keywordtype">double</span> xmax, <span class="keywordtype">double</span> ymax ,</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;              <span class="keywordtype">double</span> label_size )</div>
@@ -176,7 +176,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">  st-&gt;Draw(&quot;same&quot;);</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">}</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="pave_operation_8hh.html#a38d0561c73ea7b706b591c3bb19d5a52">   87</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="pave_operation_8cc.html#a38d0561c73ea7b706b591c3bb19d5a52">DrawStats2D</a>( TH2D* hist, <span class="keywordtype">double</span> xmin, <span class="keywordtype">double</span> ymin, <span class="keywordtype">double</span> xmax, <span class="keywordtype">double</span> ymax )</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="_pave_operation_8hh.html#a38d0561c73ea7b706b591c3bb19d5a52">   87</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_pave_operation_8cc.html#a38d0561c73ea7b706b591c3bb19d5a52">DrawStats2D</a>( TH2D* hist, <span class="keywordtype">double</span> xmin, <span class="keywordtype">double</span> ymin, <span class="keywordtype">double</span> xmax, <span class="keywordtype">double</span> ymax )</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  gPad-&gt;Update();</div>
@@ -196,11 +196,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif // MYLIB_PAVEOPERATION_CC</span></div>
-<div class="ttc" id="pave_operation_8cc.html_a4952086280c5bc6a12106cec35ddcfce"><div class="ttname"><a href="pave_operation_8cc.html#a4952086280c5bc6a12106cec35ddcfce">DrawPaletteAxis</a></div><div class="ttdeci">void DrawPaletteAxis(TH2D *hist, double xmin, double ymin, double xmax, double ymax, double label_size)</div><div class="ttdoc">Draw color palette axis for TH2 . </div><div class="ttdef"><b>Definition:</b> <a href="pave_operation_8cc_source.html#l00047">PaveOperation.cc:47</a></div></div>
+<div class="ttc" id="_pave_operation_8cc_html_a4952086280c5bc6a12106cec35ddcfce"><div class="ttname"><a href="_pave_operation_8cc.html#a4952086280c5bc6a12106cec35ddcfce">DrawPaletteAxis</a></div><div class="ttdeci">void DrawPaletteAxis(TH2D *hist, double xmin, double ymin, double xmax, double ymax, double label_size)</div><div class="ttdoc">Draw color palette axis for TH2 . </div><div class="ttdef"><b>Definition:</b> <a href="_pave_operation_8cc_source.html#l00047">PaveOperation.cc:47</a></div></div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
-<div class="ttc" id="pave_operation_8hh.html"><div class="ttname"><a href="pave_operation_8hh.html">PaveOperation.hh</a></div></div>
-<div class="ttc" id="pave_operation_8cc.html_ab69188cdbd7ed32e0b3fa15c8d787f2a"><div class="ttname"><a href="pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a></div><div class="ttdeci">void DrawTitle(TVirtualPad *pad, Double_t text_size, int text_align)</div><div class="ttdoc">pad にある title オブジェクトを取得して書き直す </div><div class="ttdef"><b>Definition:</b> <a href="pave_operation_8cc_source.html#l00010">PaveOperation.cc:10</a></div></div>
-<div class="ttc" id="pave_operation_8cc.html_a38d0561c73ea7b706b591c3bb19d5a52"><div class="ttname"><a href="pave_operation_8cc.html#a38d0561c73ea7b706b591c3bb19d5a52">DrawStats2D</a></div><div class="ttdeci">void DrawStats2D(TH2D *hist, double xmin, double ymin, double xmax, double ymax)</div><div class="ttdef"><b>Definition:</b> <a href="pave_operation_8cc_source.html#l00087">PaveOperation.cc:87</a></div></div>
+<div class="ttc" id="_pave_operation_8hh_html"><div class="ttname"><a href="_pave_operation_8hh.html">PaveOperation.hh</a></div></div>
+<div class="ttc" id="_pave_operation_8cc_html_ab69188cdbd7ed32e0b3fa15c8d787f2a"><div class="ttname"><a href="_pave_operation_8cc.html#ab69188cdbd7ed32e0b3fa15c8d787f2a">DrawTitle</a></div><div class="ttdeci">void DrawTitle(TVirtualPad *pad, Double_t text_size, int text_align)</div><div class="ttdoc">pad にある title オブジェクトを取得して書き直す </div><div class="ttdef"><b>Definition:</b> <a href="_pave_operation_8cc_source.html#l00010">PaveOperation.cc:10</a></div></div>
+<div class="ttc" id="_pave_operation_8cc_html_a38d0561c73ea7b706b591c3bb19d5a52"><div class="ttname"><a href="_pave_operation_8cc.html#a38d0561c73ea7b706b591c3bb19d5a52">DrawStats2D</a></div><div class="ttdeci">void DrawStats2D(TH2D *hist, double xmin, double ymin, double xmax, double ymax)</div><div class="ttdef"><b>Definition:</b> <a href="_pave_operation_8cc_source.html#l00087">PaveOperation.cc:87</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

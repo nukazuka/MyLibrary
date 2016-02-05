@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['getargument',['GetArgument',['../class_argument_parser.html#a6f72ae9d67e16bd0112768e0cc663d27',1,'ArgumentParser']]],
+  ['getargumentnum',['GetArgumentNum',['../class_argument_parser.html#a77909ac817227a6d48dfd2534d9aeecb',1,'ArgumentParser']]],
   ['getbasename',['GetBaseName',['../_string_operation_8cc.html#a2cdfebf2ef1c2a7306bfe8dbddd34de9',1,'GetBaseName(string path):&#160;StringOperation.cc'],['../_string_operation_8hh.html#a2cdfebf2ef1c2a7306bfe8dbddd34de9',1,'GetBaseName(string path):&#160;StringOperation.cc']]],
   ['getcanvas',['GetCanvas',['../_canvas_operation_8cc.html#a5ab46366faed9d095bab43377ecb7e5f',1,'GetCanvas(string name, string shape, bool logy=false):&#160;CanvasOperation.cc'],['../_canvas_operation_8hh.html#a91fad5f22ed0ab7072e17def32e28706',1,'GetCanvas(string name, string shape, bool logy):&#160;CanvasOperation.cc']]],
   ['getfilename',['GetFileName',['../_string_operation_8cc.html#ae9e9312573395f65774bfdb29bb56121',1,'GetFileName(string path):&#160;StringOperation.cc'],['../_string_operation_8hh.html#ae9e9312573395f65774bfdb29bb56121',1,'GetFileName(string path):&#160;StringOperation.cc']]],

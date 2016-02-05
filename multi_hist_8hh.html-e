@@ -94,10 +94,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="headers_s_l_8hh_source.html">HeadersSL.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="headers_root_8hh_source.html">HeadersRoot.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="pave_operation_8hh_source.html">PaveOperation.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="string_operation_8hh_source.html">StringOperation.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_pave_operation_8hh_source.html">PaveOperation.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_string_operation_8hh_source.html">StringOperation.hh</a>&quot;</code><br />
 </div>
-<p><a href="multi_hist_8hh_source.html">Go to the source code of this file.</a></p>
+<p><a href="_multi_hist_8hh_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
