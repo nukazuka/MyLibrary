@@ -1,6 +1,10 @@
 #ifndef ARGUMENTPARSER_HH
 #define ARGUMENTPARSER_HH
 
+/*!
+  @file ArgumentParser.hh
+*/
+
 #include <iostream>
 #include <cstdlib>
 #include <getopt.h>
@@ -8,9 +12,18 @@
 #include <vector>
 #include <algorithm>
 
-using namespace std;
-class ArgumentParser{
+/*!
+  @class ArgumentParser
+  @brief
+  @author G.Nukazuka
+  @date 2015/02/05
+  @details
+  @todo add explanations
+*/
 
+using namespace std;
+class ArgumentParser
+{
 private : 
 
   vector < string > vtype_;
@@ -28,7 +41,5 @@ public :
   int    GetArgumentNum(){ return vtype_.size(); };
   bool   IsSpecified( string type );
   void   ShowAll();
-
-
 };
 #endif
