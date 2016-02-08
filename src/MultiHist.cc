@@ -293,6 +293,7 @@ void MultiHist::Ranges()
     
   if( bl_force_ymax_ == true )
     {
+      cout << "ymax is forced to be " << ymax_force_ << endl;
       ymax_ = ymax_force_;
       margin_ratio_top_ = 0.0;
     }
@@ -324,6 +325,7 @@ void MultiHist::Ranges2D()
 
   if( bl_force_ymax_ )
     ymax_ = ymax_force_;
+
   
 }
 
@@ -443,11 +445,19 @@ void MultiHist::Draw2D( string option )
 
   // temp 
   Ranges2D();
-
   double margin_right  = ( xmax_ - xmin_ ) * margin_ratio_right_;
   double margin_left   = ( xmax_ - xmin_ ) * margin_ratio_left_;
   double margin_top    = ( ymax_ - ymin_ ) * margin_ratio_top_;
   double margin_bottom = ( ymax_ - ymin_ ) * margin_ratio_bottom_;
+  
+  if( bl_force_xmax_ )
+    margin_right = 0;
+  if( bl_force_xmin_ )
+    margin_left = 0;
+  if( bl_force_ymax_ )
+    margin_top = 0;
+  if( bl_force_ymin_ )
+    margin_bottom = 0;
 
   string name = name_ + title_ + "hframe" + Int2String( id_ );
   TH1F* frame = new TH1F( name.c_str() , title_.c_str() , 1000, xmin_ - margin_left, xmax_ + margin_right );
