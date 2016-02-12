@@ -16,7 +16,7 @@ void MultiHist::Init( string name, string title )
 {
 
   //  id_ = 
-  stats_type_ = 0;
+  stats_type_ = 1;
   name_  = name;
   title_ = title;
 
@@ -146,7 +146,7 @@ void MultiHist::Margins()
   if( bl_logx_ == true  && (xmin_ - diff_x * margin_ratio_left_ ) <= 0 )
     margin_ratio_left_ = xmin_ * 0.5 / diff_x;
 
-  if( bl_logy_ == true  && (ymin_ - diff_y * margin_ratio_left_ ) <= 0 )
+  if( bl_logy_ == true  && (ymin_ - diff_y * margin_ratio_bottom_ ) <= 0 )
       margin_ratio_bottom_ = ymin_ * 0.5 / diff_y;
 
 }
@@ -298,8 +298,6 @@ void MultiHist::Ranges()
       ymax_ = ymax_force_;
       margin_ratio_top_ = 0.0;
     }
-
-  
 }
 
 void MultiHist::Ranges2D()
