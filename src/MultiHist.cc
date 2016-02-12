@@ -2,6 +2,7 @@
 
 using namespace std;
 
+int MultiHist::id_;
 ////////////////////////////////////////////////////////////
 // private functions ///////////////////////////////////////
 ////////////////////////////////////////////////////////////
@@ -14,7 +15,8 @@ void MultiHist::Init( )
 void MultiHist::Init( string name, string title )
 {
 
-  id_ = stats_type_ = 0;
+  //  id_ = 
+  stats_type_ = 0;
   name_  = name;
   title_ = title;
 

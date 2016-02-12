@@ -23,7 +23,7 @@ class MultiHist
 {
 private:
 
-  int id_;
+  static int id_;
   int stats_type_ = 1;
   string name_;
   string title_;
