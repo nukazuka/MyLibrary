@@ -45,6 +45,11 @@ private:
   double margin_ratio_bottom_ = 0.01;
   double margin_ratio_left_   = 0.01;
 
+  double margin_top_    = 10;
+  double margin_right_  = 10;
+  double margin_bottom_ = 10;
+  double margin_left_   = 10;
+
   double stats_xmin_ = 0.9;
   double stats_ymin_ = 0.1;
   double stats_xmax_ = 1.0;
@@ -197,6 +202,29 @@ public:
   */
   string GetTitle(){ return title_;};
 
+  /*!
+    @fn double GetXmax()
+    @brief
+  */
+  double GetXmax(){ return xmax_ + margin_right_ ;};
+
+  /*!
+    @fn double GetXmin()
+    @brief
+  */
+  double GetXmin(){ return xmin_ - margin_left_ ;};
+
+  /*!
+    @fn double GetYmax()
+    @brief
+  */
+  double GetYmax(){ return ymax_ + margin_top_ ;};
+
+  /*!
+    @fn double GetYmin()
+    @brief
+  */
+  double GetYmin(){ return ymin_ - margin_bottom_ ;};
 
   /*!
     @fn void Print()

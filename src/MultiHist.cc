@@ -405,6 +405,11 @@ void MultiHist::Draw( string option,
   FrameSetting( frame , margin_bottom, margin_top );
   frame->Draw();
 
+  margin_right_  = margin_right;
+  margin_left_   = margin_left;
+  margin_top_    = margin_top;
+  margin_bottom_ = margin_bottom;
+
   if( option == "" )
     option = option_;
 
