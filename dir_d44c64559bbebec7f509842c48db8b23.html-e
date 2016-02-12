@@ -87,6 +87,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
 Files</h2></td></tr>
+<tr class="memitem:_argument_parser_8hh"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="argument_parser_8hh.html">ArgumentParser.hh</a> <a href="argument_parser_8hh_source.html">[code]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:_canvas_operation_8hh"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="canvas_operation_8hh.html">CanvasOperation.hh</a> <a href="canvas_operation_8hh_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:_canvas_setting_8hh"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="canvas_setting_8hh.html">CanvasSetting.hh</a> <a href="canvas_setting_8hh_source.html">[code]</a></td></tr>

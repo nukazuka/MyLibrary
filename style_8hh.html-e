@@ -99,19 +99,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a766767e61d475a5e310dc33475d823d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_style_8hh.html#a766767e61d475a5e310dc33475d823d7">Style</a> ()</td></tr>
+<tr class="memitem:a766767e61d475a5e310dc33475d823d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="style_8hh.html#a766767e61d475a5e310dc33475d823d7">Style</a> ()</td></tr>
 <tr class="separator:a766767e61d475a5e310dc33475d823d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3feaac70bb633c5fe1cbe1176491188"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_style_8hh.html#ab3feaac70bb633c5fe1cbe1176491188">SetHistStyle</a> (TH1D *hist, int color, int width)</td></tr>
+<tr class="memitem:ab3feaac70bb633c5fe1cbe1176491188"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="style_8hh.html#ab3feaac70bb633c5fe1cbe1176491188">SetHistStyle</a> (TH1D *hist, int color, int width)</td></tr>
 <tr class="separator:ab3feaac70bb633c5fe1cbe1176491188"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f076592efc20e6e216a435692e84cf4"><td class="memTemplParams" colspan="2">template&lt;class TH &gt; </td></tr>
-<tr class="memitem:a4f076592efc20e6e216a435692e84cf4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="_style_8hh.html#a4f076592efc20e6e216a435692e84cf4">SetHistStyle</a> (TH *hist, int color, int width)</td></tr>
+<tr class="memitem:a4f076592efc20e6e216a435692e84cf4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="style_8hh.html#a4f076592efc20e6e216a435692e84cf4">SetHistStyle</a> (TH *hist, int color, int width)</td></tr>
 <tr class="separator:a4f076592efc20e6e216a435692e84cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84e618da783b0ef006fa5120055e3004"><td class="memTemplParams" colspan="2">template&lt;typename TH &gt; </td></tr>
-<tr class="memitem:a84e618da783b0ef006fa5120055e3004"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="_style_8hh.html#a84e618da783b0ef006fa5120055e3004">HistSetting</a> (TH *hist, int color=1, int line_width=2, int fill_style=0)</td></tr>
+<tr class="memitem:a84e618da783b0ef006fa5120055e3004"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="style_8hh.html#a84e618da783b0ef006fa5120055e3004">HistSetting</a> (TH *hist, int color=1, int line_width=2, int fill_style=0)</td></tr>
 <tr class="separator:a84e618da783b0ef006fa5120055e3004"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8181b4e7ad44809e2a722cdcc7488b0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_style_8hh.html#a8181b4e7ad44809e2a722cdcc7488b0a">GraphSetting</a> (TGraph *g, int color=1, int width=2, int marker_style=20, int fill_style=0)</td></tr>
+<tr class="memitem:a8181b4e7ad44809e2a722cdcc7488b0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="style_8hh.html#a8181b4e7ad44809e2a722cdcc7488b0a">GraphSetting</a> (TGraph *g, int color=1, int width=2, int marker_style=20, int fill_style=0)</td></tr>
 <tr class="separator:a8181b4e7ad44809e2a722cdcc7488b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37a0d2b808df8265b9194872b96ea620"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_style_8hh.html#a37a0d2b808df8265b9194872b96ea620">SetColorPalette_old</a> (int num=55)</td></tr>
+<tr class="memitem:a37a0d2b808df8265b9194872b96ea620"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="style_8hh.html#a37a0d2b808df8265b9194872b96ea620">SetColorPalette_old</a> (int num=55)</td></tr>
 <tr class="separator:a37a0d2b808df8265b9194872b96ea620"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -157,7 +157,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_style_8cc_source.html#l00038">38</a> of file <a class="el" href="_style_8cc_source.html">Style.cc</a>.</p>
+<p>Definition at line <a class="el" href="style_8cc_source.html#l00038">38</a> of file <a class="el" href="style_8cc_source.html">Style.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  g-&gt;SetLineColor   ( color );</div>
@@ -237,7 +237,7 @@ template&lt;typename TH &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_style_8cc_source.html#l00049">49</a> of file <a class="el" href="_style_8cc_source.html">Style.cc</a>.</p>
+<p>Definition at line <a class="el" href="style_8cc_source.html#l00049">49</a> of file <a class="el" href="style_8cc_source.html">Style.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  TColor::InitializeColors();</div>
@@ -902,7 +902,7 @@ template&lt;typename TH &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_style_8cc_source.html#l00015">15</a> of file <a class="el" href="_style_8cc_source.html">Style.cc</a>.</p>
+<p>Definition at line <a class="el" href="style_8cc_source.html#l00015">15</a> of file <a class="el" href="style_8cc_source.html">Style.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  SetHistStyle&lt;TH1D&gt;(hist, color, width);</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
@@ -944,9 +944,9 @@ template&lt;class TH &gt; </div>
 <p>Definition at line <a class="el" href="_style_8hh_source.html#l00011">11</a> of file <a class="el" href="_style_8hh_source.html">Style.hh</a>.</p>
 <div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="_style_8hh.html#a84e618da783b0ef006fa5120055e3004">HistSetting</a>( hist , color , width );</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="style_8hh.html#a84e618da783b0ef006fa5120055e3004">HistSetting</a>( hist , color , width );</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
-<div class="ttc" id="_style_8hh_html_a84e618da783b0ef006fa5120055e3004"><div class="ttname"><a href="_style_8hh.html#a84e618da783b0ef006fa5120055e3004">HistSetting</a></div><div class="ttdeci">void HistSetting(TH *hist, int color=1, int line_width=2, int fill_style=0)</div><div class="ttdef"><b>Definition:</b> <a href="_style_8hh_source.html#l00018">Style.hh:18</a></div></div>
+<div class="ttc" id="style_8hh.html_a84e618da783b0ef006fa5120055e3004"><div class="ttname"><a href="style_8hh.html#a84e618da783b0ef006fa5120055e3004">HistSetting</a></div><div class="ttdeci">void HistSetting(TH *hist, int color=1, int line_width=2, int fill_style=0)</div><div class="ttdef"><b>Definition:</b> <a href="_style_8hh_source.html#l00018">Style.hh:18</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -963,7 +963,7 @@ template&lt;class TH &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_style_8cc_source.html#l00005">5</a> of file <a class="el" href="_style_8cc_source.html">Style.cc</a>.</p>
+<p>Definition at line <a class="el" href="style_8cc_source.html#l00005">5</a> of file <a class="el" href="style_8cc_source.html">Style.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  gStyle-&gt;SetEndErrorSize(0);</div>

@@ -12,5 +12,9 @@ var searchData=
   ['getsuffix',['GetSuffix',['../_string_operation_8cc.html#a65dd468227df93c184d3648e4bae3898',1,'GetSuffix(string path):&#160;StringOperation.cc'],['../_string_operation_8hh.html#a65dd468227df93c184d3648e4bae3898',1,'GetSuffix(string path):&#160;StringOperation.cc']]],
   ['gettitle',['GetTitle',['../class_multi_hist.html#a993499146cfa7592d1158ffbb3fd304a',1,'MultiHist']]],
   ['gettree',['GetTree',['../_io_operation_8cc.html#a9db9b7213655f569fb6b15d4028be9f0',1,'GetTree(string file_name, string tr_name):&#160;IoOperation.cc'],['../_io_operation_8cc.html#a47f9b3fe02db5161ec4cd09186fe85f8',1,'GetTree(string file_name, string dir_name, string tr_name):&#160;IoOperation.cc'],['../_io_operation_8hh.html#af26b847d372a6f52c169b5e6433f4201',1,'GetTree(string file_name, string tr_name):&#160;IoOperation.cc'],['../_io_operation_8hh.html#a56caf6bd561d400e016ec29e3a4e3a36',1,'GetTree(string file_name, string dir_name, string tr_name):&#160;IoOperation.cc']]],
+  ['getxmax',['GetXmax',['../class_multi_hist.html#aec6bdc8f4bcea33c5c29127a1b7a6214',1,'MultiHist']]],
+  ['getxmin',['GetXmin',['../class_multi_hist.html#a2f679f89c85008856fcad205ff1a071e',1,'MultiHist']]],
+  ['getymax',['GetYmax',['../class_multi_hist.html#ad318800bbafa81dc408f3b325b825098',1,'MultiHist']]],
+  ['getymin',['GetYmin',['../class_multi_hist.html#a17ff523952a69e207c34e6996f252905',1,'MultiHist']]],
   ['graphsetting',['GraphSetting',['../_style_8cc.html#add73f43f8c4d724148fe0a02c88e3a23',1,'GraphSetting(TGraph *g, int color, int width, int marker_style, int fill_style):&#160;Style.cc'],['../_style_8hh.html#a8181b4e7ad44809e2a722cdcc7488b0a',1,'GraphSetting(TGraph *g, int color=1, int width=2, int marker_style=20, int fill_style=0):&#160;Style.cc']]]
 ];

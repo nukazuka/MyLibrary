@@ -95,46 +95,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><code>#include &quot;<a class="el" href="headers_s_l_8hh_source.html">HeadersSL.hh</a>&quot;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 </div>
-<p><a href="_string_operation_8hh_source.html">Go to the source code of this file.</a></p>
+<p><a href="string_operation_8hh_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2cdfebf2ef1c2a7306bfe8dbddd34de9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_string_operation_8hh.html#a2cdfebf2ef1c2a7306bfe8dbddd34de9">GetBaseName</a> (string path)</td></tr>
+<tr class="memitem:a2cdfebf2ef1c2a7306bfe8dbddd34de9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_operation_8hh.html#a2cdfebf2ef1c2a7306bfe8dbddd34de9">GetBaseName</a> (string path)</td></tr>
 <tr class="memdesc:a2cdfebf2ef1c2a7306bfe8dbddd34de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">ファイルのフルパスからパスと拡張子を除いたファイル名を返す。  <a href="#a2cdfebf2ef1c2a7306bfe8dbddd34de9">More...</a><br /></td></tr>
 <tr class="separator:a2cdfebf2ef1c2a7306bfe8dbddd34de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9e9312573395f65774bfdb29bb56121"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_string_operation_8hh.html#ae9e9312573395f65774bfdb29bb56121">GetFileName</a> (string path)</td></tr>
+<tr class="memitem:ae9e9312573395f65774bfdb29bb56121"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_operation_8hh.html#ae9e9312573395f65774bfdb29bb56121">GetFileName</a> (string path)</td></tr>
 <tr class="memdesc:ae9e9312573395f65774bfdb29bb56121"><td class="mdescLeft">&#160;</td><td class="mdescRight">ファイルのフルパスから拡張子を含んだファイル名を返す。  <a href="#ae9e9312573395f65774bfdb29bb56121">More...</a><br /></td></tr>
 <tr class="separator:ae9e9312573395f65774bfdb29bb56121"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a969833f953674aea5560adc520ec9ada"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_string_operation_8hh.html#a969833f953674aea5560adc520ec9ada">GetPathToFile</a> (string path)</td></tr>
+<tr class="memitem:a969833f953674aea5560adc520ec9ada"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_operation_8hh.html#a969833f953674aea5560adc520ec9ada">GetPathToFile</a> (string path)</td></tr>
 <tr class="memdesc:a969833f953674aea5560adc520ec9ada"><td class="mdescLeft">&#160;</td><td class="mdescRight">ファイルのフルパスからファイルのあるディレクトリまでのパスを返す。  <a href="#a969833f953674aea5560adc520ec9ada">More...</a><br /></td></tr>
 <tr class="separator:a969833f953674aea5560adc520ec9ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab746ba2365293615930fdaaae4f6dbc8"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_string_operation_8hh.html#ab746ba2365293615930fdaaae4f6dbc8">GetRepeatedWords</a> (string word, int num)</td></tr>
+<tr class="memitem:ab746ba2365293615930fdaaae4f6dbc8"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_operation_8hh.html#ab746ba2365293615930fdaaae4f6dbc8">GetRepeatedWords</a> (string word, int num)</td></tr>
 <tr class="memdesc:ab746ba2365293615930fdaaae4f6dbc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">word を num 回繰り返した文字列を返す。コメントを表示するときなどに便利。  <a href="#ab746ba2365293615930fdaaae4f6dbc8">More...</a><br /></td></tr>
 <tr class="separator:ab746ba2365293615930fdaaae4f6dbc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65dd468227df93c184d3648e4bae3898"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_string_operation_8hh.html#a65dd468227df93c184d3648e4bae3898">GetSuffix</a> (string path)</td></tr>
+<tr class="memitem:a65dd468227df93c184d3648e4bae3898"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_operation_8hh.html#a65dd468227df93c184d3648e4bae3898">GetSuffix</a> (string path)</td></tr>
 <tr class="memdesc:a65dd468227df93c184d3648e4bae3898"><td class="mdescLeft">&#160;</td><td class="mdescRight">ファイル名やファイルのフルパスからファイルの拡張子を返す。  <a href="#a65dd468227df93c184d3648e4bae3898">More...</a><br /></td></tr>
 <tr class="separator:a65dd468227df93c184d3648e4bae3898"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ebe0c68b60fcd6dd8caf0fa483306db"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_string_operation_8hh.html#a5ebe0c68b60fcd6dd8caf0fa483306db">Replace</a> (string word, string old_key, string new_key)</td></tr>
+<tr class="memitem:a5ebe0c68b60fcd6dd8caf0fa483306db"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_operation_8hh.html#a5ebe0c68b60fcd6dd8caf0fa483306db">Replace</a> (string word, string old_key, string new_key)</td></tr>
 <tr class="memdesc:a5ebe0c68b60fcd6dd8caf0fa483306db"><td class="mdescLeft">&#160;</td><td class="mdescRight">word から old_key を探し， new_key に置き換えた文字列を返す。word は変更しない。  <a href="#a5ebe0c68b60fcd6dd8caf0fa483306db">More...</a><br /></td></tr>
 <tr class="separator:a5ebe0c68b60fcd6dd8caf0fa483306db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62d4ed9bf5dab58080693ea359b2933e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_string_operation_8hh.html#a62d4ed9bf5dab58080693ea359b2933e">Replace4Cut</a> (string cut)</td></tr>
+<tr class="memitem:a62d4ed9bf5dab58080693ea359b2933e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_operation_8hh.html#a62d4ed9bf5dab58080693ea359b2933e">Replace4Cut</a> (string cut)</td></tr>
 <tr class="memdesc:a62d4ed9bf5dab58080693ea359b2933e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ファイル名に cut 情報をのせるために作った。  <a href="#a62d4ed9bf5dab58080693ea359b2933e">More...</a><br /></td></tr>
 <tr class="separator:a62d4ed9bf5dab58080693ea359b2933e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12d38369156d6be454c91cdfc7779fc6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_string_operation_8hh.html#a12d38369156d6be454c91cdfc7779fc6">Subtraction</a> (string s1, string s2)</td></tr>
+<tr class="memitem:a12d38369156d6be454c91cdfc7779fc6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_operation_8hh.html#a12d38369156d6be454c91cdfc7779fc6">Subtraction</a> (string s1, string s2)</td></tr>
 <tr class="memdesc:a12d38369156d6be454c91cdfc7779fc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">数字のみでできた文字列間の計算 s1 - s2 を行い，結果を文字列として返す。  <a href="#a12d38369156d6be454c91cdfc7779fc6">More...</a><br /></td></tr>
 <tr class="separator:a12d38369156d6be454c91cdfc7779fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c6e184d5d7aa52921ea0a7818bb8f53"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_string_operation_8hh.html#a7c6e184d5d7aa52921ea0a7818bb8f53">String2Int</a> (string st)</td></tr>
+<tr class="memitem:a7c6e184d5d7aa52921ea0a7818bb8f53"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_operation_8hh.html#a7c6e184d5d7aa52921ea0a7818bb8f53">String2Int</a> (string st)</td></tr>
 <tr class="memdesc:a7c6e184d5d7aa52921ea0a7818bb8f53"><td class="mdescLeft">&#160;</td><td class="mdescRight">数字のみからなる文字列を int 型に変換し返す。  <a href="#a7c6e184d5d7aa52921ea0a7818bb8f53">More...</a><br /></td></tr>
 <tr class="separator:a7c6e184d5d7aa52921ea0a7818bb8f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfe1f91ad92436380fdacb590acba3c0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_string_operation_8hh.html#acfe1f91ad92436380fdacb590acba3c0">Int2String</a> (int num)</td></tr>
+<tr class="memitem:acfe1f91ad92436380fdacb590acba3c0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_operation_8hh.html#acfe1f91ad92436380fdacb590acba3c0">Int2String</a> (int num)</td></tr>
 <tr class="memdesc:acfe1f91ad92436380fdacb590acba3c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">int を string 型に変換し返す。  <a href="#acfe1f91ad92436380fdacb590acba3c0">More...</a><br /></td></tr>
 <tr class="separator:acfe1f91ad92436380fdacb590acba3c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a661084e6421f537268af3a85704058ab"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_string_operation_8hh.html#a661084e6421f537268af3a85704058ab">String2Double</a> (string st)</td></tr>
+<tr class="memitem:a661084e6421f537268af3a85704058ab"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_operation_8hh.html#a661084e6421f537268af3a85704058ab">String2Double</a> (string st)</td></tr>
 <tr class="memdesc:a661084e6421f537268af3a85704058ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">数字のみからなる文字列を double 型に変換し返す。  <a href="#a661084e6421f537268af3a85704058ab">More...</a><br /></td></tr>
 <tr class="separator:a661084e6421f537268af3a85704058ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6e6537a0d1742cb34bc42fb3a8e4015"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_string_operation_8hh.html#aa6e6537a0d1742cb34bc42fb3a8e4015">Double2String</a> (double num, int presicion=5)</td></tr>
+<tr class="memitem:aa6e6537a0d1742cb34bc42fb3a8e4015"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_operation_8hh.html#aa6e6537a0d1742cb34bc42fb3a8e4015">Double2String</a> (double num, int presicion=5)</td></tr>
 <tr class="separator:aa6e6537a0d1742cb34bc42fb3a8e4015"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a293e0c80f13ff851cef056c6bb13f659"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_string_operation_8hh.html#a293e0c80f13ff851cef056c6bb13f659">IsNumber</a> (string st)</td></tr>
+<tr class="memitem:a293e0c80f13ff851cef056c6bb13f659"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_operation_8hh.html#a293e0c80f13ff851cef056c6bb13f659">IsNumber</a> (string st)</td></tr>
 <tr class="memdesc:a293e0c80f13ff851cef056c6bb13f659"><td class="mdescLeft">&#160;</td><td class="mdescRight">文字列が数字のみで構成されているかを判定する。  <a href="#a293e0c80f13ff851cef056c6bb13f659">More...</a><br /></td></tr>
 <tr class="separator:a293e0c80f13ff851cef056c6bb13f659"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -163,7 +163,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_string_operation_8cc_source.html#l00202">202</a> of file <a class="el" href="_string_operation_8cc_source.html">StringOperation.cc</a>.</p>
+<p>Definition at line <a class="el" href="string_operation_8cc_source.html#l00202">202</a> of file <a class="el" href="string_operation_8cc_source.html">StringOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;{</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  stringstream ss;</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  ss &lt;&lt; setprecision( precision ) &lt;&lt; num;</div>
@@ -195,7 +195,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>パスと拡張子を除いたファイル名（ex. src/test.cc -&gt; test） </dd></dl>
 
-<p>Definition at line <a class="el" href="_string_operation_8cc_source.html#l00078">78</a> of file <a class="el" href="_string_operation_8cc_source.html">StringOperation.cc</a>.</p>
+<p>Definition at line <a class="el" href="string_operation_8cc_source.html#l00078">78</a> of file <a class="el" href="string_operation_8cc_source.html">StringOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">string</span> file_name = <a class="code" href="string_operation_8cc.html#ae9e9312573395f65774bfdb29bb56121">GetFileName</a>( path );</div>
@@ -203,9 +203,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">string</span> rtn = <a class="code" href="string_operation_8cc.html#a5ebe0c68b60fcd6dd8caf0fa483306db">Replace</a>( file_name, file_suffix, <span class="stringliteral">&quot;&quot;</span> );</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">return</span>  rtn;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
-<div class="ttc" id="string_operation_8cc.html_a5ebe0c68b60fcd6dd8caf0fa483306db"><div class="ttname"><a href="string_operation_8cc.html#a5ebe0c68b60fcd6dd8caf0fa483306db">Replace</a></div><div class="ttdeci">string Replace(string word, string old_key, string new_key)</div><div class="ttdoc">word から old_key を探し， new_key に置き換えた文字列を返す。word は変更しない。 </div><div class="ttdef"><b>Definition:</b> <a href="_string_operation_8cc_source.html#l00051">StringOperation.cc:51</a></div></div>
-<div class="ttc" id="string_operation_8cc.html_ae9e9312573395f65774bfdb29bb56121"><div class="ttname"><a href="string_operation_8cc.html#ae9e9312573395f65774bfdb29bb56121">GetFileName</a></div><div class="ttdeci">string GetFileName(string path)</div><div class="ttdoc">ファイルのフルパスから拡張子を含んだファイル名を返す。 </div><div class="ttdef"><b>Definition:</b> <a href="_string_operation_8cc_source.html#l00007">StringOperation.cc:7</a></div></div>
-<div class="ttc" id="string_operation_8cc.html_a65dd468227df93c184d3648e4bae3898"><div class="ttname"><a href="string_operation_8cc.html#a65dd468227df93c184d3648e4bae3898">GetSuffix</a></div><div class="ttdeci">string GetSuffix(string path)</div><div class="ttdoc">ファイル名やファイルのフルパスからファイルの拡張子を返す。 </div><div class="ttdef"><b>Definition:</b> <a href="_string_operation_8cc_source.html#l00039">StringOperation.cc:39</a></div></div>
+<div class="ttc" id="string_operation_8cc.html_a5ebe0c68b60fcd6dd8caf0fa483306db"><div class="ttname"><a href="string_operation_8cc.html#a5ebe0c68b60fcd6dd8caf0fa483306db">Replace</a></div><div class="ttdeci">string Replace(string word, string old_key, string new_key)</div><div class="ttdoc">word から old_key を探し， new_key に置き換えた文字列を返す。word は変更しない。 </div><div class="ttdef"><b>Definition:</b> <a href="string_operation_8cc_source.html#l00051">StringOperation.cc:51</a></div></div>
+<div class="ttc" id="string_operation_8cc.html_ae9e9312573395f65774bfdb29bb56121"><div class="ttname"><a href="string_operation_8cc.html#ae9e9312573395f65774bfdb29bb56121">GetFileName</a></div><div class="ttdeci">string GetFileName(string path)</div><div class="ttdoc">ファイルのフルパスから拡張子を含んだファイル名を返す。 </div><div class="ttdef"><b>Definition:</b> <a href="string_operation_8cc_source.html#l00007">StringOperation.cc:7</a></div></div>
+<div class="ttc" id="string_operation_8cc.html_a65dd468227df93c184d3648e4bae3898"><div class="ttname"><a href="string_operation_8cc.html#a65dd468227df93c184d3648e4bae3898">GetSuffix</a></div><div class="ttdeci">string GetSuffix(string path)</div><div class="ttdoc">ファイル名やファイルのフルパスからファイルの拡張子を返す。 </div><div class="ttdef"><b>Definition:</b> <a href="string_operation_8cc_source.html#l00039">StringOperation.cc:39</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -232,7 +232,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>拡張子を含んだファイル名 </dd></dl>
 
-<p>Definition at line <a class="el" href="_string_operation_8cc_source.html#l00007">7</a> of file <a class="el" href="_string_operation_8cc_source.html">StringOperation.cc</a>.</p>
+<p>Definition at line <a class="el" href="string_operation_8cc_source.html#l00007">7</a> of file <a class="el" href="string_operation_8cc_source.html">StringOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordtype">string</span> rtn = <span class="stringliteral">&quot;&quot;</span>;</div>
@@ -269,7 +269,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ファイルのあるディレクトリまでのパス </dd></dl>
 
-<p>Definition at line <a class="el" href="_string_operation_8cc_source.html#l00019">19</a> of file <a class="el" href="_string_operation_8cc_source.html">StringOperation.cc</a>.</p>
+<p>Definition at line <a class="el" href="string_operation_8cc_source.html#l00019">19</a> of file <a class="el" href="string_operation_8cc_source.html">StringOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">string</span> rtn = <span class="stringliteral">&quot;&quot;</span>;</div>
@@ -315,7 +315,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>num 個の word </dd></dl>
 
-<p>Definition at line <a class="el" href="_string_operation_8cc_source.html#l00030">30</a> of file <a class="el" href="_string_operation_8cc_source.html">StringOperation.cc</a>.</p>
+<p>Definition at line <a class="el" href="string_operation_8cc_source.html#l00030">30</a> of file <a class="el" href="string_operation_8cc_source.html">StringOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">string</span> rtn = <span class="stringliteral">&quot;&quot;</span>;</div>
@@ -349,7 +349,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ファイルの拡張子（ex. .cc ） </dd></dl>
 
-<p>Definition at line <a class="el" href="_string_operation_8cc_source.html#l00039">39</a> of file <a class="el" href="_string_operation_8cc_source.html">StringOperation.cc</a>.</p>
+<p>Definition at line <a class="el" href="string_operation_8cc_source.html#l00039">39</a> of file <a class="el" href="string_operation_8cc_source.html">StringOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">string</span> rtn = <span class="stringliteral">&quot;&quot;</span>;</div>
@@ -386,7 +386,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>num を文字列に変換したもの。 </dd></dl>
 
-<p>Definition at line <a class="el" href="_string_operation_8cc_source.html#l00182">182</a> of file <a class="el" href="_string_operation_8cc_source.html">StringOperation.cc</a>.</p>
+<p>Definition at line <a class="el" href="string_operation_8cc_source.html#l00182">182</a> of file <a class="el" href="string_operation_8cc_source.html">StringOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;{</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  stringstream ss;</div>
@@ -425,7 +425,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_string_operation_8cc_source.html#l00130">130</a> of file <a class="el" href="_string_operation_8cc_source.html">StringOperation.cc</a>.</p>
+<p>Definition at line <a class="el" href="string_operation_8cc_source.html#l00130">130</a> of file <a class="el" href="string_operation_8cc_source.html">StringOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;{</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  string::const_iterator it = st.begin();</div>
@@ -478,7 +478,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>word にある old_key を new_key に置き換えた文字列。 </dd></dl>
 
-<p>Definition at line <a class="el" href="_string_operation_8cc_source.html#l00051">51</a> of file <a class="el" href="_string_operation_8cc_source.html">StringOperation.cc</a>.</p>
+<p>Definition at line <a class="el" href="string_operation_8cc_source.html#l00051">51</a> of file <a class="el" href="string_operation_8cc_source.html">StringOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">string</span> rtn = word;</div>
@@ -569,7 +569,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>cut にある C/C++ の関係演算子を文字列に置き換えたもの。 </dd></dl>
 
-<p>Definition at line <a class="el" href="_string_operation_8cc_source.html#l00087">87</a> of file <a class="el" href="_string_operation_8cc_source.html">StringOperation.cc</a>.</p>
+<p>Definition at line <a class="el" href="string_operation_8cc_source.html#l00087">87</a> of file <a class="el" href="string_operation_8cc_source.html">StringOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordtype">string</span> rtn = cut;</div>
@@ -610,7 +610,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordflow">return</span> rtn;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
-<div class="ttc" id="string_operation_8cc.html_a5ebe0c68b60fcd6dd8caf0fa483306db"><div class="ttname"><a href="string_operation_8cc.html#a5ebe0c68b60fcd6dd8caf0fa483306db">Replace</a></div><div class="ttdeci">string Replace(string word, string old_key, string new_key)</div><div class="ttdoc">word から old_key を探し， new_key に置き換えた文字列を返す。word は変更しない。 </div><div class="ttdef"><b>Definition:</b> <a href="_string_operation_8cc_source.html#l00051">StringOperation.cc:51</a></div></div>
+<div class="ttc" id="string_operation_8cc.html_a5ebe0c68b60fcd6dd8caf0fa483306db"><div class="ttname"><a href="string_operation_8cc.html#a5ebe0c68b60fcd6dd8caf0fa483306db">Replace</a></div><div class="ttdeci">string Replace(string word, string old_key, string new_key)</div><div class="ttdoc">word から old_key を探し， new_key に置き換えた文字列を返す。word は変更しない。 </div><div class="ttdef"><b>Definition:</b> <a href="string_operation_8cc_source.html#l00051">StringOperation.cc:51</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -637,7 +637,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>st を double 型に変換したもの。 </dd></dl>
 
-<p>Definition at line <a class="el" href="_string_operation_8cc_source.html#l00190">190</a> of file <a class="el" href="_string_operation_8cc_source.html">StringOperation.cc</a>.</p>
+<p>Definition at line <a class="el" href="string_operation_8cc_source.html#l00190">190</a> of file <a class="el" href="string_operation_8cc_source.html">StringOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;{</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  istringstream iss(st);</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  stringstream ss(st);</div>
@@ -674,7 +674,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>st を int 型にしたもの。 </dd></dl>
 
-<p>Definition at line <a class="el" href="_string_operation_8cc_source.html#l00164">164</a> of file <a class="el" href="_string_operation_8cc_source.html">StringOperation.cc</a>.</p>
+<p>Definition at line <a class="el" href="string_operation_8cc_source.html#l00164">164</a> of file <a class="el" href="string_operation_8cc_source.html">StringOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;{</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keywordflow">if</span>( <a class="code" href="string_operation_8cc.html#a293e0c80f13ff851cef056c6bb13f659">IsNumber</a>( st ) == <span class="keyword">false</span> )</div>
@@ -691,7 +691,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="keywordflow">return</span> num;</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
-<div class="ttc" id="string_operation_8cc.html_a293e0c80f13ff851cef056c6bb13f659"><div class="ttname"><a href="string_operation_8cc.html#a293e0c80f13ff851cef056c6bb13f659">IsNumber</a></div><div class="ttdeci">bool IsNumber(string st)</div><div class="ttdoc">文字列が数字のみで構成されているかを判定する。 </div><div class="ttdef"><b>Definition:</b> <a href="_string_operation_8cc_source.html#l00130">StringOperation.cc:130</a></div></div>
+<div class="ttc" id="string_operation_8cc.html_a293e0c80f13ff851cef056c6bb13f659"><div class="ttname"><a href="string_operation_8cc.html#a293e0c80f13ff851cef056c6bb13f659">IsNumber</a></div><div class="ttdeci">bool IsNumber(string st)</div><div class="ttdoc">文字列が数字のみで構成されているかを判定する。 </div><div class="ttdef"><b>Definition:</b> <a href="string_operation_8cc_source.html#l00130">StringOperation.cc:130</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -730,7 +730,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>s1 - s2 の結果を文字列として返す。</dd></dl>
 <p>文字列に数字でないものが含まれていたときは，エラーを表示しプログラムを停止させる。 </p>
 
-<p>Definition at line <a class="el" href="_string_operation_8cc_source.html#l00140">140</a> of file <a class="el" href="_string_operation_8cc_source.html">StringOperation.cc</a>.</p>
+<p>Definition at line <a class="el" href="string_operation_8cc_source.html#l00140">140</a> of file <a class="el" href="string_operation_8cc_source.html">StringOperation.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;{</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keywordflow">if</span>( !(<a class="code" href="string_operation_8cc.html#a293e0c80f13ff851cef056c6bb13f659">IsNumber</a>(s1) &amp;&amp; <a class="code" href="string_operation_8cc.html#a293e0c80f13ff851cef056c6bb13f659">IsNumber</a>(s2) ) )</div>
@@ -752,7 +752,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  ssrtn &lt;&lt; result;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keywordflow">return</span> ssrtn.str();</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
-<div class="ttc" id="string_operation_8cc.html_a293e0c80f13ff851cef056c6bb13f659"><div class="ttname"><a href="string_operation_8cc.html#a293e0c80f13ff851cef056c6bb13f659">IsNumber</a></div><div class="ttdeci">bool IsNumber(string st)</div><div class="ttdoc">文字列が数字のみで構成されているかを判定する。 </div><div class="ttdef"><b>Definition:</b> <a href="_string_operation_8cc_source.html#l00130">StringOperation.cc:130</a></div></div>
+<div class="ttc" id="string_operation_8cc.html_a293e0c80f13ff851cef056c6bb13f659"><div class="ttname"><a href="string_operation_8cc.html#a293e0c80f13ff851cef056c6bb13f659">IsNumber</a></div><div class="ttdeci">bool IsNumber(string st)</div><div class="ttdoc">文字列が数字のみで構成されているかを判定する。 </div><div class="ttdef"><b>Definition:</b> <a href="string_operation_8cc_source.html#l00130">StringOperation.cc:130</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

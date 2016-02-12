@@ -90,9 +90,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">MultiHist.cc File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="multi_hist_8hh_source.html">MultiHist.hh</a>&quot;</code><br />
 </div>
-<p><a href="_multi_hist_8cc_source.html">Go to the source code of this file.</a></p>
+<p><a href="multi_hist_8cc_source.html">Go to the source code of this file.</a></p>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

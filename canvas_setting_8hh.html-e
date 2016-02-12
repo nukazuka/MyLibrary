@@ -96,15 +96,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;TPad.h&quot;</code><br />
 <code>#include &quot;TStyle.h&quot;</code><br />
 </div>
-<p><a href="_canvas_setting_8hh_source.html">Go to the source code of this file.</a></p>
+<p><a href="canvas_setting_8hh_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aeb576dac34138872b7cf507bc30cbd14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_canvas_setting_8hh.html#aeb576dac34138872b7cf507bc30cbd14">PadSetting</a> ()</td></tr>
+<tr class="memitem:aeb576dac34138872b7cf507bc30cbd14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="canvas_setting_8hh.html#aeb576dac34138872b7cf507bc30cbd14">PadSetting</a> ()</td></tr>
 <tr class="separator:aeb576dac34138872b7cf507bc30cbd14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a48668a653446329783d49706968cf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_canvas_setting_8hh.html#a4a48668a653446329783d49706968cf4">CanvasSetting</a> ()</td></tr>
+<tr class="memitem:a4a48668a653446329783d49706968cf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="canvas_setting_8hh.html#a4a48668a653446329783d49706968cf4">CanvasSetting</a> ()</td></tr>
 <tr class="separator:a4a48668a653446329783d49706968cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acec2e73ca42a470c9b2c85b05ba7bb15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_canvas_setting_8hh.html#acec2e73ca42a470c9b2c85b05ba7bb15">CanvasSetting</a> (TCanvas *c)</td></tr>
+<tr class="memitem:acec2e73ca42a470c9b2c85b05ba7bb15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="canvas_setting_8hh.html#acec2e73ca42a470c9b2c85b05ba7bb15">CanvasSetting</a> (TCanvas *c)</td></tr>
 <tr class="separator:acec2e73ca42a470c9b2c85b05ba7bb15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>

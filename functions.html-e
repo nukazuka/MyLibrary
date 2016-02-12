@@ -78,6 +78,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_a"><span>a</span></a></li>
       <li><a href="#index_d"><span>d</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
+      <li><a href="#index_i"><span>i</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
       <li><a href="#index_r"><span>r</span></a></li>
@@ -106,6 +107,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Add()
 : <a class="el" href="class_multi_hist.html#a11cc2de153653a3476d040314702d794">MultiHist</a>
 </li>
+<li>ArgumentParser()
+: <a class="el" href="class_argument_parser.html#a760403f063ce0bc16b35c7f5d4e84c04">ArgumentParser</a>
+</li>
 </ul>
 
 
@@ -129,11 +133,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
+<li>GetArgument()
+: <a class="el" href="class_argument_parser.html#a6f72ae9d67e16bd0112768e0cc663d27">ArgumentParser</a>
+</li>
+<li>GetArgumentNum()
+: <a class="el" href="class_argument_parser.html#a77909ac817227a6d48dfd2534d9aeecb">ArgumentParser</a>
+</li>
 <li>GetName()
 : <a class="el" href="class_multi_hist.html#aab1f01f1cfa68d55c02d8dbf207cc544">MultiHist</a>
 </li>
 <li>GetTitle()
 : <a class="el" href="class_multi_hist.html#a993499146cfa7592d1158ffbb3fd304a">MultiHist</a>
+</li>
+<li>GetXmax()
+: <a class="el" href="class_multi_hist.html#aec6bdc8f4bcea33c5c29127a1b7a6214">MultiHist</a>
+</li>
+<li>GetXmin()
+: <a class="el" href="class_multi_hist.html#a2f679f89c85008856fcad205ff1a071e">MultiHist</a>
+</li>
+<li>GetYmax()
+: <a class="el" href="class_multi_hist.html#ad318800bbafa81dc408f3b325b825098">MultiHist</a>
+</li>
+<li>GetYmin()
+: <a class="el" href="class_multi_hist.html#a17ff523952a69e207c34e6996f252905">MultiHist</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
+<li>IsSpecified()
+: <a class="el" href="class_argument_parser.html#a254d90fbc2f2955ca5c8cd5b3f260e5d">ArgumentParser</a>
 </li>
 </ul>
 
@@ -258,6 +287,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>SetYmin()
 : <a class="el" href="class_multi_hist.html#a81139d566b19a65c66367a1c4adb5c93">MultiHist</a>
+</li>
+<li>ShowAll()
+: <a class="el" href="class_argument_parser.html#a06bd47d91384ea1625757fc32e0d2202">ArgumentParser</a>
 </li>
 </ul>
 </div><!-- contents -->
