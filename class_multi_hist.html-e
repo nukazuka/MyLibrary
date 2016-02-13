@@ -1542,7 +1542,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>see [here][<a href="https://root.cern.ch/doc/master/classTStyle.html#a0ae6f6044b6d7a32756d7e98bb210d6c">https://root.cern.ch/doc/master/classTStyle.html#a0ae6f6044b6d7a32756d7e98bb210d6c</a>] for format. </p>
+<p>see <a href="https://root.cern.ch/doc/master/classTStyle.html#a0ae6f6044b6d7a32756d7e98bb210d6c">here</a> for format. </p>
 
 <p>Definition at line <a class="el" href="multi_hist_8hh_source.html#l00345">345</a> of file <a class="el" href="multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
 <div class="fragment"><div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;{ stats_format_ = type ;};</div>
