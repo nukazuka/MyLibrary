@@ -180,7 +180,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae6d285886569c87b2134aab0e82bbb81"><td class="mdescLeft">&#160;</td><td class="mdescRight">set point  <a href="#ae6d285886569c87b2134aab0e82bbb81">More...</a><br /></td></tr>
 <tr class="separator:ae6d285886569c87b2134aab0e82bbb81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24f8be26b5ef24e9d63460f5c926bf09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_hist.html#a24f8be26b5ef24e9d63460f5c926bf09">SetStatsFormat</a> (int type)</td></tr>
-<tr class="memdesc:a24f8be26b5ef24e9d63460f5c926bf09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set format of stats box.  see [here][<a href="https://root.cern.ch/doc/master/classTStyle.html#a0ae6f6044b6d7a32756d7e98bb210d6c">https://root.cern.ch/doc/master/classTStyle.html#a0ae6f6044b6d7a32756d7e98bb210d6c</a>] for format.  <a href="#a24f8be26b5ef24e9d63460f5c926bf09">More...</a><br /></td></tr>
+<tr class="memdesc:a24f8be26b5ef24e9d63460f5c926bf09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set format of stats box.  <a href="#a24f8be26b5ef24e9d63460f5c926bf09">More...</a><br /></td></tr>
 <tr class="separator:a24f8be26b5ef24e9d63460f5c926bf09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf6ee1204b3942a102b2c20d6183bb3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_multi_hist.html#acf6ee1204b3942a102b2c20d6183bb3e">SetStatsPosition</a> (double xmin, double ymin, double xmax, double ymax)</td></tr>
 <tr class="memdesc:acf6ee1204b3942a102b2c20d6183bb3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">set position of box for statistic  <a href="#acf6ee1204b3942a102b2c20d6183bb3e">More...</a><br /></td></tr>
@@ -1535,13 +1535,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set format of stats box.  see [here][<a href="https://root.cern.ch/doc/master/classTStyle.html#a0ae6f6044b6d7a32756d7e98bb210d6c">https://root.cern.ch/doc/master/classTStyle.html#a0ae6f6044b6d7a32756d7e98bb210d6c</a>] for format. </p>
+<p>Set format of stats box. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">type</td><td>format of stats box. </td></tr>
+    <tr><td class="paramname">type</td><td>format of stats box.</td></tr>
   </table>
   </dd>
 </dl>
+<p>see [here][<a href="https://root.cern.ch/doc/master/classTStyle.html#a0ae6f6044b6d7a32756d7e98bb210d6c">https://root.cern.ch/doc/master/classTStyle.html#a0ae6f6044b6d7a32756d7e98bb210d6c</a>] for format. </p>
 
 <p>Definition at line <a class="el" href="multi_hist_8hh_source.html#l00345">345</a> of file <a class="el" href="multi_hist_8hh_source.html">MultiHist.hh</a>.</p>
 <div class="fragment"><div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;{ stats_format_ = type ;};</div>

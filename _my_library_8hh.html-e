@@ -97,13 +97,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="headers_s_l_8hh_source.html">HeadersSL.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="hist_operation_8hh_source.html">HistOperation.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="io_operation_8hh_source.html">IoOperation.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="multi_hist_8hh_source.html">MultiHist.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="numerical_operation_8hh_source.html">NumericalOperation.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="pave_operation_8hh_source.html">PaveOperation.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="string_operation_8hh_source.html">StringOperation.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_multi_hist_8hh_source.html">MultiHist.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_numerical_operation_8hh_source.html">NumericalOperation.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_pave_operation_8hh_source.html">PaveOperation.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_string_operation_8hh_source.html">StringOperation.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_style_8hh_source.html">Style.hh</a>&quot;</code><br />
 </div>
-<p><a href="my_library_8hh_source.html">Go to the source code of this file.</a></p>
+<p><a href="_my_library_8hh_source.html">Go to the source code of this file.</a></p>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
