@@ -101,7 +101,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="numerical_operation_8hh_source.html">NumericalOperation.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="pave_operation_8hh_source.html">PaveOperation.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="string_operation_8hh_source.html">StringOperation.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_style_8hh_source.html">Style.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="style_8hh_source.html">Style.hh</a>&quot;</code><br />
 </div>
 <p><a href="my_library_8hh_source.html">Go to the source code of this file.</a></p>
 </div><!-- contents -->

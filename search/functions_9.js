@@ -19,6 +19,7 @@ var searchData=
   ['setstats',['SetStats',['../class_multi_hist.html#aa4397c14d12b33e6cf121a1f7b430b77',1,'MultiHist']]],
   ['setstatsboxpoint',['SetStatsBoxPoint',['../class_multi_hist.html#ae6d285886569c87b2134aab0e82bbb81',1,'MultiHist']]],
   ['setstatsboxsize',['SetStatsBoxSize',['../class_multi_hist.html#a85b8c640fcdf0faf8e3f7801ab6cfef8',1,'MultiHist']]],
+  ['setstatsformat',['SetStatsFormat',['../class_multi_hist.html#a24f8be26b5ef24e9d63460f5c926bf09',1,'MultiHist']]],
   ['setstatsposition',['SetStatsPosition',['../class_multi_hist.html#acf6ee1204b3942a102b2c20d6183bb3e',1,'MultiHist']]],
   ['setstatstype',['SetStatsType',['../class_multi_hist.html#a54f75be1b9e0afad94705bb0722cdb04',1,'MultiHist::SetStatsType(string type)'],['../class_multi_hist.html#a86bb47ee8070f72ad96de6326e1a5913',1,'MultiHist::SetStatsType(int num)']]],
   ['settitle',['SetTitle',['../class_multi_hist.html#aff7ce53aead01e156cb90b81a8f9df94',1,'MultiHist']]],

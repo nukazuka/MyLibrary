@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><code>#include &quot;<a class="el" href="headers_root_8hh_source.html">HeadersRoot.hh</a>&quot;</code><br />
 <code>#include &quot;TStyle.h&quot;</code><br />
 </div>
-<p><a href="_style_8hh_source.html">Go to the source code of this file.</a></p>
+<p><a href="style_8hh_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -208,7 +208,7 @@ template&lt;typename TH &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_style_8hh_source.html#l00018">18</a> of file <a class="el" href="_style_8hh_source.html">Style.hh</a>.</p>
+<p>Definition at line <a class="el" href="style_8hh_source.html#l00018">18</a> of file <a class="el" href="style_8hh_source.html">Style.hh</a>.</p>
 <div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordflow">if</span>( hist-&gt;fN != hist-&gt;GetNcells() )</div>
@@ -941,12 +941,12 @@ template&lt;class TH &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_style_8hh_source.html#l00011">11</a> of file <a class="el" href="_style_8hh_source.html">Style.hh</a>.</p>
+<p>Definition at line <a class="el" href="style_8hh_source.html#l00011">11</a> of file <a class="el" href="style_8hh_source.html">Style.hh</a>.</p>
 <div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="style_8hh.html#a84e618da783b0ef006fa5120055e3004">HistSetting</a>( hist , color , width );</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
-<div class="ttc" id="style_8hh.html_a84e618da783b0ef006fa5120055e3004"><div class="ttname"><a href="style_8hh.html#a84e618da783b0ef006fa5120055e3004">HistSetting</a></div><div class="ttdeci">void HistSetting(TH *hist, int color=1, int line_width=2, int fill_style=0)</div><div class="ttdef"><b>Definition:</b> <a href="_style_8hh_source.html#l00018">Style.hh:18</a></div></div>
+<div class="ttc" id="style_8hh.html_a84e618da783b0ef006fa5120055e3004"><div class="ttname"><a href="style_8hh.html#a84e618da783b0ef006fa5120055e3004">HistSetting</a></div><div class="ttdeci">void HistSetting(TH *hist, int color=1, int line_width=2, int fill_style=0)</div><div class="ttdef"><b>Definition:</b> <a href="style_8hh_source.html#l00018">Style.hh:18</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
