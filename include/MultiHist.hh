@@ -70,6 +70,7 @@ private:
   double size_label_y_   = 0.05;
 
   // valiable for stats box
+  int    stats_format_ = 1000111; // name, mean, std.dev., integral
   double stats_width_  = 0.1;
   double stats_height_ = 0.1;
 
@@ -334,6 +335,14 @@ public:
     @details 
   */
   void SetStatsBoxPoint( double xmax , double ymax );
+
+  /*!
+    @fn void SetStatsFormat( int type )
+    @param type format of stats box. 
+    @brief Set format of stats box.
+    @details see [here](https://root.cern.ch/doc/master/classTStyle.html#a0ae6f6044b6d7a32756d7e98bb210d6c) for format.    
+  */
+  void SetStatsFormat( int type );
 
   /*!
     @fn void SetStatsPosition( double xmin, double ymin, double xmax, double ymax )

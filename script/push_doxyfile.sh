@@ -15,11 +15,14 @@ then
     exit
 fi
 
+comment=$1
+
 if [ $# -ne 1 ]
 then
     echo ${echo_op} "Usage $0 [comment for commitment]"
     echo ${echo_op} "[comment for commitment] must be provided."
-    exit
+    comment="update doxy documents"
+#    exit
 fi
 
 
@@ -63,7 +66,7 @@ done
 #sed -i -e "s/_canvas/canvas/g" *.html
 
 git add -A
-git commit -m "$1"
+git commit -m "${comment}"
 git push origin gh-pages
 git checkout master
 

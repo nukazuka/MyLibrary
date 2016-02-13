@@ -20,6 +20,8 @@ void MultiHist::Init( string name, string title )
   name_  = name;
   title_ = title;
 
+  gStyle->SetOptStat( stats_format_ );
+
   CheckLogScale();
 }
 
@@ -530,6 +532,11 @@ void MultiHist::SetStatsPosition( double xmin, double ymin, double xmax, double 
   stats_ymax_ = ymax;
 }
 
+void MultiHist::SetStatsFormat( int type )
+{
+  stats_format_ = type ;
+  gStyle->SetOptStat( stats_format_ );
+}
 void MultiHist::SetStatsType( string type )
 {
 
