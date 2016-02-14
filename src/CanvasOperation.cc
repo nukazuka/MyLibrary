@@ -14,6 +14,7 @@ void PadSetting()
   gStyle->SetPalette(55, 0, 1 );
   gStyle->SetGridColor( kGray );
   gStyle->SetGridStyle( 3 );
+  gStyle->SetEndErrorSize(0) ;
 }
 
 
