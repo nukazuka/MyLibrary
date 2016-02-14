@@ -449,6 +449,23 @@ void MultiHist::Draw( string option,
 void MultiHist::Draw2D( string option )
 {
 
+  if( stats_type_ == 0 )
+    Draw2D( option, stats_xmin_ , stats_ymin_ , stats_xmax_ , stats_ymax_ );
+  else if( stats_type_ == 1 )
+    {
+
+      double xmin = stats_xmax_ - stats_width_ ;//* vhist_.size();
+      double ymin = stats_ymax_ - stats_height_ * vhist2d_.size();
+      Draw2D( option, xmin, ymin, stats_xmax_ , stats_ymax_ );
+    }
+
+}
+
+void MultiHist::Draw2D( string option,
+			double stats_xmin, double stats_ymin,
+			double stats_xmax, double stats_ymax )
+{
+  
   // temp 
   Ranges2D();
   double margin_right  = ( xmax_ - xmin_ ) * margin_ratio_right_;
@@ -476,18 +493,26 @@ void MultiHist::Draw2D( string option )
     option2 = "SAMES";
   else
     option2 = "SAME";
+
+  double stats_height = (stats_ymax - stats_ymin) / vhist2d_.size();
+
   for( int i=0; i<vhist2d_.size(); i++ )
     {
       vhist2d_[i]->Draw( (option + option2 ).c_str() );
-      /*
-	DrawStats( vhist2d_[i] , 
-	stats_xmin ,  
-	stats_ymax - stats_height * (i+1) ,
-	stats_xmax,
-	stats_ymax - stats_height * i );
-      */
-    }  
 
+      if( bl_stats_ == true )
+	{	
+
+
+	  DrawStats( vhist2d_[i] , 
+		     stats_xmin ,  
+		     stats_ymax - stats_height * (i+1) ,
+		     stats_xmax,
+		     stats_ymax - stats_height * i );
+	}
+
+    }  
+  
   id_++;
 }
 

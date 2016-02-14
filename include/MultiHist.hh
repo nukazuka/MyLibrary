@@ -190,6 +190,15 @@ public:
   void Draw2D( string option = "" );
 
   /*!
+    @fn   void Draw2D( string option, double stats_xmin, double stats_ymin, double stats_xmax, double stats_ymax )
+    @param option An option for TH2D::Draw
+    @brief Draw all 2D histograms
+  */
+  void Draw2D( string option,
+	       double stats_xmin, double stats_ymin,
+	       double stats_xmax, double stats_ymax );
+
+  /*!
     @fn string GetName()
     @param
     @brief
