@@ -295,12 +295,9 @@ void MultiHist::Ranges()
     
   if( bl_force_ymax_ == true )
     {
-      cout << "ymax is forced to be " << ymax_force_ << endl;
       ymax_ = ymax_force_;
       margin_ratio_top_ = 0.0;
     }
-
-  
 }
 
 void MultiHist::Ranges2D()
