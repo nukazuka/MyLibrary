@@ -60,8 +60,8 @@ private:
   string title_y_ = " ";
   double offset_title_x_ = 1.0;
   double offset_title_y_ = 1.0;
-  double size_title_x_ = 0.15;
-  double size_title_y_ = 0.15;
+  double size_title_x_ = 0.04;
+  double size_title_y_ = 0.04;
 
   // valiable for axis' label
   double offset_label_x_ = 0.005;

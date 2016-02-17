@@ -44,7 +44,7 @@ void MultiHist::FrameSetting( TH1F* frame, double margin_bottom, double margin_t
   frame->GetXaxis()->SetTitleOffset( offset_title_x_ );
   frame->GetYaxis()->SetTitleOffset( offset_title_y_ );
 
-  frame->GetXaxis()->SetTitleSize( size_title_x_ );
+    frame->GetXaxis()->SetTitleSize( size_title_x_ );
   frame->GetYaxis()->SetTitleSize( size_title_y_ );
 
   frame->GetXaxis()->SetLabelOffset( offset_label_x_ );
@@ -52,6 +52,7 @@ void MultiHist::FrameSetting( TH1F* frame, double margin_bottom, double margin_t
 
   frame->GetXaxis()->SetLabelSize( size_label_x_ );
   frame->GetYaxis()->SetLabelSize( size_label_y_ );
+
 
   if( (string)(frame->GetXaxis()->GetTitle()) == "" )
     frame->GetXaxis()->SetTitle( title_x_.c_str() );
@@ -327,7 +328,6 @@ void MultiHist::Ranges2D()
   if( bl_force_ymax_ )
     ymax_ = ymax_force_;
 
-  
 }
 
 
@@ -398,10 +398,7 @@ void MultiHist::Draw( string option,
   double margin_top    = ( ymax_ - ymin_ ) * margin_ratio_top_;
   double margin_bottom = ( ymax_ - ymin_ ) * margin_ratio_bottom_;
 
-  //  string name = name_ + title_ + "hframe" + Int2String( id_ );
-  string name = name_ + title_ + "hframe";// + Int2String( id_ );
-
-  cout << "MultiHist, " << title_ << endl;
+  string name = name_ + title_ + "hframe" + Int2String( id_ );
 
   TH1F* frame = new TH1F( name.c_str() ,
 			  title_.c_str() ,
@@ -410,9 +407,6 @@ void MultiHist::Draw( string option,
 
   FrameSetting( frame , margin_bottom, margin_top );
   frame->Draw();
-
-  cout << "MultiHist, x: " << frame->GetXaxis()->GetTitle() << endl;
-  cout << "MultiHist, y: " << frame->GetYaxis()->GetTitle() << endl;
 
   margin_right_  = margin_right;
   margin_left_   = margin_left;
@@ -456,7 +450,6 @@ void MultiHist::Draw( string option,
   id_++;
 }
 
-/*
 void MultiHist::Draw2D( string option )
 {
 
@@ -526,7 +519,6 @@ void MultiHist::Draw2D( string option,
   
   id_++;
 }
-*/
 
 void MultiHist::SetMarginV( double ratio )
 {
