@@ -60,6 +60,8 @@ void MultiHist::FrameSetting( TH1F* frame, double margin_bottom, double margin_t
   if( (string)(frame->GetYaxis()->GetTitle()) == "" )
     frame->GetYaxis()->SetTitle( title_y_.c_str() );
 
+  frame->GetXaxis()->SetNdivisions( division_x_ );
+  frame->GetYaxis()->SetNdivisions( division_y_ );
 }
 
 double MultiHist::GetHistEnd( TH1D* hist )

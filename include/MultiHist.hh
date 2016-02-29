@@ -69,6 +69,9 @@ private:
   double size_label_x_   = 0.05;
   double size_label_y_   = 0.05;
 
+  int division_x_ = 510;
+  int division_y_ = 510;
+
   // valiable for stats box
   int    stats_format_ = 1000111; // name, mean, std.dev., integral
   double stats_width_  = 0.1;
@@ -248,6 +251,22 @@ public:
     @brief all specified range are reset
   */
   void ResetRange();
+
+  /*!
+    @fn void SetDivisionX( int div = 510 )
+    @param div see [TAttAxis][https://root.cern.ch/doc/master/classTAttAxis.html#ae3067b6d4218970d09418291cbd84084]
+    @brief set the number of division for this axis.
+  */
+  void SetDivisionX( int div ){ division_x_ = div;};
+
+  /*!
+    @fn void SetDivisionY( int div = 510 )
+    @param div see [TAttAxis][https://root.cern.ch/doc/master/classTAttAxis.html#ae3067b6d4218970d09418291cbd84084]
+    @brief set the number of division for this axis.
+  */
+  void SetDivisionY( int div ){ division_y_ = div;};
+
+
 
   /*!
     @fn void SetDrawNoEntry ( bool bl )
