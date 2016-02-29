@@ -520,6 +520,16 @@ void MultiHist::Draw2D( string option,
 		     stats_ymax - stats_height * i );
 	}
 
+      if( i == 0 && bl_draw_palette_axis_ == true )
+	DrawPaletteAxis( vhist2d_[i] , 0.905, 0.1, 0.93, 0.9, 0.08 );
+      else if( i == 0 && bl_draw_palette_axis_ == false )
+	DrawPaletteAxis( vhist2d_[i] , 999, 999, 9999, 9999, 0.08 );
+
+      if( i==0 && bl_title_==true )
+	DrawTitle( title_size_ , title_align_ );
+      else if( bl_title_ == false )
+	DrawTitle( 9999, 9999 );
+
     }  
   
   id_++;

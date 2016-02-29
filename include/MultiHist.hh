@@ -90,7 +90,8 @@ private:
   bool bl_force_ymax_ = false;
   bool bl_logx_ = false;
   bool bl_logy_ = false;
-  
+  bool bl_draw_palette_axis_ = true;
+
   vector < TH1D* > vhist_;
   vector < TH2D* > vhist2d_;
 
@@ -266,7 +267,12 @@ public:
   */
   void SetDivisionY( int div ){ division_y_ = div;};
 
-
+  /*!
+    @fn void SetDrawPaletteAxis( bool bl )
+    @param bl draw palette axis or not
+    @brief sed palette axis on or off
+  */
+  void SetDrawPaletteAxis( bool bl ){ bl_draw_palette_axis_ = bl;};
 
   /*!
     @fn void SetDrawNoEntry ( bool bl )
