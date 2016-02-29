@@ -445,6 +445,9 @@ void MultiHist::Draw( string option,
 	  
       if( i==0 && bl_title_==true )
 	DrawTitle( title_size_ , title_align_ );
+      else if( bl_title_ == false )
+	DrawTitle( 9999, 9999 );
+
     }
 
   id_++;
