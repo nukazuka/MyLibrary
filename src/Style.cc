@@ -35,6 +35,15 @@ void SetHistStyle( TH1D* hist, int color, int width )
 
 #endif
 
+void FunctionSetting( TF1* f , int color, int width , int line_style )
+{
+
+  f->SetLineColor( color );
+  f->SetLineWidth( width );
+  f->SetLineStyle( line_style );
+}
+
+
 void GraphSetting( TGraph* g, int color , int width , int marker_style , int fill_style)
 {
 
