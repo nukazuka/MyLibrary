@@ -53,19 +53,19 @@ int GetColor( int num )
   else if( num == 2 )
     return kBlue;
   else if( num == 3 )
-    return kGreen;
+    return kGreen+2;
   else if( num == 4 )
     return kMagenta+1;
   else if( num == 5 )
-    return kYellow+2;
+    return kYellow+1;
   else if( num == 6 )
-    return kSpring;
+    return kCyan+1;
   else if( num == 7 )
-    return kRed;
+    return kRed+7;
   else if( num == 8 )
-    return kRed;
+    return kBlue+9;
   else if( num == 9 )
-    return kRed;
+    return kGray;
   
 
   return 1;
