@@ -23,6 +23,8 @@
 // graph
 #include "TGraph.h"
 
+// function
+#include "TF1.h"
 // vector 
 #include "TLorentzVector.h"
 #include "TLorentzRotation.h"

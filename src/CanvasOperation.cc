@@ -40,17 +40,17 @@ TCanvas* GetCanvas( string name, string shape, bool logy=false )
   string title = "title";
 
   if ( shape == "square" )
-    c = new TCanvas( name.c_str(), title.c_str(), 1000, 1000 );
+    c = new TCanvas( name.c_str(), title.c_str(), 1000, 1000 ); // 1:1
   else if ( shape == "landscape" )
-    c = new TCanvas( name.c_str(), title.c_str(), 1200, 800 );
+    c = new TCanvas( name.c_str(), title.c_str(), 1200, 800 );  // 3:2 = 1.5 : 1
   else if ( shape == "3:2" )
-    c = new TCanvas( name.c_str(), title.c_str(), 1200, 800 );
+    c = new TCanvas( name.c_str(), title.c_str(), 1200, 800 );  // 3:2 = 1.5 : 1
   else if ( shape == "presen" )
-    c = new TCanvas( name.c_str(), title.c_str(), 255, 170 );
+    c = new TCanvas( name.c_str(), title.c_str(), 255, 170 );   // 1.5 : 1
   else if ( shape == "double" )
-    c = new TCanvas( name.c_str(), title.c_str(), 1600, 800 );
+    c = new TCanvas( name.c_str(), title.c_str(), 1600, 800 );  // 2:1
   else
-    c = new TCanvas( name.c_str(), title.c_str(), 1600, 900 );
+    c = new TCanvas( name.c_str(), title.c_str(), 1600, 900 );  // 16:9 = 1.78 : 1
 
   c->SetLogy( logy );
 

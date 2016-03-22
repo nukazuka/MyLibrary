@@ -3,6 +3,7 @@
 
 #include "HeadersRoot.hh"
 #include "TStyle.h"
+
 void Style();
 void SetHistStyle( TH1D* hist, int color, int width );
 
@@ -34,9 +35,11 @@ void HistSetting( TH* hist , int color = 1 , int line_width = 2 , int fill_style
 //#endif // ifndef __CINT__
 
 //void SetGraphStyle( TGraph* g, int color , int width );
+void FunctionSetting( TF1* f , int color = 1, int width = 2 , int line_style = 1 );
+
+int GetColor( int num );
 void GraphSetting( TGraph* g, int color = 1, int width = 2 , int marker_style = 20  , int fill_style = 0 );
 
-void FunctionSetting( TF1* f , int color = 1, int width = 2 , int line_style = 1 );
 
 void SetColorPalette_old( int num = 55 );
 

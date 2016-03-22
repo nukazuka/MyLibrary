@@ -43,6 +43,34 @@ void FunctionSetting( TF1* f , int color, int width , int line_style )
   f->SetLineStyle( line_style );
 }
 
+int GetColor( int num )
+{
+  
+  if( num == 0 )
+    return kBlack;
+  else if( num == 1 )
+    return kRed;
+  else if( num == 2 )
+    return kBlue;
+  else if( num == 3 )
+    return kGreen;
+  else if( num == 4 )
+    return kMagenta+1;
+  else if( num == 5 )
+    return kYellow+2;
+  else if( num == 6 )
+    return kSpring;
+  else if( num == 7 )
+    return kRed;
+  else if( num == 8 )
+    return kRed;
+  else if( num == 9 )
+    return kRed;
+  
+
+  return 1;
+}
+
 
 void GraphSetting( TGraph* g, int color , int width , int marker_style , int fill_style)
 {
