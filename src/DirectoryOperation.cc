@@ -60,9 +60,18 @@ bool GetFileNames( string path, vector < string >& vname , bool bl_path, string 
 	  // check if path to this file should be stoed or not
 	  // and store name of this file (or path to this file)
 	  if( bl_path == true )
-	    vname.push_back( path + name );
+	    {
+
+	      if( path.substr( path.size()-1, path.size() ) == "/" )
+		vname.push_back( path + name );
+	      else
+		vname.push_back( path + "/" + name );
+
+	    }
 	  else
-	    vname.push_back( name );
+	    {
+	      vname.push_back( name );
+	    }
 	}
     } 
   while(dent!=NULL);
