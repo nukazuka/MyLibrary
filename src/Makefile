@@ -33,12 +33,12 @@ SOURCES  = $(wildcard *.cc)
 OBJECTS  = $(SOURCES:.cc=.o)
 SHARED_OBJ = $(addprefix lib,$(SOURCES:.cc=$(SUFFIX)))
 
-all: clean2 $(SHARED_OBJ) MyLibrary.hh install clean
+all: clean2 $(SHARED_OBJ) MyLibrary.hh
 
 lib%$(SUFFIX): %.cc ../include/%.hh
 	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) -o $@  $< $(LDFLAGS)
 
-libDirectoryOperation: DirectoryOperation.cc StringOperation.cc ../include/DirectoryOperation.hh ../include/StringOperation.hh
+libDirectoryOperation$(SUFFIX): DirectoryOperation.cc StringOperation.cc ../include/DirectoryOperation.hh ../include/StringOperation.hh
 	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) $(LDFLAGS) -o $@  $<  StringOperation.cc
 
 libMultiHist$(SUFFIX): MultiHist.cc PaveOperation.cc StringOperation.cc ../include/MultiHist.hh ../include/PaveOperation.hh ../include/StringOperation.hh

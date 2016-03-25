@@ -4,6 +4,22 @@
 
 using namespace std;
 
+string Double2String( double num , int precision )
+{
+  stringstream ss;
+  ss << setprecision( precision ) << num;
+  return ss.str();
+}
+
+string GetBaseName( string path )
+{
+
+  string file_name = GetFileName( path );
+  string file_suffix = GetSuffix(path);
+  string rtn = Replace( file_name, file_suffix, "" );
+  return  rtn;
+}
+
 string GetFileName( string path )
 {
 
@@ -48,6 +64,26 @@ string GetSuffix( string path )
   return rtn;
 }
 
+string Int2String( int num )
+{
+
+  stringstream ss;
+  ss << num;
+  return ss.str();
+}
+
+bool IsNumber( string st )
+{
+
+  string::const_iterator it = st.begin();
+  while( it != st.end() && std::isdigit(*it) )
+    ++it;
+
+  return !st.empty() && it == st.end();
+}
+
+
+
 string Replace( string word, string old_key, string new_key )
 {
 
@@ -73,15 +109,6 @@ string Replace( string word, string old_key, string new_key )
     }
 
   return rtn;
-}
-
-string GetBaseName( string path )
-{
-
-  string file_name = GetFileName( path );
-  string file_suffix = GetSuffix(path);
-  string rtn = Replace( file_name, file_suffix, "" );
-  return  rtn;
 }
 
 string Replace4Cut( string cut )
@@ -127,16 +154,6 @@ string Replace4Cut( string cut )
 }
 
 
-bool IsNumber( string st )
-{
-
-  string::const_iterator it = st.begin();
-  while( it != st.end() && std::isdigit(*it) )
-    ++it;
-
-  return !st.empty() && it == st.end();
-}
-
 string Subtraction( string s1, string s2 )
 {
 
@@ -179,14 +196,6 @@ int String2Int( string st )
   return num;
 }
 
-string Int2String( int num )
-{
-
-  stringstream ss;
-  ss << num;
-  return ss.str();
-}
-
 double String2Double( string st )
 {
   istringstream iss(st);
@@ -197,12 +206,5 @@ double String2Double( string st )
   iss >> num;
 
   return val;
-}
-
-string Double2String( double num , int precision )
-{
-  stringstream ss;
-  ss << setprecision( precision ) << num;
-  return ss.str();
 }
 

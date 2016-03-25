@@ -5,6 +5,17 @@
 #include <sstream>
 
 using namespace std;
+
+/*!
+  @fn string Double2String( double num )
+  @param num  変換される double 型の数字。
+  @param precision 有効数字の桁数
+  @return num を文字列に変換したもの。
+  @brief double を strgin 型に変換し，返す。
+  @details 有効数字をどうするかまだ決めていない.
+  @todo 有効数字をどうするか？ */
+string Double2String( double num , int presicion=5 );
+
 /*!
   @fn string GetBaseName( string path )
   @param path : ファイルのフルパス
@@ -45,6 +56,23 @@ string GetRepeatedWords( string word, int num );
   @brief ファイル名やファイルのフルパスからファイルの拡張子を返す。
  */
 string GetSuffix( string path );
+
+/*!
+  @fn string Int2String( int num )
+  @param num : 変換される int 型の数字。
+  @return num を文字列に変換したもの。
+  @brief int を string 型に変換し返す。
+ */
+string Int2String( int num );
+
+/*!
+  @fn bool IsNumber( string st )
+  @param st : 判定する文字列。
+  @retval true : 文字列が数字のみから構成されている時。
+  @retval false : 文字列に数字以外の文字が含まれている時。
+  @brief 文字列が数字のみで構成されているかを判定する。
+ */
+bool IsNumber( string st );
 
 /*!
   @fn string Replace( string word, string old_key, string new_key )
@@ -105,14 +133,6 @@ string Subtraction( string s1, string s2 );
 int String2Int( string st );
 
 /*!
-  @fn string Int2String( int num )
-  @param num : 変換される int 型の数字。
-  @return num を文字列に変換したもの。
-  @brief int を string 型に変換し返す。
- */
-string Int2String( int num );
-
-/*!
   @fn double String2Double( string st )
   @param st : 変換される double 型の数字。
   @return st を double 型に変換したもの。
@@ -120,22 +140,4 @@ string Int2String( int num );
  */
 double String2Double( string st );
 
-/*!
-  @fn string Double2String( double num )
-  @param num  変換される double 型の数字。
-  @param precision 有効数字の桁数
-  @return num を文字列に変換したもの。
-  @brief double を strgin 型に変換し，返す。
-  @details 有効数字をどうするかまだ決めていない.
-  @todo 有効数字をどうするか？ */
-string Double2String( double num , int presicion=5 );
-
-/*!
-  @fn bool IsNumber( string st )
-  @param st : 判定する文字列。
-  @retval true : 文字列が数字のみから構成されている時。
-  @retval false : 文字列に数字以外の文字が含まれている時。
-  @brief 文字列が数字のみで構成されているかを判定する。
- */
-bool IsNumber( string st );
 #endif

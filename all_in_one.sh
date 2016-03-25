@@ -1,18 +1,18 @@
 #!/bin/bash
 
 cd src
-make -j 
+make -j
 stat_make=$?
 
 make install
 stat_install=$?
 make clean 
 stat_clean=$?
+
 cd ../bin
 ./install.sh
 stat_install_config=$?
 cd ..
-
 
 echo "========================================"
 echo " RESULTS "
