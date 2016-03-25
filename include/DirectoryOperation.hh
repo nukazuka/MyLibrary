@@ -34,14 +34,30 @@ bool CheckSuffix( string name, string true_suffix );
  */
 bool GetFileNames( string path, vector < string >& vname , bool bl_path=false , string true_suffix = "" );
 
+
+/*!
+  @fn bool GetFileNames( string path, vector < string >& vname, string true_suffix = ""  );
+  @brief you can specify a path to the directory, suffixes to be accepted
+*/
 bool GetFileNames( string path, vector < string >& vname, string true_suffix = ""  );
 
+/*!
+  @fn bool GetFileNames( string path, vector < string >& vname );
+  @brief you can specify a path to the directory
+*/
 bool GetFileNames( string path, vector < string >& vname );
 
+/*!
+  @fn bool GetFilePaths( string path, vector < string >& vname, string true_suffix = "" );
+  @brief paths to the file in a specified directory are stored in vector < string >
+  @details you can specify a path to the directory and suffixes to be accepted
+*/
 bool GetFilePaths( string path, vector < string >& vname, string true_suffix = "" );
 
-
-
-
+/*!
+  @fn bool GetFilePaths( string path, vector < string >& vname);
+  @brief you can specify a path to the directory
+*/
+bool GetFilePaths( string path, vector < string >& vname);
 
 #endif // MYLIB_DIRECTORYOPERATION_HH
