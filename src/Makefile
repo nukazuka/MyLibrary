@@ -33,17 +33,16 @@ SOURCES  = $(wildcard *.cc)
 OBJECTS  = $(SOURCES:.cc=.o)
 SHARED_OBJ = $(addprefix lib,$(SOURCES:.cc=$(SUFFIX)))
 
-all: $(SHARED_OBJ) MyLibrary.hh
+all: clean2 $(SHARED_OBJ) MyLibrary.hh install clean
 
-lib%.so: %.cc ../include/%.hh
+lib%$(SUFFIX): %.cc ../include/%.hh
 	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) -o $@  $< $(LDFLAGS)
 
-lib%.dylib: %.cc ../include/%.hh
-	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) -o $@  $< $(LDFLAGS)
+libDirectoryOperation: DirectoryOperation.cc StringOperation.cc ../include/DirectoryOperation.hh ../include/StringOperation.hh
+	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) $(LDFLAGS) -o $@  $<  StringOperation.cc
 
-libMultiHist.dylib: MultiHist.cc ../include/MultiHist.hh
-	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) -L../lib -lPaveOperation -lStringOperation $(INCLUDE) -o $@  $< $(LDFLAGS)
-
+libMultiHist$(SUFFIX): MultiHist.cc PaveOperation.cc StringOperation.cc ../include/MultiHist.hh ../include/PaveOperation.hh ../include/StringOperation.hh
+	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) $(LDFLAGS) -o $@  $< PaveOperation.cc StringOperation.cc	
 
 MyLibrary.hh:
 	../MakeHeaderFile.sh ..
@@ -52,4 +51,7 @@ install:
 	install $(INSTALL_OPTION) $(SHARED_OBJ) ../lib
 
 clean:
-	rm -rf $(SHARED_OBJ) *~ \#* ../*/*~ *dylib.dSYM
+	rm -rf $(SHARED_OBJ) *~ \#* ../*/*~ *dylib.dSYM *.o
+
+clean2:
+	rm -rf $(SHARED_OBJ) *~ \#* ../*/*~ *dylib.dSYM ../lib/* *.o
