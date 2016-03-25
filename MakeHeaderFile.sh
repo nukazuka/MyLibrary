@@ -42,13 +42,20 @@ echo -e "#endif // ndef __CINT__" >> ${path}
 ## end of ifndef __CINT__
 
 ## ifdef __CINT__ # for CINT ###################################
+
 echo -e "\n//if __CINT__ is defined, include its source files" >> ${path}
 echo -e "#ifdef __CINT__" >> ${path}
 
 #ls -1 ${path2}include/*.hh | xargs -I {} echo -e "#include \"`pwd`/{}\"" >> ${path}
 
-ls -1 ${path2}src/*.cc | xargs -I {} echo -e "#include \"`pwd`/{}\"" >> ${path}
 
+# include *.cc
+## some file depend on other files eg DirectoryOperation depends StringOperation
+## to avoid confliction, such files are included at last
+ls -1 ${path2}src/*.cc | grep -v DirectoryOperation | xargs -I {} echo -e "#include \"`pwd`/{}\"" >> ${path}
+ls -1 ${path2}src/*.cc | grep  DirectoryOperation | xargs -I {} echo -e "#include \"`pwd`/{}\"" >> ${path}
+
+# include *.hh
 echo `grep MultiHist.cc ${path} | sed -e "s/src/include/g" | sed -e "s/.cc/.hh/g" ` >> ${path}
 echo `grep Style.cc ${path} | sed -e "s/src/include/g" | sed -e "s/.cc/.hh/g" ` >> ${path}
 
