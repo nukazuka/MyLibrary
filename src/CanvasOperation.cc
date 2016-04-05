@@ -49,6 +49,10 @@ TCanvas* GetCanvas( string name, string shape, bool logy=false )
     c = new TCanvas( name.c_str(), title.c_str(), 255, 170 );   // 1.5 : 1
   else if ( shape == "double" )
     c = new TCanvas( name.c_str(), title.c_str(), 1600, 800 );  // 2:1
+  else if ( shape == "triple" )
+    c = new TCanvas( name.c_str(), title.c_str(), 2400, 800 );  // 3:1
+  else if ( shape == "quad" )
+    c = new TCanvas( name.c_str(), title.c_str(), 3200, 800 );  // 4:1
   else
     c = new TCanvas( name.c_str(), title.c_str(), 1600, 900 );  // 16:9 = 1.78 : 1
 
