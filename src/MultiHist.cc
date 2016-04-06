@@ -392,28 +392,7 @@ void MultiHist::Draw( string option,
 		      double stats_xmax, double stats_ymax )
 {
 
-  Ranges();
-  Margins();
-
-  double margin_right  = ( xmax_ - xmin_ ) * margin_ratio_right_;
-  double margin_left   = ( xmax_ - xmin_ ) * margin_ratio_left_;
-  double margin_top    = ( ymax_ - ymin_ ) * margin_ratio_top_;
-  double margin_bottom = ( ymax_ - ymin_ ) * margin_ratio_bottom_;
-
-  string name = name_ + title_ + "hframe" + Int2String( id_ );
-
-  TH1F* frame = new TH1F( name.c_str() ,
-			  title_.c_str() ,
-			  1000, xmin_ - margin_left,
-			  xmax_ + margin_right );
-
-  FrameSetting( frame , margin_bottom, margin_top );
-  frame->Draw();
-
-  margin_right_  = margin_right;
-  margin_left_   = margin_left;
-  margin_top_    = margin_top;
-  margin_bottom_ = margin_bottom;
+  DrawFrame();
 
   if( option == "" )
     option = option_;
@@ -454,6 +433,34 @@ void MultiHist::Draw( string option,
 
   id_++;
 }
+
+void MultiHist::DrawFrame()
+{
+
+  Ranges();
+  Margins();
+
+  double margin_right  = ( xmax_ - xmin_ ) * margin_ratio_right_;
+  double margin_left   = ( xmax_ - xmin_ ) * margin_ratio_left_;
+  double margin_top    = ( ymax_ - ymin_ ) * margin_ratio_top_;
+  double margin_bottom = ( ymax_ - ymin_ ) * margin_ratio_bottom_;
+
+  margin_right_  = margin_right;
+  margin_left_   = margin_left;
+  margin_top_    = margin_top;
+  margin_bottom_ = margin_bottom;
+
+  string name = name_ + title_ + "hframe" + Int2String( id_ );
+  id_++;
+  TH1F* frame = new TH1F( name.c_str() ,
+			  title_.c_str() ,
+			  1000, xmin_ - margin_left,
+			  xmax_ + margin_right );
+
+  FrameSetting( frame , margin_bottom, margin_top );
+  frame->Draw();
+}
+
 
 void MultiHist::Draw2D( string option )
 {

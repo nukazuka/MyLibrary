@@ -7,7 +7,7 @@ using namespace std;
 TObject* GetObject( string file_name, string obj_name)
 {
 
-  TFile* tf = new TFile( file_name.c_str() );
+  TFile* tf = new TFile( file_name.c_str(), "READ"  );
 
   if( !tf->IsOpen() )
     {
@@ -37,7 +37,6 @@ TObject* GetObject( string file_name, string obj_name)
       //      exit(-1);
     }
 
-  
   return (TObject*)tf->Get( obj_name.c_str() );
 }
 

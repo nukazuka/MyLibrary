@@ -187,6 +187,13 @@ public:
 	     double stats_xmax, double stats_ymax );
 
   /*!
+    @fn void DrawFrame()
+    @brief Draw only frame
+  */
+  void DrawFrame();
+  
+
+  /*!
     @fn void Draw2D( string option )
     @param option An option for TH2D::Draw
     @brief Draw all 2D histograms
