@@ -1,1 +1,0 @@
-gnukazuk@gnukazuk-ubuntu.9083:1465142422

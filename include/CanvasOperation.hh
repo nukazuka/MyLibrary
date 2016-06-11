@@ -13,7 +13,7 @@ using namespace std;
   @param shape see details
   @param logy log scale for y axis of not
   @brief get canvas
-  @details ## defined shapes
+  @details ## Defined Shapes
   name       | width | height | ratio  | usage          | remarks
   ---------  | ----- | ------ | ------ | -------------- | -------- |
   square     | 1000  | 1000   | 1:1    | normal | |
@@ -27,6 +27,8 @@ using namespace std;
 
   ### Comparison shape
 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   //    -------------------------
   //    |//////// title /////// |  100   
   //    |                       |       
@@ -42,7 +44,7 @@ using namespace std;
   //    |///// axis title //////|  100
   //    -------------------------
   //    <--------- 1000 -------->
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  */
 TCanvas* GetCanvas( string name, string shape, bool logy );
