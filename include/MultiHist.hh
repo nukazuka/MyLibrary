@@ -91,6 +91,7 @@ private:
   bool bl_logx_ = false;
   bool bl_logy_ = false;
   bool bl_draw_palette_axis_ = true;
+  bool bl_ratio_mode_ = false;
 
   vector < TH1D* > vhist_;
   vector < TH2D* > vhist2d_;
@@ -208,6 +209,24 @@ public:
   void Draw2D( string option,
 	       double stats_xmin, double stats_ymin,
 	       double stats_xmax, double stats_ymax );
+
+  /*!
+    @fn int GetEntries()
+    @brief get entires of hist
+  */
+  int GetEntries(){ return vhist_.size();} ;
+
+  /*!
+    @fn int Get2DEntries()
+    @brief get entires of 2D hist
+  */
+  int Get2DEntries(){ return vhist2d_.size();} ;
+
+  /*!
+    @fn int GetEntries()
+    @brief get entires of 1D hist and 2D hist
+  */
+  int GetAllEntries(){ return GetEntries() + Get2DEntries() ;} ;
 
   /*!
     @fn string GetName()
@@ -350,6 +369,13 @@ public:
     @brief set ranges to be drawn
   */
   void SetRange( double xmin, double ymin, double xmax, double ymax );
+
+
+  /*!
+    @fn void SetRatioMode( bool bl_mode )
+    @brief set ratio mode
+  */
+  void SetRatioMode( bool bl_mode ){  bl_ratio_mode_ = bl_mode; };
 
   /*!
     @fn void SetStats( bool bl )

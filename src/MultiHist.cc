@@ -44,7 +44,7 @@ void MultiHist::FrameSetting( TH1F* frame, double margin_bottom, double margin_t
   frame->GetXaxis()->SetTitleOffset( offset_title_x_ );
   frame->GetYaxis()->SetTitleOffset( offset_title_y_ );
 
-    frame->GetXaxis()->SetTitleSize( size_title_x_ );
+  frame->GetXaxis()->SetTitleSize( size_title_x_ );
   frame->GetYaxis()->SetTitleSize( size_title_y_ );
 
   frame->GetXaxis()->SetLabelOffset( offset_label_x_ );
@@ -412,12 +412,21 @@ void MultiHist::Draw( string option,
 	{
 	      
 	  vhist_[i]->Draw( (option + "SAMES" ).c_str() );
-	      
-	  DrawStats( vhist_[i] , 
-		     stats_xmin ,  
-		     stats_ymax - stats_height * (i+1) ,
-		     stats_xmax,
-		     stats_ymax - stats_height * i );
+
+	  // if this is ratio mode, draw stats box
+	  if( bl_ratio_mode_ == false )
+	    {
+	      DrawStats( vhist_[i] , 
+			 stats_xmin , stats_ymax - stats_height * (i+1) ,
+			 stats_xmax , stats_ymax - stats_height * i 
+			 );
+	    }
+	  else
+	    {
+	      DrawStats( vhist_[i] , 10, 11 , 10, 11 );
+	    }
+
+	  
 	}
       else
 	{
@@ -459,6 +468,29 @@ void MultiHist::DrawFrame()
 
   FrameSetting( frame , margin_bottom, margin_top );
   frame->Draw();
+ 
+  if( bl_ratio_mode_ )
+    {
+      TLine* line = new TLine( xmin_, 1.0, xmax_, 1.0 );
+      line->SetLineColor( kRed );
+      line->SetLineWidth( 2 );
+      line->SetLineStyle( 2 );
+      line->Draw();
+
+      // remove bins which contain 0 entry
+      for( int i=0; i<vhist_.size(); i++ )
+	{
+
+	  for( int j=1; j<vhist_[i]->GetNbinsX()+1; j++)
+	    {
+
+	      if( vhist_[i]->GetBinContent( j ) == 0 )
+		vhist_[i]->SetBinContent(j, -1 );
+	    }
+	}
+
+    }
+
 }
 
 
@@ -519,14 +551,18 @@ void MultiHist::Draw2D( string option,
       if( bl_stats_ == true )
 	{	
 
-
-	  DrawStats( vhist2d_[i] , 
-		     stats_xmin ,  
-		     stats_ymax - stats_height * (i+1) ,
-		     stats_xmax,
-		     stats_ymax - stats_height * i );
+	  if( bl_ratio_mode_ == false )
+	    {
+	      DrawStats( vhist2d_[i] , 
+			 stats_xmin  , stats_ymax - stats_height * (i+1) ,
+			 stats_xmax  , stats_ymax - stats_height * i
+			 );
+	    }
+	  else
+	    {
+	      DrawStats( vhist2d_[i], 10, 11, 10, 11 );
+	    }
 	}
-
       if( i == 0 && bl_draw_palette_axis_ == true )
 	DrawPaletteAxis( vhist2d_[i] , 0.905, 0.1, 0.93, 0.9, 0.08 );
       else if( i == 0 && bl_draw_palette_axis_ == false )

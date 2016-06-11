@@ -53,6 +53,54 @@ TCanvas* GetCanvas( string name, string shape, bool logy=false )
     c = new TCanvas( name.c_str(), title.c_str(), 2400, 800 );  // 3:1
   else if ( shape == "quad" )
     c = new TCanvas( name.c_str(), title.c_str(), 3200, 800 );  // 4:1
+  else if ( shape == "comparison" )
+    {
+
+      c = new TCanvas( name.c_str(), title.c_str(), 1000, 1450 );  // 1000*1000 and 250*1000
+
+      //    -------------------------
+      //    |//////// title /////// |  100   
+      //    |                       |       
+      //    |                       |       
+      //    |           #1          | 
+      //    |         Hists         | 1000
+      //    |                       |
+      //    |                       |
+      //    |-----------------------|
+      //    |           #2          |
+      //    |         Ratio         |  250
+      //    |                       |  
+      //    |///// axis title //////|  100
+      //    -------------------------
+      //    <--------- 1000 -------->
+
+      double ratio = 1.0 - 1100.0 / 1450.0;
+      TPad *pad1 = new TPad("pad1", "title", 0.0, ratio , 1.0, 1.0 , -1, -1, -2 );
+      pad1->SetTopMargin( 100.0 / 1100.0 );
+      pad1->SetBottomMargin( 0.001 );
+      pad1->Draw();
+      pad1->SetNumber(1);
+
+      TPad *pad2 = new TPad("pad2", "title", 0.0, 0.0, 1.0, ratio , -1, -1, -2 );
+      pad2->SetTopMargin( 0.001 );
+      pad2->SetBottomMargin( 100.0 / 350.0 );
+      pad2->Draw();
+      pad2->SetNumber(2);
+
+      c->cd( 1 );
+      PadSetting();
+
+      c->cd( 2 );
+      PadSetting();
+
+  /*
+    TPad *pad = new TPad("name", "title",xlow,ylow,xup,yup,color, bordersize,bordermode);
+    pad->Draw();
+    pad->SetNumber(n);
+  */
+
+
+    }
   else
     c = new TCanvas( name.c_str(), title.c_str(), 1600, 900 );  // 16:9 = 1.78 : 1
 
