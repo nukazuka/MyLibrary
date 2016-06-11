@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['numericaloperation_2ecc',['NumericalOperation.cc',['../_numerical_operation_8cc.html',1,'']]],
-  ['numericaloperation_2ehh',['NumericalOperation.hh',['../_numerical_operation_8hh.html',1,'']]]
+  ['multihist_2ecc',['MultiHist.cc',['../_multi_hist_8cc.html',1,'']]],
+  ['multihist_2ehh',['MultiHist.hh',['../_multi_hist_8hh.html',1,'']]],
+  ['mylibrary_2ehh',['MyLibrary.hh',['../_my_library_8hh.html',1,'']]]
 ];

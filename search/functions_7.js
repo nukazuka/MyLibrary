@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['padsetting',['PadSetting',['../_canvas_operation_8cc.html#aeb576dac34138872b7cf507bc30cbd14',1,'PadSetting():&#160;CanvasOperation.cc'],['../_canvas_operation_8hh.html#aeb576dac34138872b7cf507bc30cbd14',1,'PadSetting():&#160;CanvasOperation.cc'],['../_canvas_setting_8hh.html#aeb576dac34138872b7cf507bc30cbd14',1,'PadSetting():&#160;CanvasOperation.cc']]],
-  ['print',['Print',['../class_multi_hist.html#af4561bb900052f0c0cd04b94f96ba2c7',1,'MultiHist']]]
+  ['multihist',['MultiHist',['../class_multi_hist.html#ad21711e837223ea671f8d0d7ddfbf468',1,'MultiHist::MultiHist()'],['../class_multi_hist.html#a7eef0074a80e470e0de795247ba11e94',1,'MultiHist::MultiHist(string name, string title)']]]
 ];

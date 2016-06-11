@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['rad2deg',['Rad2Deg',['../_numerical_operation_8cc.html#a711e41604c6487bc1ad87edbd223706a',1,'Rad2Deg(double radian):&#160;NumericalOperation.cc'],['../_numerical_operation_8hh.html#a711e41604c6487bc1ad87edbd223706a',1,'Rad2Deg(double radian):&#160;NumericalOperation.cc']]],
-  ['replace',['Replace',['../_string_operation_8cc.html#a5ebe0c68b60fcd6dd8caf0fa483306db',1,'Replace(string word, string old_key, string new_key):&#160;StringOperation.cc'],['../_string_operation_8hh.html#a5ebe0c68b60fcd6dd8caf0fa483306db',1,'Replace(string word, string old_key, string new_key):&#160;StringOperation.cc']]],
-  ['replace4cut',['Replace4Cut',['../_string_operation_8cc.html#a62d4ed9bf5dab58080693ea359b2933e',1,'Replace4Cut(string cut):&#160;StringOperation.cc'],['../_string_operation_8hh.html#a62d4ed9bf5dab58080693ea359b2933e',1,'Replace4Cut(string cut):&#160;StringOperation.cc']]],
-  ['resetrange',['ResetRange',['../class_multi_hist.html#a0be18b2e805c136906b66f48cad08d45',1,'MultiHist']]]
+  ['padsetting',['PadSetting',['../_canvas_operation_8cc.html#aeb576dac34138872b7cf507bc30cbd14',1,'PadSetting():&#160;CanvasOperation.cc'],['../_canvas_operation_8hh.html#aeb576dac34138872b7cf507bc30cbd14',1,'PadSetting():&#160;CanvasOperation.cc'],['../_canvas_setting_8hh.html#aeb576dac34138872b7cf507bc30cbd14',1,'PadSetting():&#160;CanvasOperation.cc']]],
+  ['paveoperation_2ecc',['PaveOperation.cc',['../_pave_operation_8cc.html',1,'']]],
+  ['paveoperation_2ehh',['PaveOperation.hh',['../_pave_operation_8hh.html',1,'']]],
+  ['print',['Print',['../class_multi_hist.html#af4561bb900052f0c0cd04b94f96ba2c7',1,'MultiHist']]]
 ];
