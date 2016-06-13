@@ -39,24 +39,62 @@ TCanvas* GetCanvas( string name, string shape, bool logy=false )
   TCanvas* c;
   string title = "title";
 
+  double width, height;
+
   if ( shape == "square" )
-    c = new TCanvas( name.c_str(), title.c_str(), 1000, 1000 ); // 1:1
+    {
+      width  = 1000;
+      height = 1000;
+    }
   else if ( shape == "landscape" )
-    c = new TCanvas( name.c_str(), title.c_str(), 1200, 800 );  // 3:2 = 1.5 : 1
+    {
+      width  = 1200;
+      height =  800;
+    }
   else if ( shape == "3:2" )
-    c = new TCanvas( name.c_str(), title.c_str(), 1200, 800 );  // 3:2 = 1.5 : 1
+    {
+      width  = 1200;
+      height =  800;
+    }
   else if ( shape == "presen" )
-    c = new TCanvas( name.c_str(), title.c_str(), 255, 170 );   // 1.5 : 1
+    {
+      width  =  255;
+      height =  170;
+    }
   else if ( shape == "double" )
-    c = new TCanvas( name.c_str(), title.c_str(), 1600, 800 );  // 2:1
+    {
+      width  = 1600;
+      height =  800;
+    }
   else if ( shape == "triple" )
-    c = new TCanvas( name.c_str(), title.c_str(), 2400, 800 );  // 3:1
+    {
+      width  = 2400;
+      height =  800;
+    }
   else if ( shape == "quad" )
-    c = new TCanvas( name.c_str(), title.c_str(), 3200, 800 );  // 4:1
+    {
+      width  = 3200;
+      height =  800;
+    }
   else if ( shape == "comparison" )
     {
+      width  = 1000;
+      height = 1450;
+    }
+  else
+    {
+      width  = 1600;
+      height =  900;
+    }
 
-      c = new TCanvas( name.c_str(), title.c_str(), 1000, 1450 );  // 1000*1000 and 250*1000
+
+  c = new TCanvas( name.c_str(), title.c_str(), width, height );  // 16:9 = 1.78 : 1
+
+  c->SetWindowSize(width + (width - c->GetWw()), height + (height - c->GetWh()));
+  gSystem->ProcessEvents();
+
+  if( shape == "comparison" )
+    {
 
       //    -------------------------
       //    |//////// title /////// |  100   
@@ -92,17 +130,7 @@ TCanvas* GetCanvas( string name, string shape, bool logy=false )
 
       c->cd( 2 );
       PadSetting();
-
-  /*
-    TPad *pad = new TPad("name", "title",xlow,ylow,xup,yup,color, bordersize,bordermode);
-    pad->Draw();
-    pad->SetNumber(n);
-  */
-
-
     }
-  else
-    c = new TCanvas( name.c_str(), title.c_str(), 1600, 900 );  // 16:9 = 1.78 : 1
 
   c->SetLogy( logy );
 

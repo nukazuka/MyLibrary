@@ -2,6 +2,7 @@
 #define MYLIB_CANVASOPERATION_HH
 
 #include "HeadersRoot.hh"
+#include "TSystem.h"
 #include <string>
 
 using namespace std;
