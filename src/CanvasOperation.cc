@@ -80,6 +80,9 @@ TCanvas* GetCanvas( string name, string shape, bool logy=false )
     {
       width  = 1000;
       height = 1450;
+
+      width  = 1200;
+      height = 1500;
     }
   else
     {
@@ -88,7 +91,7 @@ TCanvas* GetCanvas( string name, string shape, bool logy=false )
     }
 
 
-  c = new TCanvas( name.c_str(), title.c_str(), width, height );  // 16:9 = 1.78 : 1
+  c = new TCanvas( name.c_str(), title.c_str(), width, height );
 
   c->SetWindowSize(width + (width - c->GetWw()), height + (height - c->GetWh()));
   gSystem->ProcessEvents();
@@ -96,32 +99,42 @@ TCanvas* GetCanvas( string name, string shape, bool logy=false )
   if( shape == "comparison" )
     {
 
-      //    -------------------------
-      //    |//////// title /////// |  100   
-      //    |                       |       
-      //    |                       |       
-      //    |           #1          | 
-      //    |         Hists         | 1000
-      //    |                       |
-      //    |                       |
-      //    |-----------------------|
-      //    |           #2          |
-      //    |         Ratio         |  250
-      //    |                       |  
-      //    |///// axis title //////|  100
-      //    -------------------------
-      //    <--------- 1000 -------->
+      //    -------------------------------------  
+      //    |   /////////// title ///////////   |  <- 125   
+      //    | m |                           | m |       
+      //    |   |                           |   |       
+      //    | a |             #1            | a | 
+      //    |   |           Hists           |   |  <- 1000
+      //    | r |          (square)         | r |
+      //    |   |                           |   |
+      //    | g |---------------------------| g |
+      //    |   |             #2            |   |
+      //    | i |            Ratio          | i |  <- 250
+      //    |   |                           |   |  
+      //    | n |/////// axis title ////////| n |  <-  80
+      //    |-----------------------------------|
 
-      double ratio = 1.0 - 1100.0 / 1450.0;
-      TPad *pad1 = new TPad("pad1", "title", 0.0, ratio , 1.0, 1.0 , -1, -1, -2 );
-      pad1->SetTopMargin( 100.0 / 1100.0 );
-      pad1->SetBottomMargin( 0.001 );
+      //    |<-->|<----------------------->|<-->|
+      //    | 100|           1000          | 100|
+      //    |<-------------- 1200 ------------->| (in px)
+
+      double ratio = 1./4;
+      TPad *pad1 = new TPad("pad1", "title",
+			    0.0, ratio ,  // xmin , ymin
+			    1.0, 1.0 ,    // xmax , ymax
+			    -1, -1, -2 );
+      pad1->SetTopMargin( 125.0 / 1000 );
+      pad1->SetBottomMargin( 0.0 );
       pad1->Draw();
       pad1->SetNumber(1);
 
-      TPad *pad2 = new TPad("pad2", "title", 0.0, 0.0, 1.0, ratio , -1, -1, -2 );
-      pad2->SetTopMargin( 0.001 );
-      pad2->SetBottomMargin( 100.0 / 350.0 );
+      TPad *pad2 = new TPad("pad2", "title",
+			    0.0 , 0.0,    // xmin , ymin
+			    1.0 , ratio , // xmax , ymax
+			    -1  , -1, -2 );
+
+      pad2->SetTopMargin( 0.00 );
+      pad2->SetBottomMargin( 80.0 / 250.0 );
       pad2->Draw();
       pad2->SetNumber(2);
 
