@@ -6,4 +6,6 @@ LIBS="-lStringOperation "
 LIBS+="-lStyle "
 LIBS+="-lCanvasOperation "
 LIBS+="-lIoOperation "
+LIBS+="-lMultiHist "
+
 echo "-L${DIR_MYLIBRARY} ${LIBS}"
