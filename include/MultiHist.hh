@@ -103,12 +103,22 @@ private:
   void FrameSetting( TH1F* frame, double margin_bottom, double margin_top );
   double GetHistEnd( TH1D* hist );
   double GetHistStart( TH1D* hist );
+
+  /*!
+
+    @fn double GetMinimumBin_Non0( int hist_id )
+    @brief return the min. value except 0 from specified hist
+  */
+  double GetMinimumBin_Non0( int hist_id );
+
+  double GetMaximumBin_Non0( int hist_id );
   double GetSuitableXmin();
   double GetSuitableYmin();
   void Margins();
   void Ranges();
   void Ranges2D();
-  
+  double GetMaxError();
+
 public:
 
   // Constructor

@@ -88,6 +88,43 @@ double MultiHist::GetHistStart( TH1D* hist )
   return rtn;
 }
 
+double MultiHist::GetMaxError()
+{
+
+  vector < double > verror;
+  for( int i=0; i<vhist_.size(); i++ )
+    {
+      for( int j=1; j<vhist_[i]->GetNbinsX(); j++ )
+	{
+	  verror.push_back( vhist_[i]->GetBinError(j) );
+	}
+    }
+
+  return *max_element( verror.begin(), verror.end() );
+}
+
+double MultiHist::GetMinimumBin_Non0( int hist_id )
+{
+  vector < double > vval;
+  for( int i=1; i<vhist_[hist_id]->GetNbinsX(); i++ )
+    {
+      if( vhist_[hist_id]->GetBinContent(i) != 0 )
+	vval.push_back( vhist_[hist_id]->GetBinContent(i) ) ;
+    }
+  return *min_element( vval.begin(), vval.end() );
+}
+
+double MultiHist::GetMaximumBin_Non0( int hist_id )
+{
+  vector < double > vval;
+  for( int i=1; i<vhist_[hist_id]->GetNbinsX(); i++ )
+    {
+      if( vhist_[hist_id]->GetBinContent(i) != 0 )
+	vval.push_back( vhist_[hist_id]->GetBinContent(i) ) ;
+    }
+  return *max_element( vval.begin(), vval.end() );
+}
+
 double MultiHist::GetSuitableXmin()
 {
 
@@ -161,6 +198,9 @@ void MultiHist::Ranges()
 
   CheckLogScale();
   vector < double > x, y;
+
+  // loop over all hist
+  // store ( x, y ) X ( max, min ) -> 4 patterns
   for( int i=0; i<vhist_.size(); i++ )
     {
 
@@ -177,10 +217,20 @@ void MultiHist::Ranges()
 	  x.push_back( GetHistStart( vhist_[i] ) - width/2 );
 	  x.push_back( GetHistEnd( vhist_[i] )   + width/2 );
 	}
-      
-      y.push_back( vhist_[i]->GetBinContent( vhist_[i]->GetMinimumBin() ) );
-      y.push_back( vhist_[i]->GetBinContent( vhist_[i]->GetMaximumBin() ) );
 
+      // if this is not ratio mode, just get max & min values
+      if( bl_ratio_mode_ == false )
+	{
+
+	  y.push_back( vhist_[i]->GetBinContent( vhist_[i]->GetMinimumBin() ) );
+	  y.push_back( vhist_[i]->GetBinContent( vhist_[i]->GetMaximumBin() ) );
+	}
+      else // if this is ratio mode, try to get meaningful max & min values
+	{
+
+	  y.push_back( GetMinimumBin_Non0(i) );
+	  y.push_back( GetMaximumBin_Non0(i) );
+	}
     }
 
   double xmin = *min_element( x.begin(), x.end() );
@@ -247,6 +297,21 @@ void MultiHist::Ranges()
 
   double ymin = *min_element( y.begin(), y.end() );
   double ymax = *max_element( y.begin(), y.end() );
+
+  // if this is ratio mode, y range should be considerd error bars
+  if( bl_ratio_mode_ == true )
+    {
+
+      // for ymax, just add maximum error to ymax
+      double error_max = GetMaxError();
+      ymax += error_max;
+
+      // for ymin, 0 or (ymin - maximum error) are used
+      if( ymin > error_max )
+	ymin -= error_max;
+      else
+	ymin = 0;
+    }
 
   if( bl_logy_ == true )
     {
