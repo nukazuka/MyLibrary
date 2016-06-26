@@ -93,20 +93,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MYLIB_CANVASOPERATION_HH</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="headers_root_8hh.html">HeadersRoot.hh</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//TCanvas* GetCanvas( string name, string shape, bool logy=false );</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;TCanvas* <a class="code" href="canvas_operation_8hh.html#a91fad5f22ed0ab7072e17def32e28706">GetCanvas</a>( <span class="keywordtype">string</span> name, <span class="keywordtype">string</span> shape, <span class="keywordtype">bool</span> logy );</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">void</span> <a class="code" href="canvas_operation_8hh.html#aeb576dac34138872b7cf507bc30cbd14">PadSetting</a>();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">void</span> <a class="code" href="canvas_operation_8hh.html#a4a48668a653446329783d49706968cf4">CanvasSetting</a>();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> <a class="code" href="canvas_operation_8hh.html#a4a48668a653446329783d49706968cf4">CanvasSetting</a>( TCanvas* c);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;TSystem.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//TCanvas* GetCanvas( string name, string shape, bool logy=false );</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;TCanvas* <a class="code" href="canvas_operation_8hh.html#a91fad5f22ed0ab7072e17def32e28706">GetCanvas</a>( <span class="keywordtype">string</span> name, <span class="keywordtype">string</span> shape, <span class="keywordtype">bool</span> logy );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordtype">void</span> <a class="code" href="canvas_operation_8hh.html#aeb576dac34138872b7cf507bc30cbd14">PadSetting</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keywordtype">void</span> <a class="code" href="canvas_operation_8hh.html#a4a48668a653446329783d49706968cf4">CanvasSetting</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keywordtype">void</span> <a class="code" href="canvas_operation_8hh.html#a4a48668a653446329783d49706968cf4">CanvasSetting</a>( TCanvas* c);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="headers_root_8hh.html"><div class="ttname"><a href="headers_root_8hh.html">HeadersRoot.hh</a></div></div>
 <div class="ttc" id="canvas_operation_8hh.html_aeb576dac34138872b7cf507bc30cbd14"><div class="ttname"><a href="canvas_operation_8hh.html#aeb576dac34138872b7cf507bc30cbd14">PadSetting</a></div><div class="ttdeci">void PadSetting()</div><div class="ttdef"><b>Definition:</b> <a href="canvas_operation_8cc_source.html#l00007">CanvasOperation.cc:7</a></div></div>
 <div class="ttc" id="canvas_operation_8hh.html_a91fad5f22ed0ab7072e17def32e28706"><div class="ttname"><a href="canvas_operation_8hh.html#a91fad5f22ed0ab7072e17def32e28706">GetCanvas</a></div><div class="ttdeci">TCanvas * GetCanvas(string name, string shape, bool logy)</div><div class="ttdoc">get canvas </div><div class="ttdef"><b>Definition:</b> <a href="canvas_operation_8cc_source.html#l00037">CanvasOperation.cc:37</a></div></div>
