@@ -92,7 +92,7 @@ private:
   bool bl_logy_ = false;
   bool bl_draw_palette_axis_ = true;
   bool bl_ratio_mode_ = false;
-
+  bool bl_include_error_bar_ = false;
   vector < TH1D* > vhist_;
   vector < TH2D* > vhist2d_;
 
@@ -319,6 +319,12 @@ public:
   void SetDrawNoEntry ( bool bl = true )     { bl_draw_no_entry_ = bl ;};
 
   /*!
+    @fn void SetIncludeErrorBar( bool bl = true )
+    @brief range of y is adjusted to show all error bars or not
+  */
+  void SetIncludeErrorBar( bool bl = true ) { bl_include_error_bar_ = bl;};
+
+  /*!
     @fn void SetMarginBottom( double ratio )
     @param ratio ratio of margin
     @brief Set margin in %
@@ -385,7 +391,7 @@ public:
     @fn void SetRatioMode( bool bl_mode )
     @brief set ratio mode
   */
-  void SetRatioMode( bool bl_mode ){  bl_ratio_mode_ = bl_mode; };
+  void SetRatioMode( bool bl_mode ){  bl_ratio_mode_ = bl_mode; bl_include_error_bar_ = true; };
 
   /*!
     @fn void SetStats( bool bl )

@@ -299,7 +299,7 @@ void MultiHist::Ranges()
   double ymax = *max_element( y.begin(), y.end() );
 
   // if this is ratio mode, y range should be considerd error bars
-  if( bl_ratio_mode_ == true )
+  if( bl_include_error_bar_ == true )
     {
 
       // for ymax, just add maximum error to ymax
@@ -307,7 +307,7 @@ void MultiHist::Ranges()
       ymax += error_max;
 
       // for ymin, 0 or (ymin - maximum error) are used
-      if( ymin > error_max )
+      if( ymin > error_max || bl_ratio_mode_ == false )
 	ymin -= error_max;
       else
 	ymin = 0;
