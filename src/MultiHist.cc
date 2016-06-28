@@ -458,7 +458,6 @@ void MultiHist::Draw( string option,
 {
 
   DrawFrame();
-
   if( option == "" )
     option = option_;
 
@@ -469,13 +468,12 @@ void MultiHist::Draw( string option,
 
   // configuration for stats box
   double stats_height = (stats_ymax - stats_ymin) / vhist_.size();
-
   for( int i=0; i<vhist_.size(); i++ )
     {
 	  
       if( bl_stats_ == true )
 	{
-	      
+
 	  vhist_[i]->Draw( (option + "SAMES" ).c_str() );
 
 	  // if this is ratio mode, draw stats box
@@ -497,11 +495,14 @@ void MultiHist::Draw( string option,
 	{
 	  vhist_[i]->Draw( (option + "SAME" ).c_str() );
 	}
-	  
-      if( i==0 && bl_title_==true )
-	DrawTitle( title_size_ , title_align_ );
-      else if( bl_title_ == false )
-	DrawTitle( 9999, 9999 );
+
+      if( (string)vhist_[i]->GetTitle() != "" )
+	{
+	  if( i==0 && bl_title_==true )
+	    DrawTitle( title_size_ , title_align_ );
+	  else if( bl_title_ == false )
+	    DrawTitle( 9999, 9999 );
+	}
 
     }
 
