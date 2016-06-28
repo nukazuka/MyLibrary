@@ -458,6 +458,7 @@ void MultiHist::Draw( string option,
 {
 
   DrawFrame();
+
   if( option == "" )
     option = option_;
 
@@ -496,7 +497,8 @@ void MultiHist::Draw( string option,
 	  vhist_[i]->Draw( (option + "SAME" ).c_str() );
 	}
 
-      if( (string)vhist_[i]->GetTitle() != "" )
+      //      if( (string)vhist_[i]->GetTitle() != "" )
+      if( !(title_ == "" || title_.substr(0,1) == ";" ) )
 	{
 	  if( i==0 && bl_title_==true )
 	    DrawTitle( title_size_ , title_align_ );

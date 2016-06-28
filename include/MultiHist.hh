@@ -202,7 +202,6 @@ public:
     @brief Draw only frame
   */
   void DrawFrame();
-  
 
   /*!
     @fn void Draw2D( string option )
