@@ -34,6 +34,147 @@ void CanvasSetting( TCanvas* c )
   CanvasSetting();
 }
 
+// I just took this from official tutrial ( tutrial/graphics/canvas2.C )
+void CanvasPartition(TCanvas *C,const Int_t Nx,const Int_t Ny,
+                     Float_t lMargin, Float_t rMargin,
+                     Float_t bMargin, Float_t tMargin)
+{
+  if (!C) return;
+
+  // Setup Pad layout:
+  Float_t vSpacing = 0.0;
+  Float_t vStep  = (1.- bMargin - tMargin - (Ny-1) * vSpacing) / Ny;
+
+  Float_t hSpacing = 0.0;
+  Float_t hStep  = (1.- lMargin - rMargin - (Nx-1) * hSpacing) / Nx;
+
+  Float_t vposd,vposu,vmard,vmaru,vfactor;
+  Float_t hposl,hposr,hmarl,hmarr,hfactor;
+
+  for (Int_t j=0;j<Ny;j++) {
+
+    // top line 
+    if ( j==0 ) {
+      vposu = 1.;
+      vposd = vposu - vStep - tMargin;
+      vfactor = vposu-vposd;
+      vmard = 0.0;
+      vmaru = bMargin / (vposu-vposd);
+    }
+    else if(j == Ny-1){ // bottom line 
+      vposu = vposd - vSpacing;
+      vposd = 0.0;
+      vfactor = vposu-vposd;
+      vmard = tMargin / vfactor;
+      vmaru = 0.0;
+    }
+    else { // other lines
+      vposu = vposd - vSpacing;
+      vposd = vposu - vStep;
+      vfactor = vposu-vposd;
+      vmard = 0.0;
+      vmaru = 0.0;
+    }
+
+    for (Int_t i=0;i<Nx;i++) {
+       
+      if (i==0) { // left line
+	hposl = 0.0;
+	hposr = lMargin + hStep;
+	hfactor = hposr-hposl;
+	hmarl = lMargin / hfactor;
+	hmarr = 0.0;
+      } else if (i == Nx-1) { // right line
+	hposl = hposr + hSpacing;
+	hposr = hposl + hStep + rMargin;
+	hfactor = hposr-hposl;
+	hmarl = 0.0;
+	hmarr = rMargin / (hposr-hposl);
+      } else {
+	hposl = hposr + hSpacing;
+	hposr = hposl + hStep;
+	hfactor = hposr-hposl;
+	hmarl = 0.0;
+	hmarr = 0.0;
+      }
+       
+       
+      C->cd(0);
+	 
+      char name[16];
+      sprintf(name,"pad_%i_%i",i,j);
+      TPad *pad = (TPad*) gROOT->FindObject(name);
+      if (pad) delete pad;
+      pad = new TPad(name,"",hposl,vposd,hposr,vposu);
+      pad->SetLeftMargin(hmarl);
+      pad->SetRightMargin(hmarr);
+      pad->SetBottomMargin(vmard);
+      pad->SetTopMargin(vmaru);
+
+      pad->SetFrameBorderMode(0);
+      pad->SetBorderMode(0);
+      pad->SetBorderSize(0);
+
+      pad->Draw();
+
+      int num = (i+1) + Ny*(j);
+      pad->SetNumber( num );
+      /*	 
+      cout << "Pad#" << setw(2) << num << " | "
+	   << setw(10) << setprecision(5) << hposl << " , " 
+	   << setw(10) << setprecision(5) << vposd << " , " 
+	   << setw(10) << setprecision(5) << hposr << " , " 
+	   << setw(10) << setprecision(5) << vposu 
+	   <<  endl;
+      */
+    }
+  }
+}
+
+void DivideEqually( TCanvas*c , int nx, int ny, double lMargin, double rMargin, double bMargin, double tMargin, int color)
+{
+
+  // Canvas setup
+  CanvasPartition( c, nx, ny, lMargin, rMargin, bMargin, tMargin);
+
+  TPad *pad[nx][ny];
+  for (Int_t i=0;i<nx;i++)
+    {
+      for (Int_t j=0;j<ny;j++)
+	{
+	   
+	  c->cd(0);
+	   
+	  // Get the pads previosly created.
+	  char pname[16];
+	  sprintf(pname,"pad_%i_%i",i,j);
+	  pad[i][j] = (TPad*) gROOT->FindObject(pname);
+	  pad[i][j]->Draw();
+	  pad[i][j]->SetFillStyle(4000);
+	  pad[i][j]->SetFrameFillStyle(4000);
+	  pad[i][j]->cd();
+	}
+    }
+
+  int counter = 1;
+  for (Int_t i=nx-1;i<-1;i--)
+    {
+      for (Int_t j=0;j<ny;j++)
+	{
+	  pad[i][j]->SetNumber( counter );
+	  counter++;
+	}
+    }
+  c->cd();
+}
+
+void DivideEqually( TCanvas*c , int nx, int ny, double xmargin = 0.01 , double ymargin = 0.01 , int color = 0 )
+{
+
+  DivideEqually( c , nx, ny, xmargin, xmargin, ymargin, ymargin, color );
+}
+
+
 TCanvas* GetCanvas( string name, string shape, bool logy=false )
 {  
   TCanvas* c;
@@ -150,3 +291,4 @@ TCanvas* GetCanvas( string name, string shape, bool logy=false )
   CanvasSetting(c);
   return c;
 }
+

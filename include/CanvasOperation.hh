@@ -74,4 +74,19 @@ void CanvasSetting();
  */
 void CanvasSetting( TCanvas* c);
 
+/*!
+  @fn void DivideEquarlly( TCanvas*c , int nx, int ny, double xmargin = 0.01, double ymargin = 0.01, int color = 0 )
+  @brief Divide canvas into (nx * ny) pads with same size
+  @details 
+*/
+void DivideEquarlly( TCanvas*c , int nx, int ny, double xmargin = 0.01, double ymargin = 0.01, int color = 0 );
+
+void DivideEquarlly( TCanvas*c , int nx, int ny, double lMargin, double rMargin, double bMargin, double tMargin, int color );
+
+
+
+void CanvasPartition(TCanvas *C ,const Int_t Nx,const Int_t Ny,
+                     Float_t lMargin, Float_t rMargin,
+                     Float_t bMargin, Float_t tMargin);
+
 #endif
