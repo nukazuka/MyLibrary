@@ -92,7 +92,7 @@ private:
   bool bl_logy_ = false;
   bool bl_draw_palette_axis_ = true;
   bool bl_ratio_mode_ = false;
-  bool bl_include_error_bar_ = false;
+  bool bl_include_error_bar_ = true;
   vector < TH1D* > vhist_;
   vector < TH2D* > vhist2d_;
 
@@ -240,9 +240,7 @@ public:
 
   /*!
     @fn string GetName()
-    @param
-    @brief
-    @details
+    @brief get the name of this object
   */
   string GetName(){ return name_;};
 
@@ -253,26 +251,32 @@ public:
   string GetTitle(){ return title_;};
 
   /*!
+    @fn   bool GetRatioMode()
+    @brief check whether this is ratio mode or not
+  */
+  bool GetRatioMode(){ return bl_ratio_mode_;};
+
+  /*!
     @fn double GetXmax()
-    @brief
+    @brief Get max. range of x axis
   */
   double GetXmax(){ return xmax_ + margin_right_ ;};
 
   /*!
     @fn double GetXmin()
-    @brief
+    @brief Get min. range of x axis
   */
   double GetXmin(){ return xmin_ - margin_left_ ;};
 
   /*!
     @fn double GetYmax()
-    @brief
+    @brief Get max. range of y axis
   */
   double GetYmax(){ return ymax_ + margin_top_ ;};
 
   /*!
     @fn double GetYmin()
-    @brief
+    @brief Get max. range of y axis
   */
   double GetYmin(){ return ymin_ - margin_bottom_ ;};
 
@@ -355,7 +359,7 @@ public:
   /*!
     @fn void SetMarginH( double ratio )
     @param ratio
-    @brief
+    @brief set horizontal margins in %
   */
   void SetMarginH( double ratio );
 
@@ -369,7 +373,7 @@ public:
   /*!
     @fn void SetMargins( double ratio )
     @param ratio
-    @brief
+    @brief set all margins in %
   */
   void SetMargins( double ratio );
   
@@ -391,13 +395,13 @@ public:
     @fn void SetRatioMode( bool bl_mode )
     @brief set ratio mode
   */
-  void SetRatioMode( bool bl_mode ){  bl_ratio_mode_ = bl_mode; bl_include_error_bar_ = true; };
+  //  void SetRatioMode( bool bl_mode ){  bl_ratio_mode_ = bl_mode; bl_include_error_bar_ = true; };
+  void SetRatioMode( bool bl_mode ){  bl_ratio_mode_ = bl_mode;};
 
   /*!
     @fn void SetStats( bool bl )
-    @param
-    @brief
-    @details
+    @param bl flag
+    @brief set whether stats box is on or off
   */
   void SetStats       ( bool bl )     { bl_stats_ = bl;};
 
@@ -551,31 +555,33 @@ public:
 
   /*!
     @fn void SetXmin( double val )
-    @param
-    @brief
-    @details
+    @param val min. of xaxis
+    @brief set min. value of xaxis
+    @details left margin will be ignored
   */
   void SetXmin( double val );
 
   /*!
     @fn void SetXmax( double val )
-    @param
-    @brief
-    @details
+    @param val max. of xaxis
+    @brief set max. value of xaxis
+    @details right margin will be ignored
   */
   void SetXmax( double val );
+
   /*!
     @fn void SetYmin( double val )
-    @param
-    @brief
-    @details
+    @param val min. of yaxis
+    @brief set min. value of yaxis
+    @details bottom margin will be ignored
   */
   void SetYmin( double val );
+
   /*!
     @fn void SetYmax( double val )
-    @param
-    @brief
-    @details
+    @param val max. of yaxis
+    @brief set max. value of yaxis
+    @details top margin will be ignored
   */
   void SetYmax( double val );
 };

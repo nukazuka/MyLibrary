@@ -533,9 +533,10 @@ void MultiHist::DrawFrame()
 
   FrameSetting( frame , margin_bottom, margin_top );
   frame->Draw();
- 
-  if( bl_ratio_mode_ )
+
+  if( bl_ratio_mode_ == true )
     {
+
       TLine* line = new TLine( xmin_, 1.0, xmax_, 1.0 );
       line->SetLineColor( kRed );
       line->SetLineWidth( 2 );
