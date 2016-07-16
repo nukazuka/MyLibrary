@@ -36,6 +36,7 @@ void MultiHist::FrameSetting( TH1F* frame, double margin_bottom, double margin_t
 
   frame->SetMinimum( ymin_ - margin_bottom );
   frame->SetMaximum( ymax_ + margin_top );
+
   frame->SetStats( false );
 
   frame->GetXaxis()->CenterTitle( true );
@@ -52,7 +53,6 @@ void MultiHist::FrameSetting( TH1F* frame, double margin_bottom, double margin_t
 
   frame->GetXaxis()->SetLabelSize( size_label_x_ );
   frame->GetYaxis()->SetLabelSize( size_label_y_ );
-
 
   if( (string)(frame->GetXaxis()->GetTitle()) == "" )
     frame->GetXaxis()->SetTitle( title_x_.c_str() );
@@ -105,22 +105,40 @@ double MultiHist::GetMaxError()
 
 double MultiHist::GetMinimumBin_Non0( int hist_id )
 {
+
   vector < double > vval;
   for( int i=1; i<vhist_[hist_id]->GetNbinsX(); i++ )
     {
       if( vhist_[hist_id]->GetBinContent(i) != 0 )
 	vval.push_back( vhist_[hist_id]->GetBinContent(i) ) ;
     }
+
+  if( vval.size() == 0 )
+    {
+      if( bl_force_xmin_ == true )
+	return xmin_force_;
+      else
+	return 1;
+    }
+
   return *min_element( vval.begin(), vval.end() );
 }
 
 double MultiHist::GetMaximumBin_Non0( int hist_id )
 {
+
   vector < double > vval;
   for( int i=1; i<vhist_[hist_id]->GetNbinsX(); i++ )
     {
       if( vhist_[hist_id]->GetBinContent(i) != 0 )
 	vval.push_back( vhist_[hist_id]->GetBinContent(i) ) ;
+    }
+  if( vval.size() == 0 )
+    {
+      if( bl_force_xmax_ == true )
+	return xmax_force_;
+      else
+	return 2;
     }
   return *max_element( vval.begin(), vval.end() );
 }
@@ -233,6 +251,9 @@ void MultiHist::Ranges()
 	}
     }
 
+  /////////////////////////////////////////////////////////////
+  // for y axis                                              //
+  /////////////////////////////////////////////////////////////
   double xmin = *min_element( x.begin(), x.end() );
   double xmax = *max_element( x.begin(), x.end() );
 
@@ -243,8 +264,7 @@ void MultiHist::Ranges()
   //   3. (OK, NO) : something wrong  -> exit program
   //   4. (NO, NO) : very rare case   -> force liner scale
   //
-
-  if( bl_logx_ == true )
+  if( bl_logx_ == true && (bl_force_xmin_ && bl_force_xmax_ ) == false )
     {
 
       if( xmin <= 0.0 && xmax <= 0.0 )// case4
@@ -282,6 +302,8 @@ void MultiHist::Ranges()
       xmax_ = xmax;
     }
 
+  /////////////////////////////////////////////////////////////
+  // if xmin and/or xmax are specified, 
   if( bl_force_xmin_ == true )
     {
 
@@ -295,25 +317,13 @@ void MultiHist::Ranges()
       margin_ratio_right_ = 0.0;
     }
 
+
+  /////////////////////////////////////////////////////////////
+  // for y axis                                              //
+  /////////////////////////////////////////////////////////////
   double ymin = *min_element( y.begin(), y.end() );
   double ymax = *max_element( y.begin(), y.end() );
-
-  // if this is ratio mode, y range should be considerd error bars
-  if( bl_include_error_bar_ == true )
-    {
-
-      // for ymax, just add maximum error to ymax
-      double error_max = GetMaxError();
-      ymax += error_max;
-
-      // for ymin, 0 or (ymin - maximum error) are used
-      if( ymin > error_max || bl_ratio_mode_ == false )
-	ymin -= error_max;
-      else
-	ymin = 0;
-    }
-
-  if( bl_logy_ == true )
+  if( bl_logy_ == true && (bl_force_ymin_ && bl_force_ymax_ ) == false )
     {
 
       if( ymin <= 0.0 && ymax <= 0.0 )// case4
@@ -357,6 +367,8 @@ void MultiHist::Ranges()
       ymax_ = ymax;
     }
 
+  /////////////////////////////////////////////////////////////
+  // if ymin and/or ymax are specified, 
   if( bl_force_ymin_ == true )
     {
       ymin_ = ymin_force_;
@@ -368,6 +380,24 @@ void MultiHist::Ranges()
       ymax_ = ymax_force_;
       margin_ratio_top_ = 0.0;
     }
+
+  /////////////////////////////////////////////////////////////
+  // if this is ratio mode, y range should be considerd error bars
+  if( bl_include_error_bar_ == true )
+    {
+
+      // for ymax, just add maximum error to ymax
+      double error_max = GetMaxError();
+      ymax += error_max;
+
+      // for ymin, 0 or (ymin - maximum error) are used
+      if( ymin > error_max || bl_ratio_mode_ == false )
+	ymin -= error_max;
+      else
+	ymin = 0;
+    }
+
+
 }
 
 void MultiHist::Ranges2D()
@@ -475,8 +505,9 @@ void MultiHist::Draw( string option,
 	  
       if( bl_stats_ == true )
 	{
-	      
-	  vhist_[i]->Draw( (option + "SAMES" ).c_str() );
+
+	  
+	  vhist_[i]->Draw( (option + "SAMES" + vhist_[i]->GetOption() ).c_str() );
 
 	  // if this is ratio mode, draw stats box
 	  if( bl_ratio_mode_ == false )
@@ -526,17 +557,18 @@ void MultiHist::DrawFrame()
 
   string name = name_ + title_ + "hframe" + Int2String( id_ );
   id_++;
+
   TH1F* frame = new TH1F( name.c_str() ,
 			  title_.c_str() ,
 			  1000, xmin_ - margin_left,
 			  xmax_ + margin_right );
+
 
   FrameSetting( frame , margin_bottom, margin_top );
   frame->Draw();
 
   if( bl_ratio_mode_ == true )
     {
-
       TLine* line = new TLine( xmin_, 1.0, xmax_, 1.0 );
       line->SetLineColor( kRed );
       line->SetLineWidth( 2 );
@@ -619,6 +651,7 @@ void MultiHist::Draw2D( string option,
 
 	  if( bl_ratio_mode_ == false )
 	    {
+
 	      DrawStats( vhist2d_[i] , 
 			 stats_xmin  , stats_ymax - stats_height * (i+1) ,
 			 stats_xmax  , stats_ymax - stats_height * i
