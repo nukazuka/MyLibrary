@@ -33,7 +33,7 @@ SOURCES  = $(wildcard *.cc)
 OBJECTS  = $(SOURCES:.cc=.o)
 SHARED_OBJ = $(addprefix lib,$(SOURCES:.cc=$(SUFFIX)))
 
-all: clean2 $(SHARED_OBJ) MyLibrary.hh
+all: $(SHARED_OBJ) MyLibrary.hh
 
 lib%$(SUFFIX): %.cc ../include/%.hh
 	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) -o $@  $< $(LDFLAGS)
@@ -47,7 +47,7 @@ libMultiHist$(SUFFIX): MultiHist.cc PaveOperation.cc StringOperation.cc ../inclu
 MyLibrary.hh:
 	../MakeHeaderFile.sh ..
 
-install:
+install: all
 	install $(INSTALL_OPTION) $(SHARED_OBJ) ../lib
 
 clean:
