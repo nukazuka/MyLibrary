@@ -25,6 +25,10 @@ fi
 touch ${path}
 
 
+###############################################################
+## settings for this file ######################################
+###############################################################
+
 # include guard #############################################
 echo -e "#ifndef MYLIB_MYLIBRARY_HH" >> ${path}
 echo -e "#define MYLIB_MYLIBRARY_HH" >> ${path}
@@ -32,22 +36,24 @@ echo -e "#define MYLIB_MYLIBRARY_HH" >> ${path}
 # include headers  #############################################
 echo -e "\n//include headers" >> ${path}
 
-## ifndef __CINT__ # for cpp ###################################
+
+###############################################################
+## ifndef __CINT__ # for cpp ##################################
+###############################################################
 echo -e "#ifndef __CINT__" >> ${path}
-
 ls -1 ${path2}include/*.hh | xargs -I {} basename {} .hh | xargs -I {} echo -e "#include \"{}.hh\"" >> ${path}
-
 echo -e "#endif // ndef __CINT__" >> ${path}
 
-## end of ifndef __CINT__
-
-## ifdef __CINT__ # for CINT ###################################
-
+###############################################################
+## ifdef __CINT__ # for CINT ##################################
+###############################################################
 echo -e "\n//if __CINT__ is defined, include its source files" >> ${path}
 echo -e "#ifdef __CINT__" >> ${path}
 
 #ls -1 ${path2}include/*.hh | xargs -I {} echo -e "#include \"`pwd`/{}\"" >> ${path}
-
+echo "#include \"`pwd -P`/../include/ArgumentParser.hh\""  >> ${path}
+echo "#include \"`pwd -P`/../include/MultiHist.hh\""  >> ${path}
+echo "#include \"`pwd -P`/../include/Style.hh\""  >> ${path}
 
 # include *.cc
 ## some file depend on other files eg DirectoryOperation depends StringOperation
@@ -55,15 +61,20 @@ echo -e "#ifdef __CINT__" >> ${path}
 ls -1 ${path2}src/*.cc | grep -v DirectoryOperation | xargs -I {} echo -e "#include \"`pwd`/{}\"" >> ${path}
 ls -1 ${path2}src/*.cc | grep  DirectoryOperation | xargs -I {} echo -e "#include \"`pwd`/{}\"" >> ${path}
 
+## if .cc contains class, .hh should be included as well ######
 # include *.hh
-echo `grep MultiHist.cc ${path} | sed -e "s/src/include/g" | sed -e "s/.cc/.hh/g" ` >> ${path}
-echo `grep Style.cc ${path} | sed -e "s/src/include/g" | sed -e "s/.cc/.hh/g" ` >> ${path}
+echo `grep ArgumentParser.cc ${path} | sed -e "s/src/include/g" | sed -e "s/.cc/.hh/g" ` >> ${path}
+echo `grep MultiHist.cc ${path}      | sed -e "s/src/include/g" | sed -e "s/.cc/.hh/g" ` >> ${path}
+echo `grep Style.cc ${path}         | sed -e "s/src/include/g" | sed -e "s/.cc/.hh/g" ` >> ${path}
+
 
 echo -e "#endif // __CINT__" >> ${path}
 
 ## end of ifdef __CINT__
 
-# edit MyLibrary.hh
+###############################################################
+# edit MyLibrary.hh  ###########################################
+###############################################################
 ## remove #include "MyLibrary.hh" and "HeadersPhast.hh"
 
 # # sed -e "/line4/s/enable/disable/" /home/test.conf

@@ -1,4 +1,7 @@
+#ifndef __CINT__
 #include "ArgumentParser.hh"
+#endif
+
 using namespace std;
 
 ArgumentParser::ArgumentParser( int argc, char* argv[] )
