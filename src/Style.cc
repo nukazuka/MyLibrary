@@ -11,6 +11,7 @@ void Style()
 
 }
 
+/*
 #ifndef __CINT__
 void SetHistStyle( TH1D* hist, int color, int width )
 {
@@ -34,6 +35,7 @@ void SetHistStyle( TH1D* hist, int color, int width )
 }
 
 #endif
+*/
 
 void FunctionSetting( TF1* f , int color, int width , int line_style )
 {

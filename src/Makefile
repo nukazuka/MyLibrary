@@ -44,8 +44,8 @@ libDirectoryOperation$(SUFFIX): DirectoryOperation.cc StringOperation.cc ../incl
 libMultiHist$(SUFFIX): MultiHist.cc PaveOperation.cc StringOperation.cc ../include/MultiHist.hh ../include/PaveOperation.hh ../include/StringOperation.hh
 	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) $(LDFLAGS) -o $@  $< PaveOperation.cc StringOperation.cc	
 
-MyLibrary.hh:
-	../MakeHeaderFile.sh ..
+MyLibrary.hh:../include/MyLibrary.hh
+	../MakeHeaderFile.sh .. 
 
 install: all
 	install $(INSTALL_OPTION) $(SHARED_OBJ) ../lib

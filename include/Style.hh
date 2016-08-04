@@ -5,6 +5,8 @@
 #include "TStyle.h"
 
 void Style();
+
+/*
 void SetHistStyle( TH1D* hist, int color, int width );
 
 // #ifndef __CINT__
@@ -28,6 +30,7 @@ void HistSetting( TH* hist , int color = 1 , int line_width = 2 , int fill_style
   hist->GetXaxis()->CenterTitle();
   hist->GetYaxis()->CenterTitle();
 }
+*/
 
 //#endif // ifdef __CINT__
 
