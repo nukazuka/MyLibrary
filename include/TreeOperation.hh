@@ -1,13 +1,14 @@
 #ifndef MYLIB_TREEOPERATION
 #define  MYLIB_TREEOPERATION
 
-/*
-#ifdef __linux__
-#include "/home/gnukazuk/local/MyLibrary/include/MyLibrary.hh"
-#elif __APPLE__
-#include "/Users/nukazuka/local/MyLibrary/include/MyLibrary.hh"
-#endif
-*/
+#include "HeadersRoot.hh"
+#include <algorithm>
+
+using namespace std;
+
+vector < double > GetElement(TTree* tr, string target, string cut );
+double GetMaxVal( TTree* tr, string target, string cut );
+double GetMinVal( TTree* tr, string target, string cut );
 
 //#include ".hh"
 /*

@@ -3,6 +3,7 @@
 
 #include "HeadersSL.hh"
 #include "HeadersRoot.hh"
+#include "Style.hh"
 
 using namespace std;
 
@@ -62,6 +63,32 @@ TH* GetHist( string name, string title,
        << cut << endl;
   tr->Draw( (target+">>"+name).c_str() , cut.c_str(), "goff" );
   return hist_rtn;
+}
+
+/*
+template < typename TH >
+double GetMaxVal( TH* hist )
+{
+  
+
+
+}
+*/
+
+template < typename TH >
+vector < TH* > GetVectorHist( string name, string title, 
+			      int bin, double xmin, double xmax,
+			      vector < TTree* > &vtr, string target , string cut )
+{
+
+  vector < TH* > vhist;
+  for( int i=0; i<vtr.size(); i++ )
+    {
+      vhist.push_back( GetHist<TH>( name, title, bin, xmin, xmax, vtr[i], target , cut ) );
+      HistSetting( vhist[i], GetColor(i), 2 );
+    }
+  
+  return vhist;
 }
 
 
