@@ -49,6 +49,14 @@ TH1D* GetHist( string name, string title,
 
 */
 
+/*!
+
+template < typename TH >
+TH* GetHist( string name, string title, 
+	     int bin, double xmin, double xmax,
+	     TTree* tr, string target , string cut )
+*/
+
 template < typename TH >
 TH* GetHist( string name, string title, 
 	     int bin, double xmin, double xmax,
