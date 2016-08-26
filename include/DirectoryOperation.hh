@@ -23,7 +23,7 @@ using namespace std;
 bool CheckSuffix( string name, string true_suffix );
 
 /*!
-  @fn bool GetFileNames( string path , vector < string >& vname)
+  @fn bool GetFileNames( string path, vector < string >& vname , bool bl_path, string true_suffix )
   @param path path to the directory which you want to see
   @param vname name of files are stroed in this
   @param bl_path if true is given, path to files are also stored
