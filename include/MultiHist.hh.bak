@@ -10,7 +10,7 @@
   @brief This class treats multi-histograms.
   @date 26/Nov./2015
   @author G. Nukazuka
-  @detail This can make a frame which all histograms are in.
+  @details This can make a frame which all histograms are in.
 */
 
 using namespace std;

@@ -19,7 +19,7 @@ using namespace std;
 /*!
   @fn void HistSetting( TH1* hist )
   @param hist A pointer of histogram
-  @detail
+  @details
 */
 
 //void HistSetting( TH1* hist );
@@ -28,7 +28,7 @@ using namespace std;
   @fn void HistSetting( TH1* hist, int color )
   @param hist A pointer of histogram
   @param color 
-  @detail
+  @details
 */
 //void HistSetting( TH1* hist, int color );
 
@@ -50,7 +50,6 @@ TH1D* GetHist( string name, string title,
 */
 
 /*!
-
 template < typename TH >
 TH* GetHist( string name, string title, 
 	     int bin, double xmin, double xmax,

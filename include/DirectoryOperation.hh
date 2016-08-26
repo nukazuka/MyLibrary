@@ -30,7 +30,7 @@ bool CheckSuffix( string name, string true_suffix );
   @retval true the directory was found and got name of files successfully
   @retval false the directory was not found or the name of files are not got somehow
   @brief name of all files in the specified directory are stored in vector < string >
-  @detail this function is the most prilitive. Use functions below.
+  @details this function is the most prilitive. Use functions below.
  */
 bool GetFileNames( string path, vector < string >& vname , bool bl_path=false , string true_suffix = "" );
 

@@ -66,7 +66,7 @@ void DrawStats2D( TH2D* hist, double xmin, double ymin, double xmax, double ymax
   @param ymax top position in ratio
   @param label_size size of label
   @brief Draw color palette axis for TH2
-  @detail
+  @details
 
 */
 void DrawPaletteAxis( TH2D* hist , 

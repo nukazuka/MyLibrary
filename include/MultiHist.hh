@@ -151,7 +151,7 @@ public:
     @fn void Add( TH2D* hist2d )
     @param hist2d A pointer of 2 dimensional histogram
     @brief add 2D histogram
-    @detail If at least one 2D hist have been added, 1D hist will not be drawn.
+    @details If at least one 2D hist have been added, 1D hist will not be drawn.
     To remove 2D hists, use DeleteHist2D().
   */
   void Add( TH2D* hist2d );
