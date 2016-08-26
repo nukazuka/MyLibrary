@@ -22,6 +22,7 @@
 
 // graph
 #include "TGraph.h"
+#include "TGraphErrors.h"
 
 // function
 #include "TF1.h"
