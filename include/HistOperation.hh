@@ -76,6 +76,29 @@ double GetMaxVal( TH* hist )
 */
 
 template < typename TH >
+TH* GetHistFromGraph( TGraph* g , string hist_name )
+{
+
+  int num = g->GetN();
+  double *val_y  = g->GetY();
+  vector < double > vtemp;
+  for( int i=0; i<num; i++ )
+    vtemp.push_back( val_y[i] );
+  
+  TH* hist = new TH( hist_name.c_str(), "title",
+		     num , 
+		     *min_element( vtemp.begin(), vtemp.end()) , 
+		     *min_element( vtemp.begin(), vtemp.end())
+		     );
+
+  for( int i=0; i<num; i++ )
+    hist->SetBinContent( i+1 , val_y[i] );
+  
+  return hist;
+}
+
+
+template < typename TH >
 vector < TH* > GetVectorHist( string name, string title, 
 			      int bin, double xmin, double xmax,
 			      vector < TTree* > &vtr, string target , string cut )
@@ -89,6 +112,59 @@ vector < TH* > GetVectorHist( string name, string title,
     }
   
   return vhist;
+}
+
+template < typename TH >
+int GetMaxBinContent( TH* hist )
+{
+  vector < int > vcontent;
+  for( int i=0; i < hist->GetNbinsX(); i++ )
+    vcontent.push_back( hist->GetBinContent( i+1 ) );
+
+  return *max_element( vcontent.begin(), vcontent.end() );
+}
+
+template < typename TH >
+int GetMinBinContent( TH* hist , bool bl_ignote_negative )
+{
+
+  vector < int > vcontent;
+
+  for( int i=0; i < hist->GetNbinsX(); i++ )
+    // if this content is larget than 0, just take it
+    if( hist->GetBinContent( i+1 ) > 0 )
+      {
+	vcontent.push_back( hist->GetBinContent( i+1 ) );
+      }
+  // if this content is 0 or negative, check flag
+    else 
+      {
+	// if flag is false, take it
+	if( bl_ignote_negative == false )
+	  {
+	    vcontent.push_back( hist->GetBinContent( i+1 ) );
+	  }
+      }
+
+    return *min_element( vcontent.begin(), vcontent.end() );
+}
+
+template < typename TH >
+int GetMinBinContent( TH* hist )
+{
+  return GetMinBinContent( hist , false );
+}
+
+template < typename TH >
+int GetBinWithMaxContent( TH* hist )
+{
+
+  int max_content = GetMaxBinContent( hist );
+  for( int i=0; i < hist->GetNbinsX(); i++ )
+    if( hist->GetBinContent( i+1 ) == max_content )
+      return i+1;
+
+  return -1;
 }
 
 
