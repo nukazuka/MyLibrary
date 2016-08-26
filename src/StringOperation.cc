@@ -198,12 +198,9 @@ int String2Int( string st )
 
 double String2Double( string st )
 {
-  istringstream iss(st);
   stringstream ss(st);
   double val;
   ss >> val;
-  int num;
-  iss >> num;
 
   return val;
 }
