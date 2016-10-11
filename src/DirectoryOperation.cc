@@ -100,3 +100,8 @@ bool GetFilePaths( string path, vector < string >& vname, string true_suffix )
   return GetFileNames( path, vname, true, true_suffix );
 }
 
+bool GetFilePaths( string path, vector < string >& vname )
+{
+  return GetFileNames( path, vname, true, "" );
+}
+
