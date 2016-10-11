@@ -52,7 +52,7 @@ bool GetFileNames( string path, vector < string >& vname );
   @brief paths to the file in a specified directory are stored in vector < string >
   @details you can specify a path to the directory and suffixes to be accepted
 */
-bool GetFilePaths( string path, vector < string >& vname, string true_suffix = "" );
+bool GetFilePaths( string path, vector < string >& vname, string true_suffix);
 
 /*!
   @fn bool GetFilePaths( string path, vector < string >& vname);
