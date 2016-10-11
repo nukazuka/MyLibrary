@@ -47,6 +47,10 @@ libMultiHist$(SUFFIX): MultiHist.cc PaveOperation.cc StringOperation.cc ../inclu
 libHistOperation$(SUFFIX): HistOperation.cc Style.cc ../include/HistOperation.hh ../include/Style.hh
 	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) $(LDFLAGS) -o $@  $< Style.cc
 
+libGraphOperation$(SUFFIX): GraphOperation.cc Style.cc ../include/GraphOperation.hh ../include/Style.hh
+	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) $(LDFLAGS) -o $@  $< Style.cc
+
+
 MyLibrary.hh:../include/MyLibrary.hh
 	../MakeHeaderFile.sh .. 
 
