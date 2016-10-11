@@ -1,14 +1,18 @@
 #ifndef MYLIB_TREEOPERATION
 #define  MYLIB_TREEOPERATION
 
+#include "HeadersSL.hh"
 #include "HeadersRoot.hh"
 #include <algorithm>
 
 using namespace std;
 
 vector < double > GetElement(TTree* tr, string target, string cut );
+double GetAverageVal( TTree* tr, string target, string cut );
 double GetMaxVal( TTree* tr, string target, string cut );
 double GetMinVal( TTree* tr, string target, string cut );
+
+
 
 //#include ".hh"
 /*
