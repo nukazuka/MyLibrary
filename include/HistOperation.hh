@@ -9,14 +9,6 @@ using namespace std;
 
 
 /*!
-  @fn TObject* GetObject( string file_name, string obj_name)
-  @param
-  @return
-  @brief get root object
- */
-//TObject* GetObject( string file_name, string obj_name);
-
-/*!
   @fn void HistSetting( TH1* hist )
   @param hist A pointer of histogram
   @details
@@ -34,22 +26,6 @@ using namespace std;
 
 
 /*!
-  @fn void DrawTitle(TVirtualPad* pad)
-  @param
-  @return
-  @brief
- */
-//void DrawTitle(TVirtualPad* pad);
-
-
-/*
-TH1D* GetHist( string name, string title, 
-	       int bin, double xmin, double xmax,
-	       TTree* tr, string target , string cut );
-
-*/
-
-/*!
 template < typename TH >
 TH* GetHist( string name, string title, 
 	     int bin, double xmin, double xmax,
@@ -65,6 +41,23 @@ TH* GetHist( string name, string title,
   TH* hist_rtn = new TH( name.c_str(), title.c_str(), bin, xmin, xmax );
   hist_rtn->Sumw2();
   cout << "GetHist::" 
+       << setw(15) << target << " >> " 
+       << setw(15) << name   << "\t" 
+       << cut << endl;
+  tr->Draw( (target+">>"+name).c_str() , cut.c_str(), "goff" );
+  return hist_rtn;
+}
+
+template < typename TH >
+TH* GetHist2D( string name, string title, 
+	       int binx, double xmin, double xmax,
+	       int biny, double ymin, double ymax,
+	       TTree* tr, string target , string cut )
+{
+  
+  TH* hist_rtn = new TH( name.c_str(), title.c_str(), binx, xmin, xmax, biny, ymin, ymax );
+  hist_rtn->Sumw2();
+  cout << "GetHist2D::" 
        << setw(15) << target << " >> " 
        << setw(15) << name   << "\t" 
        << cut << endl;
@@ -174,9 +167,32 @@ int GetBinWithMaxContent( TH* hist )
   return -1;
 }
 
+/*!
+  @fn int GetBinWith( TH* hist , double bin_center )
+  @brief Get index of the bin which contains bin_center
+  @tparam hist histogram, should be TH1*
+  @param bin_center this is the value that returned bin contains
+*/
+
+template < typename TH >
+int GetBinAt( TH* hist , double bin_center )
+{
+  int rtn = -1;
+  double diff = 1e5;
+  for( int i=0; i<hist->GetNbinsX(); i++ )
+    {
+      double temp = abs( hist->GetBinCenter( i+1 ) - bin_center );
+      if( temp < diff )
+	{
+	  diff = temp;
+	  rtn = i+1;
+	}
+    }
+  return rtn;
+}
 
 template < typename TH > 
-void HistSetting( TH* hist , int color , int line_width = 2)
+void HistSetting( TH* hist , int color = 1, int line_width = 2, int marker_style = 20 )
 {
 
   hist->Sumw2();
@@ -185,19 +201,14 @@ void HistSetting( TH* hist , int color , int line_width = 2)
   hist->SetLineWidth( line_width );
   hist->GetXaxis()->CenterTitle();
   hist->GetYaxis()->CenterTitle();
-
+  hist->SetMarkerStyle( marker_style );
+  
 }
 
 template < typename TH > 
-void HistSetting( TH* hist , int color )
+void NormalizeHist( TH* hist , double val = 1.0 )
 {
-  HistSetting( hist , color , 2 );
-}
-
-template < typename TH > 
-void NormalizeHist( TH* hist )
-{
-  hist->Scale( 1.0 / hist->Integral() );
+hist->Scale( val / hist->Integral() );
 }
 
 #endif
