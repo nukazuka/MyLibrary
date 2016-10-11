@@ -36,6 +36,9 @@ void MultiHist::CheckLogScale()
 void MultiHist::FrameSetting( TH1F* frame, double margin_bottom, double margin_top )
 {
 
+  // to remove hist with no entry
+  frame->SetLineWidth( 0 ); 
+
   frame->SetMinimum( ymin_ - margin_bottom );
   frame->SetMaximum( ymax_ + margin_top );
 
@@ -398,8 +401,6 @@ void MultiHist::Ranges()
       else
 	ymin = 0;
     }
-
-
 }
 
 void MultiHist::Ranges2D()
