@@ -1,3 +1,4 @@
+
 #ifndef __CINT__
 #include "CanvasOperation.hh"
 #endif
@@ -59,13 +60,15 @@ void CanvasPartition(TCanvas *C,const Int_t Nx,const Int_t Ny,
       vposd = vposu - vStep - tMargin;
       vfactor = vposu-vposd;
       vmard = 0.0;
-      vmaru = bMargin / (vposu-vposd);
+      //      vmaru = bMargin / (vposu-vposd);
+      vmaru = tMargin / (vposu-vposd);
     }
     else if(j == Ny-1){ // bottom line 
       vposu = vposd - vSpacing;
       vposd = 0.0;
       vfactor = vposu-vposd;
-      vmard = tMargin / vfactor;
+      //vmard = tMargin / vfactor;
+      vmard = bMargin / vfactor;
       vmaru = 0.0;
     }
     else { // other lines
@@ -117,9 +120,10 @@ void CanvasPartition(TCanvas *C,const Int_t Nx,const Int_t Ny,
 
       pad->Draw();
 
-      int num = (i+1) + Ny*(j);
+      int num = (i+1) + Nx*(j);
       pad->SetNumber( num );
-      /*	 
+
+      /*
       cout << "Pad#" << setw(2) << num << " | "
 	   << setw(10) << setprecision(5) << hposl << " , " 
 	   << setw(10) << setprecision(5) << vposd << " , " 
@@ -127,6 +131,7 @@ void CanvasPartition(TCanvas *C,const Int_t Nx,const Int_t Ny,
 	   << setw(10) << setprecision(5) << vposu 
 	   <<  endl;
       */
+      
     }
   }
 }
