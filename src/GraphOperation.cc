@@ -1,8 +1,6 @@
-//#ifndef __CINT__
-//#include "GraphOperation.hh"
-//#endif
-
+#ifndef __CINT__
 #include "GraphOperation.hh"
+#endif
 
 void AddPoint( TGraph* g_original, TGraph* g_new )
 {
@@ -17,34 +15,9 @@ void AddPoint( TGraph* g_original, TGraph* g_new )
 
 }
 
-TH1D* GetCommonFrame( TGraph** graphs , int num )
-{
-  return GetCommonFrame( graphs , num , 0.1, 0.1, 0.1, 0.1 );
-}
-TH1D* GetCommonFrame( TGraph** graphs , int num,
-		      double margin_top , double margin_right,
-		      double margin_bottom , double margin_left )
-{
-  vector < TGraph* > vgraph;
-  for( int i=0; i<num; i++ )
-    vgraph.push_back( graphs[i] );
-
-  return GetCommonFrame( vgraph, margin_top, margin_right, margin_bottom, margin_left  );
-}
-
-TH1D* GetCommonFrame( vector < TGraph* >& vgraph )
-{
-  return GetCommonFrame( vgraph , 0.1 , 0.1 );
-}
-
-TH1D* GetCommonFrame( vector < TGraph* >& vgraph , double vmargin , double hmargin )
-{
-  return GetCommonFrame( vgraph , vmargin , hmargin , vmargin , hmargin );
-}
-
 TH1D* GetCommonFrame( vector < TGraph* >& vgraph ,
-		      double margin_top , double margin_right,
-		      double margin_bottom , double margin_left )
+		      double margin_top = 0.1  , double margin_right = 0.1 ,
+		      double margin_bottom = 0.1 , double margin_left = 0.1 )
 {
 
   double xmin = GetMinX( vgraph );
@@ -76,6 +49,37 @@ TH1D* GetCommonFrame( vector < TGraph* >& vgraph ,
   common_frame_id++;
   return frame;
 }
+
+/*
+TH1D* GetCommonFrame( TGraph** graphs , int num )
+{
+  return GetCommonFrame( graphs , num , 0.1, 0.1, 0.1, 0.1 );
+}
+*/
+
+TH1D* GetCommonFrame( TGraph** graphs , int num,
+		      double margin_top = 0.1  , double margin_right = 0.1 ,
+		      double margin_bottom = 0.1 , double margin_left = 0.1 )
+{
+  vector < TGraph* > vgraph;
+  for( int i=0; i<num; i++ )
+    vgraph.push_back( graphs[i] );
+
+  return GetCommonFrame( vgraph, margin_top, margin_right, margin_bottom, margin_left  );
+}
+
+/*
+TH1D* GetCommonFrame( vector < TGraph* >& vgraph )
+{
+  return GetCommonFrame( vgraph , 0.1 , 0.1 );
+}
+
+TH1D* GetCommonFrame( vector < TGraph* >& vgraph , double vmargin , double hmargin )
+{
+  return GetCommonFrame( vgraph , vmargin , hmargin , vmargin , hmargin );
+}
+*/
+
 
 
 double GetCorrespond_Core( TGraph* g , double val, string type )

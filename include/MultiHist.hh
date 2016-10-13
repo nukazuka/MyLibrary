@@ -585,4 +585,8 @@ public:
   void SetYmax( double val );
 };
 
+#ifdef __CINT__
+#include "../src/MultiHist.cc"
+#endif
+
 #endif

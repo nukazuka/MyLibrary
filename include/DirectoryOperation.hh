@@ -60,4 +60,8 @@ bool GetFilePaths( string path, vector < string >& vname, string true_suffix);
 */
 bool GetFilePaths( string path, vector < string >& vname);
 
+#ifdef __CINT__
+#include "../src/DirectoryOperation.cc"
+#endif
+
 #endif // MYLIB_DIRECTORYOPERATION_HH

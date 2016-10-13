@@ -38,4 +38,8 @@ TTree* GetTree( string file_name , string tr_name );
  */
 TTree* GetTree( string file_name , string dir_name, string tr_name );
 
+#ifdef __CINT__
+#include "../src/IoOperation.cc"
+#endif
+
 #endif

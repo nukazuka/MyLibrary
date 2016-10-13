@@ -1,6 +1,7 @@
 #ifndef MYLIB_GRAPHOPERATION
 #define MYLIB_GRAPHOPERATION
 
+
 #include "HeadersRoot.hh"
 #include "HeadersSL.hh"
 #include "NumericalOperation.hh"
@@ -12,15 +13,17 @@ static int common_frame_id = 0;
 
 void AddPoint( TGraph* g_original, TGraph* g_new );
 
-TH1D* GetCommonFrame( TGraph** graphs , int num );
+//TH1D* GetCommonFrame( TGraph** graphs , int num );
 
 TH1D* GetCommonFrame( TGraph** graphs , int num,
 		      double margin_top , double margin_right,
 		      double margin_bottom , double margin_left );
 
+/*
 TH1D* GetCommonFrame( vector < TGraph* >& vgraph );
 
 TH1D* GetCommonFrame( vector < TGraph* >& vgraph , double vmargin , double hmargin );
+*/
 
 TH1D* GetCommonFrame( vector < TGraph* >& vgraph ,
 		      double margin_top , double margin_right,
@@ -67,4 +70,9 @@ vector < double > GetValY( TGraph* g );
 TGraph* Subtract( TGraph* g1 , TGraph* g2, int mode = 0 );
 TGraph* SubtractX( TGraph* g1 , TGraph* g2 );
 TGraph* SubtractY( TGraph* g1 , TGraph* g2 );
+
+#ifdef __CINT__
+#include "../src/GraphOperation.cc"
+#endif 
+
 #endif

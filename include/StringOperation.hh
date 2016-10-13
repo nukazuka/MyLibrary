@@ -140,4 +140,8 @@ int String2Int( string st );
  */
 double String2Double( string st );
 
+#ifdef __CINT__
+#include "../src/StringOperation.cc"
+#endif
+
 #endif

@@ -32,4 +32,8 @@ T* GetHist( TTree* tr, string name, string title,
 }
 */
 
+#ifdef __CINT__
+#include "../src/TreeOperation.cc"
+#endif
+
 #endif

@@ -1,4 +1,6 @@
+#ifndef __CINT__
 #include "TreeOperation.hh"
+#endif
 
 using namespace std;
 

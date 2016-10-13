@@ -104,5 +104,8 @@ double Deg2Rad( double degree );
  */
 double Rad2Deg( double radian );
 
+#ifdef __CINT__
+#include "../src/NumericalOperation.cc"
+#endif
 
 #endif

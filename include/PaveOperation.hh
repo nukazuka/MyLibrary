@@ -148,5 +148,8 @@ void DrawStats( TH* hist, double xmin, double ymin, double xmax, double ymax )
   st->Draw("same");
 }
 
+#ifdef __CINT__
+#include "../src/PaveOperation.cc"
+#endif
 
 #endif

@@ -211,4 +211,8 @@ void NormalizeHist( TH* hist , double val = 1.0 )
 hist->Scale( val / hist->Integral() );
 }
 
+#ifdef __CINT__
+#include "../src/HistOperation.cc"
+#endif
+
 #endif

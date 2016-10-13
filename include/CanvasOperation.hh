@@ -89,4 +89,8 @@ void CanvasPartition(TCanvas *C ,const Int_t Nx,const Int_t Ny,
                      Float_t lMargin, Float_t rMargin,
                      Float_t bMargin, Float_t tMargin);
 
+#ifdef __CINT__
+#include  "../src/CanvasOperation.cc"
+#endif
+
 #endif

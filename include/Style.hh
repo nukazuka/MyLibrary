@@ -46,4 +46,8 @@ void GraphSetting( TGraph* g, int color = 1, int width = 2 , int marker_style = 
 
 void SetColorPalette_old( int num = 55 );
 
+#ifdef __CINT__
+#include "../src/Style.cc"
+#endif
+
 #endif // ifndef MYLIB_STYLE_HH
