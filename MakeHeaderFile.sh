@@ -57,14 +57,10 @@ echo ${echo_option} "#endif // ndef __CINT__" >> ${path}
 ###############################################################
 ## ifdef __CINT__ # for CINT ##################################
 ###############################################################
-#echo ${echo_option} "${br}//if __CINT__ is defined, include its source files" >> ${path}
 echo ${echo_option} "${br}//if __CINT__ is defined, include header files with its full path" >> ${path}
 echo ${echo_option} "#ifdef __CINT__" >> ${path}
 
 #ls -1 ${path2}include/*.hh | xargs -I {} echo ${echo_option} "#include \"`pwd`/{}\"" >> ${path}
-#echo "#include \"`pwd -P`/../include/ArgumentParser.hh\""  >> ${path}
-#echo "#include \"`pwd -P`/../include/MultiHist.hh\""  >> ${path}
-#echo "#include \"`pwd -P`/../include/Style.hh\""  >> ${path}
 echo "#include \"`pwd -P`/include/ArgumentParser.hh\""  >> ${path}
 echo "#include \"`pwd -P`/include/MultiHist.hh\""  >> ${path}
 echo "#include \"`pwd -P`/include/Style.hh\""  >> ${path}
@@ -72,9 +68,7 @@ echo "#include \"`pwd -P`/include/Style.hh\""  >> ${path}
 # include *.hh with its full path
 ## some file depend on other files eg DirectoryOperation depends StringOperation
 ## to avoid confliction, such files are included at last
-#ls -1 ${path2}src/*.cc | grep -v DirectoryOperation | xargs -I {} echo ${echo_option} "#include \"`pwd`/{}\"" >> ${path}
 ls -1 ${path2}include/*.hh | grep -v DirectoryOperation | xargs -I {} echo ${echo_option} "#include \"`pwd`/{}\"" >> ${path}
-#ls -1 ${path2}src/*.cc | grep  DirectoryOperation | xargs -I {} echo ${echo_option} "#include \"`pwd`/{}\"" >> ${path}
 ls -1 ${path2}include/*.hh | grep  DirectoryOperation | xargs -I {} echo ${echo_option} "#include \"`pwd`/{}\"" >> ${path}
 
 ## if .cc contains class, .hh should be included as well ######
@@ -82,7 +76,6 @@ ls -1 ${path2}include/*.hh | grep  DirectoryOperation | xargs -I {} echo ${echo_
 echo `grep ArgumentParser.cc ${path} | sed -e "s/src/include/g" | sed -e "s/.cc/.hh/g" ` >> ${path}
 echo `grep MultiHist.cc ${path}      | sed -e "s/src/include/g" | sed -e "s/.cc/.hh/g" ` >> ${path}
 echo `grep Style.cc ${path}         | sed -e "s/src/include/g" | sed -e "s/.cc/.hh/g" ` >> ${path}
-
 
 echo ${echo_option} "#endif // __CINT__" >> ${path}
 
