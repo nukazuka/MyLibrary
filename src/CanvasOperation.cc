@@ -212,10 +212,20 @@ TCanvas* GetCanvas( string name, string shape, bool logy=false )
       width  = 1600;
       height =  800;
     }
+  else if ( shape == "double_inverse" )
+    {
+      width  =   800;
+      height =  1600;
+    }
   else if ( shape == "triple" )
     {
       width  = 2400;
       height =  800;
+    }
+  else if ( shape == "triple_inverse" )
+    {
+      width  =  800;
+      height = 2400;
     }
   else if ( shape == "quad" )
     {
