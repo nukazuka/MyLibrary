@@ -105,7 +105,12 @@ double MultiHist::GetMaxError()
 	}
     }
 
-  return *max_element( verror.begin(), verror.end() );
+  double rtn;
+  if( verror.size() == 0 )
+    rtn = 0;
+  else
+    rtn = *max_element( verror.begin(), verror.end() );
+  return rtn;
 }
 
 double MultiHist::GetMinimumBin_Non0( int hist_id )
