@@ -66,8 +66,8 @@ private:
   // valiable for axis' label
   double offset_label_x_ = 0.005;
   double offset_label_y_ = 0.005;
-  double size_label_x_   = 0.05;
-  double size_label_y_   = 0.05;
+  double size_label_x_   = 0.04;
+  double size_label_y_   = 0.04;
 
   int division_x_ = 510;
   int division_y_ = 510;
