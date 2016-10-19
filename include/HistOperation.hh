@@ -3,10 +3,12 @@
 
 #include "HeadersSL.hh"
 #include "HeadersRoot.hh"
+#include "StringOperation.hh"
 #include "Style.hh"
 
 using namespace std;
 
+static int id_for_hist_operation = 0;
 
 /*!
   @fn void HistSetting( TH1* hist )
@@ -32,19 +34,103 @@ TH* GetHist( string name, string title,
 	     TTree* tr, string target , string cut )
 */
 
+/*!
+  @fn TH* GetHist( string name, string title, 
+	     int bin, double xmin, double xmax,
+	     TTree* tr, string target , string cut )
+  @param name name of returned hist
+  @param title title of returned hist
+  @param bin a number of bin of returned hist
+  @param xmin min. range of returned hist
+  @param xmax max. range of returned hist
+  @param cut a cut to be applied
+*/
 template < typename TH >
 TH* GetHist( string name, string title, 
 	     int bin, double xmin, double xmax,
 	     TTree* tr, string target , string cut )
 {
   
-  TH* hist_rtn = new TH( name.c_str(), title.c_str(), bin, xmin, xmax );
-  hist_rtn->Sumw2();
   cout << "GetHist::" 
        << setw(15) << target << " >> " 
        << setw(15) << name   << "\t" 
-       << cut << endl;
+       << cut ;
+  TH* hist_rtn = new TH( name.c_str(), title.c_str(), bin, xmin, xmax );
+  hist_rtn->Sumw2();
   tr->Draw( (target+">>"+name).c_str() , cut.c_str(), "goff" );
+
+  cout << " : done" << endl;
+  return hist_rtn;
+}
+
+/*!
+
+  @fn TH* GetHistWithWithoutCut( string name, string title, 
+  int bin, double xmin, double xmax,
+  TTree* tr, string target , string cut, string cut_check )
+  @brief cut_check の有無の割合ヒストグラムを返す
+  @param name name of returned hist
+  @param title title of returned hist
+  @param bin a number of bin of returned hist
+  @param xmin min. range of returned hist
+  @param xmax max. range of returned hist
+  @param cut a cut to be applied
+  @param cht_check retured hist is the ratio of (entry with this cut) / (entry without this cut)
+  @details
+*/
+
+template < typename TH >
+TH* GetHistWithWithoutCut( string name, string title, 
+			   int bin, double xmin, double xmax,
+			   TTree* tr, string target , string cut, string cut_check )
+{
+
+  if( cut_check == "" )
+    {
+      cerr << "TH* GetHistWithWithoutCut( string name, string title," << endl;
+      cerr << "\tint bin, double xmin, double xmax," << endl;
+      cerr << "\tTTree* tr, string target , string cut, string cut_check )" << endl;
+      cerr << "cut_check must no be \"\"" << endl;
+      exit(-1);
+    }
+
+  ///////////////////////////////////////////////////
+  // hist without cut_check /////////////////////////  
+  string hist_name_without = (string)"HistOperation_GetHistWithWithoutCut"
+    + Int2String( id_for_hist_operation );
+  id_for_hist_operation++;
+
+  TH* hist_without = GetHist<TH>( hist_name_without, "title_without" ,
+				  bin, xmin, xmax,
+				  tr, target , cut
+				  );
+
+  ///////////////////////////////////////////////////
+  // hist with cut_check ////////////////////////////
+  string hist_name_with = (string)"HistOperation_GetHistWithWithoutCut"
+    + Int2String( id_for_hist_operation);
+  id_for_hist_operation++;  
+
+  cut += " && " + cut_check;
+  TH* hist_with = GetHist<TH>( hist_name_with , "title" ,
+			       bin, xmin, xmax,
+			       tr , target , cut
+			       );
+  
+  cout << "GetHistWithWithoutCut::" 
+       << setw(15) << target << " >> " 
+       << setw(15) << name   << "\t" 
+       << cut << "\t with or without "
+       << cut_check;
+
+  TH* hist_rtn = (TH*)hist_with->Clone();
+  hist_rtn->SetName( name.c_str() );
+  hist_rtn->SetTitle( title.c_str() );
+  HistSetting( hist_rtn );
+  hist_rtn->Divide( hist_without );
+  
+  cout << " : done" << endl;
+  //  tr->Draw( (target+">>"+name).c_str() , cut.c_str(), "goff" );
   return hist_rtn;
 }
 

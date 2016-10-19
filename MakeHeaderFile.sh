@@ -61,9 +61,9 @@ echo ${echo_option} "${br}//if __CINT__ is defined, include header files with it
 echo ${echo_option} "#ifdef __CINT__" >> ${path}
 
 #ls -1 ${path2}include/*.hh | xargs -I {} echo ${echo_option} "#include \"`pwd`/{}\"" >> ${path}
-echo "#include \"`pwd -P`/include/ArgumentParser.hh\""  >> ${path}
-echo "#include \"`pwd -P`/include/MultiHist.hh\""  >> ${path}
-echo "#include \"`pwd -P`/include/Style.hh\""  >> ${path}
+echo "#include \"`pwd -P`/../include/ArgumentParser.hh\""  >> ${path}
+echo "#include \"`pwd -P`/../include/MultiHist.hh\""  >> ${path}
+echo "#include \"`pwd -P`/../include/Style.hh\""  >> ${path}
 
 # include *.hh with its full path
 ## some file depend on other files eg DirectoryOperation depends StringOperation

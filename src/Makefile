@@ -44,8 +44,8 @@ libDirectoryOperation$(SUFFIX): DirectoryOperation.cc StringOperation.cc ../incl
 libMultiHist$(SUFFIX): MultiHist.cc PaveOperation.cc StringOperation.cc ../include/MultiHist.hh ../include/PaveOperation.hh ../include/StringOperation.hh
 	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) $(LDFLAGS) -o $@  $< PaveOperation.cc StringOperation.cc	
 
-libHistOperation$(SUFFIX): HistOperation.cc Style.cc ../include/HistOperation.hh ../include/Style.hh
-	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) $(LDFLAGS) -o $@  $< Style.cc
+libHistOperation$(SUFFIX): HistOperation.cc StringOperation.cc Style.cc ../include/HistOperation.hh ../include/StringOperation.hh ../include/Style.hh 
+	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) $(LDFLAGS) -o $@  $< StringOperation.cc Style.cc
 
 libGraphOperation$(SUFFIX): GraphOperation.cc Style.cc ../include/GraphOperation.hh ../include/Style.hh
 	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) $(LDFLAGS) -o $@  $< Style.cc
