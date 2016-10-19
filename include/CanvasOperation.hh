@@ -15,16 +15,18 @@ using namespace std;
   @param logy log scale for y axis of not
   @brief get canvas
   @details ## Defined Shapes
-  name       | width | height | ratio  | usage          | remarks
-  ---------  | ----- | ------ | ------ | -------------- | -------- |
-  square     | 1000  | 1000   | 1:1    | normal | |
-  landscape  | 1200  |  800   | 1.5:1  | | |
-  3:2        | 1200  |  800   | 1.5:1  | | |
-  presen     |  255  |  170   | 1.5:1  | for presentation | |
-  double     | 1600  |  800   | 2:1    | 2 graphs | |
-  triple     | 2400  |  800   | 3:1    | 3 graphs | |
-  quad       | 3200  |  800   | 4:1    | 4 graphs | |
-  comparison | 1000  | 1450   | 1:1.45 | comparison | see below
+  name          | width | height | ratio  | usage          | remarks
+  ------------  | ----- | ------ | ------ | -------------- | -------- |
+  square        | 1000  | 1000   | 1:1    | normal | |
+  landscape     | 1200  |  800   | 1.5:1  | | |
+  3:2           | 1200  |  800   | 1.5:1  | | |
+  presen        |  255  |  170   | 1.5:1  | for presentation | |
+  double        | 1600  |  800   | 2:1    | 2 graphs | |
+  double_inverse|  800  | 1600   | 1:2    | 2 graphs | |
+  triple        | 2400  |  800   | 3:1    | 3 graphs | |
+  triple_inverse|  800  | 2400   | 1:3    | 3 graphs | |
+  quad          | 3200  |  800   | 4:1    | 4 graphs | |
+  comparison    | 1000  | 1450   | 1:1.45 | comparison | see below
 
   ### Comparison shape
 
