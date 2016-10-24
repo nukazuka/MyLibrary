@@ -53,7 +53,36 @@ do
     fi
 done
 
+
+# incdir 
+echo "if [ \"\${1}\" = \"--incdir\" ] " >> ${TEMP}
+echo "then" >> ${TEMP}
+echo "echo \${DIR_INCLUDE}" >> ${TEMP}
+
+# libdir
+echo "elif [ \"\${1}\" = \"--libdir\" ] " >> ${TEMP}
+echo "then" >> ${TEMP}
+echo "echo \${DIR_MYLIBRARY}" >> ${TEMP}
+
+# libs
+echo "elif [ \"\${1}\" = \"--libs\" ] " >> ${TEMP}
+echo "then" >> ${TEMP}
+echo "echo -L\${DIR_MYLIBRARY} \${LIBS}" >> ${TEMP}
+
+# help
+echo "elif [ \"\${1}\" = \"--help\" ] " >> ${TEMP}
+echo "then" >> ${TEMP}
+echo "echo -e \"\\n ==== MyLibrary-config HELP === \\n\"" >> ${TEMP}
+echo "echo \ \ --incdir : show the path to the include directory" >> ${TEMP}
+echo "echo \ \ --libdir : show the path to the library directory" >> ${TEMP}
+echo "echo \ \ --libs \ \ : returns a -L/-l flags in above output" >> ${TEMP}
+echo "echo -e \"  (nothing): show everything\\n\"" >> ${TEMP}
+
+# all 
+echo "else" >> ${TEMP}
 echo "echo -I\${DIR_INCLUDE} -L\${DIR_MYLIBRARY} \${LIBS}" >> ${TEMP}
+
+echo "fi" >> ${TEMP}
 
 # mv temp file 
 chmod u+x ${TEMP}
