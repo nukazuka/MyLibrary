@@ -185,19 +185,41 @@ TH* GetHistFromGraph( TGraph* g , string hist_name )
 
 
 template < typename TH >
-vector < TH* > GetVectorHist( string name, string title, 
+vector < TH* > GetVectorHist( vector < string >& vname, vector < string >& vtitle, 
 			      int bin, double xmin, double xmax,
-			      vector < TTree* > &vtr, string target , string cut )
+			      vector < TTree* > &vtr, string target , vector < string >& vcut )
 {
 
   vector < TH* > vhist;
   for( int i=0; i<vtr.size(); i++ )
     {
-      vhist.push_back( GetHist<TH>( name, title, bin, xmin, xmax, vtr[i], target , cut ) );
+      vhist.push_back( GetHist<TH>( vname[i], vtitle[i], bin, xmin, xmax, vtr[i], target , vcut[i] ) );
       HistSetting( vhist[i], GetColor(i), 2 );
     }
   
   return vhist;
+}
+
+template < typename TH >
+vector < TH* > GetVectorHist( string name, string title, 
+			      int bin, double xmin, double xmax,
+			      vector < TTree* > &vtr, string target , string cut )
+{
+
+
+  vector < string > vname, vtitle, vcut;
+  vector < TH* > vhist;
+  for( int i=0; i<vtr.size(); i++ )
+    {
+      vname.push_back( (string)"name" + Int2String(i+1) );
+      vtitle.push_back( (string)"title" + Int2String(i+1) );
+      vcut.push_back( cut );
+      //      vhist.push_back( GetHist<TH>( name, title, bin, xmin, xmax, vtr[i], target , cut ) );
+      //      HistSetting( vhist[i], GetColor(i), 2 );
+    }
+  
+  //  return vhist;
+  return GetVectorHist<TH>( vname, vtitle, bin, xmin, xmax, vtr, target, vcut );
 }
 
 template < typename TH >
