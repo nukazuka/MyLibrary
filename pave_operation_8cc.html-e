@@ -114,7 +114,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a2902ca574ed3e01c2be97e21b1a747ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pave_operation_8cc.html#a2902ca574ed3e01c2be97e21b1a747ba">DrawTitle</a> (TVirtualPad *pad)</td></tr>
 <tr class="separator:a2902ca574ed3e01c2be97e21b1a747ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4952086280c5bc6a12106cec35ddcfce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pave_operation_8cc.html#a4952086280c5bc6a12106cec35ddcfce">DrawPaletteAxis</a> (TH2D *hist, double xmin, double ymin, double xmax, double ymax, double label_size)</td></tr>
-<tr class="memdesc:a4952086280c5bc6a12106cec35ddcfce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw color palette axis for TH2 .  <a href="#a4952086280c5bc6a12106cec35ddcfce">More...</a><br /></td></tr>
+<tr class="memdesc:a4952086280c5bc6a12106cec35ddcfce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw color palette axis for TH2.  <a href="#a4952086280c5bc6a12106cec35ddcfce">More...</a><br /></td></tr>
 <tr class="separator:a4952086280c5bc6a12106cec35ddcfce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38d0561c73ea7b706b591c3bb19d5a52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pave_operation_8cc.html#a38d0561c73ea7b706b591c3bb19d5a52">DrawStats2D</a> (TH2D *hist, double xmin, double ymin, double xmax, double ymax)</td></tr>
 <tr class="separator:a38d0561c73ea7b706b591c3bb19d5a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -183,7 +183,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Draw color palette axis for TH2 . </p>
+<p>Draw color palette axis for TH2. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">hist</td><td>target of histogram </td></tr>

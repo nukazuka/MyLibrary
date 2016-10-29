@@ -5,5 +5,5 @@ var searchData=
   ['headerssl_2ehh',['HeadersSL.hh',['../_headers_s_l_8hh.html',1,'']]],
   ['histoperation_2ecc',['HistOperation.cc',['../_hist_operation_8cc.html',1,'']]],
   ['histoperation_2ehh',['HistOperation.hh',['../_hist_operation_8hh.html',1,'']]],
-  ['histsetting',['HistSetting',['../_style_8hh.html#a84e618da783b0ef006fa5120055e3004',1,'Style.hh']]]
+  ['histsetting',['HistSetting',['../_hist_operation_8hh.html#a4839d47dbfe7b992cb7468f50f599717',1,'HistOperation.hh']]]
 ];

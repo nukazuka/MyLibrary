@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['histsetting',['HistSetting',['../_style_8hh.html#a84e618da783b0ef006fa5120055e3004',1,'Style.hh']]]
+  ['histsetting',['HistSetting',['../_hist_operation_8hh.html#a4839d47dbfe7b992cb7468f50f599717',1,'HistOperation.hh']]]
 ];

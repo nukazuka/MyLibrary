@@ -5,7 +5,7 @@ var searchData=
   ['setdivisiony',['SetDivisionY',['../class_multi_hist.html#a846de17277681c1ca9df0713040c801e',1,'MultiHist']]],
   ['setdrawnoentry',['SetDrawNoEntry',['../class_multi_hist.html#ad1d361ab627bca274018de15a2e96095',1,'MultiHist']]],
   ['setdrawpaletteaxis',['SetDrawPaletteAxis',['../class_multi_hist.html#a61277d318573bf346134c76446cebeda',1,'MultiHist']]],
-  ['sethiststyle',['SetHistStyle',['../_style_8cc.html#ab3feaac70bb633c5fe1cbe1176491188',1,'SetHistStyle(TH1D *hist, int color, int width):&#160;Style.cc'],['../_style_8hh.html#ab3feaac70bb633c5fe1cbe1176491188',1,'SetHistStyle(TH1D *hist, int color, int width):&#160;Style.cc'],['../_style_8hh.html#a4f076592efc20e6e216a435692e84cf4',1,'SetHistStyle(TH *hist, int color, int width):&#160;Style.hh']]],
+  ['setincludeerrorbar',['SetIncludeErrorBar',['../class_multi_hist.html#a96882c3c17788cd63f0bc452b18551a0',1,'MultiHist']]],
   ['setlabeloffsetx',['SetLabelOffsetX',['../class_multi_hist.html#a5d1891bb21cf5c01838ebe6002fc017e',1,'MultiHist']]],
   ['setlabeloffsety',['SetLabelOffsetY',['../class_multi_hist.html#a091c719cb5adeca5edd4ceeb78bb5a16',1,'MultiHist']]],
   ['setlabelsizex',['SetLabelSizeX',['../class_multi_hist.html#a23baf8196da32ce676c0b04880612c63',1,'MultiHist']]],
@@ -48,5 +48,8 @@ var searchData=
   ['style',['Style',['../_style_8cc.html#a766767e61d475a5e310dc33475d823d7',1,'Style():&#160;Style.cc'],['../_style_8hh.html#a766767e61d475a5e310dc33475d823d7',1,'Style():&#160;Style.cc']]],
   ['style_2ecc',['Style.cc',['../_style_8cc.html',1,'']]],
   ['style_2ehh',['Style.hh',['../_style_8hh.html',1,'']]],
-  ['subtraction',['Subtraction',['../_string_operation_8cc.html#a12d38369156d6be454c91cdfc7779fc6',1,'Subtraction(string s1, string s2):&#160;StringOperation.cc'],['../_string_operation_8hh.html#a12d38369156d6be454c91cdfc7779fc6',1,'Subtraction(string s1, string s2):&#160;StringOperation.cc']]]
+  ['subtract',['Subtract',['../_graph_operation_8cc.html#af68abe513c20240584cb6ffce05d0b92',1,'Subtract(TGraph *g1, TGraph *g2, int mode):&#160;GraphOperation.cc'],['../_graph_operation_8hh.html#aaad7d6aa3ecc50ab935281bd8b647cb0',1,'Subtract(TGraph *g1, TGraph *g2, int mode=0):&#160;GraphOperation.cc']]],
+  ['subtraction',['Subtraction',['../_string_operation_8cc.html#a12d38369156d6be454c91cdfc7779fc6',1,'Subtraction(string s1, string s2):&#160;StringOperation.cc'],['../_string_operation_8hh.html#a12d38369156d6be454c91cdfc7779fc6',1,'Subtraction(string s1, string s2):&#160;StringOperation.cc']]],
+  ['subtractx',['SubtractX',['../_graph_operation_8cc.html#a685bfdc62b64a6d6a821708ba490af21',1,'SubtractX(TGraph *g1, TGraph *g2):&#160;GraphOperation.cc'],['../_graph_operation_8hh.html#a685bfdc62b64a6d6a821708ba490af21',1,'SubtractX(TGraph *g1, TGraph *g2):&#160;GraphOperation.cc']]],
+  ['subtracty',['SubtractY',['../_graph_operation_8cc.html#a8702151a024524e2dc570e1cc91283ca',1,'SubtractY(TGraph *g1, TGraph *g2):&#160;GraphOperation.cc'],['../_graph_operation_8hh.html#a8702151a024524e2dc570e1cc91283ca',1,'SubtractY(TGraph *g1, TGraph *g2):&#160;GraphOperation.cc']]]
 ];

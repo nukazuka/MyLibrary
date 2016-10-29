@@ -112,7 +112,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a38d0561c73ea7b706b591c3bb19d5a52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pave_operation_8hh.html#a38d0561c73ea7b706b591c3bb19d5a52">DrawStats2D</a> (TH2D *hist, double xmin, double ymin, double xmax, double ymax)</td></tr>
 <tr class="separator:a38d0561c73ea7b706b591c3bb19d5a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5e71038ccca0543871fb6d36d2f0786"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pave_operation_8hh.html#ae5e71038ccca0543871fb6d36d2f0786">DrawPaletteAxis</a> (TH2D *hist, double xmin=0.9, double ymin=0.1, double xmax=0.93, double ymax=0.9, double label_size=0.08)</td></tr>
-<tr class="memdesc:ae5e71038ccca0543871fb6d36d2f0786"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw color palette axis for TH2 .  <a href="#ae5e71038ccca0543871fb6d36d2f0786">More...</a><br /></td></tr>
+<tr class="memdesc:ae5e71038ccca0543871fb6d36d2f0786"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw color palette axis for TH2.  <a href="#ae5e71038ccca0543871fb6d36d2f0786">More...</a><br /></td></tr>
 <tr class="separator:ae5e71038ccca0543871fb6d36d2f0786"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af71e38570520000cdd3b0652d5f756a3"><td class="memTemplParams" colspan="2">template&lt;typename TH &gt; </td></tr>
 <tr class="memitem:af71e38570520000cdd3b0652d5f756a3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="pave_operation_8hh.html#af71e38570520000cdd3b0652d5f756a3">DrawStats</a> (TH *hist, double xmin, double ymin, double xmax, double ymax)</td></tr>
@@ -167,7 +167,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Draw color palette axis for TH2 . </p>
+<p>Draw color palette axis for TH2. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">hist</td><td>target of histogram </td></tr>

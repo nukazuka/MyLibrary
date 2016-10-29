@@ -93,6 +93,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><code>#include &quot;<a class="el" href="argument_parser_8hh_source.html">ArgumentParser.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="canvas_operation_8hh_source.html">CanvasOperation.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="canvas_setting_8hh_source.html">CanvasSetting.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="directory_operation_8hh_source.html">DirectoryOperation.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="graph_operation_8hh_source.html">GraphOperation.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="headers_root_8hh_source.html">HeadersRoot.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="headers_s_l_8hh_source.html">HeadersSL.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="hist_operation_8hh_source.html">HistOperation.hh</a>&quot;</code><br />
@@ -102,6 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="pave_operation_8hh_source.html">PaveOperation.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="string_operation_8hh_source.html">StringOperation.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="style_8hh_source.html">Style.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_tree_operation_8hh_source.html">TreeOperation.hh</a>&quot;</code><br />
 </div>
 <p><a href="my_library_8hh_source.html">Go to the source code of this file.</a></p>
 </div><!-- contents -->

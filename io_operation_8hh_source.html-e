@@ -106,8 +106,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;TTree* <a class="code" href="io_operation_8hh.html#af26b847d372a6f52c169b5e6433f4201">GetTree</a>( <span class="keywordtype">string</span> file_name , <span class="keywordtype">string</span> dir_name, <span class="keywordtype">string</span> tr_name );</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="io_operation_8hh.html_af26b847d372a6f52c169b5e6433f4201"><div class="ttname"><a href="io_operation_8hh.html#af26b847d372a6f52c169b5e6433f4201">GetTree</a></div><div class="ttdeci">TTree * GetTree(string file_name, string tr_name)</div><div class="ttdoc">get TTree </div><div class="ttdef"><b>Definition:</b> <a href="io_operation_8cc_source.html#l00101">IoOperation.cc:101</a></div></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#ifdef __CINT__</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;../src/IoOperation.cc&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="io_operation_8hh.html_af26b847d372a6f52c169b5e6433f4201"><div class="ttname"><a href="io_operation_8hh.html#af26b847d372a6f52c169b5e6433f4201">GetTree</a></div><div class="ttdeci">TTree * GetTree(string file_name, string tr_name)</div><div class="ttdoc">get TTree </div><div class="ttdef"><b>Definition:</b> <a href="io_operation_8cc_source.html#l00100">IoOperation.cc:100</a></div></div>
 <div class="ttc" id="headers_root_8hh.html"><div class="ttname"><a href="headers_root_8hh.html">HeadersRoot.hh</a></div></div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
 <div class="ttc" id="headers_s_l_8hh.html"><div class="ttname"><a href="headers_s_l_8hh.html">HeadersSL.hh</a></div></div>
