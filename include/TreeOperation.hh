@@ -1,5 +1,5 @@
 #ifndef MYLIB_TREEOPERATION
-#define  MYLIB_TREEOPERATION
+#define MYLIB_TREEOPERATION
 
 #include "HeadersSL.hh"
 #include "HeadersRoot.hh"
