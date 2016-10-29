@@ -7,10 +7,30 @@
 
 using namespace std;
 
+/*!
+  @fn vector < double > GetElement(TTree* tr, string target, string cut );
+  @brief get all values with cut
+*/
 vector < double > GetElement(TTree* tr, string target, string cut );
+
+/*!
+  @fn double GetAverageVal( TTree* tr, string target, string cut );
+  @brief get average of target with cut
+*/
 double GetAverageVal( TTree* tr, string target, string cut );
+
+/*!
+  @fn double GetMaxVal( TTree* tr, string target, string cut );
+  @brief get the max. value of target with cut
+*/
 double GetMaxVal( TTree* tr, string target, string cut );
+
+/*!
+  @fn double GetMinVal( TTree* tr, string target, string cut );
+  @brief get the min. value of the target with cut
+*/
 double GetMinVal( TTree* tr, string target, string cut );
+
 
 
 
