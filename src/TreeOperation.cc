@@ -12,6 +12,7 @@ vector < double > GetElement(TTree* tr, string target, string cut )
 
   for( int i=0; i<num; i++ )
     vx.push_back( x[i] );
+
   return vx;
 }
 
@@ -19,7 +20,7 @@ double GetAverageVal( TTree* tr, string target, string cut )
 {
 
   vector < double > vx = GetElement( tr, target, cut );
-  return accumulate( vx.begin(), vx.end() , 0 ) / (double)vx.size() ;
+  return accumulate( vx.begin(), vx.end() , 0.0 ) / (double)vx.size() ;
 }
 
 double GetMaxVal( TTree* tr, string target, string cut )
