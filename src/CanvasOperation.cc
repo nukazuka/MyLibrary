@@ -242,10 +242,10 @@ TCanvas* GetCanvas( string name, string shape, bool logy=false )
     }
   else
     {
+      cerr << "Specified shape: " << shape << " is not found" << endl;      
       width  = 1600;
       height =  900;
     }
-
 
   c = new TCanvas( name.c_str(), title.c_str(), width, height );
 
