@@ -8,7 +8,10 @@ using namespace std;
 
 vector < double > GetElement(TTree* tr, string target, string cut )
 {
+
   vector < double > vx;
+
+  // as far as I remember, tr->GetEntries() cannot be used due to tr->GetV1()
   const int num = tr->Draw( target.c_str() , cut.c_str(), "goff" );
   double* x = tr->GetV1();
 
@@ -31,6 +34,17 @@ double GetMaxVal( TTree* tr, string target, string cut )
 {
 
   vector < double > vx = GetElement( tr, target, cut );
+
+  if( vx.size() == 0 )
+    {
+      cerr << "==== WARNING ==================" << endl;
+      cerr << "  TreeOperation.cc in MyLibrary" << endl;
+      cerr << "  double GetMaxVal( TTree* tr, string target, string cut )" << endl;
+      cerr << "  a number of elements with the cut: " << cut << " = 0 " << endl;
+      cerr << "  1 is returned not to crash program" << endl;
+      return 1;
+    }
+  
   return *max_element( vx.begin(), vx.end() );
 }
 
@@ -38,5 +52,15 @@ double GetMinVal( TTree* tr, string target, string cut )
 {
 
   vector < double > vx = GetElement( tr, target, cut );
+  if( vx.size() == 0 )
+    {
+      cerr << "==== WARNING ==================" << endl;
+      cerr << "  TreeOperation.cc in MyLibrary" << endl;
+      cerr << "  double GetMinVal( TTree* tr, string target, string cut )" << endl;
+      cerr << "  a number of elements with the cut: " << cut << " = 0 " << endl;
+      cerr << "  0 is returned not to crash program" << endl;
+      return 0;
+    }
+  
   return *min_element( vx.begin(), vx.end() );
 }
