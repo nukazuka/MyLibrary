@@ -6,6 +6,31 @@ using namespace std;
 
 int MultiHist::id_;
 ////////////////////////////////////////////////////////////
+// constructor  ////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+MultiHist::MultiHist( string name, string title , TH1D* hist_base , TH1D* hist_divide_with )
+{
+
+  Init( name, title );
+
+  // modify size of text 
+  SetLabelSizeX( 0.08 );
+  SetLabelSizeY( 0.08 );
+
+  SetTitleSizeX( 0.08 );
+  SetTitleSizeY( 0.08 );
+
+  // make ratio hist and add it
+  hist_base->Scale( 1.0 / hist_base->Integral() );
+  hist_divide_with->Scale( 1.0 / hist_divide_with->Integral() );
+
+  this->SetRatioMode();
+  TH1D* hist_ratio = (TH1D*)hist_base->Clone();
+  hist_ratio->Divide( hist_divide_with );
+  this->Add( hist_ratio );  
+}
+
+////////////////////////////////////////////////////////////
 // private functions ///////////////////////////////////////
 ////////////////////////////////////////////////////////////
 

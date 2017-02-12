@@ -136,6 +136,16 @@ public:
   */
   MultiHist( string name, string title ){ Init( name, title) ;} ;
 
+  /*!
+    @fn MultiHist( string name, string title)
+    @param name A name of this object.
+    @param title A title of this object
+    @param hist_base this hist is divided by 4th argument
+    @param hist_divide_with 
+    @brief A constructor for ratio mode. hists are normalized before division
+  */
+  MultiHist( string name, string title , TH1D* hist_base , TH1D* hist_divide_with );
+
   // void 
   /*!
     @fn void Add( TH1* hist )
@@ -395,7 +405,7 @@ public:
     @brief set ratio mode
   */
   //  void SetRatioMode( bool bl_mode ){  bl_ratio_mode_ = bl_mode; bl_include_error_bar_ = true; };
-  void SetRatioMode( bool bl_mode ){  bl_ratio_mode_ = bl_mode;};
+  void SetRatioMode( bool bl_mode = true ){  bl_ratio_mode_ = bl_mode;};
 
   /*!
     @fn void SetStats( bool bl )
