@@ -732,7 +732,7 @@ void MultiHist::Draw2D( string option,
   id_++;
 }
 
-void MultiHist::NormalizeHist( double val = 1.0 )
+void MultiHist::NormalizeHist( double val )
 {
   for( unsigned int i=0; i<vhist_.size(); i++)
     vhist_[i]->Scale( val / vhist_[i]->Integral() );
