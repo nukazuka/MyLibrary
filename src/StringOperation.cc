@@ -49,6 +49,7 @@ string GetRepeatedWords( string word, int num )
   string rtn = "";
   for( int i=0; i<num; i++)
     rtn += word;
+  //  string rtn( num , word );
   return rtn;
 }
 
