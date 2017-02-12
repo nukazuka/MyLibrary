@@ -8,7 +8,7 @@ int MultiHist::id_;
 ////////////////////////////////////////////////////////////
 // constructor  ////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
-MultiHist::MultiHist( string name, string title , TH1D* hist_base , TH1D* hist_divide_with )
+MultiHist::MultiHist( string name, string title , TH1D* hist , TH1D* hist_base )
 {
 
   Init( name, title );
@@ -20,14 +20,18 @@ MultiHist::MultiHist( string name, string title , TH1D* hist_base , TH1D* hist_d
   SetTitleSizeX( 0.08 );
   SetTitleSizeY( 0.08 );
 
+  SetYmax( 2.0 );
+  hist_base_ = hist_base;
+  
   // make ratio hist and add it
-  hist_base->Scale( 1.0 / hist_base->Integral() );
-  hist_divide_with->Scale( 1.0 / hist_divide_with->Integral() );
+  //  hist_base->Scale( 1.0 / hist_base->Integral() );
+  //  hist_divide_with->Scale( 1.0 / hist_divide_with->Integral() );
 
   this->SetRatioMode();
-  TH1D* hist_ratio = (TH1D*)hist_base->Clone();
-  hist_ratio->Divide( hist_divide_with );
-  this->Add( hist_ratio );  
+  //  TH1D* hist_ratio = (TH1D*)hist_base->Clone();
+  //  hist_ratio->Divide( hist_divide_with );
+  //  this->Add( hist_ratio );
+  this->Add( hist );
 }
 
 ////////////////////////////////////////////////////////////
@@ -48,7 +52,7 @@ void MultiHist::Init( string name, string title )
   title_ = title;
 
   gStyle->SetOptStat( stats_format_ );
-
+  hist_base_ = new TH1D();
   CheckLogScale();
 }
 
@@ -474,12 +478,28 @@ void MultiHist::Add( TH1* hist )
     切り捨てられる等の癖をどう扱うのかよくわかんない。
     今は TH1D しか使わないから問題ないので放置しておく。    
    */
-  vhist_.push_back( (TH1D*)hist ); 
+
+  if( IsRatioMode() == false )
+    {
+      vhist_.push_back( (TH1D*)hist );
+    }
+  else
+    {
+      hist->Scale( 1.0 / hist->Integral() );
+      TH1D* hist_ratio = (TH1D*)hist->Clone();
+      hist_ratio->Divide( hist_base_ );
+      vhist_.push_back( (TH1D*)hist_ratio );
+    }
 }
 
 void MultiHist::Add( TH2D* hist2d )
 {
   vhist2d_.push_back( hist2d );
+}
+
+void MultiHist::AddBaseHist( TH1D* hist_base )
+{
+  hist_base_ = hist_base;
 }
 
 void MultiHist::DeleteAllHist()
@@ -710,6 +730,12 @@ void MultiHist::Draw2D( string option,
     }  
   
   id_++;
+}
+
+void MultiHist::NormalizeHist( double val = 1.0 )
+{
+  for( unsigned int i=0; i<vhist_.size(); i++)
+    vhist_[i]->Scale( val / vhist_[i]->Integral() );
 }
 
 void MultiHist::SetMarginV( double ratio )

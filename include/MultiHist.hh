@@ -95,7 +95,8 @@ private:
   bool bl_include_error_bar_ = true;
   vector < TH1D* > vhist_;
   vector < TH2D* > vhist2d_;
-
+  TH1D* hist_base_;
+  
   // Initialization
   void Init( );
   void Init( string name, string title );
@@ -137,7 +138,7 @@ public:
   MultiHist( string name, string title ){ Init( name, title) ;} ;
 
   /*!
-    @fn MultiHist( string name, string title)
+    @fn MultiHist( string name, string title , TH1D* hist_base , TH1D* hist_divide_with )
     @param name A name of this object.
     @param title A title of this object
     @param hist_base this hist is divided by 4th argument
@@ -166,6 +167,11 @@ public:
   */
   void Add( TH2D* hist2d );
 
+  /*!
+    @fn void AddBaseHist( TH1D* hist_base )
+    @brief add base hist of ratio mode
+  */
+  void AddBaseHist( TH1D* hist_base );
   /*!
     @fn void DeleteAllHist()
     @brief Delete all stored histograms
@@ -289,6 +295,18 @@ public:
   */
   double GetYmin(){ return ymin_ - margin_bottom_ ;};
 
+  /*!
+    @fn   bool IsRatioMode()
+    @brief same as GetRatioMode
+  */
+  bool IsRatioMode(){ return bl_ratio_mode_;};
+  
+  /*!
+    @fn void NormalizeHist( double val = 1.0 )
+    @brief all stored hists are normalized to val
+  */
+  void NormalizeHist( double val = 1.0 );
+  
   /*!
     @fn void Print()
     @brief
