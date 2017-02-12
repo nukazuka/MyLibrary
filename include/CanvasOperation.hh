@@ -27,6 +27,7 @@ using namespace std;
   triple_inverse|  800  | 2400   | 1:3    | 3 graphs | |
   quad          | 3200  |  800   | 4:1    | 4 graphs | |
   comparison    | 1000  | 1450   | 1:1.45 | comparison | see below
+  ratio         | 1000  | 1450   | 1:1.45 | comparison | same as comparison
 
   ### Comparison shape
 

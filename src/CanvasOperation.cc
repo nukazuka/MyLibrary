@@ -232,7 +232,7 @@ TCanvas* GetCanvas( string name, string shape, bool logy=false )
       width  = 3200;
       height =  800;
     }
-  else if ( shape == "comparison" )
+  else if ( shape == "comparison" || shape == "ratio" )
     {
       width  = 1000;
       height = 1450;
@@ -252,7 +252,7 @@ TCanvas* GetCanvas( string name, string shape, bool logy=false )
   c->SetWindowSize(width + (width - c->GetWw()), height + (height - c->GetWh()));
   gSystem->ProcessEvents();
 
-  if( shape == "comparison" )
+  if( shape == "comparison" || shape == "ratio" )
     {
 
       //    -------------------------------------  
