@@ -40,8 +40,9 @@ double GetMaxVal( TTree* tr, string target, string cut )
       cerr << "==== WARNING ==================" << endl;
       cerr << "  TreeOperation.cc in MyLibrary" << endl;
       cerr << "  double GetMaxVal( TTree* tr, string target, string cut )" << endl;
-      cerr << "  a number of elements with the cut: " << cut << " = 0 " << endl;
+      cerr << "  a number of elements with the cut:\n " << cut << " : 0 " << endl;
       cerr << "  1 is returned not to crash program" << endl;
+      tr->Print();
       return 1;
     }
   
@@ -57,7 +58,7 @@ double GetMinVal( TTree* tr, string target, string cut )
       cerr << "==== WARNING ==================" << endl;
       cerr << "  TreeOperation.cc in MyLibrary" << endl;
       cerr << "  double GetMinVal( TTree* tr, string target, string cut )" << endl;
-      cerr << "  a number of elements with the cut: " << cut << " = 0 " << endl;
+      cerr << "  a number of elements with the cut:\n " << cut << " : 0 " << endl;
       cerr << "  0 is returned not to crash program" << endl;
       return 0;
     }
