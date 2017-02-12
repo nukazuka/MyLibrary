@@ -238,7 +238,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="hist_operation_8hh.html#a6283d16c37cd85d1ef4db61cb55acb98">HistOperation.hh</a>
 </li>
 <li>GetHist2D()
-: <a class="el" href="hist_operation_8hh.html#a68bd2b7cdb563cb83804e23a5bb448b6">HistOperation.hh</a>
+: <a class="el" href="hist_operation_8hh.html#a2abae97ae4fc7f8868a03accd61ac0ed">HistOperation.hh</a>
 </li>
 <li>GetHistFromGraph()
 : <a class="el" href="hist_operation_8hh.html#a790ae9fbf94e9b1720115c23202531b5">HistOperation.hh</a>

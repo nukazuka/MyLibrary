@@ -19,7 +19,7 @@ var searchData=
   ['setmarginv',['SetMarginV',['../class_multi_hist.html#a3c3ee5df728d50f5baeaf2bddf491d5f',1,'MultiHist']]],
   ['setoption',['SetOption',['../class_multi_hist.html#a61e12692e71667372e51b96fd35dee51',1,'MultiHist']]],
   ['setrange',['SetRange',['../class_multi_hist.html#a380f638d94af2e37878429b5743ab76a',1,'MultiHist']]],
-  ['setratiomode',['SetRatioMode',['../class_multi_hist.html#aa2e5d8f86106c00426369fd7cd40745c',1,'MultiHist']]],
+  ['setratiomode',['SetRatioMode',['../class_multi_hist.html#a03257b50429eff5b43e2b04815004fbe',1,'MultiHist']]],
   ['setstats',['SetStats',['../class_multi_hist.html#aa4397c14d12b33e6cf121a1f7b430b77',1,'MultiHist']]],
   ['setstatsboxpoint',['SetStatsBoxPoint',['../class_multi_hist.html#ae6d285886569c87b2134aab0e82bbb81',1,'MultiHist']]],
   ['setstatsboxsize',['SetStatsBoxSize',['../class_multi_hist.html#a85b8c640fcdf0faf8e3f7801ab6cfef8',1,'MultiHist']]],
