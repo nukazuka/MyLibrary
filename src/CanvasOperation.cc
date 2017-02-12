@@ -275,6 +275,7 @@ TCanvas* GetCanvas( string name, string shape, bool logy=false )
       //    |<-------------- 1200 ------------->| (in px)
 
       double ratio = 1./4;
+      //double ratio = 0.4;
       TPad *pad1 = new TPad("pad1", "title",
 			    0.0, ratio ,  // xmin , ymin
 			    1.0, 1.0 ,    // xmax , ymax
