@@ -8,9 +8,10 @@ int MultiHist::id_;
 ////////////////////////////////////////////////////////////
 // constructor  ////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
-MultiHist::MultiHist( string name, string title , TH1D* hist , TH1D* hist_base )
+MultiHist::MultiHist( string name, string title , TH1D* hist , TH1D* hist_base, bool bl_normalize )
 {
 
+  bl_ratio_normalize_ = bl_normalize;
   Init( name, title );
 
   // modify size of text 
@@ -23,16 +24,18 @@ MultiHist::MultiHist( string name, string title , TH1D* hist , TH1D* hist_base )
   SetYmax( 2.0 );
   hist_base_ = hist_base;
   
-  // make ratio hist and add it
-  //  hist_base->Scale( 1.0 / hist_base->Integral() );
-  //  hist_divide_with->Scale( 1.0 / hist_divide_with->Integral() );
-
   this->SetRatioMode();
-  //  TH1D* hist_ratio = (TH1D*)hist_base->Clone();
-  //  hist_ratio->Divide( hist_divide_with );
-  //  this->Add( hist_ratio );
+
+  // this is in ratio mode so automatically ratio hist is added
   this->Add( hist );
 }
+
+/*
+MultiHist::MultiHist( string name, string title , TH1D* hist , TH1D* hist_base )
+{
+  MultiHist( name , title , hist , hist_base , true );
+}
+*/
 
 ////////////////////////////////////////////////////////////
 // private functions ///////////////////////////////////////
@@ -485,7 +488,9 @@ void MultiHist::Add( TH1* hist )
     }
   else
     {
-      hist->Scale( 1.0 / hist->Integral() );
+      if( bl_ratio_normalize_ == true )
+	hist->Scale( 1.0 / hist->Integral() );
+      
       TH1D* hist_ratio = (TH1D*)hist->Clone();
       hist_ratio->Divide( hist_base_ );
       vhist_.push_back( (TH1D*)hist_ratio );

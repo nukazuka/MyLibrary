@@ -81,18 +81,20 @@ private:
   double title_size_ = 0.07;
   int title_align_ = 23;
 
-  bool bl_stats_ = true;
-  bool bl_title_ = true;
-  bool bl_draw_no_entry_ = false;
-  bool bl_force_xmin_ = false;
-  bool bl_force_xmax_ = false;
-  bool bl_force_ymin_ = false;
-  bool bl_force_ymax_ = false;
-  bool bl_logx_ = false;
-  bool bl_logy_ = false;
-  bool bl_draw_palette_axis_ = true;
-  bool bl_ratio_mode_ = false;
-  bool bl_include_error_bar_ = true;
+  bool bl_stats_		= true;
+  bool bl_title_		= true;
+  bool bl_draw_no_entry_	= false;
+  bool bl_force_xmin_		= false;
+  bool bl_force_xmax_		= false;
+  bool bl_force_ymin_		= false;
+  bool bl_force_ymax_		= false;
+  bool bl_logx_			= false;
+  bool bl_logy_			= false;
+  bool bl_draw_palette_axis_	= true;
+  bool bl_ratio_mode_		= false;
+  bool bl_include_error_bar_	= true;
+  bool bl_ratio_normalize_	= true;
+  
   vector < TH1D* > vhist_;
   vector < TH2D* > vhist2d_;
   TH1D* hist_base_;
@@ -143,9 +145,20 @@ public:
     @param title A title of this object
     @param hist_base this hist is divided by 4th argument
     @param hist_divide_with 
+    @param bl_normalize a flag of normalization
     @brief A constructor for ratio mode. hists are normalized before division
   */
-  MultiHist( string name, string title , TH1D* hist_base , TH1D* hist_divide_with );
+  MultiHist( string name, string title , TH1D* hist_base , TH1D* hist_divide_with , bool bl_normalize = true );
+
+  /*!
+    @fn MultiHist( string name, string title , TH1D* hist_base , TH1D* hist_divide_with )
+    @param name A name of this object.
+    @param title A title of this object
+    @param hist_base this hist is divided by 4th argument
+    @param hist_divide_with 
+    @brief A constructor for ratio mode. hists are normalized before division
+  */
+  //  MultiHist( string name, string title , TH1D* hist_base , TH1D* hist_divide_with );
 
   // void 
   /*!
