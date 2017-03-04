@@ -95,27 +95,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="headers_s_l_8hh.html">HeadersSL.hh</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="headers_root_8hh.html">HeadersRoot.hh</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;TObject* <a class="code" href="io_operation_8hh.html#a0d52bdcf06fa03254d18c664cd019c29">GetObject</a>( <span class="keywordtype">string</span> file_name, <span class="keywordtype">string</span> obj_name);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;TObject* <a class="code" href="io_operation_8hh.html#a0d52bdcf06fa03254d18c664cd019c29">GetObject</a>( <span class="keywordtype">string</span> file_name, <span class="keywordtype">string</span> dir_name, <span class="keywordtype">string</span> obj_name);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;TTree* <a class="code" href="io_operation_8hh.html#af26b847d372a6f52c169b5e6433f4201">GetTree</a>( <span class="keywordtype">string</span> file_name , <span class="keywordtype">string</span> tr_name );</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;TTree* <a class="code" href="io_operation_8hh.html#af26b847d372a6f52c169b5e6433f4201">GetTree</a>( <span class="keywordtype">string</span> file_name , <span class="keywordtype">string</span> dir_name, <span class="keywordtype">string</span> tr_name );</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#ifdef __CINT__</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;../src/IoOperation.cc&quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="string_operation_8hh.html">StringOperation.hh</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;TObject* <a class="code" href="io_operation_8hh.html#a0d52bdcf06fa03254d18c664cd019c29">GetObject</a>( <span class="keywordtype">string</span> file_name, <span class="keywordtype">string</span> obj_name);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;TObject* <a class="code" href="io_operation_8hh.html#a0d52bdcf06fa03254d18c664cd019c29">GetObject</a>( <span class="keywordtype">string</span> file_name, <span class="keywordtype">string</span> dir_name, <span class="keywordtype">string</span> obj_name);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;TTree* <a class="code" href="io_operation_8hh.html#af26b847d372a6f52c169b5e6433f4201">GetTree</a>( <span class="keywordtype">string</span> file_name , <span class="keywordtype">string</span> tr_name );</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;TTree* <a class="code" href="io_operation_8hh.html#af26b847d372a6f52c169b5e6433f4201">GetTree</a>( <span class="keywordtype">string</span> file_name , <span class="keywordtype">string</span> dir_name, <span class="keywordtype">string</span> tr_name );</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;vector &lt; double &gt; <a class="code" href="io_operation_8hh.html#a2a70d8eef1f7739ada6ed7475898eda6">SplitLine2Double</a>( <span class="keywordtype">string</span> line , <span class="keywordtype">string</span> delimiter );</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;vector &lt; string &gt; <a class="code" href="io_operation_8hh.html#ad3f4039959c36fc5ac127e8f256419dd">SplitLine2String</a>( <span class="keywordtype">string</span> line, <span class="keywordtype">string</span> delimiter );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">void</span> <a class="code" href="io_operation_8hh.html#a68efc74959e914a795c815ccbe915acc">SplitLine2String_Internal</a>( <span class="keywordtype">string</span> line, vector &lt; string &gt;&amp; vwords, <span class="keywordtype">string</span> delimiter );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#ifdef __CINT__</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#include &quot;../src/IoOperation.cc&quot;</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="string_operation_8hh.html"><div class="ttname"><a href="string_operation_8hh.html">StringOperation.hh</a></div></div>
 <div class="ttc" id="io_operation_8hh.html_af26b847d372a6f52c169b5e6433f4201"><div class="ttname"><a href="io_operation_8hh.html#af26b847d372a6f52c169b5e6433f4201">GetTree</a></div><div class="ttdeci">TTree * GetTree(string file_name, string tr_name)</div><div class="ttdoc">get TTree </div><div class="ttdef"><b>Definition:</b> <a href="io_operation_8cc_source.html#l00100">IoOperation.cc:100</a></div></div>
 <div class="ttc" id="headers_root_8hh.html"><div class="ttname"><a href="headers_root_8hh.html">HeadersRoot.hh</a></div></div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
 <div class="ttc" id="headers_s_l_8hh.html"><div class="ttname"><a href="headers_s_l_8hh.html">HeadersSL.hh</a></div></div>
+<div class="ttc" id="io_operation_8hh.html_a2a70d8eef1f7739ada6ed7475898eda6"><div class="ttname"><a href="io_operation_8hh.html#a2a70d8eef1f7739ada6ed7475898eda6">SplitLine2Double</a></div><div class="ttdeci">vector&lt; double &gt; SplitLine2Double(string line, string delimiter)</div><div class="ttdoc">split line with delimiter and stre in vector < double > </div><div class="ttdef"><b>Definition:</b> <a href="io_operation_8cc_source.html#l00110">IoOperation.cc:110</a></div></div>
 <div class="ttc" id="io_operation_8hh.html_a0d52bdcf06fa03254d18c664cd019c29"><div class="ttname"><a href="io_operation_8hh.html#a0d52bdcf06fa03254d18c664cd019c29">GetObject</a></div><div class="ttdeci">TObject * GetObject(string file_name, string obj_name)</div><div class="ttdoc">get root object </div><div class="ttdef"><b>Definition:</b> <a href="io_operation_8cc_source.html#l00007">IoOperation.cc:7</a></div></div>
+<div class="ttc" id="io_operation_8hh.html_ad3f4039959c36fc5ac127e8f256419dd"><div class="ttname"><a href="io_operation_8hh.html#ad3f4039959c36fc5ac127e8f256419dd">SplitLine2String</a></div><div class="ttdeci">vector&lt; string &gt; SplitLine2String(string line, string delimiter)</div><div class="ttdef"><b>Definition:</b> <a href="io_operation_8cc_source.html#l00122">IoOperation.cc:122</a></div></div>
+<div class="ttc" id="io_operation_8hh.html_a68efc74959e914a795c815ccbe915acc"><div class="ttname"><a href="io_operation_8hh.html#a68efc74959e914a795c815ccbe915acc">SplitLine2String_Internal</a></div><div class="ttdeci">void SplitLine2String_Internal(string line, vector&lt; string &gt; &amp;vwords, string delimiter)</div><div class="ttdoc">this is for SplitLine2String. Users don&#39;t need to use it. </div><div class="ttdef"><b>Definition:</b> <a href="io_operation_8cc_source.html#l00131">IoOperation.cc:131</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

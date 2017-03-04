@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['multihist',['MultiHist',['../class_multi_hist.html#ad21711e837223ea671f8d0d7ddfbf468',1,'MultiHist::MultiHist()'],['../class_multi_hist.html#a7eef0074a80e470e0de795247ba11e94',1,'MultiHist::MultiHist(string name, string title)'],['../class_multi_hist.html#a7509d14ab95f884262d9a2b4f5237018',1,'MultiHist::MultiHist(string name, string title, TH1D *hist_base, TH1D *hist_divide_with)']]]
+  ['multihist',['MultiHist',['../class_multi_hist.html#ad21711e837223ea671f8d0d7ddfbf468',1,'MultiHist::MultiHist()'],['../class_multi_hist.html#a7eef0074a80e470e0de795247ba11e94',1,'MultiHist::MultiHist(string name, string title)'],['../class_multi_hist.html#abbdd90a99376fccd4b1cbaa386cb7d49',1,'MultiHist::MultiHist(string name, string title, TH1D *hist_base, TH1D *hist_divide_with, bool bl_normalize=true)']]]
 ];

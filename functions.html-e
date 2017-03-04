@@ -80,6 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_g"><span>g</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_n"><span>n</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
       <li><a href="#index_r"><span>r</span></a></li>
       <li class="current"><a href="#index_s"><span>s</span></a></li>
@@ -106,6 +107,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
 <li>Add()
 : <a class="el" href="class_multi_hist.html#a11cc2de153653a3476d040314702d794">MultiHist</a>
+</li>
+<li>AddBaseHist()
+: <a class="el" href="class_multi_hist.html#ade455f49e52f7f7c8717400a5b75f5d6">MultiHist</a>
 </li>
 <li>ArgumentParser()
 : <a class="el" href="class_argument_parser.html#a760403f063ce0bc16b35c7f5d4e84c04">ArgumentParser</a>
@@ -176,6 +180,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
+<li>IsRatioMode()
+: <a class="el" href="class_multi_hist.html#acda73b325f9eaa70bf8ecbccd39253d8">MultiHist</a>
+</li>
 <li>IsSpecified()
 : <a class="el" href="class_argument_parser.html#a254d90fbc2f2955ca5c8cd5b3f260e5d">ArgumentParser</a>
 </li>
@@ -185,6 +192,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
 <li>MultiHist()
 : <a class="el" href="class_multi_hist.html#ad21711e837223ea671f8d0d7ddfbf468">MultiHist</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
+<li>NormalizeHist()
+: <a class="el" href="class_multi_hist.html#aaabd2548888b3294c7c4994bfe549585">MultiHist</a>
 </li>
 </ul>
 
