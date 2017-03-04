@@ -3,6 +3,7 @@
 
 #include "HeadersSL.hh"
 #include "HeadersRoot.hh"
+#include "StringOperation.hh"
 
 using namespace std;
 
@@ -37,6 +38,24 @@ TTree* GetTree( string file_name , string tr_name );
   @brief get TTree in TDirectoryFile
  */
 TTree* GetTree( string file_name , string dir_name, string tr_name );
+
+/*!
+  @fn vector < double > SplitLine2Double( string line , string delimiter )
+  @brief split line with delimiter and stre in vector < double >
+*/
+vector < double > SplitLine2Double( string line , string delimiter );
+
+/*!
+  @fn void SplitLine2String( string line, vector < string >& vwords, string delimiter )
+  @brief split line with delimiter and store in vector < string >
+*/
+vector < string > SplitLine2String( string line, string delimiter );
+
+/*!
+  @fn void SplitLine2String_Internal( string line, vector < string >& vwords, string delimiter );
+  @brief this is for SplitLine2String. Users don't need to use it.
+*/
+void SplitLine2String_Internal( string line, vector < string >& vwords, string delimiter );
 
 #ifdef __CINT__
 #include "../src/IoOperation.cc"

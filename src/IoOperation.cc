@@ -106,3 +106,44 @@ TTree* GetTree( string file_name , string dir_name, string tr_name )
 {
   return (TTree*)GetObject( file_name, dir_name, tr_name );
 }
+
+vector < double > SplitLine2Double( string line , string delimiter )
+{
+  vector < string > vwords = SplitLine2String( line, delimiter );
+
+  vector < double > vvalues;
+  for( int i=0, itotal=vwords.size(); i<itotal; i++ )
+    vvalues.push_back( String2Double( vwords[i] ) );
+
+  return vvalues;
+}
+
+
+vector < string >  SplitLine2String( string line, string delimiter )
+{
+
+  vector < string > vwords; 
+  SplitLine2String_Internal( line, vwords, delimiter );
+  return vwords;
+}
+
+
+void SplitLine2String_Internal( string line, vector < string >& vwords, string delimiter )
+{
+
+  // if delimiter is still exist in line, keep splitting!
+  if( line.find ( delimiter ) != string::npos )
+    {
+      string word     = line.substr( 0             , line.find_first_of(delimiter) );
+      string residual = line.substr( word.size()+1 , line.size() - word.size()     ) ;
+      
+      vwords.push_back( word );
+      if( residual.size() != 0 )
+	SplitLine2String_Internal( residual, vwords, delimiter );
+    }
+  // if no delimiter is found, this is the lest element. Keep it!
+  else
+    {
+      vwords.push_back( line );
+    }
+}
