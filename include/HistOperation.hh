@@ -342,7 +342,11 @@ int GetBinAt( TH* hist , double bin_center )
 }
 
 template < typename TH > 
-void HistSetting( TH* hist , int color = 1, int line_width = 2, int marker_style = 20 )
+void HistSetting( TH* hist ,
+		  int color = 1,
+		  int line_width = 2,
+		  int marker_style = 20,
+		  int line_style = 1 )
 {
 
   hist->Sumw2();
@@ -352,6 +356,7 @@ void HistSetting( TH* hist , int color = 1, int line_width = 2, int marker_style
   hist->GetXaxis()->CenterTitle();
   hist->GetYaxis()->CenterTitle();
   hist->SetMarkerStyle( marker_style );
+  hist->SetLineStyle( line_style );
   
 }
 
