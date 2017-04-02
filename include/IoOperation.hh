@@ -46,7 +46,7 @@ TTree* GetTree( string file_name , string dir_name, string tr_name );
 vector < double > SplitLine2Double( string line , string delimiter );
 
 /*!
-  @fn void SplitLine2String( string line, vector < string >& vwords, string delimiter )
+  @fn void SplitLine2String( string line, string delimiter )
   @brief split line with delimiter and store in vector < string >
 */
 vector < string > SplitLine2String( string line, string delimiter );
