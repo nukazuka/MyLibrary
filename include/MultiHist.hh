@@ -40,7 +40,7 @@ private:
   double xmax_force_ = -9999.9;
   double ymax_force_ = -9999.9;
 
-  double margin_ratio_top_    = 0.01;
+  double margin_ratio_top_    = 0.1;
   double margin_ratio_right_  = 0.01;
   double margin_ratio_bottom_ = 0.01;
   double margin_ratio_left_   = 0.01;
@@ -73,7 +73,8 @@ private:
   int division_y_ = 510;
 
   // valiable for stats box
-  int    stats_format_ = 1000111; // name, mean, std.dev., integral
+  //  int    stats_format_ = 1000111; // name, mean, std.dev., integral
+  int    stats_format_ = 111; // name, mean, std.dev., integral
   double stats_width_  = 0.1;
   double stats_height_ = 0.1;
 
