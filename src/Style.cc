@@ -63,7 +63,7 @@ int GetColor( int num )
   else if( num == 6 )
     return kCyan+1;
   else if( num == 7 )
-    return kRed-7;
+    return kOrange+1;
   else if( num == 8 )
     return kBlue+9;
   else if( num == 9 )
