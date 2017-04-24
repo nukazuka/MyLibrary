@@ -51,15 +51,15 @@ TH* GetHist( string name, string title,
 	     TTree* tr, string target , string cut )
 {
   
-  cout << "GetHist::" 
-       << setw(15) << target << " >> " 
-       << setw(15) << name   << "\t" 
-       << cut ;
+  //   cout << "GetHist::" 
+  //        << setw(15) << target << " >> " 
+  //        << setw(15) << name   << "\t" 
+  //        << cut ;
   TH* hist_rtn = new TH( name.c_str(), title.c_str(), bin, xmin, xmax );
   hist_rtn->Sumw2();
   tr->Draw( (target+">>"+name).c_str() , cut.c_str(), "goff" );
 
-  cout << " : done" << endl;
+  //   cout << " : done" << endl;
   return hist_rtn;
 }
 
@@ -104,6 +104,113 @@ TH* GetHist2D( string name, string title,
   cout << " : done" << endl;
   return hist_rtn;
 }
+
+
+/*!
+  @fn vector < TH* > GetHists( string name, string title,
+  int bin_num , double xmin, double xmax,
+  TTree* tr,
+  string expression , string cut_baes ,
+  string cut_for_range,  vector < double > vrange 
+  )
+  @param name base name of histograms. The name of hist without cut has this name. The name of hists with range cut have "name + i".
+  @param title title of hists
+  @param bin_num a number of bin
+  @param xmin minimum range in x axis
+  @param xmax maximum range in x axis
+  @param tr TTree
+  @param expression name of branch which you want to draw
+  @param cut_base cuts which are applied to all hists
+  @param cut_range a cut to get hists in each region
+  @param vrange range for range cut
+  @brief a hist and hists applied range cuts are returned
+  @details 
+
+*/
+
+template < typename TH >
+vector < TH* > GetHists( string name, string title,
+			 int bin_num , double xmin, double xmax,
+			 TTree* tr,
+			 string expression , string cut_base ,
+			 string cut_for_range , vector < double > vrange 
+			 )
+{
+
+
+  TH* hist = GetHist<TH1D>( name , title, bin_num, xmin, xmax, tr, expression, cut_base );
+  HistSetting( hist );
+
+  vector < TH* > vhist;
+  vhist.push_back( hist );
+  
+  for( int i=0; i<vrange.size(); i++ )
+    {
+      stringstream ss_cut;
+      if( i == 0 ) // the first loop
+	{
+	  ss_cut << cut_for_range << "<" << vrange[i];
+	}
+      //      else if( i == vrange.size()-1 ) // the last loop
+      else if( i == vrange.size() ) // the last loop
+	{
+	  ss_cut << vrange[i-1] << "<" << cut_for_range ;
+	}
+      else // normal loop
+	{
+	  ss_cut << vrange[i-1] << "<" << cut_for_range << " && "
+		 << cut_for_range << "<" << vrange[i];
+	}
+
+      string this_name = ss_cut.str();
+      
+      if( cut_base != "" )
+	ss_cut << " && " << cut_base;
+
+      TH* hist_temp = GetHist<TH>( this_name , title,
+				   bin_num , xmin , xmax ,
+				   tr , expression , ss_cut.str() );
+
+      HistSetting( hist_temp , GetColor(i+1) );
+      vhist.push_back( hist_temp );
+
+      cout << ss_cut.str() << endl;
+    }
+  
+  return vhist;
+}
+
+
+template < typename TH >
+vector < TH* > GetHists( string name, string title,
+			 int bin_num , double xmin, double xmax,
+			 TTree* tr,
+			 string expression , string cut_base ,
+			 string cut_for_range ,
+			 int div_num , double range_min , double range_max
+			 )
+{
+
+  double step;
+  if( div_num != 0 )
+    step = ( range_max - range_min ) / div_num;
+  else
+    step = ( range_max - range_min );
+
+  vector < double > vrange;
+  for( int i=0; i<div_num; i++ )
+    vrange.push_back( range_min + i * step );
+
+  
+  return GetHists< TH* >( name          , title    ,
+			  bin_num       , xmin     , xmax ,
+			  tr            ,
+			  expression    , cut_base ,
+			  cut_for_range , vrange   );
+}
+
+
+
 
 /*!
 

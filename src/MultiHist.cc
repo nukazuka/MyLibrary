@@ -30,12 +30,16 @@ MultiHist::MultiHist( string name, string title , TH1D* hist , TH1D* hist_base, 
   this->Add( hist );
 }
 
-/*
-MultiHist::MultiHist( string name, string title , TH1D* hist , TH1D* hist_base )
+
+MultiHist::MultiHist( string name, string title , vector < TH1D* > vhist )
 {
-  MultiHist( name , title , hist , hist_base , true );
+
+  //  MultiHist( name , title );
+  Init( name , title );
+  for( int i=0; i<vhist.size(); i++ )
+    this->Add( vhist[i] );  
 }
-*/
+
 
 ////////////////////////////////////////////////////////////
 // private functions ///////////////////////////////////////

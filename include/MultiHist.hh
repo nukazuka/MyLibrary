@@ -141,6 +141,15 @@ public:
   MultiHist( string name, string title ){ Init( name, title) ;} ;
 
   /*!
+    @fn MultiHist( string name, string title)
+    @param name A name of this object.
+    @param title A title of this object
+    @param vhist hists to be drawn
+    @brief A constructor with name and title. Given hists will be added.
+  */
+  MultiHist( string name, string title , vector < TH1D* > vhist );
+
+  /*!
     @fn MultiHist( string name, string title , TH1D* hist_base , TH1D* hist_divide_with )
     @param name A name of this object.
     @param title A title of this object
