@@ -17,6 +17,10 @@ vector < double > GetElement(TTree* tr, string target, string cut )
 
   for( int i=0; i<num; i++ )
     {
+      // sometimes value at the end ( close to the end ) is 
+      // strange. It seems to access out of range ?
+      //      if( x[i] > 1e10 )
+      //	continue;      
       vx.push_back( x[i] );
     }
 
@@ -34,7 +38,6 @@ double GetMaxVal( TTree* tr, string target, string cut )
 {
 
   vector < double > vx = GetElement( tr, target, cut );
-
   if( vx.size() == 0 )
     {
       cerr << "==== WARNING ==================" << endl;

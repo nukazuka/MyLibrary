@@ -446,6 +446,13 @@ public:
     @brief set ratio mode
   */
   //  void SetRatioMode( bool bl_mode ){  bl_ratio_mode_ = bl_mode; bl_include_error_bar_ = true; };
+  void SetRatioNormalize( bool bl = true ){  bl_ratio_normalize_  = bl;};
+
+  /*!
+    @fn void SetRatioMode( bool bl_mode )
+    @brief set ratio mode
+  */
+  //  void SetRatioMode( bool bl_mode ){  bl_ratio_mode_ = bl_mode; bl_include_error_bar_ = true; };
   void SetRatioMode( bool bl_mode = true ){  bl_ratio_mode_ = bl_mode;};
 
   /*!

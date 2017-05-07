@@ -488,16 +488,18 @@ void MultiHist::Add( TH1* hist )
 
   if( IsRatioMode() == false )
     {
-      vhist_.push_back( (TH1D*)hist );
+      vhist_.push_back( (TH1D*)hist->Clone() );
     }
   else
     {
-      if( bl_ratio_normalize_ == true )
-	hist->Scale( 1.0 / hist->Integral() );
-      
+
       TH1D* hist_ratio = (TH1D*)hist->Clone();
+
+      if( bl_ratio_normalize_ == true )
+	hist_ratio->Scale( 1.0 / hist_ratio->Integral() );
+      
       hist_ratio->Divide( hist_base_ );
-      vhist_.push_back( (TH1D*)hist_ratio );
+      vhist_.push_back( (TH1D*)hist_ratio->Clone() );
     }
 }
 
@@ -509,6 +511,10 @@ void MultiHist::Add( TH2D* hist2d )
 void MultiHist::AddBaseHist( TH1D* hist_base )
 {
   hist_base_ = hist_base;
+
+  if( bl_ratio_normalize_ == true )
+    hist_base_->Scale( 1.0 / hist_base_->Integral() );
+  
 }
 
 void MultiHist::DeleteAllHist()
@@ -568,7 +574,7 @@ void MultiHist::Draw( string option,
 	{
 
 	  vhist_[i]->Draw( (option + "SAMES" + vhist_[i]->GetOption() ).c_str() );
-
+	  
 	  // if this is ratio mode, draw stats box
 	  if( bl_ratio_mode_ == false )
 	    {
