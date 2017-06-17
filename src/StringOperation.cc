@@ -4,12 +4,14 @@
 
 using namespace std;
 
+
 string Double2String( double num , int precision )
 {
   stringstream ss;
   ss << setprecision( precision ) << num;
   return ss.str();
 }
+
 
 string GetBaseName( string path )
 {
@@ -53,6 +55,7 @@ string GetRepeatedWords( string word, int num )
   return rtn;
 }
 
+
 string GetSuffix( string path )
 {
 
@@ -82,7 +85,6 @@ bool IsNumber( string st )
 
   return !st.empty() && it == st.end();
 }
-
 
 
 string Replace( string word, string old_key, string new_key )
@@ -136,7 +138,6 @@ string Replace4Cut( string cut )
   rtn = Replace( rtn, "*", "_mul_" );
   rtn = Replace( rtn, "/", "_dev_" );
   rtn = Replace( rtn, "=", "_eq_" );
-
 
   // Other operators
   rtn = Replace( rtn, "(" , "_" );
@@ -205,4 +206,3 @@ double String2Double( string st )
 
   return val;
 }
-

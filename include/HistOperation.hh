@@ -470,7 +470,11 @@ void HistSetting( TH* hist ,
 template < typename TH > 
 void NormalizeHist( TH* hist , double val = 1.0 )
 {
-hist->Scale( val / hist->Integral() );
+  if( hist->Integral() != 0 )
+    hist->Scale( val / hist->Integral() );
+  else
+    cerr << "void NormalizeHist, " << hist->GetName() << " cannot be normalized since it has no entry" << endl;
+  
 }
 
 #ifdef __CINT__
