@@ -753,7 +753,7 @@ TH1D* MultiHist::GetHist( int num )
   if( num >= vhist_.size() )
     {
       cerr << "TH1D* MultiHist::GetHist( int num )" << endl;
-      cerr << "Given value: " << num << " is larger than a number of contained hist." << endl;
+      cerr << "Given num = " << num << " is larger than the number of stored 1D hists : " << vhist_.size() << endl;
       cerr << "Dummy TH1D* is returned." << endl;
       return new TH1D();
     }
@@ -765,7 +765,7 @@ TH2D* MultiHist::GetHist2D( int num )
   if( num >= vhist2d_.size() )
     {
       cerr << "TH2D* MultiHist::GetHist2D( int num )" << endl;
-      cerr << "Given value: " << num << " is larger than a number of contained 2D hist." << endl;
+      cerr << "Given num = " << num << " is larger than the number of stored 2D hists : " << vhist2d_.size() << endl;
       cerr << "Dummy TH2D* is returned." << endl;
       return new TH2D();
     }

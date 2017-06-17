@@ -277,6 +277,30 @@ public:
   int GetAllEntries(){ return GetEntries() + Get2DEntries() ;} ;
 
   /*!
+    TH1D* GetHist( int num );
+    @brief the 1D hist stored in num-th is returned
+  */
+  TH1D* GetHist( int num );
+
+  /*!
+    @fn TH2D* GetHist2D( int num );
+    @brief the 2D hist stored in num-th is returned
+  */
+  TH2D* GetHist2D( int num );
+  
+  /*!
+    @fn vector < TH1D* > GetHists()
+    @brief all 1D hists are returned
+  */
+  vector < TH1D* > GetHists(){ return vhist_;};
+
+  /*!
+    @fn vector < TH1D* > GetHists2D()
+    @brief all 2D hists are returned
+  */
+  vector < TH2D* > GetHists2D(){ return vhist2d_;};
+
+  /*!
     @fn string GetName()
     @brief get the name of this object
   */
@@ -317,30 +341,6 @@ public:
     @brief Get max. range of y axis
   */
   double GetYmin(){ return ymin_ - margin_bottom_ ;};
-
-  /*!
-    @fn TH1D* GetHist( int num );
-    @brief specified hist by the argument is returned
-  */
-  TH1D* GetHist( int num );
-
-  /*!
-    @fn TH2D* GetHist2D( int num );
-    @brief specified 2D hist by the argument is returned
-  */
-  TH2D* GetHist2D( int num );
-
-  /*!
-    @fn vector < TH1D* > GetHists(){ return vhists_;};
-    @brief all contained hists in vector are returned 
-  */  
-    vector < TH1D* > GetHists(){ return vhist_;};
-
-  /*!
-    @fn vector < TH2D* > GetHists2D(){ return vhists2d_;};
-    @brief all contained 2D hists in vector are returned 
-  */  
-    vector < TH2D* > GetHists2D(){ return vhist2d_;};
 
   /*!
     @fn   bool IsRatioMode()
