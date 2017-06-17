@@ -747,6 +747,31 @@ void MultiHist::Draw2D( string option,
   id_++;
 }
 
+
+TH1D* MultiHist::GetHist( int num )
+{
+  if( num >= vhist_.size() )
+    {
+      cerr << "TH1D* MultiHist::GetHist( int num )" << endl;
+      cerr << "Given num = " << num << " is larger than the number of stored 1D hists : " << vhist_.size() << endl;
+      cerr << "Dummy is returend" << endl;
+      return new TH1D();
+    }
+  return vhist_[num];
+}
+
+TH2D* MultiHist::GetHist2D( int num )
+{
+  if( num >= vhist2d_.size() )
+    {
+      cerr << "TH2D* MultiHist::GetHist2D( int num )" << endl;
+      cerr << "Given num = " << num << " is larger than the number of stored 2D hists : " << vhist2d_.size() << endl;
+      cerr << "Dummy is returend" << endl;
+      return new TH2D();
+    }
+  return vhist2d_[num];
+}
+
 void MultiHist::NormalizeHist( double val )
 {
   for( unsigned int i=0; i<vhist_.size(); i++)
