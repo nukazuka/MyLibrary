@@ -58,6 +58,25 @@ string GetRepeatedWords( string word, int num );
 string GetSuffix( string path );
 
 /*!
+  @fn string InsertAtFirstOf( string st , string delimiter , string st_added )
+  @param st 
+  @param delimiter st_added is inserted just before the first point of this argument if found
+  @param st_added this is inserted to st
+  @brief st_added を st 内で最初に delimiter がでてくる場所の直前に挿入する
+*/
+string InsertAtFirstOf( string st , string delimiter , string st_added );
+
+
+/*!
+  @fn string InsertAtLastOf( string st , string delimiter , string st_added )
+  @param st 
+  @param delimiter st_added is inserted just before the last point of this argument if found
+  @param st_added this is inserted to st
+  @brief st_added を st 内で最後に delimiter がでてくる場所の直前に挿入する
+*/
+string InsertAtLastOf( string st , string delimiter , string st_added );
+
+/*!
   @fn string Int2String( int num )
   @param num : 変換される int 型の数字。
   @return num を文字列に変換したもの。

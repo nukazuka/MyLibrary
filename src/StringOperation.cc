@@ -68,6 +68,24 @@ string GetSuffix( string path )
   return rtn;
 }
 
+string InsertAtFirstOf( string st , string delimiter , string st_added )
+{
+  int first_point = st.find_first_of( delimiter );
+  string rtn = st.substr( 0,  first_point )
+    + st_added
+    + st.substr( first_point , st.size() - first_point );
+  return rtn;
+}
+
+string InsertAtLastOf( string st , string delimiter , string st_added )
+{
+  int last_point = st.find_last_of( delimiter );
+  string rtn = st.substr( 0,  last_point )
+    + st_added
+    + st.substr( last_point , st.size() - last_point );
+  return rtn;
+}
+
 string Int2String( int num )
 {
 
