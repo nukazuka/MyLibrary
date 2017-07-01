@@ -55,7 +55,7 @@ void DrawTitle(TVirtualPad* pad);
   @return
   @brief
  */
-void DrawStats2D( TH2D* hist, double xmin, double ymin, double xmax, double ymax );
+//void DrawStats2D( TH2D* hist, double xmin, double ymin, double xmax, double ymax );
 
 /*!
   @fn void DrawPaletteAxis( TH2D* hist , double xmin = 0.9 , double ymin = 0.1, double xmax = 0.93, double ymax = 0.9, double label_size = 0.08 )
@@ -69,7 +69,7 @@ void DrawStats2D( TH2D* hist, double xmin, double ymin, double xmax, double ymax
   @details
 
 */
-void DrawPaletteAxis( TH2D* hist , 
+void DrawPaletteAxis( TH2D* hist = new TH2D(), 
 		      double xmin = 0.9 , double ymin = 0.1,
 		      double xmax = 0.93, double ymax = 0.9,
 		      double label_size = 0.08 );

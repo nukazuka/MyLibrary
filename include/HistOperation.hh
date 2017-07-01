@@ -462,6 +462,7 @@ void HistSetting( TH* hist ,
   hist->SetLineWidth( line_width );
   hist->GetXaxis()->CenterTitle();
   hist->GetYaxis()->CenterTitle();
+  hist->GetZaxis()->CenterTitle();
   hist->SetMarkerStyle( marker_style );
   hist->SetLineStyle( line_style );
   

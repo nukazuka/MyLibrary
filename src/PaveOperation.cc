@@ -84,23 +84,9 @@ void DrawStats( TH1D* hist, double xmin, double ymin, double xmax, double ymax )
   st->Draw("same");
 }
 */
-void DrawStats2D( TH2D* hist, double xmin, double ymin, double xmax, double ymax )
-{
-
-  gPad->Update();
-
-  TPaveStats *st = (TPaveStats*)hist->FindObject("stats");
-  st->SetTextColor( hist->GetLineColor() );
-  st->SetLineColor( hist->GetLineColor() );
-  st->SetFillStyle( 1001 );
-  st->SetFillColor( 0 );
-
-  st->SetX1NDC( xmin );
-  st->SetX2NDC( xmax );
-  st->SetY1NDC( ymin );
-  st->SetY2NDC( ymax );
-
-  st->Draw("same");
-}
+// void DrawStats2D( TH2D* hist, double xmin, double ymin, double xmax, double ymax )
+// {
+//   DrawStats<TH2D>( hist, xmin, ymin, xmax, ymax );
+// }
 
 #endif // MYLIB_PAVEOPERATION_CC
