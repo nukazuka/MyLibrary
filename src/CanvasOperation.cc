@@ -240,6 +240,11 @@ TCanvas* GetCanvas( string name, string shape, bool logy=false )
       width  = 1200;
       height = 1500;
     }
+  else if ( shape == "comparison_double" || shape == "ratio_double" )
+    {
+      width  = 2400;
+      height = 1500;
+    }
   else
     {
       cerr << "Specified shape: " << shape << " is not found" << endl;      
@@ -252,7 +257,7 @@ TCanvas* GetCanvas( string name, string shape, bool logy=false )
   c->SetWindowSize(width + (width - c->GetWw()), height + (height - c->GetWh()));
   gSystem->ProcessEvents();
 
-  if( shape == "comparison" || shape == "ratio" )
+  if( shape == "comparison" || shape == "ratio" || shape == "comparison_double" || shape == "ratio_double" )
     {
 
       //    -------------------------------------  
