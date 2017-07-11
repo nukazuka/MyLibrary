@@ -74,7 +74,7 @@ void MultiHist::FrameSetting( TH1F* frame, double margin_bottom, double margin_t
 
   // to remove hist with no entry
   frame->SetLineWidth( 0 ); 
-
+  
   frame->SetMinimum( ymin_ - margin_bottom );
   frame->SetMaximum( ymax_ + margin_top );
 
@@ -635,7 +635,7 @@ void MultiHist::DrawFrame()
 
 
   FrameSetting( frame , margin_bottom, margin_top );
-  frame->Draw();
+  frame->Draw("0");
 
   if( bl_ratio_mode_ == true )
     {
@@ -643,7 +643,7 @@ void MultiHist::DrawFrame()
       line->SetLineColor( kGray + 2  );
       line->SetLineWidth( 2 );
       line->SetLineStyle( 2 );
-      line->Draw();
+      line->Draw("");
 
       // remove bins which contain 0 entry
       for( int i=0; i<vhist_.size(); i++ )
@@ -702,7 +702,7 @@ void MultiHist::Draw2D( string option,
   TH1F* frame = new TH1F( name.c_str() , title_.c_str() , 1000, xmin_ - margin_left, xmax_ + margin_right );
 
   FrameSetting( frame , margin_bottom, margin_top );
-  frame->Draw();
+  frame->Draw("0");
 
   string option2 = "";
   if( bl_stats_ == true )
