@@ -6,6 +6,10 @@
 
 using namespace std;
 
+
+int CountCharactor( string target , string key );
+
+
 /*!
   @fn string Double2String( double num )
   @param num  変換される double 型の数字。

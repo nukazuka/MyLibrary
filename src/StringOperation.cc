@@ -4,6 +4,19 @@
 
 using namespace std;
 
+int CountCharactor( string target , string key )
+{
+
+  int counter = 0;
+  for( int i=0; i<target.size() - key.size(); i++ )
+    {
+      string part = target.substr( i , key.size() );
+      if( part == key )
+	counter++;
+    }
+
+  return counter;      
+}
 
 string Double2String( double num , int precision )
 {

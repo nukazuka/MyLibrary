@@ -53,6 +53,9 @@ libIoOperation$(SUFFIX): IoOperation.cc StringOperation.cc ../include/IoOperatio
 libMultiHist$(SUFFIX): MultiHist.cc PaveOperation.cc StringOperation.cc ../include/MultiHist.hh ../include/PaveOperation.hh ../include/StringOperation.hh
 	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) $(LDFLAGS) -o $@  $< PaveOperation.cc StringOperation.cc	
 
+libTForest$(SUFFIX): TForest.cc StringOperation.cc ../include/StringOperation.hh
+	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) $(LDFLAGS) -o $@  $< StringOperation.cc
+
 
 
 MyLibrary.hh:../include/MyLibrary.hh
