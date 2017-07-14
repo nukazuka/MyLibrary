@@ -13,7 +13,8 @@ TObject* GetObject( string file_name, string obj_name)
     {
       cerr << "TObject* GetObject( string file_name, string obj_name)" << endl;
       cerr << "\"" << file_name << "\" does not exist" << endl;
-      exit(-1);
+      //      exit(-1);
+      return new TObject();
     }
   
   bool bl_exist = false;

@@ -53,8 +53,19 @@ public:
 			   bin_x, xmin, xmax,
 			   bin_y, ymin, ymax,
 			   expression, cut );
-    //    else if( expression == 3 )
-    
+    else if( expression == 3 )
+      rtn = GetHist3D<TH>( hist_name , "title",
+			   bin_x, xmin, xmax,
+			   bin_y, ymin, ymax,
+			   bin_z, zmin, zmax,
+			   expression, cut );
+    else
+      {
+	cerr << "GetHist in TForest\n"
+	     << "given expression has " << expression << ".\n"
+	     << "It's strange!!!!" << endl;
+	return new TH();
+      }
     HistSetting( rtn );
     return rtn;
   }

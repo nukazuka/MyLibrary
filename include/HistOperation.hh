@@ -26,18 +26,11 @@ static int id_for_hist_operation = 0;
 */
 //void HistSetting( TH1* hist, int color );
 
-
-/*!
-template < typename TH >
-TH* GetHist( string name, string title, 
-	     int bin, double xmin, double xmax,
-	     TTree* tr, string target , string cut )
-*/
-
 /*!
   @fn TH* GetHist( string name, string title, 
 	     int bin, double xmin, double xmax,
 	     TTree* tr, string target , string cut )
+  @brief get a hit with given bin configuration from given tree using given expression and cut
   @param name name of returned hist
   @param title title of returned hist
   @param bin a number of bin of returned hist
@@ -51,22 +44,17 @@ TH* GetHist( string name, string title,
 	     TTree* tr, string target , string cut )
 {
   
-  //   cout << "GetHist::" 
-  //        << setw(15) << target << " >> " 
-  //        << setw(15) << name   << "\t" 
-  //        << cut ;
   TH* hist_rtn = new TH( name.c_str(), title.c_str(), bin, xmin, xmax );
   hist_rtn->Sumw2();
   tr->Draw( (target+">>"+name).c_str() , cut.c_str(), "goff" );
-
-  //   cout << " : done" << endl;
+  HistSetting( hist_rtn );
   return hist_rtn;
 }
 
 /*!
-  @fn TH* GetHist( string name, string title, 
-	     int bin, double xmin, double xmax,
-	     TTree* tr, string target , string cut )
+  @fn TH* GetHist2D( string name, string title, 
+  int bin, double xmin, double xmax,
+  TTree* tr, string target , string cut )
   @param name name of returned hist
   @param title title of returned hist
   @param xbin a number of bin of returned hist
@@ -86,11 +74,33 @@ TH* GetHist2D( string name, string title,
 	       TTree* tr, string xtarget , string ytarget, string cut )
 {
   
-  cout << "GetHist2D::" 
-       << setw(15) << ytarget << ":"
-       << xtarget << " >> " 
-       << setw(15) << name   << "\t" 
-       << cut ;
+  string expression = ytarget + ":" + xtarget + ">>" + name;
+  return GetHist2D<TH>( name, title,
+			xbin, xmin, xmax,
+			ybin, ymin, ymax,
+			tr, expression, cut );
+}
+/*!
+  @fn TH* GetHist2D( string name, string title, 
+  int bin, double xmin, double xmax,
+  TTree* tr, string target , string cut )
+  @param name name of returned hist
+  @param title title of returned hist
+  @param xbin a number of bin of returned hist
+  @param xmin min. range of returned hist
+  @param xmax max. range of returned hist
+  @param ybin a number of bin of returned hist
+  @param ymin min. range of returned hist
+  @param ymax max. range of returned hist
+  @param expression used to get hist from TTree::Draw
+  @param cut a cut to be applied
+*/
+template < typename TH >
+TH* GetHist2D( string name, string title, 
+	       int xbin, double xmin, double xmax,
+	       int ybin, double ymin, double ymax,
+	       TTree* tr, string expression_arg, string cut )
+{
   
   TH* hist_rtn = new TH( name.c_str(), title.c_str(),
 			 xbin, xmin, xmax,
@@ -98,10 +108,89 @@ TH* GetHist2D( string name, string title,
 			 );
   
   hist_rtn->Sumw2();
-  string expression = ytarget + ":" + xtarget + ">>" + name;
+  string expression = expression + ">>" + name;
   tr->Draw( expression.c_str() , cut.c_str(), "goff" );
+  HistSetting( hist_rtn );
+  return hist_rtn;
+}
 
-  cout << " : done" << endl;
+/*!
+  @fn TH* GetHist3D( string name, string title, 
+	     int bin, double xmin, double xmax,
+	     TTree* tr, string target , string cut )
+  @param name name of returned hist
+  @param title title of returned hist
+  @param xbin a number of bin of returned hist
+  @param xmin min. range of returned hist
+  @param xmax max. range of returned hist
+  @param ybin a number of bin of returned hist
+  @param ymin min. range of returned hist
+  @param ymax max. range of returned hist
+  @param zbin a number of bin of returned hist
+  @param zmin min. range of returned hist
+  @param zmax max. range of returned hist
+  @param xtarget target to be drawn in xaxis
+  @param ytarget target to be drawn in yaxis
+  @param ztarget target to be drawn in zaxis
+  @param cut a cut to be applied
+*/
+template < typename TH >
+TH* GetHist3D( string name, string title, 
+	       int xbin, double xmin, double xmax,
+	       int ybin, double ymin, double ymax,
+	       int zbin, double zmin, double zmax,
+	       TTree* tr,
+	       string xtarget , string ytarget, string ztarget,
+	       string cut )
+{
+  
+  string expression = ztarget + ":" + ytarget + ":" + xtarget + ">>" + name;
+  return GetHist3D<TH>( name, title,
+			xbin, xmin, xmax,
+			ybin, ymin, ymax,
+			zbin, zmin, zmax,
+			tr, expression, cut );
+}
+
+/*!
+  @fn TH* GetHist3D( string name, string title, 
+	     int bin, double xmin, double xmax,
+	     TTree* tr, string target , string cut )
+  @param name name of returned hist
+  @param title title of returned hist
+  @param xbin a number of bin of returned hist
+  @param xmin min. range of returned hist
+  @param xmax max. range of returned hist
+  @param ybin a number of bin of returned hist
+  @param ymin min. range of returned hist
+  @param ymax max. range of returned hist
+  @param zbin a number of bin of returned hist
+  @param zmin min. range of returned hist
+  @param zmax max. range of returned hist
+  @param xtarget target to be drawn in xaxis
+  @param ytarget target to be drawn in yaxis
+  @param ztarget target to be drawn in zaxis
+  @param cut a cut to be applied
+*/
+template < typename TH >
+TH* GetHist3D( string name, string title, 
+	       int xbin, double xmin, double xmax,
+	       int ybin, double ymin, double ymax,
+	       int zbin, double zmin, double zmax,
+	       TTree* tr, string expression_arg, string cut )
+{
+  
+  TH* hist_rtn = new TH( name.c_str(), title.c_str(),
+			 xbin, xmin, xmax,
+			 ybin, ymin, ymax,
+			 zbin, zmin, zmax
+			 );
+  
+  hist_rtn->Sumw2();
+  string expression = expression_arg + ">>" + name;
+  tr->Draw( expression.c_str() , cut.c_str(), "goff" );
+  HistSetting( hist_rtn );
+
   return hist_rtn;
 }
 
@@ -280,23 +369,6 @@ TH* GetHistWithWithoutCut( string name, string title,
   
   cout << " : done" << endl;
   //  tr->Draw( (target+">>"+name).c_str() , cut.c_str(), "goff" );
-  return hist_rtn;
-}
-
-template < typename TH >
-TH* GetHist2D( string name, string title, 
-	       int binx, double xmin, double xmax,
-	       int biny, double ymin, double ymax,
-	       TTree* tr, string target , string cut )
-{
-  
-  TH* hist_rtn = new TH( name.c_str(), title.c_str(), binx, xmin, xmax, biny, ymin, ymax );
-  hist_rtn->Sumw2();
-  cout << "GetHist2D::" 
-       << setw(15) << target << " >> " 
-       << setw(15) << name   << "\t" 
-       << cut << endl;
-  tr->Draw( (target+">>"+name).c_str() , cut.c_str(), "goff" );
   return hist_rtn;
 }
 
