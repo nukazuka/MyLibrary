@@ -108,7 +108,7 @@ TH* GetHist2D( string name, string title,
 			 );
   
   hist_rtn->Sumw2();
-  string expression = expression + ">>" + name;
+  string expression = expression_arg + ">>" + name;
   tr->Draw( expression.c_str() , cut.c_str(), "goff" );
   HistSetting( hist_rtn );
   return hist_rtn;
