@@ -74,7 +74,7 @@ TH* GetHist2D( string name, string title,
 	       TTree* tr, string xtarget , string ytarget, string cut )
 {
   
-  string expression = ytarget + ":" + xtarget + ">>" + name;
+  string expression = ytarget + ":" + xtarget;
   return GetHist2D<TH>( name, title,
 			xbin, xmin, xmax,
 			ybin, ymin, ymax,
