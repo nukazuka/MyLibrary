@@ -599,9 +599,9 @@ void MultiHist::Draw( string option,
       if( !(title_ == "" || title_.substr(0,1) == ";" ) )
 	{
 	  if( i==0 && bl_title_==true )
-	    DrawTitle( title_size_ , title_align_ );
+	    DrawTitle( title_size_ , title_align_, 4 );
 	  else if( bl_title_ == false )
-	    DrawTitle( 9999, 9999 );
+	    DrawTitle( 9999, 9999, 4 );
 	}
 
     }
@@ -738,9 +738,9 @@ void MultiHist::Draw2D( string option,
 	DrawPaletteAxis( vhist2d_[i] , 999, 999, 9999, 9999, 0.08 );
 
       if( i==0 && bl_title_==true )
-	DrawTitle( title_size_ , title_align_ );
+	DrawTitle( title_size_ , title_align_, 4 );
       else if( bl_title_ == false )
-	DrawTitle( 9999, 9999 );
+	DrawTitle( 9999, 9999, 4 );
 
     }  
   

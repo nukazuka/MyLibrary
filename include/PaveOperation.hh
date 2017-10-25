@@ -15,7 +15,7 @@
   @brief pad にある title オブジェクトを取得して書き直す
   @details 他の DrawTitle は最終的にこの関数を呼び出している。
 */
-void DrawTitle(TVirtualPad* pad, Double_t text_size , int text_align );
+void DrawTitle(TVirtualPad* pad, Double_t text_size , int text_align, int font = 4 );
 
 /*!
   @fn void void DrawTitle( Double_t text_size = 0.07 , int test_align = 23 )
@@ -24,7 +24,7 @@ void DrawTitle(TVirtualPad* pad, Double_t text_size , int text_align );
   @brief
   @details
 */
-void DrawTitle( Double_t text_size = 0.07 , int test_align = 23 );
+void DrawTitle( Double_t text_size = 0.07 , int test_align = 23, int font = 4 );
 
 /*!
   @fn void DrawTitle(TVirtualPad* pad, Double_t text_size = 0.07 )
@@ -128,7 +128,8 @@ void DrawStats2D( TH2D* hist, double xmin, double ymin, double xmax, double ymax
 #endif // __CINT__
 
 template < typename TH >
-void DrawStats( TH* hist, double xmin, double ymin, double xmax, double ymax )
+//void DrawStats( TH* hist, double xmin, double ymin, double xmax, double ymax )
+void DrawStats( TH* hist, double xmin, double ymin, double xmax, double ymax, int font = 4 )
 {
 
   gPad->Update();
@@ -138,7 +139,8 @@ void DrawStats( TH* hist, double xmin, double ymin, double xmax, double ymax )
   st->SetLineColor( hist->GetLineColor() );
   st->SetFillStyle( 1001 );
   st->SetFillColor( 0 );
-
+  st->SetTextFont( font );
+  
   st->SetX1NDC( xmin );
   st->SetX2NDC( xmax );
   st->SetY1NDC( ymin );

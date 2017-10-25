@@ -232,6 +232,11 @@ TCanvas* GetCanvas( string name, string shape, bool logy=false )
       width  = 3200;
       height =  800;
     }
+  else if ( shape == "penta" )
+    {
+      width  = 4000;
+      height =  800;
+    }
   else if ( shape == "comparison" || shape == "ratio" )
     {
       width  = 1000;
