@@ -525,7 +525,8 @@ void HistSetting( TH* hist ,
 		  int color = 1,
 		  int line_width = 2,
 		  int marker_style = 20,
-		  int line_style = 1 )
+		  int line_style = 1,
+		  int font = 4 )
 {
 
   hist->Sumw2();
@@ -537,6 +538,14 @@ void HistSetting( TH* hist ,
   hist->GetZaxis()->CenterTitle();
   hist->SetMarkerStyle( marker_style );
   hist->SetLineStyle( line_style );
+
+  hist->SetTitleFont( font );
+  //  hist->SetTextFont( font );
+  hist->GetXaxis()->SetTitleFont( font );
+  hist->GetXaxis()->SetLabelFont( font );
+  hist->GetYaxis()->SetTitleFont( font );
+  hist->GetYaxis()->SetLabelFont( font );
+
   
 }
 

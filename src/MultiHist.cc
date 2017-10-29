@@ -567,6 +567,7 @@ void MultiHist::Draw( string option,
 
   // configuration for stats box
   double stats_height = (stats_ymax - stats_ymin) / vhist_.size();
+  
   for( int i=0; i<vhist_.size(); i++ )
     {
 	  
@@ -578,14 +579,17 @@ void MultiHist::Draw( string option,
 	  // if this is ratio mode, draw stats box
 	  if( bl_ratio_mode_ == false )
 	    {
+	      
 	      DrawStats( vhist_[i] , 
-			 stats_xmin , stats_ymax - stats_height * (i+1) ,
-			 stats_xmax , stats_ymax - stats_height * i 
-			 );
+	      		 stats_xmin , stats_ymax - stats_height * (i+1) ,
+	      		 stats_xmax , stats_ymax - stats_height * i,
+			 stats_font_
+	      		 );
+
 	    }
 	  else
 	    {
-	      DrawStats( vhist_[i] , 10, 11 , 10, 11 );
+	      DrawStats( vhist_[i] , 10, 11 , 10, 11, stats_font_ );
 	    }
 
 	  

@@ -127,9 +127,16 @@ void DrawStats2D( TH2D* hist, double xmin, double ymin, double xmax, double ymax
 #include "../src/PaveOperation.cc"
 #endif // __CINT__
 
+
+// template < typename TH >
+// void DrawStats( TH* hist, double xmin, double ymin, double xmax, double ymax )
+// {
+//   DrawStats<TH>( hist, xmin, ymin, xmax, ymax , 4 );
+// }
+
 template < typename TH >
 //void DrawStats( TH* hist, double xmin, double ymin, double xmax, double ymax )
-void DrawStats( TH* hist, double xmin, double ymin, double xmax, double ymax, int font = 4 )
+void DrawStats( TH* hist, double xmin, double ymin, double xmax, double ymax, int font = 4)
 {
 
   gPad->Update();
