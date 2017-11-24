@@ -4,7 +4,7 @@
 #include "HeadersSL.hh"
 #include "HeadersRoot.hh"
 #include <algorithm>
-
+#include <numeric>
 using namespace std;
 
 /*!
@@ -31,6 +31,11 @@ double GetMaxVal( TTree* tr, string target, string cut );
 */
 double GetMinVal( TTree* tr, string target, string cut );
 
+/*!
+  @fn double GetStdDev( TTree* tr, string target, string cut );
+  @brief get std. dev
+*/
+double GetStdDev( TTree* tr, string target, string cut );
 
 
 

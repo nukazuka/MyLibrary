@@ -567,6 +567,7 @@ void MultiHist::Draw( string option,
 
   // configuration for stats box
   double stats_height = (stats_ymax - stats_ymin) / vhist_.size();
+  
   for( int i=0; i<vhist_.size(); i++ )
     {
 	  
@@ -578,14 +579,17 @@ void MultiHist::Draw( string option,
 	  // if this is ratio mode, draw stats box
 	  if( bl_ratio_mode_ == false )
 	    {
+	      
 	      DrawStats( vhist_[i] , 
-			 stats_xmin , stats_ymax - stats_height * (i+1) ,
-			 stats_xmax , stats_ymax - stats_height * i 
-			 );
+	      		 stats_xmin , stats_ymax - stats_height * (i+1) ,
+	      		 stats_xmax , stats_ymax - stats_height * i,
+			 stats_font_
+	      		 );
+
 	    }
 	  else
 	    {
-	      DrawStats( vhist_[i] , 10, 11 , 10, 11 );
+	      DrawStats( vhist_[i] , 10, 11 , 10, 11, stats_font_ );
 	    }
 
 	  
@@ -599,9 +603,9 @@ void MultiHist::Draw( string option,
       if( !(title_ == "" || title_.substr(0,1) == ";" ) )
 	{
 	  if( i==0 && bl_title_==true )
-	    DrawTitle( title_size_ , title_align_ );
+	    DrawTitle( title_size_ , title_align_, 4 );
 	  else if( bl_title_ == false )
-	    DrawTitle( 9999, 9999 );
+	    DrawTitle( 9999, 9999, 4 );
 	}
 
     }
@@ -738,9 +742,9 @@ void MultiHist::Draw2D( string option,
 	DrawPaletteAxis( vhist2d_[i] , 999, 999, 9999, 9999, 0.08 );
 
       if( i==0 && bl_title_==true )
-	DrawTitle( title_size_ , title_align_ );
+	DrawTitle( title_size_ , title_align_, 4 );
       else if( bl_title_ == false )
-	DrawTitle( 9999, 9999 );
+	DrawTitle( 9999, 9999, 4 );
 
     }  
   

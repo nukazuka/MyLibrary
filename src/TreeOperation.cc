@@ -68,3 +68,14 @@ double GetMinVal( TTree* tr, string target, string cut )
   
   return *min_element( vx.begin(), vx.end() );
 }
+
+double GetStdDev( TTree* tr, string target, string cut )
+{
+
+  vector < double > vx = GetElement( tr, target, cut );
+  double mean = accumulate( vx.begin(), vx.end() , 0.0 ) / (double)vx.size() ;
+  double sq_sum = inner_product(vx.begin(), vx.end(), vx.begin(), 0.0);
+  double std_dev = sqrt(sq_sum / vx.size() - mean * mean);
+
+  return std_dev;
+}

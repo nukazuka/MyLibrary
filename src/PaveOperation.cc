@@ -7,7 +7,7 @@
 using namespace std;
 
 
-void DrawTitle(TVirtualPad* pad, Double_t text_size , int text_align )
+void DrawTitle(TVirtualPad* pad, Double_t text_size , int text_align, int font )
 {
 
   pad->Update();
@@ -19,22 +19,23 @@ void DrawTitle(TVirtualPad* pad, Double_t text_size , int text_align )
 
   title->SetTextSize( text_size );
   title->SetTextAlign( text_align );
+  title->SetTextFont( font );
   title->Draw( "same" );
 }
 
-void DrawTitle( Double_t text_size , int text_align)
+void DrawTitle( Double_t text_size , int text_align, int font )
 {
-  DrawTitle( gPad , text_size , text_align );
+  DrawTitle( gPad , text_size , text_align, font );
 }
 
 void DrawTitle(TVirtualPad* pad, Double_t text_size )
 {
-  DrawTitle( pad , text_size , 23);
+  DrawTitle( pad , text_size , 23, 4);
 }
 
 void DrawTitle(TVirtualPad* pad)
 {
-  DrawTitle( pad , 0.07 , 23);
+  DrawTitle( pad , 0.07 , 23, 4);
 }
 
 /*
