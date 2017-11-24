@@ -74,12 +74,13 @@ TH* GetHist2D( string name, string title,
 	       TTree* tr, string xtarget , string ytarget, string cut )
 {
   
-  string expression = ytarget + ":" + xtarget + ">>" + name;
+  string expression = ytarget + ":" + xtarget;
   return GetHist2D<TH>( name, title,
 			xbin, xmin, xmax,
 			ybin, ymin, ymax,
 			tr, expression, cut );
 }
+
 /*!
   @fn TH* GetHist2D( string name, string title, 
   int bin, double xmin, double xmax,
@@ -106,9 +107,18 @@ TH* GetHist2D( string name, string title,
 			 xbin, xmin, xmax,
 			 ybin, ymin, ymax
 			 );
-  
+
   hist_rtn->Sumw2();
   string expression = expression_arg + ">>" + name;
+
+  // for debugging
+  // cout << name << endl;
+  // cout << title << endl;
+  // cout << xbin << " " << xmin << " " << xmax << endl;
+  // cout << ybin << " " << ymin << " " << ymax << endl;
+  // cout << expression << endl;
+  // cout << cut << endl;
+      
   tr->Draw( expression.c_str() , cut.c_str(), "goff" );
   HistSetting( hist_rtn );
   return hist_rtn;
@@ -403,6 +413,97 @@ TH* GetHistFromGraph( TGraph* g , string hist_name )
   
   return hist;
 }
+
+template < typename TH >
+int GetOverflowNum( TH* hist )
+{
+  return hist->GetBinContent( hist->GetXbinsX() + 1 );
+}
+
+template < typename TH >
+int GetUnderflowNum( TH* hist )
+{
+  return hist->GetBinContent( 0 );
+}
+
+template < typename TH >
+int GetOverflowAndUnderflowNum( TH* hist )
+{
+  return GetOverflowNum( hist ) + GetUnderflowNum( hist );
+}
+
+
+template < typename TH >
+int GetOverflowNum2DX( TH* hist )
+{
+  int rtn = 0;
+  for( int i=0; i<hist->GetNibnsY(); i++ )
+    rtn += hist->GetBinContent( hist->GetNbinsX()+1 , i );
+
+  return rtn;
+}
+
+/*!
+  @fn int GetOverflowUnderflowNum2D( TH* hist , bool bl_x_over , bool bl_y_over , bool bl_and )
+  @param hist 2D histogram
+  @param bl_x_over a flag for x axis. true means overflow and false means underflow
+  @param bl_y_over a flag for y axis. true means overflow and false means underflow
+  @param conbination 0 means AND. AND of x and y is returned. 
+  1 means OR. OR of x and y is returned. 
+  2 means ONLY X. Sum of overflow or underflow in x axis is returned.
+  3 means ONLY Y. Sum of overflow or underflow in y axis is returned.
+  4 means ALL. All entries in overflow and underflow bins are returned.
+ */
+template < typename TH >
+int GetOverflowUnderflowNum2D( TH* hist , bool bl_x_over , bool bl_y_over , int conbination = 1 )
+{
+
+  int bin_x = 0;
+  if( bl_x_over )
+    bin_x = hist->GetNbinsX() + 1;
+
+  int bin_y = 0;
+  if( bl_y_over )
+    bin_y = hist->GetNbinsY() + 1;
+  
+  if( conbination == 0 ) // AND
+    return hist->GetBinContent( bin_x , bin_y );
+
+  // |uo|oooooooooooooo|oo|  - o : overflow
+  // |u |              |o |  - u : underflow
+  // |u |    hist      |o |
+  // |u |              |o |
+  // |uu|uuuuuuuuuuuuuu|ou|
+  //
+  // conbination 0 returns uu, uo, ou, or oo 
+  // conbination 1 returns sum(x-flag) + sum(y-flag) + 
+  
+  if( conbination == 4 ) // ALL
+    return GetOverflowUnderflowNum2D < TH > ( hist , true  , true  , 1 ) // x-over  || y-over
+      + GetOverflowUnderflowNum2D    < TH > ( hist , false , false , 1 ) // y-under || y-under
+      - GetOverflowUnderflowNum2D    < TH > ( hist , true  , false , 0 ) // x-over  && y-under
+      - GetOverflowUnderflowNum2D    < TH > ( hist , false , true  , 0 );// x-under && y-over
+
+  int sum_x = 0;
+  // loop over overflow (underflow) bins of x
+  for( int i=0; i<hist->GetNbinsY(); i++ )
+      sum_x += hist->GetBinContent( bin_x , i );
+
+  if( conbination == 2 ) // only x
+    return sum_x;
+  
+  int sum_y = 0;
+  // loop over overflow (underflow) bins of y
+  for( int i=0; i<hist->GetNbinsX(); i++ )
+    sum_y += hist->GetBinContent( i, bin_y );
+
+  if( conbination == 3 ) // only y
+    return sum_y;
+
+  // conbination == 1, OR
+  return sum_x + sum_y - GetOverflowUnderflowNum2D<TH>( hist , bl_x_over , bl_y_over, 0 ); // subtract overlapping bin ( x && y )
+}
+
 
 
 template < typename TH >

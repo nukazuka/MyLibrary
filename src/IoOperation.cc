@@ -37,7 +37,6 @@ TObject* GetObject( string file_name, string obj_name)
       return new TObject();
       //      exit(-1);
     }
-
   return (TObject*)tf->Get( obj_name.c_str() );
 }
 
