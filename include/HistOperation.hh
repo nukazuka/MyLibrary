@@ -627,7 +627,7 @@ void HistSetting( TH* hist ,
 		  int line_width = 2,
 		  int marker_style = 20,
 		  int line_style = 1,
-		  int font = 4 )
+		  int font = 62 )
 {
 
   hist->Sumw2();
