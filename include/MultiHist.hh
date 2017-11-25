@@ -398,6 +398,15 @@ public:
   void SetDrawNoEntry ( bool bl = true )     { bl_draw_no_entry_ = bl ;};
 
   /*!
+    @fn void SetFont( int font_num )
+    @brief set fonts for all
+  */
+  void SetFont( int font_num )
+  {
+    stats_font_ = font_num;
+  }
+  
+  /*!
     @fn void SetIncludeErrorBar( bool bl = true )
     @brief range of y is adjusted to show all error bars or not
   */
