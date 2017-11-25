@@ -54,7 +54,7 @@ private:
   double stats_ymin_ = 0.1;
   double stats_xmax_ = 1.0;
   double stats_ymax_ = 0.9;
-  int    stats_font_ = 4;
+  int    stats_font_ = 62;
   
   // valiable for axis' title
   string title_x_ = " ";
