@@ -828,6 +828,14 @@ void MultiHist::SetStatsFormat( int type )
   stats_format_ = type ;
   gStyle->SetOptStat( stats_format_ );
 }
+
+void MultiHist::SetStatsFormat( string type )
+{
+  //  stats_format_ = type ;
+  gStyle->SetOptStat( type.c_str() );
+}
+
+
 void MultiHist::SetStatsType( string type )
 {
 

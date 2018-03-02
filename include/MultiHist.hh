@@ -523,6 +523,15 @@ public:
   void SetStatsFormat( int type );
 
   /*!
+    @fn void SetStatsFormat( string type )
+    @param type format of stats box. 
+    @brief Set format of stats box.
+    @details see [here](https://root.cern.ch/doc/master/classTStyle.html#a0ae6f6044b6d7a32756d7e98bb210d6c) for format.    
+    @todo conversion fron string to int
+  */
+  void SetStatsFormat( string type );
+
+  /*!
     @fn void SetStatsPosition( double xmin, double ymin, double xmax, double ymax )
     @param xmin a position of left side of stats in ratio
     @param ymin a position of bottom of stats in ratio
