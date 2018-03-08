@@ -38,7 +38,8 @@ TObject* GetObject( string file_name, string obj_name)
       //      exit(-1);
     }
 
-  TObject* obj = (TObject*)tf->Get( obj_name.c_str() );
+  TH1::AddDirectory(kFALSE);
+  TObject* obj = tf->Get( obj_name.c_str() )->Clone();
   tf->Close();
   return obj;
 }
