@@ -37,7 +37,10 @@ TObject* GetObject( string file_name, string obj_name)
       return new TObject();
       //      exit(-1);
     }
-  return (TObject*)tf->Get( obj_name.c_str() );
+
+  TObject* obj = (TObject*)tf->Get( obj_name.c_str() );
+  tf->Close();
+  return obj;
 }
 
 TObject* GetObject( string file_name, string dir_name, string obj_name)
