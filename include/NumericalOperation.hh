@@ -27,7 +27,7 @@ T GetMax( T* values , int num )
 template < typename T >
 T GetMean( vector < T >& vval )
 {
-  return accumulate( vval.begin(), vval.end(), 0 ) / (T)vval.size();
+  return accumulate( vval.begin(), vval.end(), 0.0 ) / (T)vval.size();
 }
 
 template < typename T >

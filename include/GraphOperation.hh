@@ -1,7 +1,6 @@
 #ifndef MYLIB_GRAPHOPERATION
 #define MYLIB_GRAPHOPERATION
 
-
 #include "HeadersRoot.hh"
 #include "HeadersSL.hh"
 #include "NumericalOperation.hh"
