@@ -142,11 +142,11 @@ void DrawStats( TH* hist, double xmin, double ymin, double xmax, double ymax, in
   gPad->Update();
 
   TPaveStats *st = (TPaveStats*)hist->FindObject("stats");
-  st->SetTextColor( hist->GetLineColor() );
-  st->SetLineColor( hist->GetLineColor() );
+  st->SetTextColorAlpha( hist->GetLineColor(), 1.0 );
+  st->SetLineColorAlpha( hist->GetLineColor(), 1.0 );
   st->SetFillStyle( 1001 );
   st->SetFillColor( 0 );
-  st->SetTextFont( font );
+  //  st->SetTextFont( font );
   
   st->SetX1NDC( xmin );
   st->SetX2NDC( xmax );
