@@ -103,6 +103,9 @@ void MultiHist::FrameSetting( TH1F* frame, double margin_bottom, double margin_t
 
   frame->GetXaxis()->SetNdivisions( division_x_ );
   frame->GetYaxis()->SetNdivisions( division_y_ );
+
+  frame->GetXaxis()->SetMoreLogLabels( true );
+  frame->GetYaxis()->SetMoreLogLabels( true );
 }
 
 double MultiHist::GetHistEnd( TH1D* hist )
@@ -273,7 +276,7 @@ void MultiHist::Ranges()
 	
       if( bl_draw_no_entry_ == false )
 	{
-	  x.push_back( vhist_[i]->GetBinCenter(0)   - width/2. );
+	  x.push_back( vhist_[i]->GetBinCenter(1)   - width/2. );
 	  x.push_back( vhist_[i]->GetBinCenter(bin) + width/2. );
 	}
       else
@@ -319,6 +322,11 @@ void MultiHist::Ranges()
 	  xmin_ = xmin;
 	  xmax_ = xmax;
 	  gPad->SetLogx( false );
+	  cerr << "=============== WARNING = from here ==============" << endl;
+	  cerr << "Both min and max for x-axis are negative" << endl;
+	  cerr << "They are changed to the default value to avoid error" << endl;
+	  cerr << "=============== WARNING = to here   ==============" << endl;
+
 	}
       else if( xmin > 0.0 && xmax <= 0.0 ) // case3
 	{
@@ -332,7 +340,7 @@ void MultiHist::Ranges()
       else // case2
 	{
 
-	  xmax = xmax_;
+	  //	  xmax = xmax_;
 	  cerr << "=============== WARNING = from here ==============" << endl;
 	  cerr << "void MultiHist::GetRange()" << endl;
 	  cerr << "xmin is " << xmin << " and xaxis is set as a log scale" << endl;
@@ -535,7 +543,7 @@ void MultiHist::DeleteHist2D()
   vhist2d_.erase( vhist2d_.begin() , vhist2d_.end() );
 }
 
-void MultiHist::Draw( string option )
+void MultiHist::DrawWithoutFrame( string option )
 {
 
   if( stats_type_ == 0 )
@@ -550,12 +558,12 @@ void MultiHist::Draw( string option )
 
 }
 
-void MultiHist::Draw( string option,
-		      double stats_xmin, double stats_ymin,
-		      double stats_xmax, double stats_ymax )
+void MultiHist::DrawWithoutFrame( string option,
+				  double stats_xmin, double stats_ymin,
+				  double stats_xmax, double stats_ymax )
 {
 
-  DrawFrame();
+  //  DrawFrame();
 
   if( option == "" )
     option = option_;
@@ -585,6 +593,7 @@ void MultiHist::Draw( string option,
 	      		 stats_xmax , stats_ymax - stats_height * i,
 			 stats_font_
 	      		 );
+	      
 
 	    }
 	  else
@@ -612,6 +621,22 @@ void MultiHist::Draw( string option,
 
   id_++;
 }
+
+void MultiHist::Draw( string option )
+{
+  DrawFrame();
+  DrawWithoutFrame( option );
+}
+
+void MultiHist::Draw( string option,
+		      double stats_xmin, double stats_ymin,
+		      double stats_xmax, double stats_ymax )
+{
+
+  DrawFrame();
+  DrawWithoutFrame( option , stats_xmin, stats_ymin, stats_xmax, stats_ymax );
+}
+
 
 void MultiHist::DrawFrame()
 {

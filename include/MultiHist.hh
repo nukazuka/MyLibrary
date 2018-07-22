@@ -237,6 +237,12 @@ public:
 	     double stats_xmin, double stats_ymin,
 	     double stats_xmax, double stats_ymax );
 
+  void DrawWithoutFrame( string option = "" );
+
+  void DrawWithoutFrame( string option,
+			 double stats_xmin, double stats_ymin,
+			 double stats_xmax, double stats_ymax );
+  
   /*!
     @fn void DrawFrame()
     @brief Draw only frame
