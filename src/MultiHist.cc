@@ -905,4 +905,15 @@ void MultiHist::Print()
        << setw(width) << setprecision(5) << ymin_ << " - " << margin_ratio_bottom_ << " <==> "
        << setw(width) << setprecision(5) << ymax_ << " - " << margin_ratio_top_
        << endl;
+
+  if( vhist_.size() > 1 )
+    {
+      cout << setw(width) << "# of 1D hist: " << vhist_.size() << endl;
+      for( int i=0; i<vhist_.size(); i++ )
+	{
+	  cout << setw(width/2) << "";
+	  vhist_[i]->Print();
+	}
+    }
+  
 }
