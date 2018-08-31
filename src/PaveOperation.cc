@@ -19,7 +19,7 @@ void DrawTitle(TVirtualPad* pad, Double_t text_size , int text_align, int font )
 
   title->SetTextSize( text_size );
   title->SetTextAlign( text_align );
-  title->SetTextFont( font );
+  //  title->SetTextFont( font );
   title->Draw( "same" );
 }
 
