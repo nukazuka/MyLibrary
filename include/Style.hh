@@ -3,6 +3,7 @@
 
 #include "HeadersRoot.hh"
 #include "TStyle.h"
+#include "TColor.h"
 
 void Style();
 
@@ -41,6 +42,14 @@ void HistSetting( TH* hist , int color = 1 , int line_width = 2 , int fill_style
 void FunctionSetting( TF1* f , int color = 1, int width = 2 , int line_style = 1 );
 
 int GetColor( int num );
+
+/*!
+  @fn int GetRainbowColor( int num , int total_num , float saturation = 0.95, float value = 0.95 );
+  @brief one of rainbow color is returned
+  @details the 2nd argument total_num detemins a number of division
+*/
+int GetRainbowColor( int num , int total_num , float saturation = 0.95, float value = 0.95 );
+
 void GraphSetting( TGraph* g, int color = 1, int width = 2 , int marker_style = 20  , int fill_style = 0 );
 
 
