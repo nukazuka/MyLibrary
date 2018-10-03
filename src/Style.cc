@@ -73,10 +73,10 @@ int GetColor( int num )
   return 1;
 }
 
-int GetRainbowColor( int num , int total_num, float saturation , float value )
+int GetRainbowColor( int num , int total_num, float saturation , float value, float hue_min , float hue_max )
 {
 
-  float hue = 330.0 * num / total_num;
+  float hue = hue_max * num / total_num + hue_min;
   float red, green, blue;
   TColor::HSV2RGB( hue, saturation, value , red, green, blue);
 

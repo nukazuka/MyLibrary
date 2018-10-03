@@ -48,7 +48,7 @@ int GetColor( int num );
   @brief one of rainbow color is returned
   @details the 2nd argument total_num detemins a number of division
 */
-int GetRainbowColor( int num , int total_num , float saturation = 0.95, float value = 0.95 );
+int GetRainbowColor( int num , int total_num , float saturation = 0.95, float value = 0.95, float hue_min = 0.0, float hue_max = 330.0 );
 
 void GraphSetting( TGraph* g, int color = 1, int width = 2 , int marker_style = 20  , int fill_style = 0 );
 
