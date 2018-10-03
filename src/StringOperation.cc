@@ -224,6 +224,18 @@ int String2Int( string st )
 
   istringstream iss(st);
   int num;
+  iss >> setprecision(15) >> num;
+
+  return num;
+}
+
+long String2Long( string st )
+{
+  // error check
+  String2Int( st );
+
+  istringstream iss(st);
+  long num;
   iss >> num;
 
   return num;
