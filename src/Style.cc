@@ -73,6 +73,16 @@ int GetColor( int num )
   return 1;
 }
 
+int GetRainbowColor( int num , int total_num, float saturation , float value, float hue_min , float hue_max )
+{
+
+  float hue = hue_max * num / total_num + hue_min;
+  float red, green, blue;
+  TColor::HSV2RGB( hue, saturation, value , red, green, blue);
+
+  int color = TColor::GetColor( red, green, blue );  
+  return color;
+}
 
 void GraphSetting( TGraph* g, int color , int width , int marker_style , int fill_style)
 {

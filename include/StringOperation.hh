@@ -155,6 +155,8 @@ string Subtraction( string s1, string s2 );
  */
 int String2Int( string st );
 
+long String2Long( string st );
+
 /*!
   @fn double String2Double( string st )
   @param st : 変換される double 型の数字。
