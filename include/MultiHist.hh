@@ -196,6 +196,13 @@ public:
     @brief add base hist of ratio mode
   */
   void AddBaseHist( TH1D* hist_base );
+
+
+  /*!
+    @fn void CopySetting( MultiHist* mh )
+  */
+  void CopySetting( MultiHist* mh );
+  
   /*!
     @fn void DeleteAllHist()
     @brief Delete all stored histograms
@@ -247,7 +254,8 @@ public:
     @fn void DrawFrame()
     @brief Draw only frame
   */
-  void DrawFrame();
+  //  void DrawFrame();
+  TH1F* DrawFrame( string option = "0" );
 
   /*!
     @fn void Draw2D( string option )
@@ -265,6 +273,27 @@ public:
 	       double stats_xmin, double stats_ymin,
 	       double stats_xmax, double stats_ymax );
 
+
+  string GetTitleX()		{ return title_x_ ;		};
+  string GetTitleY()		{ return title_y_ ;		};
+  double GetTitleOffsetX()	{ return offset_title_x_ ;	};
+  double GetTitleOffsetY()	{ return offset_title_y_ ;	};
+  double GetTitleSizeX()	{ return size_title_x_ ;	};
+  double GetTitleSizeY()	{ return size_title_y_ ;	};
+  double GetLabelOffsetX()	{ return offset_label_x_ ;	};
+  double GetLabelOffsetY()	{ return offset_label_y_ ;	};
+  double GetLabelSizeX()	{ return size_label_x_   ;	};
+  double GetLabelSizeY()	{ return size_label_y_   ;	};
+  int    GetDivisionX()		{ return division_x_ ;		};
+  int    GetDivisionY()		{ return division_y_ ;		};
+  int    GetStatsFormat()	{ return stats_format_ ;	};
+  double GetStatsWidth()	{ return stats_width_  ;	};
+  double GetStatsHeight()	{ return stats_height_ ;	};
+  double GetTitleSize()		{ return title_size_ ;		};
+  int    GetTitleAlign()	{ return title_align_ ;		};
+
+
+  
   /*!
     @fn int GetEntries()
     @brief get entires of hist
@@ -329,25 +358,29 @@ public:
     @fn double GetXmax()
     @brief Get max. range of x axis
   */
-  double GetXmax(){ return xmax_ + margin_right_ ;};
+  //  double GetXmax(){ return xmax_ + margin_right_ ;};
+  double GetXmax();
 
   /*!
     @fn double GetXmin()
     @brief Get min. range of x axis
   */
-  double GetXmin(){ return xmin_ - margin_left_ ;};
+  //  double GetXmin(){ return xmin_ - margin_left_ ;};
+  double GetXmin();
 
   /*!
     @fn double GetYmax()
     @brief Get max. range of y axis
   */
-  double GetYmax(){ return ymax_ + margin_top_ ;};
+  //  double GetYmax(){ return ymax_ + margin_top_ ;};
+  double GetYmax();
 
   /*!
     @fn double GetYmin()
     @brief Get max. range of y axis
   */
-  double GetYmin(){ return ymin_ - margin_bottom_ ;};
+  //  double GetYmin(){ return ymin_ - margin_bottom_ ;};
+  double GetYmin();
 
   /*!
     @fn   bool IsRatioMode()

@@ -525,6 +525,28 @@ void MultiHist::AddBaseHist( TH1D* hist_base )
   
 }
 
+void MultiHist::CopySetting( MultiHist* mh )
+{
+
+  this->SetTitleX	( mh->GetTitleX()	);
+  this->SetTitleY	( mh->GetTitleY()	);
+  this->SetTitleOffsetX	( mh->GetTitleOffsetX() );
+  this->SetTitleOffsetY	( mh->GetTitleOffsetY() );
+  this->SetTitleSizeX	( mh->GetTitleSizeX()	);
+  this->SetTitleSizeY	( mh->GetTitleSizeY()	);
+  this->SetLabelOffsetX	( mh->GetLabelOffsetX() );
+  this->SetLabelOffsetY	( mh->GetLabelOffsetY() );
+  this->SetLabelSizeX	( mh->GetLabelSizeX()	);
+  this->SetLabelSizeY	( mh->GetLabelSizeY()	);
+  this->SetDivisionX	( mh->GetDivisionX()	);
+  this->SetDivisionY	( mh->GetDivisionY()	);
+  this->SetStatsFormat	( mh->GetStatsFormat()	);
+  this->SetStatsBoxSize ( mh->GetStatsWidth(), mh->GetStatsHeight() );
+  this->SetTitleSize	( mh->GetTitleSize()	);
+  this->SetTitleAlign	( mh->GetTitleAlign()	);
+  
+}
+
 void MultiHist::DeleteAllHist()
 {
   DeleteHist();
@@ -563,8 +585,6 @@ void MultiHist::DrawWithoutFrame( string option,
 				  double stats_xmax, double stats_ymax )
 {
 
-  //  DrawFrame();
-
   if( option == "" )
     option = option_;
 
@@ -572,7 +592,7 @@ void MultiHist::DrawWithoutFrame( string option,
   option = Replace( option , "SAMES" , "" );
   option = Replace( option , "same"  , "" );
   option = Replace( option , "SAME"  , "" );
-
+  
   // configuration for stats box
   double stats_height = (stats_ymax - stats_ymin) / vhist_.size();
   
@@ -581,8 +601,7 @@ void MultiHist::DrawWithoutFrame( string option,
 	  
       if( bl_stats_ == true )
 	{
-
-	  vhist_[i]->Draw( (option + "SAMES" + vhist_[i]->GetOption() ).c_str() );
+	  vhist_[i]->Draw( (option + " SAMES" + vhist_[i]->GetOption() ).c_str() );
 	  
 	  // if this is ratio mode, draw stats box
 	  if( bl_ratio_mode_ == false )
@@ -637,8 +656,8 @@ void MultiHist::Draw( string option,
   DrawWithoutFrame( option , stats_xmin, stats_ymin, stats_xmax, stats_ymax );
 }
 
-
-void MultiHist::DrawFrame()
+//void MultiHist::DrawFrame()
+TH1F* MultiHist::DrawFrame( string option )
 {
 
   Ranges();
@@ -664,7 +683,7 @@ void MultiHist::DrawFrame()
 
 
   FrameSetting( frame , margin_bottom, margin_top );
-  frame->Draw("0");
+  frame->Draw( option.c_str() );
 
   if( bl_ratio_mode_ == true )
     {
@@ -688,6 +707,7 @@ void MultiHist::DrawFrame()
 
     }
 
+  return (TH1F*)frame->Clone();
 }
 
 
@@ -801,6 +821,34 @@ TH2D* MultiHist::GetHist2D( int num )
   return vhist2d_[num];
 }
 
+double MultiHist::GetXmax()
+{
+  if( bl_force_xmin_ == true )
+    return xmax_;
+  return xmax_ + margin_right_ ;
+}
+
+double MultiHist::GetXmin()
+{
+  if( bl_force_xmin_ == true )
+    return xmin_;
+  return xmin_ - margin_left_ ;
+}
+
+double MultiHist::GetYmax()
+{
+  if( bl_force_ymax_ == true )
+    return ymax_;
+  return ymax_ + margin_top_ ;
+}
+
+double MultiHist::GetYmin()
+{
+  if( bl_force_ymin_ == true )
+    return ymin_;
+  return ymin_ - margin_bottom_ ;
+}
+
 void MultiHist::NormalizeHist( double val )
 {
   for( unsigned int i=0; i<vhist_.size(); i++)
@@ -856,7 +904,6 @@ void MultiHist::SetStatsFormat( int type )
 
 void MultiHist::SetStatsFormat( string type )
 {
-  //  stats_format_ = type ;
   gStyle->SetOptStat( type.c_str() );
 }
 
@@ -894,24 +941,28 @@ void MultiHist::ResetRange()
 void MultiHist::SetXmin( double val )
 {
   xmin_force_ = val;
+  xmin_ = val;
   bl_force_xmin_ = true;
 };
 
 void MultiHist::SetXmax( double val )
 {
   xmax_force_ = val;
+  xmax_ = val;
   bl_force_xmax_ = true;
 };
 
 void MultiHist::SetYmin( double val )
 {
   ymin_force_ = val;
+  ymin_ = val;
   bl_force_ymin_ = true;
 };
 
 void MultiHist::SetYmax( double val )
 {
   ymax_force_ = val;
+  ymax_ = val;
   bl_force_ymax_ = true;
 };
 
