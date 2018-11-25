@@ -36,6 +36,13 @@ double GetCorrespondX( TGraph* g , double y );
 TGraph* GetGraph( string graph_name, string graph_title,
 		  TTree* tr , string target , string cut );
 
+int GetMaxPoint( TGraph* g , double& x, double& y, int mode );
+int GetMinPoint( TGraph* g , double& x, double& y, int mode );
+
+int GetMaxXPoint( TGraph* g , double& x, double& y );
+int GetMaxYPoint( TGraph* g , double& x, double& y );
+int GetMaxRPoint( TGraph* g , double& x, double& y );
+
 double GetMax( TGraph* g , int num );
 double GetMax( vector < TGraph* >  vg , int num );
 

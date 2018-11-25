@@ -135,6 +135,54 @@ TGraph* GetGraph( string graph_name, string graph_title,
 
 //////////////////////////////////////////////////////
 // GetMax
+
+int GetMaxPoint( TGraph* g , double& x, double& y, int mode )
+{
+  vector < double > vx = GetValX( g );
+  vector < double > vy = GetValY( g );
+
+  int index = -1 ;
+
+  if( mode == 0 )
+    {
+      index = (int)( max_element(vx.begin(), vx.end()) - vx.begin());
+    }
+  else if( mode == 1 )
+    {
+      index = (int)( max_element(vy.begin(), vy.end()) - vy.begin());
+    }
+  else if( mode == 2 )
+    {
+      vector < double > vr;
+      for( int i=0; i<vx.size(); i++ )
+	{
+	  vr.push_back( pow(vx[i], 2) + pow(vy[i], 2) );
+	}
+      index = (int)( max_element(vr.begin(), vr.end()) - vr.begin());
+    }
+  
+  x = vx[ index ];
+  y = vy[ index ];
+  
+  return index;
+}
+
+int GetMaxXPoint( TGraph* g, double& x, double& y )
+{
+
+  return GetMaxPoint(g, x, y, 0 );
+}
+						  
+int GetMaxYPoint( TGraph* g, double& x, double& y )
+{
+  return GetMaxPoint(g, x, y, 1 );
+}
+						  
+int GetMaxRPoint( TGraph* g, double& x, double& y )
+{
+  return GetMaxPoint(g, x, y, 2 );
+}
+						  
 double GetMax( TGraph* g , int num )
 {
 
@@ -193,6 +241,36 @@ double GetMeanY( TGraph* g )
 
 //////////////////////////////////////////////////////
 // GetMin
+int GetMinPoint( TGraph* g , double& x, double& y, int mode )
+{
+  vector < double > vx = GetValX( g );
+  vector < double > vy = GetValY( g );
+
+  int index = -1 ;
+
+  if( mode == 0 )
+    {
+      index = (int)( min_element(vx.begin(), vx.end()) - vx.begin());
+    }
+  else if( mode == 1 )
+    {
+      index = (int)( min_element(vy.begin(), vy.end()) - vy.begin());
+    }
+  else if( mode == 2 )
+    {
+      vector < double > vr;
+      for( int i=0; i<vx.size(); i++ )
+	{
+	  vr.push_back( pow(vx[i], 2) + pow(vy[i], 2) );
+	}
+      index = (int)( min_element(vr.begin(), vr.end()) - vr.begin());
+    }
+  
+  x = vx[ index ];
+  y = vy[ index ];
+  
+  return index;
+}
 
 double GetMin( TGraph* g , int num )
 {
