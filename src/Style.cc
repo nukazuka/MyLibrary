@@ -67,8 +67,8 @@ int GetColor( int num )
   else if( num == 8 )
     return kBlue+9;
   else if( num == 9 )
-    return kGray;
-  
+    return kGray + 2;
+
 
   return 1;
 }
