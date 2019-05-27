@@ -9,7 +9,7 @@
 
 /*!
   @fn void DrawTitle(TVirtualPad* pad, Double_t text_size , int text_align )
-  @param pad 対象となる pad 
+  @param pad 対象となる pad
   @param test_size text size
   @param text_align 文字の置き方
   @brief pad にある title オブジェクトを取得して書き直す
@@ -69,7 +69,7 @@ void DrawTitle(TVirtualPad* pad);
   @details
 
 */
-void DrawPaletteAxis( TH2D* hist = new TH2D(), 
+void DrawPaletteAxis( TH2D* hist = new TH2D(),
 		      double xmin = 0.9 , double ymin = 0.1,
 		      double xmax = 0.93, double ymax = 0.9,
 		      double label_size = 0.08 );
@@ -147,7 +147,31 @@ void DrawStats( TH* hist, double xmin, double ymin, double xmax, double ymax, in
   st->SetFillStyle( 1001 );
   st->SetFillColor( 0 );
   //  st->SetTextFont( font );
-  
+
+  st->SetX1NDC( xmin );
+  st->SetX2NDC( xmax );
+  st->SetY1NDC( ymin );
+  st->SetY2NDC( ymax );
+
+  //  st->SetOptStat( 111111 ) ; // overflow and underflos are ON
+  st->Draw("same");
+}
+
+/*!
+	@brief Fit results made by fitting to TGraph is draw in the specified position
+*/
+template < typename TH >
+void DrawFitResults( TH* graph, double xmin, double ymin, double xmax, double ymax, int font = 4)
+{
+  gPad->Update();
+
+  TPaveStats *st = (TPaveStats*)graph->GetListOfFunctions()->FindObject("stats");
+  st->SetTextColorAlpha( graph->GetLineColor(), 1.0 );
+  st->SetLineColorAlpha( graph->GetLineColor(), 1.0 );
+  st->SetFillStyle( 1001 );
+  st->SetFillColor( 0 );
+  //  st->SetTextFont( font );
+
   st->SetX1NDC( xmin );
   st->SetX2NDC( xmax );
   st->SetY1NDC( ymin );
