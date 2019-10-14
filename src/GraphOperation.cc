@@ -407,3 +407,34 @@ TGraph* SubtractY( TGraph* g1, TGraph* g2 )
 {
   return Subtract( g1, g2, 1 );
 }
+
+
+TGraph* Scale( TGraph* g, double factor, int mode )
+{
+  TGraph* rtn = (TGraph*)g->Clone();
+  for( int i=0; i<rtn->GetN(); i++ )
+    {
+      double x, y;
+      rtn->GetPoint( i, x, y );
+
+      if( mode == 0 )
+	rtn->SetPoint( i, x * factor, y );
+      else if( mode == 1 )
+	rtn->SetPoint( i, x, y * factor);
+      else if( mode == 2 ) // will I use?
+	rtn->SetPoint( i, x * factor, y * factor);
+
+    }
+
+  return rtn;
+}
+
+TGraph* ScaleX( TGraph* g, double factor )
+{
+  return Scale( g, factor, 0 );
+}
+
+TGraph* ScaleY( TGraph* g, double factor )
+{
+  return Scale( g, factor, 1 );
+}

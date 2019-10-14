@@ -77,6 +77,9 @@ TGraph* Subtract( TGraph* g1 , TGraph* g2, int mode = 0 );
 TGraph* SubtractX( TGraph* g1 , TGraph* g2 );
 TGraph* SubtractY( TGraph* g1 , TGraph* g2 );
 
+TGraph* Scale( TGraph* g, double factor, int mode = 0 );
+TGraph* ScaleX( TGraph* g, double factor );
+TGraph* ScaleY( TGraph* g, double factor );
 #ifdef __CINT__
 #include "../src/GraphOperation.cc"
 #endif 
