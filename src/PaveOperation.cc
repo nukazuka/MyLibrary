@@ -45,25 +45,6 @@ void DrawTitle()
 }
 */
 
-void DrawPaletteAxis( TH2D* hist , 
-		      double xmin, double ymin,
-		      double xmax, double ymax ,
-		      double label_size )
-{
-
-  gPad->Update();
-  TPaletteAxis *pal = (TPaletteAxis*)hist->GetListOfFunctions()->FindObject("palette");
-  pal->GetAxis()->SetLabelSize( label_size );
-  pal->GetAxis()->CenterTitle();
-
-  pal->SetX1NDC( xmin );
-  pal->SetX2NDC( xmax );
-
-  pal->SetY1NDC( ymin );
-  pal->SetY2NDC( ymax );
-  pal->Draw();
-}
-
 /*
 void DrawStats( TH1D* hist, double xmin, double ymin, double xmax, double ymax )
 {
