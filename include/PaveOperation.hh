@@ -58,7 +58,7 @@ void DrawTitle(TVirtualPad* pad);
 //void DrawStats2D( TH2D* hist, double xmin, double ymin, double xmax, double ymax );
 
 /*!
-  @fn void DrawPaletteAxis( TH2D* hist , double xmin = 0.9 , double ymin = 0.1, double xmax = 0.93, double ymax = 0.9, double label_size = 0.08 )
+  @fn TPaletteAxis* DrawPaletteAxis( TH2D* hist , double xmin = 0.9 , double ymin = 0.1, double xmax = 0.93, double ymax = 0.9, double label_size = 0.08 )
   @param hist target of histogram
   @param xmin left position in ratio
   @param ymin bottom position in ratio
@@ -180,6 +180,42 @@ void DrawFitResults( TH* graph, double xmin, double ymin, double xmax, double ym
 
   //  st->SetOptStat( 111111 ) ; // overflow and underflos are ON
   st->Draw("same");
+}
+
+/*!
+  @fn TPaletteAxis* DrawPaletteAxis( TH2D* hist = new TH2D(), double xmin = 0.9 , double ymin = 0.1, double xmax = 0.93, double ymax = 0.9, double label_size = 0.08 )
+  @param hist target of histogram
+  @param xmin left position in ratio
+  @param ymin bottom position in ratio
+  @param xmax right position in ratio
+  @param ymax top position in ratio
+  @param label_size size of label
+  @brief Draw color palette axis for TH2
+  @details
+
+*/
+
+template < typename TH >
+TPaletteAxis* DrawPaletteAxis( TH* hist,
+			       double xmin, double ymin,
+			       double xmax, double ymax,
+			       double label_size)
+
+{
+
+  gPad->Update();
+  TPaletteAxis *pal = (TPaletteAxis*)hist->GetListOfFunctions()->FindObject("palette");
+  pal->GetAxis()->SetLabelSize( label_size );
+  pal->GetAxis()->CenterTitle();
+
+  pal->SetX1NDC( xmin );
+  pal->SetX2NDC( xmax );
+
+  pal->SetY1NDC( ymin );
+  pal->SetY2NDC( ymax );
+  pal->Draw();
+
+  return pal;
 }
 
 #ifdef __CINT__

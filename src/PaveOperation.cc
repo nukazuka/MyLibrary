@@ -45,6 +45,7 @@ void DrawTitle()
 }
 */
 
+<<<<<<< HEAD
 //void DrawPaletteAxis( TH2D* hist , 
 TPaletteAxis* DrawPaletteAxis( TH2D* hist , 
 		      double xmin, double ymin,
@@ -67,6 +68,8 @@ TPaletteAxis* DrawPaletteAxis( TH2D* hist ,
   return pal;
 }
 
+=======
+>>>>>>> 18ba43955945c0eb25470eb55272b6e7f22de0b0
 /*
 void DrawStats( TH1D* hist, double xmin, double ymin, double xmax, double ymax )
 {
