@@ -69,7 +69,8 @@ void DrawTitle(TVirtualPad* pad);
   @details
 
 */
-void DrawPaletteAxis( TH2D* hist = new TH2D(),
+//void DrawPaletteAxis( TH2D* hist = new TH2D(),
+TPaletteAxis* DrawPaletteAxis( TH2D* hist = new TH2D(),
 		      double xmin = 0.9 , double ymin = 0.1,
 		      double xmax = 0.93, double ymax = 0.9,
 		      double label_size = 0.08 );

@@ -45,10 +45,11 @@ void DrawTitle()
 }
 */
 
-void DrawPaletteAxis( TH2D* hist , 
+//void DrawPaletteAxis( TH2D* hist , 
+TPaletteAxis* DrawPaletteAxis( TH2D* hist , 
 		      double xmin, double ymin,
 		      double xmax, double ymax ,
-		      double label_size )
+		      double label_size)
 {
 
   gPad->Update();
@@ -62,6 +63,8 @@ void DrawPaletteAxis( TH2D* hist ,
   pal->SetY1NDC( ymin );
   pal->SetY2NDC( ymax );
   pal->Draw();
+
+  return pal;
 }
 
 /*
