@@ -143,6 +143,22 @@ void DrawStats( TH* hist, double xmin, double ymin, double xmax, double ymax, in
   gPad->Update();
 
   TPaveStats *st = (TPaveStats*)hist->FindObject("stats");
+  if( st == nullptr )
+    {
+      string color_red = "\033[31m";
+      string color_cancel = "\033[m";
+
+      cerr << color_red << endl;
+      cerr << " " << string( 50, '=' ) << endl;
+      cerr << " void DrawStats( TH* hist, double xmin, double ymin, double xmax, double ymax, int font = 4)" << endl;
+      cerr << " TPaveStats *st = (TPaveStats*)hist->FindObject(\"stats\")  ---> nullptr" << endl;
+      cerr << " Someting wrong!!!" << endl;
+      cerr << " " << string( 50, '=' ) << endl;
+      cerr << color_cancel << endl;
+      return;
+
+    }
+  
   st->SetTextColorAlpha( hist->GetLineColor(), 1.0 );
   st->SetLineColorAlpha( hist->GetLineColor(), 1.0 );
   st->SetFillStyle( 1001 );
@@ -205,6 +221,22 @@ TPaletteAxis* DrawPaletteAxis( TH* hist,
 
   gPad->Update();
   TPaletteAxis *pal = (TPaletteAxis*)hist->GetListOfFunctions()->FindObject("palette");
+  if( pal == nullptr )
+    {
+      string color_red = "\033[31m";
+      string color_cancel = "\033[m";
+
+      cerr << color_red << endl;
+      cerr << " " << string( 50, '=' ) << endl;
+      cerr << "template <typename TH> TPaletteAxis* DrawPaletteAxis( TH* hist , double xmin, double ymin, double xmax, double ymax , double label_size)" << endl;
+      cerr << "TPaletteAxis *pal = (TPaletteAxis*)hist->GetListOfFunctions()->FindObject(\"palette\")  ---> nullptr" << endl;
+      cerr << " Someting wrong!!!" << endl;
+      cerr << " " << string( 50, '=' ) << endl;
+      cerr << color_cancel << endl;
+
+      return new TPaletteAxis();
+    }
+
   pal->GetAxis()->SetLabelSize( label_size );
   pal->GetAxis()->CenterTitle();
 
