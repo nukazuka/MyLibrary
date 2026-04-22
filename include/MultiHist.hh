@@ -99,7 +99,7 @@ private:
   
   vector < TH1D* > vhist_;
   vector < TH2D* > vhist2d_;
-  TH1D* hist_base_;
+  TH1* hist_base_;
   
   // Initialization
   void Init( );
@@ -195,7 +195,7 @@ public:
     @fn void AddBaseHist( TH1D* hist_base )
     @brief add base hist of ratio mode
   */
-  void AddBaseHist( TH1D* hist_base );
+  void AddBaseHist( TH1* hist_base );
 
 
   /*!

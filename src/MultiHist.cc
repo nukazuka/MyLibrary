@@ -516,7 +516,7 @@ void MultiHist::Add( TH2D* hist2d )
   vhist2d_.push_back( hist2d );
 }
 
-void MultiHist::AddBaseHist( TH1D* hist_base )
+void MultiHist::AddBaseHist( TH1* hist_base )
 {
   hist_base_ = hist_base;
 
@@ -782,9 +782,9 @@ void MultiHist::Draw2D( string option,
 	    }
 	}
       if( i == 0 && bl_draw_palette_axis_ == true )
-	DrawPaletteAxis( vhist2d_[i] , 0.905, 0.1, 0.93, 0.9, 0.08 );
+	DrawPaletteAxis<TH2D>( vhist2d_[i] , 0.905, 0.1, 0.93, 0.9, 0.08 );
       else if( i == 0 && bl_draw_palette_axis_ == false )
-	DrawPaletteAxis( vhist2d_[i] , 999, 999, 9999, 9999, 0.08 );
+	DrawPaletteAxis<TH2D>( vhist2d_[i] , 999, 999, 9999, 9999, 0.08 );
 
       if( i==0 && bl_title_==true )
 	DrawTitle( title_size_ , title_align_, 4 );

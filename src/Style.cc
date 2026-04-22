@@ -2,7 +2,7 @@
 #include "Style.hh"
 #endif // __CINT__
 
-void Style()
+void Stylee()
 {
 
   gStyle->SetEndErrorSize(0);

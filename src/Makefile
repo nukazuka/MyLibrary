@@ -4,7 +4,7 @@
 COMPILER = g++
 #COMPILER = clang++
 CFLAGS    = #-g -Wall -Wextra -Winit-self -Wno-unused-parameter -Wfloat-equal # for warning
-CFLAGS   += -std=c++11
+CFLAGS   += -std=c++17
 CFLAGS   +=  -O -O1 # for optimazation
 CFLAGS   += `root-config --cflags`
 MYLIB_FLAGS = `MyLibrary-config`
@@ -50,13 +50,11 @@ libHistOperation$(SUFFIX): HistOperation.cc StringOperation.cc Style.cc ../inclu
 libIoOperation$(SUFFIX): IoOperation.cc StringOperation.cc ../include/IoOperation.hh ../include/StringOperation.hh
 	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) $(LDFLAGS) -o $@  $< StringOperation.cc
 
-libMultiHist$(SUFFIX): MultiHist.cc PaveOperation.cc StringOperation.cc ../include/MultiHist.hh ../include/PaveOperation.hh ../include/StringOperation.hh
-	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) $(LDFLAGS) -o $@  $< PaveOperation.cc StringOperation.cc	
+libMultiHist$(SUFFIX): MultiHist.cc PaveOperation.cc StringOperation.cc ../include/MultiHist.hh ../include/PaveOperation.hh ../include/StringOperation.hh libPaveOperation$(SUFFIX)
+	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) $(LDFLAGS) -L. -lPaveOperation -o $@  $< PaveOperation.cc StringOperation.cc	
 
 libTForest$(SUFFIX): TForest.cc StringOperation.cc ../include/StringOperation.hh
 	$(COMPILER) $(CFLAGS) $(CFLAGS_SHARE) $(INCLUDE) $(LDFLAGS) -o $@  $< StringOperation.cc
-
-
 
 MyLibrary.hh:../include/MyLibrary.hh
 	../MakeHeaderFile.sh .. 

@@ -5,7 +5,7 @@
 #include "TStyle.h"
 #include "TColor.h"
 
-void Style();
+//void Style();
 
 /*
 void SetHistStyle( TH1D* hist, int color, int width );

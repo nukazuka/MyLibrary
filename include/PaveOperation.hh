@@ -5,6 +5,7 @@
 #include "HeadersSL.hh"
 #include "HeadersRoot.hh"
 
+using namespace std;
 #ifndef __CINT__
 
 /*!
@@ -70,10 +71,10 @@ void DrawTitle(TVirtualPad* pad);
 
 */
 //void DrawPaletteAxis( TH2D* hist = new TH2D(),
-TPaletteAxis* DrawPaletteAxis( TH2D* hist = new TH2D(),
-		      double xmin = 0.9 , double ymin = 0.1,
-		      double xmax = 0.93, double ymax = 0.9,
-		      double label_size = 0.08 );
+// TPaletteAxis* DrawPaletteAxis( TH2D* hist = new TH2D(),
+// 		      double xmin = 0.9 , double ymin = 0.1,
+// 		      double xmax = 0.93, double ymax = 0.9,
+// 		      double label_size = 0.08 );
 
 /*
 void DrawTitle(TVirtualPad* pad)
@@ -212,11 +213,14 @@ void DrawFitResults( TH* graph, double xmin, double ymin, double xmax, double ym
 */
 
 template < typename TH >
+// TPaletteAxis* DrawPaletteAxis( TH* hist,
+// 			       double xmin, double ymin,
+// 			       double xmax, double ymax,
+// 			       double label_size)
 TPaletteAxis* DrawPaletteAxis( TH* hist,
-			       double xmin, double ymin,
-			       double xmax, double ymax,
-			       double label_size)
-
+		      double xmin = 0.9 , double ymin = 0.1,
+		      double xmax = 0.93, double ymax = 0.9,
+		      double label_size = 0.08 )
 {
 
   gPad->Update();
@@ -234,7 +238,7 @@ TPaletteAxis* DrawPaletteAxis( TH* hist,
       cerr << " " << string( 50, '=' ) << endl;
       cerr << color_cancel << endl;
 
-      return new TPaletteAxis();
+      return nullptr;
     }
 
   pal->GetAxis()->SetLabelSize( label_size );
